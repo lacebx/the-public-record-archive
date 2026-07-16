@@ -24,11 +24,11 @@
 
 Three GitHub Actions workflows run against `main`:
 
-| Workflow | Trigger | Purpose |
-|----------|---------|---------|
-| `ci.yml` | Pull request to `main` | Validate: install → snapshot → format → test → lint → typecheck → build |
-| `deploy.yml` | Push to `main` (also validates PRs) | Same checks + deploy to Cloudflare Workers |
-| `snapshot.yml` | Scheduled daily 06:00 UTC + `workflow_dispatch` | Generate snapshot, validate integrity, archive artifacts |
+| Workflow       | Trigger                                         | Purpose                                                                 |
+| -------------- | ----------------------------------------------- | ----------------------------------------------------------------------- |
+| `ci.yml`       | Pull request to `main`                          | Validate: install → snapshot → format → test → lint → typecheck → build |
+| `deploy.yml`   | Push to `main` (also validates PRs)             | Same checks + deploy to Cloudflare Workers                              |
+| `snapshot.yml` | Scheduled daily 06:00 UTC + `workflow_dispatch` | Generate snapshot, validate integrity, archive artifacts                |
 
 ### Snapshot Lifecycle
 
@@ -134,6 +134,7 @@ export class LocalSnapshotStore implements SnapshotStore {
 ```
 
 Used by:
+
 - `scripts/generate-snapshot.ts` — calls `persistSnapshot()` which uses
   `LocalSnapshotStore` to write data files.
 - `src/lib/data.ts` — `getSnapshotByDate()` falls back to
@@ -141,21 +142,21 @@ Used by:
 
 ### Key Modules
 
-| Module                          | Purpose                                           |
-| ------------------------------- | ------------------------------------------------- |
-| `scripts/generate-snapshot.ts`  | RSS fetching, parsing, hashing, output generation |
-| `src/lib/data.ts`               | Type definitions, server functions, data access   |
-| `src/lib/storage.ts`            | SnapshotStore interface + LocalSnapshotStore      |
-| `src/lib/snapshot-data.ts`      | Auto-generated bundled snapshot data              |
-| `src/routes/`                   | All application routes                            |
-| `src/components/site-shell.tsx` | Shared layout                                     |
-| `src/styles.css`                | Global styles, Tailwind, custom CSS               |
-| `src/start.ts`                  | TanStack Start entry point                        |
-| `src/server.ts`                 | SSR server with error recovery                    |
-| `src/router.tsx`                | TanStack Router with QueryClient                  |
-| `.github/workflows/ci.yml`      | PR validation                                     |
-| `.github/workflows/deploy.yml`  | Production deploy + PR validation                 |
-| `.github/workflows/snapshot.yml`| Scheduled daily snapshot generation               |
+| Module                           | Purpose                                           |
+| -------------------------------- | ------------------------------------------------- |
+| `scripts/generate-snapshot.ts`   | RSS fetching, parsing, hashing, output generation |
+| `src/lib/data.ts`                | Type definitions, server functions, data access   |
+| `src/lib/storage.ts`             | SnapshotStore interface + LocalSnapshotStore      |
+| `src/lib/snapshot-data.ts`       | Auto-generated bundled snapshot data              |
+| `src/routes/`                    | All application routes                            |
+| `src/components/site-shell.tsx`  | Shared layout                                     |
+| `src/styles.css`                 | Global styles, Tailwind, custom CSS               |
+| `src/start.ts`                   | TanStack Start entry point                        |
+| `src/server.ts`                  | SSR server with error recovery                    |
+| `src/router.tsx`                 | TanStack Router with QueryClient                  |
+| `.github/workflows/ci.yml`       | PR validation                                     |
+| `.github/workflows/deploy.yml`   | Production deploy + PR validation                 |
+| `.github/workflows/snapshot.yml` | Scheduled daily snapshot generation               |
 
 ## Future Architecture Considerations
 

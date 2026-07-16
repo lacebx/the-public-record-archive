@@ -10,7 +10,13 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 export const ROOT = resolve(__dirname, "..");
 export const DATA_DIR = resolve(ROOT, "data");
 
-interface RawArticle {
+interface FetchResult {
+  articles: RawArticle[];
+  ok: boolean;
+  source: string;
+}
+
+export interface RawArticle {
   title: string;
   description: string;
   link: string;
@@ -207,7 +213,7 @@ export function parseFeedItems(
   return articles;
 }
 
-async function fetchFeed(feed: (typeof FEEDS)[number]): Promise<RawArticle[]> {
+async function fetchFeed(feed: (typeof FEEDS)[number]): Promise<FetchResult> {
   try {
     const response = await fetch(feed.url, {
       signal: AbortSignal.timeout(15000),
@@ -215,13 +221,24 @@ async function fetchFeed(feed: (typeof FEEDS)[number]): Promise<RawArticle[]> {
     });
     if (!response.ok) {
       console.warn(`  [${response.status}] ${feed.source}`);
-      return [];
+      return { articles: [], ok: false, source: feed.source };
     }
     const xml = await response.text();
-    return parseFeedItems(xml, feed);
+    return { articles: parseFeedItems(xml, feed), ok: true, source: feed.source };
   } catch (err) {
     console.warn(`  [error] ${feed.source}: ${err instanceof Error ? err.message : String(err)}`);
-    return [];
+    return { articles: [], ok: false, source: feed.source };
+  }
+}
+
+export async function loadPreviousSnapshot(): Promise<Snapshot | null> {
+  try {
+    const { readFileSync } = await import("node:fs");
+    const latestPath = resolve(DATA_DIR, "latest.json");
+    const data = readFileSync(latestPath, "utf-8");
+    return JSON.parse(data) as Snapshot;
+  } catch {
+    return null;
   }
 }
 
@@ -304,11 +321,40 @@ async function main() {
   mkdirSync(DATA_DIR, { recursive: true });
 
   console.log("Fetching RSS feeds...");
-  const results = await Promise.allSettled(FEEDS.map((f) => fetchFeed(f)));
+  const results = await Promise.all(FEEDS.map((f) => fetchFeed(f)));
+
   const allArticles: RawArticle[] = [];
+  const failedSources: string[] = [];
+
   for (const r of results) {
-    if (r.status === "fulfilled") allArticles.push(...r.value);
+    allArticles.push(...r.articles);
+    if (!r.ok) failedSources.push(r.source);
   }
+
+  if (failedSources.length > 0) {
+    console.log(`\n${failedSources.length} feed(s) failed: ${failedSources.join(", ")}`);
+    const prev = await loadPreviousSnapshot();
+    if (prev) {
+      for (const source of failedSources) {
+        const prevRecords = prev.records.filter((r) => r.publisher === source);
+        if (prevRecords.length > 0) {
+          console.log(`  Rolling over ${prevRecords.length} records from ${source}`);
+          for (const rec of prevRecords) {
+            allArticles.push({
+              title: rec.title,
+              description: rec.summary,
+              link: rec.sourceUrl,
+              published: rec.published,
+              source: rec.publisher,
+              country: rec.country,
+              category: rec.category,
+            });
+          }
+        }
+      }
+    }
+  }
+
   console.log(`\nTotal articles fetched: ${allArticles.length}`);
 
   if (allArticles.length === 0) {

@@ -7,6 +7,7 @@ import {
   isRecord,
   buildRecords,
   buildSnapshot,
+  loadPreviousSnapshot,
 } from "../generate-snapshot";
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
@@ -322,5 +323,17 @@ describe("buildSnapshot", () => {
       isoDate: "2026-07-16",
       generated: "12:00:00 UTC",
     });
+  });
+});
+
+describe("loadPreviousSnapshot", () => {
+  it("returns a snapshot when data/latest.json exists", async () => {
+    const result = await loadPreviousSnapshot();
+    expect(result).not.toBeNull();
+    if (result) {
+      expect(result).toHaveProperty("isoDate");
+      expect(result).toHaveProperty("hash");
+      expect(result).toHaveProperty("records");
+    }
   });
 });

@@ -219,6 +219,7 @@ but R2 is not yet configured. A storage abstraction allows development with
 local filesystem storage and migration to R2 without refactoring.
 
 Options considered:
+
 - Direct R2 integration from the start (blocked — no R2 bucket, no credentials)
 - Direct filesystem writes only (creates R2 migration work later)
 - Storage interface with swappable implementations (chosen)
@@ -229,6 +230,7 @@ A minimal interface (`SnapshotStore`) with a single filesystem implementation
 store. In CI, the data directory is archived as GitHub Actions artifacts.
 
 Consequences:
+
 - Adding R2 is a new class implementing the same interface
 - The generator and app code never reference filesystem or R2 directly
 - Artifacts provide 90-day retention without any external service
@@ -252,6 +254,7 @@ configured, and the snapshot generator requires Node.js filesystem access
 (`node:fs`) which is not available in Workers without polyfills.
 
 Options considered:
+
 - Cloudflare Workers Cron Triggers (tighter integration, but R2 not configured)
 - GitHub Actions scheduled workflow (simpler, works with local filesystem,
   artifact archival)
@@ -263,6 +266,7 @@ triggering. The workflow runs the full generator pipeline, validates integrity,
 and archives data as artifacts (90-day retention).
 
 Consequences:
+
 - Snapshot runs on GitHub infrastructure (not Cloudflare)
 - Artifacts provide temporary preservation without R2
 - `workflow_dispatch` enables testing without waiting for cron
@@ -285,6 +289,7 @@ GitHub Actions artifacts provide free storage with 90-day retention, URL
 download access, and require no additional setup.
 
 Options considered:
+
 - GitHub Actions artifacts (free, 90-day retention, no setup)
 - Git LFS (commits binary blobs to repo, pollutes history)
 - Committing to a separate `data` branch (increases repo size, no retention
@@ -296,6 +301,7 @@ artifact. The TypeScript module (`src/lib/snapshot-data.ts`) is also uploaded
 for reference. Both use `actions/upload-artifact@v4`.
 
 Consequences:
+
 - Snapshots are preserved for 90 days (extendable if needed)
 - Downloadable via GitHub Artifacts UI or API
 - No external service dependencies

@@ -37,11 +37,11 @@ Pre-requisites for Issue #4:
 
 ## Workflows
 
-| File | Trigger | Purpose |
-|------|---------|---------|
-| `.github/workflows/ci.yml` | PR to main | Validate (install → snapshot → format → test → lint → typecheck → build) |
-| `.github/workflows/deploy.yml` | Push to main (also PRs) | Validate + deploy to Cloudflare Workers |
-| `.github/workflows/snapshot.yml` | Daily 06:00 UTC + manual | Generate snapshot, validate integrity, archive artifacts |
+| File                             | Trigger                  | Purpose                                                                  |
+| -------------------------------- | ------------------------ | ------------------------------------------------------------------------ |
+| `.github/workflows/ci.yml`       | PR to main               | Validate (install → snapshot → format → test → lint → typecheck → build) |
+| `.github/workflows/deploy.yml`   | Push to main (also PRs)  | Validate + deploy to Cloudflare Workers                                  |
+| `.github/workflows/snapshot.yml` | Daily 06:00 UTC + manual | Generate snapshot, validate integrity, archive artifacts                 |
 
 ## Quick Links
 
