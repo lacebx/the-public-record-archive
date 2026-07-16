@@ -476,4 +476,4 @@ and an interactive API playground with Scalar.
 - `npm run typecheck`: 0 errors
 - `npm run build`: succeeds
 
-**PR:** (to be opened, closes #12, #13, #14)
+**PR:** https://github.com/lacebx/the-public-record-archive/pull/39 (closes #12, #13, #14)
