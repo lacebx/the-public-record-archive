@@ -234,7 +234,7 @@ snapshot generation, and build storage abstraction layer.
 - `npm run typecheck` — 0 errors
 - `npm run build` — succeeds
 
-**PR:** (to be opened, closes #10)
+**PR:** https://github.com/lacebx/the-public-record-archive/pull/35 (merged, closes #10)
 
 **Remaining work after Issue #10:**
 
@@ -408,4 +408,72 @@ not available locally. Add LRU caching for R2 responses.
 - `npm run typecheck`: 0 errors
 - `npm run build`: succeeds
 
-**PR:** (to be opened, closes #6)
+**PR:** https://github.com/lacebx/the-public-record-archive/pull/38 (closes #6)
+
+---
+
+### Session: 2026-07-16 — Issue #12, #13, #14: REST API, dev portal, Scalar playground
+
+**Goal:** Implement a versioned REST API at `/api/v1/*`, a developer portal page,
+and an interactive API playground with Scalar.
+
+**Milestone:** Milestone 2: Search & Discovery
+
+**Issues:** #12, #13, #14
+
+**Branch:** `feature/api-v1`
+
+**Changes made:**
+
+**REST API (Issue #12):**
+- Created `src/lib/api.ts` — API business logic module with 7 endpoint handlers:
+  `listSnapshots()`, `getSnapshotApi()`, `getRecords()`, `getRecordById()`,
+  `searchRecords()`, `getArchiveData()`, `healthCheck()`
+- All functions return standardized `ApiResponse<T>` objects with `success`,
+  `data`, `error`, and `meta` fields
+- Created 7 TanStack Start routes under `src/routes/api/v1/`:
+  - `health.tsx` → `/api/v1/health`
+  - `snapshots.tsx` → `/api/v1/snapshots`
+  - `snapshots.$date.tsx` → `/api/v1/snapshots/{date}`
+  - `records.$id.tsx` → `/api/v1/records/{id}`
+  - `search.tsx` → `/api/v1/search`
+  - `archive.$date.tsx` → `/api/v1/archive/{date}`
+  - `index.tsx` → redirects to `/api`
+- OpenAPI 3.1 spec at `public/openapi.json` with all 6 endpoints documented
+
+**Developer Portal (Issue #13):**
+- Enhanced `src/routes/api.tsx` — full developer portal with:
+  - Endpoint table with live links to each API route
+  - Query parameters documentation
+  - Example response
+  - Error codes table
+  - Caching and OpenAPI/Scalar sections
+
+**Interactive Playground (Issue #14):**
+- Installed `@scalar/api-reference` and `@scalar/api-reference-react`
+- Created `src/routes/api/playground.tsx` — full-page Scalar API playground
+
+**Testing:**
+- Created `tests/api.test.ts` — 22 comprehensive tests covering all endpoints
+
+**Files created:**
+- `src/lib/api.ts` — API handler functions
+- `src/routes/api/v1/index.tsx`, `health.tsx`, `snapshots.tsx`,
+  `snapshots.$date.tsx`, `records.$id.tsx`, `search.tsx`, `archive.$date.tsx`
+- `src/routes/api/playground.tsx` — Scalar interactive playground
+- `public/openapi.json` — OpenAPI 3.1 specification
+- `tests/api.test.ts` — 22 API tests
+
+**Files modified:**
+- `src/routes/api.tsx` — enhanced developer portal
+- `package.json`, `package-lock.json` — added Scalar deps
+- `docs/ai/ARCHITECTURE.md`, `CONTEXT.md`, `DECISIONS.md`, `HANDOFF.md`,
+  `WORK_LOG.md`
+
+**Verification:**
+- `npm test`: 110/110 passed (22 new + 88 existing)
+- `npm run lint`: 0 errors
+- `npm run typecheck`: 0 errors
+- `npm run build`: succeeds
+
+**PR:** https://github.com/lacebx/the-public-record-archive/pull/39 (closes #12, #13, #14)
