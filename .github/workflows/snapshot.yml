@@ -23,22 +23,7 @@ jobs:
         run: npm run snapshot
 
       - name: Validate snapshot structure
-        run: npx tsx -e "
-          import { readFileSync } from 'node:fs';
-          import { resolve } from 'node:path';
-          import { createHash } from 'node:crypto';
-          const data = readFileSync(resolve('src/lib/snapshot-data.ts'), 'utf-8');
-          const match = data.match(/const data: Snapshot = (.+?);\nexport default data;/s);
-          if (!match) { console.error('FAIL: could not parse snapshot-data.ts'); process.exit(1); }
-          const snapshot = JSON.parse(match[1]);
-          if (!snapshot.isoDate) { console.error('FAIL: missing isoDate'); process.exit(1); }
-          if (!snapshot.hash) { console.error('FAIL: missing hash'); process.exit(1); }
-          if (!Array.isArray(snapshot.records)) { console.error('FAIL: missing records'); process.exit(1); }
-          const recordsJson = JSON.stringify(snapshot.records, null, 2);
-          const computed = createHash('sha256').update(recordsJson, 'utf-8').digest('hex');
-          if (computed !== snapshot.hash) { console.error('FAIL: integrity hash mismatch'); process.exit(1); }
-          console.log('OK: snapshot valid, date=' + snapshot.isoDate + ', records=' + snapshot.records.length + ', hash=' + snapshot.hash);
-        "
+        run: npx tsx scripts/validate-snapshot.ts
 
       - name: Archive snapshot data
         uses: actions/upload-artifact@v4
