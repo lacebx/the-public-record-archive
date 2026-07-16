@@ -6,7 +6,8 @@ import { fileURLToPath } from "node:url";
 import { XMLParser } from "fast-xml-parser";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const DATA_DIR = resolve(__dirname, "..", "data");
+const ROOT = resolve(__dirname, "..");
+const DATA_DIR = resolve(ROOT, "data");
 
 interface RawArticle {
   title: string;
@@ -45,90 +46,17 @@ interface Snapshot {
 }
 
 const FEEDS = [
-  {
-    url: "https://feeds.bbci.co.uk/news/rss.xml",
-    source: "BBC News",
-    country: "United Kingdom",
-    category: "News",
-  },
-  {
-    url: "https://www.nasa.gov/feed/",
-    source: "NASA",
-    country: "United States",
-    category: "Science",
-  },
-  {
-    url: "https://www.whitehouse.gov/feed/",
-    source: "White House",
-    country: "United States",
-    category: "Politics",
-  },
-  {
-    url: "https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml",
-    source: "The New York Times",
-    country: "United States",
-    category: "News",
-  },
-  {
-    url: "https://feeds.npr.org/1001/rss.xml",
-    source: "NPR",
-    country: "United States",
-    category: "News",
-  },
-  {
-    url: "https://www.wired.com/feed/rss",
-    source: "Wired",
-    country: "United States",
-    category: "Technology",
-  },
-  {
-    url: "https://arstechnica.com/feed/",
-    source: "Ars Technica",
-    country: "United States",
-    category: "Technology",
-  },
-  {
-    url: "https://www.theguardian.com/world/rss",
-    source: "The Guardian",
-    country: "United Kingdom",
-    category: "News",
-  },
-  {
-    url: "https://www.spiegel.de/schlagzeilen/tops/index.rss",
-    source: "Der Spiegel",
-    country: "Germany",
-    category: "News",
-  },
-  {
-    url: "https://www.lemonde.fr/rss/une.xml",
-    source: "Le Monde",
-    country: "France",
-    category: "News",
-  },
-  {
-    url: "https://www.aljazeera.com/xml/rss/all.xml",
-    source: "Al Jazeera",
-    country: "Qatar",
-    category: "News",
-  },
-  {
-    url: "https://www.economist.com/feeds/print-sections/77/business.xml",
-    source: "The Economist",
-    country: "United Kingdom",
-    category: "Economy",
-  },
-  {
-    url: "https://feeds.content.dowjones.io/public/rss/mw_topstories",
-    source: "MarketWatch",
-    country: "United States",
-    category: "Economy",
-  },
-  {
-    url: "https://www.sciencedaily.com/rss/all.xml",
-    source: "ScienceDaily",
-    country: "United States",
-    category: "Science",
-  },
+  { url: "https://feeds.bbci.co.uk/news/rss.xml", source: "BBC News", country: "United Kingdom", category: "News" },
+  { url: "https://www.nasa.gov/feed/", source: "NASA", country: "United States", category: "Science" },
+  { url: "https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml", source: "The New York Times", country: "United States", category: "News" },
+  { url: "https://feeds.npr.org/1001/rss.xml", source: "NPR", country: "United States", category: "News" },
+  { url: "https://www.wired.com/feed/rss", source: "Wired", country: "United States", category: "Technology" },
+  { url: "https://arstechnica.com/feed/", source: "Ars Technica", country: "United States", category: "Technology" },
+  { url: "https://www.theguardian.com/world/rss", source: "The Guardian", country: "United Kingdom", category: "News" },
+  { url: "https://www.spiegel.de/schlagzeilen/tops/index.rss", source: "Der Spiegel", country: "Germany", category: "News" },
+  { url: "https://www.lemonde.fr/rss/une.xml", source: "Le Monde", country: "France", category: "News" },
+  { url: "https://www.aljazeera.com/xml/rss/all.xml", source: "Al Jazeera", country: "Qatar", category: "News" },
+  { url: "https://www.sciencedaily.com/rss/all.xml", source: "ScienceDaily", country: "United States", category: "Science" },
 ];
 
 function extractText(val: unknown): string {
@@ -148,11 +76,7 @@ function extractLink(item: Record<string, unknown>): string {
   if (typeof link === "string") return link;
   if (typeof link === "object" && link !== null) {
     const l = link as Record<string, unknown>;
-    if (
-      l.$ &&
-      typeof l.$ === "object" &&
-      typeof (l.$ as Record<string, unknown>).href === "string"
-    ) {
+    if (l.$ && typeof l.$ === "object" && typeof (l.$ as Record<string, unknown>).href === "string") {
       return (l.$ as Record<string, unknown>).href as string;
     }
     if (typeof l._ === "string") return l._;
@@ -164,7 +88,7 @@ function isRecord(val: unknown): val is Record<string, unknown> {
   return typeof val === "object" && val !== null;
 }
 
-async function fetchFeed(feed: (typeof FEEDS)[number]): Promise<RawArticle[]> {
+async function fetchFeed(feed: typeof FEEDS[number]): Promise<RawArticle[]> {
   try {
     const response = await fetch(feed.url, {
       signal: AbortSignal.timeout(15000),
@@ -199,16 +123,9 @@ async function fetchFeed(feed: (typeof FEEDS)[number]): Promise<RawArticle[]> {
     for (const item of items) {
       if (!item) continue;
       const title = extractText(item.title);
-      const description =
-        extractText(item["content:encoded"]) ||
-        extractText(item.description) ||
-        extractText(item.summary);
+      const description = extractText(item["content:encoded"]) || extractText(item.description) || extractText(item.summary);
       const link = extractLink(item);
-      const pubDate =
-        extractText(item.pubDate) ||
-        extractText(item["dc:date"]) ||
-        extractText(item.published) ||
-        extractText(item.updated);
+      const pubDate = extractText(item.pubDate) || extractText(item["dc:date"]) || extractText(item.published) || extractText(item.updated);
 
       if (!title && !description) continue;
 
@@ -297,15 +214,27 @@ async function main() {
     records,
   };
 
+  // Write JSON data files
   const dateFile = resolve(DATA_DIR, `${isoDate}.json`);
   const latestFile = resolve(DATA_DIR, "latest.json");
-
   writeFileSync(dateFile, JSON.stringify(snapshot, null, 2), "utf-8");
   writeFileSync(latestFile, JSON.stringify(snapshot, null, 2), "utf-8");
+
+  // Generate a TypeScript module so the app never needs filesystem access at runtime
+  const tsFile = resolve(ROOT, "src", "lib", "snapshot-data.ts");
+  const tsContent = `// Auto-generated by scripts/generate-snapshot.ts — do not edit
+import type { Snapshot } from "./data";
+
+const data: Snapshot = ${JSON.stringify(snapshot, null, 2)};
+
+export default data;
+`;
+  writeFileSync(tsFile, tsContent, "utf-8");
 
   console.log(`\nSnapshot saved to:`);
   console.log(`  ${dateFile}`);
   console.log(`  ${latestFile}`);
+  console.log(`  ${tsFile}`);
   console.log(`\nSummary:`);
   console.log(`  Date:       ${dateStr}`);
   console.log(`  Records:    ${records.length}`);
