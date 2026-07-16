@@ -12,12 +12,14 @@ export const Route = createFileRoute("/about")({
       { title: "About — Public Internet Record" },
       {
         name: "description",
-        content: "The Public Internet Record is a nonprofit archival trust preserving the primary sources of the open web since 1998.",
+        content:
+          "The Public Internet Record is a nonprofit archival trust preserving the primary sources of the open web since 1998.",
       },
       { property: "og:title", content: "About — Public Internet Record" },
       {
         property: "og:description",
-        content: "Nonprofit archival trust preserving the primary sources of the open web since 1998.",
+        content:
+          "Nonprofit archival trust preserving the primary sources of the open web since 1998.",
       },
     ],
   }),
