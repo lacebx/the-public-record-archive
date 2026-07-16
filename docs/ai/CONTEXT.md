@@ -1,26 +1,48 @@
 # Context
 
 **Current milestone:** Milestone 1: Persistent Archive
-**Current issue:** #8 (downloadable snapshot archive) — completed
-**Current branch:** feature/snapshot-archive
-**Current PR:** https://github.com/lacebx/the-public-record-archive/pull/36
-**Last completed work:** Downloadable snapshot archive (tar.gz with MANIFEST, SHA256SUMS, README)
+**Current issue:** #4 (R2 storage) — completed
+**Current branch:** feature/r2-storage
+**Current PR:** https://github.com/lacebx/the-public-record-archive/pull/37 (pending)
+**Last completed work:** R2SnapshotStore implementation with S3-compatible API
 
 ## Current Blockers
 
-- No Cloudflare R2 bucket configured (required for Issue #4)
+- No Cloudflare R2 bucket configured (requires account setup + credentials)
+- No R2 credentials set in GitHub secrets (requires R2 bucket first)
 
 ## Next Recommended Action
 
-Open PR for Issue #10, then start **Issue #4: Persist snapshot JSON to cloud object storage**.
-
-Pre-requisites for Issue #4:
-
-1. Create a Cloudflare R2 bucket
+1. Create a Cloudflare R2 bucket named `public-record-archive`
 2. Generate R2 API credentials (Access Key ID + Secret Access Key)
-3. Configure environment variables in GitHub secrets
-4. Implement `R2SnapshotStore` implementing `SnapshotStore` interface (already defined in `src/lib/storage.ts`)
-5. Update `generate-snapshot.ts` to use `R2SnapshotStore` when configured
+3. Set GitHub secrets: `R2_ACCOUNT_ID`, `R2_ACCESS_KEY_ID`, `R2_SECRET_ACCESS_KEY`
+4. Monitor the next scheduled snapshot workflow to verify R2 sync
+
+## Environment Variables (R2)
+
+The following env vars activate R2 storage. When absent, the app falls back to
+local storage and bundled snapshot data.
+
+| Variable                  | Required | Default                   | Description             |
+| ------------------------- | -------- | ------------------------- | ----------------------- |
+| `R2_ACCOUNT_ID`           | Yes      | —                         | Cloudflare account ID   |
+| `R2_ACCESS_KEY_ID`        | Yes      | —                         | R2 access key           |
+| `R2_SECRET_ACCESS_KEY`    | Yes      | —                         | R2 secret access key    |
+| `R2_BUCKET`               | No       | `public-record-archive`   | R2 bucket name          |
+
+## Object Storage Structure
+
+```
+snapshots/
+├── latest.json
+├── YYYY/
+│   └── MM/
+│       └── DD/
+│           ├── snapshot.json
+│           ├── public-record-YYYY-MM-DD.tar.gz
+│           ├── manifest.json
+│           └── checksums.txt
+```
 
 ## Important Commands
 

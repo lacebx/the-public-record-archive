@@ -1,10 +1,11 @@
+import "dotenv/config";
 import { createHash } from "node:crypto";
 import { mkdirSync, writeFileSync } from "node:fs";
 import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { XMLParser } from "fast-xml-parser";
-import { LocalSnapshotStore } from "../src/lib/storage";
+import { LocalSnapshotStore, r2Config } from "../src/lib/storage";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 export const ROOT = resolve(__dirname, "..");
@@ -315,6 +316,30 @@ export async function persistSnapshot(snapshot: Snapshot, isoDate: string) {
   const store = new LocalSnapshotStore(DATA_DIR);
   await store.save("latest", snapshot);
   await store.save(isoDate, snapshot);
+
+  const cfg = r2Config();
+  if (cfg) {
+    const { R2SnapshotStore } = await import("../src/lib/storage");
+    const { buildArchiveTarGz, buildArchiveFiles } = await import("../src/lib/archive");
+    try {
+      const r2 = new R2SnapshotStore();
+      await r2.save(isoDate, snapshot);
+      await r2.saveLatest(snapshot);
+
+      const tarGz = await buildArchiveTarGz(snapshot);
+      const files = await buildArchiveFiles(snapshot);
+      const manifest = JSON.parse(files[1].content);
+      const checksums = files[2].content;
+
+      await r2.saveArchive(isoDate, tarGz);
+      await r2.saveManifest(isoDate, manifest);
+      await r2.saveChecksums(isoDate, checksums);
+
+      console.log(`  Synced to R2 (bucket: ${cfg.bucket})`);
+    } catch (err) {
+      console.warn("  R2 sync skipped:", err instanceof Error ? err.message : String(err));
+    }
+  }
 }
 
 async function main() {

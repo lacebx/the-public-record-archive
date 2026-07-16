@@ -51,6 +51,17 @@ export async function getSnapshotByDate(date: string): Promise<Snapshot | null> 
   if (date === bundledSnapshot.isoDate) return bundledSnapshot satisfies Snapshot;
 
   try {
+    const { R2SnapshotStore, r2Config } = await import("./storage");
+    if (r2Config()) {
+      const store = new R2SnapshotStore();
+      const snapshot = await store.load(date);
+      if (snapshot) return snapshot;
+    }
+  } catch {
+    // R2 not available, fall through
+  }
+
+  try {
     const { LocalSnapshotStore } = await import("./storage");
     const { ROOT } = await import("../../scripts/generate-snapshot");
     const { resolve } = await import("node:path");

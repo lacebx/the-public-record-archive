@@ -314,6 +314,54 @@ Consequences:
 
 ---
 
+---
+
+### ADR-011: R2SnapshotStore with S3-compatible API via @aws-sdk/client-s3
+
+Date: 2026-07-16
+
+Decision:
+Implement `R2SnapshotStore` using the `@aws-sdk/client-s3` package with
+Cloudflare R2's S3-compatible API. The store is activated only when environment
+variables `R2_ACCOUNT_ID`, `R2_ACCESS_KEY_ID`, and `R2_SECRET_ACCESS_KEY` are
+set. When not configured, the application falls back to `LocalSnapshotStore`
+and the bundled snapshot module.
+
+Context:
+The project needs to persist daily snapshots to Cloudflare R2 for long-term
+durability. R2 offers an S3-compatible API that can be accessed from any
+runtime (Node.js, Workers, CI). The existing `SnapshotStore` interface provides
+a clean abstraction point for adding new storage backends.
+
+Options considered:
+
+- Native Cloudflare Workers R2 binding (`env.R2`) — optimal for Workers runtime
+  but does not work from GitHub Actions (Node.js) where the generator runs.
+  Would require two separate implementations.
+- `@aws-sdk/client-s3` with R2 endpoint — works from both Node.js and Workers
+  (with `nodejs_compat`), single implementation, standard S3 API.
+- Raw S3 REST API via fetch — fewer dependencies but requires implementing
+  AWS Signature V4, error handling, and multipart uploads manually.
+
+Chosen approach:
+`@aws-sdk/client-s3` with dynamic imports. The S3 client is only loaded at
+runtime when R2 is configured, keeping the Worker bundle graceful when R2 is
+not in use. The store follows the `SnapshotStore` interface for snapshot data
+and adds `saveArchive()`, `saveManifest()`, `saveChecksums()` for archive
+assets. Objects are stored at `snapshots/YYYY/MM/DD/{type}` for clean
+prefix-based listing.
+
+Consequences:
+
+- Adds ~366 KB to the server bundle (only loaded when R2 is configured)
+- Environment variables are the sole configuration mechanism (no hardcoded creds)
+- The generator syncs to both local filesystem and R2 when configured
+- `getSnapshotByDate()` tries R2 first, then local, then bundled fallback
+- Future: native Workers R2 binding can be added as a second implementation
+  for the app server, skipping the S3 overhead in Workers runtime
+
+---
+
 ### ADR-009: GitHub Actions artifacts as interim snapshot storage
 
 Date: 2026-07-16
