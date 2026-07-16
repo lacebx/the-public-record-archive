@@ -19,6 +19,9 @@ dist-ssr
 # Generated snapshot data
 data/*.json
 
+# Environment variables
+.env
+
 # Wrangler / Cloudflare
 .wrangler/
 .dev.vars
