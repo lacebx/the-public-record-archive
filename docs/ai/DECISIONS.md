@@ -275,6 +275,45 @@ Consequences:
 
 ---
 
+---
+
+### ADR-010: Minimal USTAR tar.gz for archive download (no external dependency)
+
+Date: 2026-07-16
+
+Decision:
+Implement a minimal USTAR tar packer in-house rather than importing the `tar`
+npm package for archive download generation.
+
+Context:
+Snapshots need a downloadable bulk export containing snapshot.json, MANIFEST.json,
+SHA256SUMS, and README.md as a single file. The format must be unpackable with
+standard tools (`tar xzf`) on any system. Only 4 text files need to be packaged,
+and the USTAR format is simple (512-byte headers).
+
+Options considered:
+
+- `tar` npm package (pure JS, well-maintained, but another dependency)
+- `archiver` npm package (streaming, supports tar+zip, but heavier)
+- Child process `tar czf` (Linux/macOS only, not portable to Workers)
+- Custom USTAR implementation (zero dependencies, ~80 lines, format is simple)
+
+Chosen approach:
+A minimal USTAR implementation in `src/lib/archive.ts` with Node.js built-in
+`zlib.gzipSync()` for compression. The implementation handles ASCII filenames
+only (no unicode in archive paths), which is fine for `snapshot.json`,
+`MANIFEST.json`, `SHA256SUMS`, `README.md`. Total implementation: ~80 lines.
+
+Consequences:
+
+- Zero new dependencies
+- Archive is created entirely in-memory (no temp files)
+- Limited to ASCII filenames (sufficient for our use case)
+- File sizes limited to what fits in a Worker response (under 100MB)
+- Future: could switch to `tar` package if more complex archive structure needed
+
+---
+
 ### ADR-009: GitHub Actions artifacts as interim snapshot storage
 
 Date: 2026-07-16

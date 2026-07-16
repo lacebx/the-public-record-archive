@@ -111,6 +111,18 @@ scripts/generate-snapshot.ts
 | `/documentation`   | DocumentationPage | Static                               |
 | `/api`             | ApiDocs           | Static                               |
 
+### Archive Download
+
+The snapshot detail page (`/snapshots/$date`) includes an "Download Archive (.tar.gz)"
+button that calls the `getArchive` server function. The archive is built on the server:
+
+1. Snapshot data is fetched via `getSnapshotByDate()` (uses store interface)
+2. `buildArchiveTarGz()` in `src/lib/archive.ts` generates files (snapshot.json,
+   MANIFEST.json, SHA256SUMS, README.md) and packs them into a `.tar.gz` using
+   Node.js built-in `zlib` and a minimal USTAR tar packer
+3. The compressed archive is returned as base64 to the client, which triggers
+   a browser download
+
 ### Storage Abstraction
 
 ```typescript
@@ -147,6 +159,7 @@ Used by:
 | `scripts/generate-snapshot.ts`   | RSS fetching, parsing, hashing, output generation |
 | `src/lib/data.ts`                | Type definitions, server functions, data access   |
 | `src/lib/storage.ts`             | SnapshotStore interface + LocalSnapshotStore      |
+| `src/lib/archive.ts`             | Archive builder (tar.gz packaging)                |
 | `src/lib/snapshot-data.ts`       | Auto-generated bundled snapshot data              |
 | `src/routes/`                    | All application routes                            |
 | `src/components/site-shell.tsx`  | Shared layout                                     |

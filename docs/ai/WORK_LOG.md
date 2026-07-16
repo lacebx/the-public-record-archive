@@ -240,3 +240,52 @@ snapshot generation, and build storage abstraction layer.
 
 - Begin Issue #4: Persist snapshot JSON to Cloudflare R2
 - Requires: Cloudflare R2 bucket setup, credential configuration
+
+---
+
+### Session: 2026-07-16 — Issue #8: Downloadable snapshot archive
+
+**Goal:** Implement a downloadable tar.gz archive for each snapshot containing
+snapshot.json, MANIFEST.json, SHA256SUMS, and README.md, with offline
+verification support.
+
+**Milestone:** Milestone 1: Persistent Archive
+
+**Branch:** `feature/snapshot-archive`
+
+**Changes made:**
+
+- Created `src/lib/archive.ts` — archive builder module with:
+  - `buildArchiveFiles()` — generates 4 archive files (snapshot.json,
+    MANIFEST.json, SHA256SUMS, README.md) with SHA-256 checksums
+  - `buildArchiveTarGz()` — packs files into tar.gz using a minimal USTAR
+    implementation (~80 lines) + Node.js built-in `zlib.gzipSync()`
+  - `archiveFilename()` — returns `public-record-{isoDate}.tar.gz`
+- Updated `src/lib/data.ts` — added `getArchive` server function that fetches
+  snapshot by date and builds archive on the server, returns base64
+- Updated `src/routes/snapshots.$date.tsx` — added `ArchiveDownloadButton` that
+  calls the server function and triggers browser download
+- Created `tests/archive.test.ts` — 11 tests covering archive file generation,
+  checksum verification, tar.gz structure, and edge cases
+- Updated `docs/ai/` — ARCHITECTURE.md (archive data flow, key modules),
+  CONTEXT.md (current state), DECISIONS.md (ADR-010), HANDOFF.md (summary)
+
+**Files modified:**
+
+- `src/lib/archive.ts` — new file (archive builder)
+- `src/lib/data.ts` — added `getArchive` server function
+- `src/routes/snapshots.$date.tsx` — added ArchiveDownloadButton
+- `tests/archive.test.ts` — new tests
+- `docs/ai/ARCHITECTURE.md`, `CONTEXT.md`, `DECISIONS.md`, `HANDOFF.md`
+
+**Verification:**
+
+- `npm test` — 65/65 passed
+- `npm run lint` — 0 errors
+- `npm run typecheck` — 0 errors
+
+**PR:** https://github.com/lacebx/the-public-record-archive/pull/36 (closes #8)
+
+**Remaining work after Issue #8:
+- Begin Issue #4: Persist snapshot JSON to Cloudflare R2
+- Requires: Cloudflare R2 bucket setup, credential configuration
