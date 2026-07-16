@@ -1,27 +1,26 @@
 # Context
 
 **Current milestone:** Milestone 1: Persistent Archive
-**Current issue:** #4 (R2 storage) — completed
-**Current branch:** feature/r2-storage
-**Current PR:** https://github.com/lacebx/the-public-record-archive/pull/37 (pending)
-**Last completed work:** R2SnapshotStore implementation with S3-compatible API
+**Current issue:** #6 (serve historical snapshots on demand) — in progress
+**Current branch:** feature/historical-snapshots
+**Current PR:** https://github.com/lacebx/the-public-record-archive/pull/38
+**Last completed work:** Historical snapshot retrieval with R2 listing, LRU caching, and full index page
 
-## Current Blockers
+## Data Flow
 
-- No Cloudflare R2 bucket configured (requires account setup + credentials)
-- No R2 credentials set in GitHub secrets (requires R2 bucket first)
+- `/snapshots/` — `getSnapshotList()` returns all dates from R2 (cached 2 min), falls back to bundled
+- `/snapshots/:date` — `getSnapshotByDate()` checks LRU cache, then R2, then local store, then bundled
+- Archive download — `getArchive()` works for any date via the same resolution chain
+- Missing dates — loader returns `{ data: null, latestIsoDate }` rendering a 404-style page
 
-## Next Recommended Action
+## Caching
 
-1. Create a Cloudflare R2 bucket named `public-record-archive`
-2. Generate R2 API credentials (Access Key ID + Secret Access Key)
-3. Set GitHub secrets: `R2_ACCOUNT_ID`, `R2_ACCESS_KEY_ID`, `R2_SECRET_ACCESS_KEY`
-4. Monitor the next scheduled snapshot workflow to verify R2 sync
+| Cache | TTL | Purpose |
+|-------|-----|---------|
+| `snapshotCache` | 5 min | Full snapshot objects by isoDate |
+| `listCache` | 2 min | SnapshotSummary array from R2 listing |
 
 ## Environment Variables (R2)
-
-The following env vars activate R2 storage. When absent, the app falls back to
-local storage and bundled snapshot data.
 
 | Variable                  | Required | Default                   | Description             |
 | ------------------------- | -------- | ------------------------- | ----------------------- |
@@ -30,39 +29,22 @@ local storage and bundled snapshot data.
 | `R2_SECRET_ACCESS_KEY`    | Yes      | —                         | R2 secret access key    |
 | `R2_BUCKET`               | No       | `public-record-archive`   | R2 bucket name          |
 
-## Object Storage Structure
-
-```
-snapshots/
-├── latest.json
-├── YYYY/
-│   └── MM/
-│       └── DD/
-│           ├── snapshot.json
-│           ├── public-record-YYYY-MM-DD.tar.gz
-│           ├── manifest.json
-│           └── checksums.txt
-```
-
 ## Important Commands
 
 - `npm run dev` — Start development server
 - `npm run build` — Production build
-- `npm run deploy` — Deploy to Cloudflare Workers (requires secrets)
-- `npm run deploy:preview` — Deploy preview build
+- `npm run deploy` — Deploy to Cloudflare Workers
 - `npm run snapshot` — Generate snapshot from RSS feeds
 - `npm test` — Run all tests (vitest run)
-- `npm run test:watch` — Run tests in watch mode
 - `npm run typecheck` — TypeScript type check
 - `npm run lint` — Lint source files
-- `npm run format` — Format source files (run after `npm run snapshot`)
 
 ## Workflows
 
 | File                             | Trigger                  | Purpose                                                                  |
 | -------------------------------- | ------------------------ | ------------------------------------------------------------------------ |
 | `.github/workflows/ci.yml`       | PR to main               | Validate (install → snapshot → format → test → lint → typecheck → build) |
-| `.github/workflows/deploy.yml`   | Push to main (also PRs)  | Validate + deploy to Cloudflare Workers                                  |
+| `.github/workflows/deploy.yml`   | Push to main             | Validate + deploy to Cloudflare Workers                                  |
 | `.github/workflows/snapshot.yml` | Daily 06:00 UTC + manual | Generate snapshot, validate integrity, archive artifacts                 |
 
 ## Quick Links

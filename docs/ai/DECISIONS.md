@@ -394,3 +394,39 @@ Consequences:
 - No external service dependencies
 - Artifacts are automatically deleted after retention period
 - Migration to R2: replace artifact upload with R2 store call
+
+---
+
+### ADR-012: LRU cache for snapshot retrieval
+
+Date: 2026-07-16
+
+Decision:
+Use `lru-cache` (already a dependency) for in-memory caching of snapshot data
+and snapshot lists. Two separate caches: `snapshotCache` (5-min TTL, 50 entries)
+for full snapshots and `listCache` (2-min TTL, 10 entries) for date listings.
+
+Context:
+Without caching, every navigation to `/snapshots/:date` or `/snapshots/` would
+trigger R2 API calls or filesystem reads. R2 latency is typically 50-200ms per
+request, and listing all snapshots does a `ListObjectsV2` call. With 5+ page
+views per session, caching eliminates redundant fetches.
+
+Options considered:
+- No caching (simplest, but poor UX with repeated R2 calls)
+- `lru-cache` (already installed, minimal overhead, proven)
+- React Query on the client (would duplicate state, no server-side benefit)
+
+Chosen approach:
+Two `lru-cache` instances in `src/lib/data.ts`. The bundled snapshot is cached
+on first access. Historical snapshots from R2 are cached on first load. Cache
+entries expire after TTL to allow new snapshots to appear without restart.
+
+Consequences:
+- Cache is per-process (lost on cold start, which is fine for Workers)
+- Short TTLs (2-5 min) ensure new snapshots visible quickly
+- `fetchSnapshotList()` iterates R2 dates and calls `getSnapshotByDate()` per date
+  — the per-date results are cached by `snapshotCache`, so only the list call is
+  expensive
+- Overall: 1 R2 ListObjects + N R2 GetObject calls per cache expiry cycle
+  (where N = number of new dates since last expiry)
