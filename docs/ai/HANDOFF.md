@@ -9,16 +9,20 @@ The project is at early MVP stage with:
 - Client-side verification and download
 - All data bundled at build time (no historical archive yet)
 - No database, no auth, no server-side state
-- Testing infrastructure: Vitest with 54 tests
-- CI/CD: GitHub Actions (PR checks, deploy, scheduled snapshots)
+- Testing infrastructure: Vitest with 65 tests
+- CI/CD: GitHub Actions (PR checks, deploy, scheduled snapshots + artifacts)
 - Storage abstraction: `SnapshotStore` interface + `LocalSnapshotStore`
+- Downloadable snapshot archive: tar.gz with manifest, checksums, and README
 
 ## Recently Completed
 
 - **Issue #9: Testing infrastructure** — Vitest, 54 tests, generator refactored
 - **Issue #10: CI/CD pipeline** — CI workflow, deploy workflow, scheduled
-  snapshot workflow, storage abstraction (`SnapshotStore` interface +
-  `LocalSnapshotStore`), GitHub Actions artifact archival
+  snapshot workflow, storage abstraction, artifact archival
+- **Issue #8: Downloadable snapshot archive** — Archive builder with minimal
+  USTAR tar packer + gzip compression, server function for on-demand archive
+  generation, download button on snapshot detail page, SHA-256 integrity
+  information in MANIFEST + separate checksums file
 
 ## Next
 
