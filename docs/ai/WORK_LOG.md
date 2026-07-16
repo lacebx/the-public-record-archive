@@ -284,10 +284,8 @@ verification support.
 - `npm run lint` — 0 errors
 - `npm run typecheck` — 0 errors
 
-**PR:** (to be opened, closes #8)
+**PR:** https://github.com/lacebx/the-public-record-archive/pull/36 (closes #8)
 
-**Remaining work after Issue #8:**
-
-- Open PR #37 for Issue #8
+**Remaining work after Issue #8:
 - Begin Issue #4: Persist snapshot JSON to Cloudflare R2
 - Requires: Cloudflare R2 bucket setup, credential configuration

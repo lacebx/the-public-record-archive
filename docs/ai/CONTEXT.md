@@ -3,7 +3,7 @@
 **Current milestone:** Milestone 1: Persistent Archive
 **Current issue:** #8 (downloadable snapshot archive) — completed
 **Current branch:** feature/snapshot-archive
-**Current PR:** https://github.com/lacebx/the-public-record-archive/pull/37
+**Current PR:** https://github.com/lacebx/the-public-record-archive/pull/36
 **Last completed work:** Downloadable snapshot archive (tar.gz with MANIFEST, SHA256SUMS, README)
 
 ## Current Blockers
