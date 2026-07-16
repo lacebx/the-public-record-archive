@@ -3,7 +3,7 @@
 **Current milestone:** Milestone 1: Persistent Archive
 **Current issue:** #6 (serve historical snapshots on demand) — in progress
 **Current branch:** feature/historical-snapshots
-**Current PR:** https://github.com/lacebx/the-public-record-archive/pull/38 (pending)
+**Current PR:** https://github.com/lacebx/the-public-record-archive/pull/38
 **Last completed work:** Historical snapshot retrieval with R2 listing, LRU caching, and full index page
 
 ## Data Flow
