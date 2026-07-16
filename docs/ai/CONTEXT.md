@@ -3,7 +3,7 @@
 **Current milestone:** Milestone 1: Persistent Archive
 **Current issue:** #4 (R2 storage) — completed
 **Current branch:** feature/r2-storage
-**Current PR:** https://github.com/lacebx/the-public-record-archive/pull/37
+**Current PR:** https://github.com/lacebx/the-public-record-archive/pull/37 (pending)
 **Last completed work:** R2SnapshotStore implementation with S3-compatible API
 
 ## Current Blockers
