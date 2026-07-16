@@ -4,10 +4,11 @@ import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { XMLParser } from "fast-xml-parser";
+import { LocalSnapshotStore } from "../src/lib/storage";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const ROOT = resolve(__dirname, "..");
-const DATA_DIR = resolve(ROOT, "data");
+export const ROOT = resolve(__dirname, "..");
+export const DATA_DIR = resolve(ROOT, "data");
 
 interface RawArticle {
   title: string;
@@ -19,7 +20,7 @@ interface RawArticle {
   category: string;
 }
 
-interface Record {
+interface SnapshotRecord {
   id: string;
   publisher: string;
   title: string;
@@ -42,7 +43,7 @@ interface Snapshot {
   countries: number;
   status: string;
   hash: string;
-  records: Record[];
+  records: SnapshotRecord[];
 }
 
 const FEEDS = [
@@ -228,7 +229,7 @@ export function buildRecords(
   articles: RawArticle[],
   isoDate: string,
   archivedAt: string,
-): Record[] {
+): SnapshotRecord[] {
   return articles.map((a, i) => {
     const id = `REC-${isoDate}-${String(i + 1).padStart(6, "0")}`;
     const hashSource = `${id}|${a.title}|${a.description}|${a.link}|${a.source}|${archivedAt}`;
@@ -250,7 +251,7 @@ export function buildRecords(
 }
 
 export function buildSnapshot(
-  records: Record[],
+  records: SnapshotRecord[],
   isoDate: string,
   dateStr: string,
   generated: string,
@@ -293,6 +294,12 @@ export default data;
   return { dateFile, latestFile, tsFile };
 }
 
+export async function persistSnapshot(snapshot: Snapshot, isoDate: string) {
+  const store = new LocalSnapshotStore(DATA_DIR);
+  await store.save("latest", snapshot);
+  await store.save(isoDate, snapshot);
+}
+
 async function main() {
   mkdirSync(DATA_DIR, { recursive: true });
 
@@ -322,6 +329,7 @@ async function main() {
   const records = buildRecords(allArticles, isoDate, archivedAt);
   const snapshot = buildSnapshot(records, isoDate, dateStr, generated);
   const files = writeSnapshotFiles(snapshot, isoDate);
+  await persistSnapshot(snapshot, isoDate);
 
   console.log(`\nSnapshot saved to:`);
   console.log(`  ${files.dateFile}`);

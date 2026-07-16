@@ -90,10 +90,10 @@ function Home() {
           <Link to="/snapshots/$date" params={{ date: meta.isoDate }} className="btn">
             [ Download Snapshot ]
           </Link>
-          <Link to="/browse" search={{}} className="btn">
+          <Link to="/browse" search={{ category: "" }} className="btn">
             [ Browse Records ]
           </Link>
-          <Link to="/search" search={{}} className="btn">
+          <Link to="/search" search={{ q: "" }} className="btn">
             [ Search Archive ]
           </Link>
         </div>
@@ -130,7 +130,7 @@ function Home() {
             </tbody>
           </table>
           <div className="mt-2 text-[12px]">
-            <Link to="/browse" search={{}}>
+            <Link to="/browse" search={{ category: "" }}>
               View all recently archived records &raquo;
             </Link>
           </div>

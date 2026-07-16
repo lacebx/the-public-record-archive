@@ -101,7 +101,7 @@ function SnapshotPage() {
       <div className="mt-4 flex flex-wrap gap-2">
         <DownloadButton data={data} isoDate={isoDate} />
         <VerifyButton expectedHash={hash} data={data} />
-        <Link to="/browse" search={{}} className="btn">
+        <Link to="/browse" search={{ category: "" }} className="btn">
           [ Browse Contents ]
         </Link>
       </div>

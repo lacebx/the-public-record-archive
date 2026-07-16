@@ -12,8 +12,11 @@
     "vercel-build": "npm run snapshot && npm run build",
     "test": "vitest run",
     "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
     "lint": "eslint .",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "deploy": "nitro deploy",
+    "deploy:preview": "nitro deploy --prebuilt"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.2.1",

@@ -34,7 +34,7 @@ export const Route = createFileRoute("/record/$id")({
       <hr className="mt-1" />
       <p className="mt-3 text-[12px]">
         The requested record identifier is not present in the current archive.{" "}
-        <Link to="/browse" search={{}}>
+        <Link to="/browse" search={{ category: "" }}>
           Browse all records
         </Link>
         .

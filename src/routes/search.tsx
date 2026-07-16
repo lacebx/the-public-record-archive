@@ -83,7 +83,7 @@ function Search() {
       ) : results.length === 0 ? (
         <p className="mt-4 text-[12px]">
           No records match &ldquo;{q}&rdquo;. Try a different query or{" "}
-          <Link to="/browse" search={{}}>
+          <Link to="/browse" search={{ category: "" }}>
             browse all records
           </Link>
           .
