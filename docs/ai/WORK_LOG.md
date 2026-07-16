@@ -353,10 +353,59 @@ when R2 is not configured.
 - `npm run typecheck` — 0 errors
 - `npm run build` — succeeds (S3 client bundled for server, ~366 KB)
 
-**PR:** (to be opened, closes #4)
+**PR:** https://github.com/lacebx/the-public-record-archive/pull/37 (closes #4)
 
 **Remaining work after Issue #4:**
 
 - **CRITICAL**: Create Cloudflare R2 bucket + set GitHub secrets
 - Review Milestone 2 issues on GitHub roadmap
 - Potential optimization: use native Workers R2 binding instead of S3 client
+
+---
+
+### Session: 2026-07-16 — Issue #6: Serve historical snapshots on demand
+
+**Goal:** The snapshots index page must enumerate every snapshot available in R2,
+and visiting `/snapshots/:date` should fetch that specific snapshot from R2 if
+not available locally. Add LRU caching for R2 responses.
+
+**Milestone:** Milestone 1: Persistent Archive
+
+**Branch:** `feature/historical-snapshots`
+
+**Changes made:**
+
+- Updated `src/lib/data.ts`:
+  - Added two `LRUCache` instances (`snapshotCache` 5-min TTL, `listCache` 2-min TTL)
+  - Added `fetchSnapshotList()` — plain async function that returns
+    `SnapshotSummary[]` (isoDate, date, generated, articles, sources, hash)
+    from R2, falls back to bundled snapshot
+  - Added `getSnapshotList` server function wrapping `fetchSnapshotList()`
+  - Updated `getSnapshotByDate()` to check LRU cache first, then R2, then local
+  - Bundled snapshot is cached on first access
+- Updated `src/routes/snapshots.index.tsx`:
+  - Loads data from `getSnapshotList()` instead of `getSnapshot()`
+  - Renders all snapshots in the table, not just the latest
+  - Shows empty state when no snapshots available
+- Updated `tests/data.test.ts`:
+  - Added SnapshotSummary shape assertions to bundled snapshot tests
+  - Added `getSnapshotByDate` cache reference test (same object on repeat call)
+  - Added `fetchSnapshotList` tests: R2 fallback, field types, bundled last entry
+- Updated `docs/ai/` — all memory files + ADR-012
+
+**Files modified:**
+
+- `src/lib/data.ts` — caching, fetchSnapshotList, getSnapshotList
+- `src/routes/snapshots.index.tsx` — full list rendering
+- `tests/data.test.ts` — listing + cache tests
+- `docs/ai/ARCHITECTURE.md`, `docs/ai/CONTEXT.md`, `docs/ai/DECISIONS.md`,
+  `docs/ai/HANDOFF.md`, `docs/ai/WORK_LOG.md`
+
+**Verification:**
+
+- `npm test`: 88/88 passed
+- `npm run lint`: 0 errors (excluding auto-generated snapshot-data.ts)
+- `npm run typecheck`: 0 errors
+- `npm run build`: succeeds
+
+**PR:** (to be opened, closes #6)

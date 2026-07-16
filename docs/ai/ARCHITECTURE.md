@@ -100,8 +100,11 @@ scripts/generate-snapshot.ts
           TanStack Start SSR Runtime
                 │
                 ├──► getSnapshot() → returns bundled snapshot
-                ├──► getSnapshotByDate(date) → tries R2, then local store, then bundled
-                └──► listSnapshots() → R2SnapshotStore.list() (future)
+                ├──► getSnapshotList() / fetchSnapshotList() → returns SnapshotSummary[]
+                │   from R2 (with LRU caching, 2-min TTL), falls back to bundled
+                ├──► getSnapshotByDate(date) → tries cache, then R2, then local store,
+                │   then bundled (with LRU caching, 5-min TTL)
+                └──► getArchive(date) → builds tar.gz on-demand for any snapshot
 ```
 
 ### Route Structure
@@ -111,7 +114,7 @@ scripts/generate-snapshot.ts
 | `/`                | HomePage          | `getSnapshot()`                      |
 | `/browse`          | BrowsePage        | `getSnapshot()`                      |
 | `/search`          | SearchPage        | `getSnapshot()` (client-side filter) |
-| `/snapshots/`      | SnapshotsIndex    | `getSnapshot()`                      |
+| `/snapshots/`      | SnapshotsIndex    | `getSnapshotList()` (all dates)      |
 | `/snapshots/$date` | SnapshotPage      | `getSnapshotByDate(date)`            |
 | `/record/$id`      | RecordPage        | `getSnapshot()` (find by id)         |
 | `/about`           | AboutPage         | `getSnapshot()`                      |
@@ -168,12 +171,25 @@ Used by:
   (if R2 configured), then falls back to `LocalSnapshotStore.load()`, then to
   bundled snapshot.
 
+### Caching
+
+Two LRU caches in `src/lib/data.ts` reduce R2 and filesystem calls:
+
+| Cache | Key | Max | TTL | Populated by |
+|-------|-----|-----|-----|-------------|
+| `snapshotCache` | isoDate | 50 | 5 min | `getSnapshotByDate()` |
+| `listCache` | `"all"` | 10 | 2 min | `fetchSnapshotList()` |
+
+The bundled snapshot is always returned synchronously from the `Snapshot` type
+export and participates in caching. Historical snapshots fetched from R2 are
+cached on first access.
+
 ### Key Modules
 
 | Module                           | Purpose                                           |
 | -------------------------------- | ------------------------------------------------- |
 | `scripts/generate-snapshot.ts`   | RSS fetching, parsing, hashing, output generation |
-| `src/lib/data.ts`                | Type definitions, server functions, data access   |
+| `src/lib/data.ts`                | Type definitions, server functions, data access, LRU caching |
 | `src/lib/storage.ts`             | SnapshotStore interface + LocalSnapshotStore + R2SnapshotStore |
 | `src/lib/archive.ts`             | Archive builder (tar.gz packaging)                |
 | `src/lib/snapshot-data.ts`       | Auto-generated bundled snapshot data              |

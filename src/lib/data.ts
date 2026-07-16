@@ -1,4 +1,5 @@
 import { createServerFn } from "@tanstack/react-start";
+import { LRUCache } from "lru-cache";
 import bundledSnapshot from "./snapshot-data";
 
 export type Record = {
@@ -27,8 +28,76 @@ export type Snapshot = {
   records: Record[];
 };
 
+export type SnapshotSummary = {
+  isoDate: string;
+  date: string;
+  generated: string;
+  articles: number;
+  sources: number;
+  hash: string;
+};
+
+const snapshotCache = new LRUCache<string, Snapshot>({
+  max: 50,
+  ttl: 1000 * 60 * 5,
+});
+
+const listCache = new LRUCache<string, SnapshotSummary[]>({
+  max: 10,
+  ttl: 1000 * 60 * 2,
+});
+
 export const getSnapshot = createServerFn({ method: "GET" }).handler(
   async () => bundledSnapshot satisfies Snapshot,
+);
+
+export async function fetchSnapshotList(): Promise<SnapshotSummary[]> {
+  const cached = listCache.get("all");
+  if (cached) return cached;
+
+  try {
+    const { R2SnapshotStore, r2Config } = await import("./storage");
+    if (r2Config()) {
+      const store = new R2SnapshotStore();
+      const dates = await store.list();
+      if (dates.length > 0) {
+        const summaries: SnapshotSummary[] = [];
+        for (const isoDate of dates) {
+          const s = await getSnapshotByDate(isoDate);
+          if (s) {
+            summaries.push({
+              isoDate: s.isoDate,
+              date: s.date,
+              generated: s.generated,
+              articles: s.articles,
+              sources: s.sources,
+              hash: s.hash,
+            });
+          }
+        }
+        listCache.set("all", summaries);
+        return summaries;
+      }
+    }
+  } catch {
+    // R2 not available, fall through
+  }
+
+  const fallback: SnapshotSummary[] = [
+    {
+      isoDate: bundledSnapshot.isoDate,
+      date: bundledSnapshot.date,
+      generated: bundledSnapshot.generated,
+      articles: bundledSnapshot.articles,
+      sources: bundledSnapshot.sources,
+      hash: bundledSnapshot.hash,
+    },
+  ];
+  return fallback;
+}
+
+export const getSnapshotList = createServerFn({ method: "GET" }).handler(
+  async () => fetchSnapshotList(),
 );
 
 export const getArchive = createServerFn({ method: "POST" })
@@ -48,14 +117,23 @@ export const getArchive = createServerFn({ method: "POST" })
   });
 
 export async function getSnapshotByDate(date: string): Promise<Snapshot | null> {
-  if (date === bundledSnapshot.isoDate) return bundledSnapshot satisfies Snapshot;
+  const cached = snapshotCache.get(date);
+  if (cached) return cached;
+
+  if (date === bundledSnapshot.isoDate) {
+    snapshotCache.set(date, bundledSnapshot satisfies Snapshot);
+    return bundledSnapshot satisfies Snapshot;
+  }
 
   try {
     const { R2SnapshotStore, r2Config } = await import("./storage");
     if (r2Config()) {
       const store = new R2SnapshotStore();
       const snapshot = await store.load(date);
-      if (snapshot) return snapshot;
+      if (snapshot) {
+        snapshotCache.set(date, snapshot);
+        return snapshot;
+      }
     }
   } catch {
     // R2 not available, fall through
@@ -66,8 +144,14 @@ export async function getSnapshotByDate(date: string): Promise<Snapshot | null> 
     const { ROOT } = await import("../../scripts/generate-snapshot");
     const { resolve } = await import("node:path");
     const store = new LocalSnapshotStore(resolve(ROOT, "data"));
-    return await store.load(date);
+    const snapshot = await store.load(date);
+    if (snapshot) {
+      snapshotCache.set(date, snapshot);
+      return snapshot;
+    }
   } catch {
-    return null;
+    // Not found
   }
+
+  return null;
 }
