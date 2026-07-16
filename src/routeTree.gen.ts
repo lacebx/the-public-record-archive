@@ -9,38 +9,181 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SearchRouteImport } from './routes/search'
+import { Route as DocumentationRouteImport } from './routes/documentation'
+import { Route as BrowseRouteImport } from './routes/browse'
+import { Route as ApiRouteImport } from './routes/api'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as SnapshotsIndexRouteImport } from './routes/snapshots.index'
+import { Route as SnapshotsDateRouteImport } from './routes/snapshots.$date'
+import { Route as RecordIdRouteImport } from './routes/record.$id'
 
+const SearchRoute = SearchRouteImport.update({
+  id: '/search',
+  path: '/search',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DocumentationRoute = DocumentationRouteImport.update({
+  id: '/documentation',
+  path: '/documentation',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BrowseRoute = BrowseRouteImport.update({
+  id: '/browse',
+  path: '/browse',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiRoute = ApiRouteImport.update({
+  id: '/api',
+  path: '/api',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SnapshotsIndexRoute = SnapshotsIndexRouteImport.update({
+  id: '/snapshots/',
+  path: '/snapshots/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SnapshotsDateRoute = SnapshotsDateRouteImport.update({
+  id: '/snapshots/$date',
+  path: '/snapshots/$date',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RecordIdRoute = RecordIdRouteImport.update({
+  id: '/record/$id',
+  path: '/record/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/api': typeof ApiRoute
+  '/browse': typeof BrowseRoute
+  '/documentation': typeof DocumentationRoute
+  '/search': typeof SearchRoute
+  '/record/$id': typeof RecordIdRoute
+  '/snapshots/$date': typeof SnapshotsDateRoute
+  '/snapshots/': typeof SnapshotsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/api': typeof ApiRoute
+  '/browse': typeof BrowseRoute
+  '/documentation': typeof DocumentationRoute
+  '/search': typeof SearchRoute
+  '/record/$id': typeof RecordIdRoute
+  '/snapshots/$date': typeof SnapshotsDateRoute
+  '/snapshots': typeof SnapshotsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/api': typeof ApiRoute
+  '/browse': typeof BrowseRoute
+  '/documentation': typeof DocumentationRoute
+  '/search': typeof SearchRoute
+  '/record/$id': typeof RecordIdRoute
+  '/snapshots/$date': typeof SnapshotsDateRoute
+  '/snapshots/': typeof SnapshotsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/api'
+    | '/browse'
+    | '/documentation'
+    | '/search'
+    | '/record/$id'
+    | '/snapshots/$date'
+    | '/snapshots/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/api'
+    | '/browse'
+    | '/documentation'
+    | '/search'
+    | '/record/$id'
+    | '/snapshots/$date'
+    | '/snapshots'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/api'
+    | '/browse'
+    | '/documentation'
+    | '/search'
+    | '/record/$id'
+    | '/snapshots/$date'
+    | '/snapshots/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  ApiRoute: typeof ApiRoute
+  BrowseRoute: typeof BrowseRoute
+  DocumentationRoute: typeof DocumentationRoute
+  SearchRoute: typeof SearchRoute
+  RecordIdRoute: typeof RecordIdRoute
+  SnapshotsDateRoute: typeof SnapshotsDateRoute
+  SnapshotsIndexRoute: typeof SnapshotsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/search': {
+      id: '/search'
+      path: '/search'
+      fullPath: '/search'
+      preLoaderRoute: typeof SearchRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/documentation': {
+      id: '/documentation'
+      path: '/documentation'
+      fullPath: '/documentation'
+      preLoaderRoute: typeof DocumentationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/browse': {
+      id: '/browse'
+      path: '/browse'
+      fullPath: '/browse'
+      preLoaderRoute: typeof BrowseRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api': {
+      id: '/api'
+      path: '/api'
+      fullPath: '/api'
+      preLoaderRoute: typeof ApiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,22 +191,41 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/snapshots/': {
+      id: '/snapshots/'
+      path: '/snapshots'
+      fullPath: '/snapshots/'
+      preLoaderRoute: typeof SnapshotsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/snapshots/$date': {
+      id: '/snapshots/$date'
+      path: '/snapshots/$date'
+      fullPath: '/snapshots/$date'
+      preLoaderRoute: typeof SnapshotsDateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/record/$id': {
+      id: '/record/$id'
+      path: '/record/$id'
+      fullPath: '/record/$id'
+      preLoaderRoute: typeof RecordIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  ApiRoute: ApiRoute,
+  BrowseRoute: BrowseRoute,
+  DocumentationRoute: DocumentationRoute,
+  SearchRoute: SearchRoute,
+  RecordIdRoute: RecordIdRoute,
+  SnapshotsDateRoute: SnapshotsDateRoute,
+  SnapshotsIndexRoute: SnapshotsIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
