@@ -4,21 +4,21 @@ import type { Snapshot } from "./data";
 const data: Snapshot = {
   date: "July 16, 2026",
   isoDate: "2026-07-16",
-  generated: "08:02:28 UTC",
-  articles: 326,
+  generated: "08:44:44 UTC",
+  articles: 325,
   sources: 11,
   countries: 5,
   status: "VERIFIED",
-  hash: "fd5360e6b7085172b849476f390d23ce18f762d54244e1d29c8e8de753674d2e",
+  hash: "83c54608e7e332f78b8a7c567f213778120b97d180db4acffd5e4686f4033124",
   records: [
     {
       id: "REC-2026-07-16-000001",
       publisher: "BBC News",
       title: "'No regrets' - Tuchel on England's defeat by Argentina",
       published: "Wed, 15 Jul 2026 22:40:05 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "9cd499f005e6a3fb8dcdbdd34ca2ec1e4c9b3ebfccfa56ceb70d0a2d17bca706",
+      hash: "bd21d2507b7819d09663b6f01b8140fbbf5d5441c656acc7e2f88054c7af387f",
       summary:
         'England manager Thomas Tuchel believes his team "got too passive" after scoring first in the World Cup semi-final against Argentina, which they lost 2-1 at Atlanta Stadium.',
       sourceUrl:
@@ -31,9 +31,9 @@ const data: Snapshot = {
       publisher: "BBC News",
       title: "Argentina face action over Falklands banner",
       published: "Wed, 15 Jul 2026 22:49:47 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "0859eeb0b6b244c78fa0b08f172dc9830dbc438ce232a635bd378405787cbaf5",
+      hash: "20aae75678918dc7335ff210fdd8cc7ad4778a4c62a7189deec5730df8fe6bef",
       summary:
         "Argentina face the prospect of disciplinary action from Fifa after their players celebrate the World Cup semi-final win against England with a banner in support of their country's claims to the Falkland Islands.",
       sourceUrl:
@@ -46,9 +46,9 @@ const data: Snapshot = {
       publisher: "BBC News",
       title: "British Steel taken into public ownership to protect 'vital' UK supply",
       published: "Thu, 16 Jul 2026 07:34:47 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "1d1569f271a793dfe3a687e847741da89a5538651b5c73bf99c022d837f8ff2c",
+      hash: "d912945b72e7de2dead650b5f067ae379e22cfcd549b3572c2e5e9c75a284250",
       summary:
         "The Scunthorpe steelworks has been officially nationalised under new government powers passed this week.",
       sourceUrl: "https://www.bbc.co.uk/news/articles/c5y680w62wno?at_medium=RSS&at_campaign=rss",
@@ -59,10 +59,10 @@ const data: Snapshot = {
       id: "REC-2026-07-16-000004",
       publisher: "BBC News",
       title: "Starmer pledges 'cast-iron support' for Ukraine on final visit as PM",
-      published: "Thu, 16 Jul 2026 07:05:02 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      published: "Thu, 16 Jul 2026 08:20:51 GMT",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "a96c956812fbb3e0aea6d28471fe0dfaf9729a688cd0bda576f283926e83cbce",
+      hash: "1b641716f95fb43241a32c1dfbcf2cd6069107ede569917dbafb8afa87546b60",
       summary:
         "The prime minister will meet Ukrainian President Volodymyr Zelensky in Kyiv later on Thursday.",
       sourceUrl: "https://www.bbc.co.uk/news/articles/cx2myl1erj8o?at_medium=RSS&at_campaign=rss",
@@ -74,9 +74,9 @@ const data: Snapshot = {
       publisher: "BBC News",
       title: "New monkey species with orange lips found 'hiding' in DR Congo forest",
       published: "Wed, 15 Jul 2026 23:02:49 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "6dee8e157562144656395f15b7ff339e34ba97e6abe595a9b2f2102560b0c34f",
+      hash: "d6e8b715d2aa694c3fee68dc7570ee6ced5e4945c17a3161d72c48c59bf20a3e",
       summary:
         'Scientists describe "amazing feeling" to look into the face of an animal that so few people knew existed.',
       sourceUrl: "https://www.bbc.co.uk/news/articles/c15y5wgj4x8o?at_medium=RSS&at_campaign=rss",
@@ -88,9 +88,9 @@ const data: Snapshot = {
       publisher: "BBC News",
       title: "Nowak killer's first recorded confession revealed",
       published: "Thu, 16 Jul 2026 05:17:14 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "a1675702c17a70a0ee155c559ec9dbadba7534f60ac2df1fb4ad02401ddeee4e",
+      hash: "af50c8fc8d359bfcbfda0eee3ef19dd2dfcacf0970fb53669752b690adc340cf",
       summary:
         "Vickrum Digwa was recorded in a police van discussing Henry Nowak's murder in Southampton.",
       sourceUrl: "https://www.bbc.co.uk/news/articles/c70ylezgr1eo?at_medium=RSS&at_campaign=rss",
@@ -100,29 +100,28 @@ const data: Snapshot = {
     {
       id: "REC-2026-07-16-000007",
       publisher: "BBC News",
-      title: "US military to start screening for testosterone deficiency, Hegseth says",
-      published: "Thu, 16 Jul 2026 02:33:40 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      title: "Ofcom launches investigation into TikTok child safety concerns",
+      published: "Thu, 16 Jul 2026 08:19:21 GMT",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "e1060a38aa2f2e3740d572cb2dbf33d2a46ba10825e61e4f3f8c0b0bd610c6bf",
+      hash: "d7bcdd58d794e469e8c15ac28efca05907219272e40a500faf1181be6af5b09c",
       summary:
-        'Hegseth says he is authorising hormone screening to ensure US troops "operate at your absolute best".',
-      sourceUrl: "https://www.bbc.co.uk/news/articles/cn0nlx18rz0o?at_medium=RSS&at_campaign=rss",
+        'It follows a review by the regulator in May that criticised the platform for not being "safe enough" for children.',
+      sourceUrl: "https://www.bbc.co.uk/news/articles/ce8l1zk9dk9o?at_medium=RSS&at_campaign=rss",
       country: "United Kingdom",
       category: "News",
     },
     {
       id: "REC-2026-07-16-000008",
       publisher: "BBC News",
-      title:
-        "Singer Jesy Nelson calls plan to test newborns for deadly muscle condition a 'victory'",
-      published: "Thu, 16 Jul 2026 00:20:52 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      title: "US military to start screening for testosterone deficiency, Hegseth says",
+      published: "Thu, 16 Jul 2026 02:33:40 GMT",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "cfb11f546db3af569829d4e01025e27778deef96b04c0a7af0fecdaeb025ffbe",
+      hash: "09229d57ea447f2798052546e3425309f25e134bbe11adc3fc21a609ba2df450",
       summary:
-        "All newborn babies are set to have a heel prick test for Spinal Muscular Atrophy (SMA) in England.",
-      sourceUrl: "https://www.bbc.co.uk/news/articles/c07y77exx8eo?at_medium=RSS&at_campaign=rss",
+        'Hegseth says he is authorising hormone screening to ensure US troops "operate at your absolute best".',
+      sourceUrl: "https://www.bbc.co.uk/news/articles/cn0nlx18rz0o?at_medium=RSS&at_campaign=rss",
       country: "United Kingdom",
       category: "News",
     },
@@ -131,9 +130,9 @@ const data: Snapshot = {
       publisher: "BBC News",
       title: "Families of 43 victims await verdict in Genoa bridge disaster",
       published: "Wed, 15 Jul 2026 23:02:37 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "ccbf17f1a893e925351774b43bb830da7d9d6ca4f0a56342e0914901b7dec752",
+      hash: "d774078b7c17b55d4a415276672cf242ed6b4463ce889b30a535accc844ba27b",
       summary:
         "A large section of the giant Morandi motorway bridge crumbled and collapsed on to the railway tracks below. ",
       sourceUrl: "https://www.bbc.co.uk/news/articles/c20y00712ezo?at_medium=RSS&at_campaign=rss",
@@ -145,9 +144,9 @@ const data: Snapshot = {
       publisher: "BBC News",
       title: "Iran targets military bases as US launches wave of strikes",
       published: "Thu, 16 Jul 2026 07:44:08 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "60ce9a0b118250a989ff96366717e6239633c89d2b1506aafa97167d44a78f9a",
+      hash: "3b91977cbfa53034c40e7ce841160fb8903fe0b76f5773f101d520848b76d515",
       summary:
         "Explosions were heard across Iran overnight, shortly after neighbouring Gulf states began to report attacks.",
       sourceUrl: "https://www.bbc.co.uk/news/articles/c2lq1ed28jxo?at_medium=RSS&at_campaign=rss",
@@ -159,9 +158,9 @@ const data: Snapshot = {
       publisher: "BBC News",
       title: "Weekend cooldown to mark end of heatwave for some",
       published: "Thu, 16 Jul 2026 00:31:59 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "3f0d0f51e4b369b8544132720cd52c51a3f6cf5e9be790064a63ee3e7c49eabc",
+      hash: "fc25b47e87a8d20e8e5e2dd6c254472fcadb6a1693fdfbb4bc06ec6d0191c0d4",
       summary:
         "Temperatures are set to fall by several degrees in some areas, including parts of Scotland, Northern Ireland and northern England.",
       sourceUrl:
@@ -174,9 +173,9 @@ const data: Snapshot = {
       publisher: "BBC News",
       title: "'Passive' and 'crumbled' - did Tuchel's defensive tactics cost England?",
       published: "Thu, 16 Jul 2026 06:42:54 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "e4483ce06e0f57250848678466efe3494af5b5da7bee3a8e7b6543a97a88f8f0",
+      hash: "ad67aaab97ae36f071cb02d5b62ceec4a8add1310ba5eff2b08c1608caf8f8ed",
       summary:
         'England went 1-0 up against Argentina before slumping to a heartbreaking semi-final defeat. Did boss Thomas Tuchel\'s "negative" tactics cost them a place in the World Cup final?',
       sourceUrl:
@@ -189,9 +188,9 @@ const data: Snapshot = {
       publisher: "BBC News",
       title: "William tells England to 'hold their heads high' after loss",
       published: "Thu, 16 Jul 2026 00:07:05 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "923f3a4df43a3ccc8a67a471665e3422d8e04ec27257c1cbecf4e0de0dd64e85",
+      hash: "a49d95d66e370c1c73b088c8c6fc227c0acbf81008fb772ea9729bea09475f35",
       summary:
         'The Prince of Wales says England has "inspired us all" as he offers his commiserations over the loss to Argentina.',
       sourceUrl: "https://www.bbc.co.uk/news/articles/c5y68dgnylxo?at_medium=RSS&at_campaign=rss",
@@ -203,9 +202,9 @@ const data: Snapshot = {
       publisher: "BBC News",
       title: "Why England's loss to Argentina felt like most painful in 60 years of hurt",
       published: "Thu, 16 Jul 2026 01:35:24 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "0c611a4bf5167ce82ae7430241c59a55af291d318cee00324df6423bb0d2e359",
+      hash: "afe06030e859dea87c6df63e2fd688d331ab654f7f23b04420cb3615758043c7",
       summary:
         "England's years of hurt will now stretch beyond 60, but the late collapse to a World Cup semi-final defeat by Argentina may be the most painful wound of all.",
       sourceUrl:
@@ -218,9 +217,9 @@ const data: Snapshot = {
       publisher: "BBC News",
       title: "'That's why he's the king' - Messi sets up third World Cup final",
       published: "Wed, 15 Jul 2026 23:42:19 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "05270f51b0fcf153afc3483be5e80842165da9a9e35c0c14ca743db6739bfb5e",
+      hash: "2fb0a4dc315f2455e8c846dd761c702ce5ea7c6050f5fa45da28b61a81084e1e",
       summary:
         "BBC Sport looks at Lionel Messi's masterclass on the right wing to knock England out of the World Cup.",
       sourceUrl:
@@ -233,9 +232,9 @@ const data: Snapshot = {
       publisher: "BBC News",
       title: "Watch: England fans in New York City lament loss to Argentina",
       published: "Thu, 16 Jul 2026 01:57:50 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "1322913ff725ae5422e8cc218f4af7af54a8d675cb5dacb43ad83b0edccdc0bb",
+      hash: "a472578c8ded87b6d0ab7a4910ec43922c320362902a1ed9a3a445f20c293231",
       summary: "North America correspondent Nada Tawik reports from a packed pub in the Big Apple.",
       sourceUrl: "https://www.bbc.co.uk/news/videos/cy4klvz2wlko?at_medium=RSS&at_campaign=rss",
       country: "United Kingdom",
@@ -246,9 +245,9 @@ const data: Snapshot = {
       publisher: "BBC News",
       title: "'I couldn't leave the house, I worried I'd cheat': The rise of relationship OCD",
       published: "Thu, 16 Jul 2026 00:34:41 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "99b3148ae55927a0a359db50ffac16fed460e9739ba31497d85831b2541daeb2",
+      hash: "db416c550480dfde2e2454628eadbf45cc23e97c6ee3d2595f1e9424debaeaad",
       summary:
         "Relationship OCD is gaining awareness, but limited data means little is known about how common the condition is.",
       sourceUrl: "https://www.bbc.co.uk/news/articles/ce9592kve1po?at_medium=RSS&at_campaign=rss",
@@ -260,9 +259,9 @@ const data: Snapshot = {
       publisher: "BBC News",
       title: "The Odyssey is a 'colossal piece of cinema', critics say in rave reviews",
       published: "Wed, 15 Jul 2026 17:04:58 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "b57c9b67c3abdabb8844e95e20b6e2fcd63e23dca32473eef332df2641cab370",
+      hash: "896d836b56c095d1a68c93dc6944fdf84aef599ecdab4eb4a35b98c4f149d29f",
       summary:
         "The film, starring Matt Damon and Zendaya, is director Sir Christopher Nolan's first since Oppenheimer.",
       sourceUrl: "https://www.bbc.co.uk/news/articles/c20y0rn9052o?at_medium=RSS&at_campaign=rss",
@@ -274,9 +273,9 @@ const data: Snapshot = {
       publisher: "BBC News",
       title: "Can Andy Burnham solve the UK's housing crisis?",
       published: "Thu, 16 Jul 2026 05:00:04 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "32dd5097a00c17e7e2d420b6b7298432c9e33a2faa8abef0d08b37c164945c3e",
+      hash: "f65cc51f4f75eac166276b787f5feb6d3b01519f64979a32a3d7a419d3bb8e6c",
       summary:
         "BBC Verify has looked at the scale of the housing challenge facing Burnham when he becomes PM.",
       sourceUrl: "https://www.bbc.co.uk/news/articles/c3wygjz632qo?at_medium=RSS&at_campaign=rss",
@@ -288,9 +287,9 @@ const data: Snapshot = {
       publisher: "BBC News",
       title: "Celebrity influencers paid up to £1m to advertise deodorant on Instagram",
       published: "Thu, 16 Jul 2026 06:40:58 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "f0d3b03a2a380d9207f6a9049263272c207ab853194ce1d724760b2a9690f170",
+      hash: "546b9cd8227e655d2f1173c1ff8988381a64f8ebaa525e1d48b11845b114c6ab",
       summary:
         "The chief executive of Wild reveals what happens behind the scenes of social media posts.",
       sourceUrl: "https://www.bbc.co.uk/news/articles/cvgegqrp656o?at_medium=RSS&at_campaign=rss",
@@ -302,9 +301,9 @@ const data: Snapshot = {
       publisher: "BBC News",
       title: "A Cold War bunker gets a luxury makeover as 'doomsday' condos",
       published: "Wed, 15 Jul 2026 23:35:39 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "3ddc5ab367a85070c57cecd322a7721e87dab2b4526688d68652938c8627bcd4",
+      hash: "40921a78216468f1b804281c61872e3b3da063cd6d5fe00ef00764c8f7eed663",
       summary:
         "A former Canadian government nuclear bomb shelter in rural Nova Scotia may soon be home to the country’s first large-scale luxury survival shelter.",
       sourceUrl: "https://www.bbc.co.uk/news/articles/cn4d3lpjkggo?at_medium=RSS&at_campaign=rss",
@@ -316,9 +315,9 @@ const data: Snapshot = {
       publisher: "BBC News",
       title: "'I must get out into the free world', dissident who fled China on boat tells BBC",
       published: "Wed, 15 Jul 2026 22:04:12 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "0704635a051ea4051bc0270c0fb1f8ebeaa64b0423e3fa7219a2bf3b8aa90907",
+      hash: "5d8816fe21125d3dd41c369a4406b9eef66247d6413eb174ce3254f47c2b8b68",
       summary:
         "Dong Guangping, who has resettled in Canada, recounts his perilous escape from China to South Korea.",
       sourceUrl: "https://www.bbc.co.uk/news/articles/cm2j2jw117lo?at_medium=RSS&at_campaign=rss",
@@ -330,9 +329,9 @@ const data: Snapshot = {
       publisher: "BBC News",
       title: "The Papers: 'World Cup dream over' and 'Mahmood for chancellor'",
       published: "Thu, 16 Jul 2026 01:01:25 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "cc8e02bb3a5e295c7b9191dfa16cac6c428566fe79654d4f94a3da7f6b437272",
+      hash: "321a7d5b80d4b1a254c9c12493fbde2409ee73606cf1c2b17ccdd839983a221e",
       summary:
         'England\'s World Cup "dream" ends and Andy Burnham is "poised" to make Shabana Mahmood his chancellor - Thursday\'s papers.',
       sourceUrl: "https://www.bbc.co.uk/news/articles/c0qvewzn1e1o?at_medium=RSS&at_campaign=rss",
@@ -344,9 +343,9 @@ const data: Snapshot = {
       publisher: "BBC News",
       title: "Orange haze from Canada wildfires seen in Ontario and northern US",
       published: "Thu, 16 Jul 2026 00:33:23 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "e2175c9668e386121b27d1b6600759d4854e86049c766605098db406229a4fc4",
+      hash: "7d80035d45d53a20dfd29132e25c2490a37c3086df4ebca0e9e2123889ca211d",
       summary:
         "There are currently 838 wildfires actively burning across the country, according to the Canadian Interagency Forest Fire Centre.",
       sourceUrl: "https://www.bbc.co.uk/news/videos/c62q3kw126xo?at_medium=RSS&at_campaign=rss",
@@ -356,54 +355,12 @@ const data: Snapshot = {
     {
       id: "REC-2026-07-16-000025",
       publisher: "BBC News",
-      title: "Actor Sam Neill died from pneumonia, agent confirms",
-      published: "Thu, 16 Jul 2026 04:28:22 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
-      status: "VERIFIED",
-      hash: "0a6c8f43e20ce95844a8189b9fda124b91ec4a4144c522a0e615a606ec90ff1b",
-      summary:
-        "Neill died in Sydney on Monday, with his family saying his death was 'sudden and unexpected'.",
-      sourceUrl: "https://www.bbc.co.uk/news/articles/cddj7e8v767o?at_medium=RSS&at_campaign=rss",
-      country: "United Kingdom",
-      category: "News",
-    },
-    {
-      id: "REC-2026-07-16-000026",
-      publisher: "BBC News",
-      title: "UK economy returns to growth in May",
-      published: "Thu, 16 Jul 2026 07:19:17 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
-      status: "VERIFIED",
-      hash: "061dbdf694864173cf3542d7d3d4239c49e9ade37db71269284636c3a77c2ef7",
-      summary:
-        "The modest growth reverses a slight contraction that had been seen the previous month.",
-      sourceUrl: "https://www.bbc.co.uk/news/articles/c8xnllq944go?at_medium=RSS&at_campaign=rss",
-      country: "United Kingdom",
-      category: "News",
-    },
-    {
-      id: "REC-2026-07-16-000027",
-      publisher: "BBC News",
-      title: "'Her ear was shattered' - home piercings leading to deformities, says expert",
-      published: "Thu, 16 Jul 2026 05:10:02 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
-      status: "VERIFIED",
-      hash: "b1d344daf9877181d21e895161528e79aa4273dc71a80e06e31ba168419b9561",
-      summary:
-        "From embedded jewellery to scarring and infections, some in the industry want at-home kits banned.",
-      sourceUrl: "https://www.bbc.co.uk/news/articles/cn4d4l4vky1o?at_medium=RSS&at_campaign=rss",
-      country: "United Kingdom",
-      category: "News",
-    },
-    {
-      id: "REC-2026-07-16-000028",
-      publisher: "BBC News",
       title:
         "Firefighters battle through the night as wildfire burns across Cairngorms National Park",
       published: "Thu, 16 Jul 2026 07:36:18 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "f11c1306a7bab635885ab28751d77a1077b3fdee2da270659d1d8222d91a5e95",
+      hash: "c3ca7159477c1c1bc93b3fd14884b3574a5a038f4245c0f9bcf26846fe3eaf2b",
       summary:
         "Members of the public are being urged to avoid Glenmore Forest Park and Loch Morlich as firefighting continues.",
       sourceUrl: "https://www.bbc.co.uk/news/articles/cd69y219n13o?at_medium=RSS&at_campaign=rss",
@@ -411,16 +368,59 @@ const data: Snapshot = {
       category: "News",
     },
     {
+      id: "REC-2026-07-16-000026",
+      publisher: "BBC News",
+      title:
+        "Singer Jesy Nelson calls plan to test newborns for deadly muscle condition a 'victory'",
+      published: "Thu, 16 Jul 2026 00:20:52 GMT",
+      archived: "2026-07-16T08:44:44.735Z",
+      status: "VERIFIED",
+      hash: "7ffed49c94cc358f251b9c5ab8441958e5aa97f45c2c87a562b012acafb738d5",
+      summary:
+        "All newborn babies are set to have a heel prick test for Spinal Muscular Atrophy (SMA) in England.",
+      sourceUrl: "https://www.bbc.co.uk/news/articles/c07y77exx8eo?at_medium=RSS&at_campaign=rss",
+      country: "United Kingdom",
+      category: "News",
+    },
+    {
+      id: "REC-2026-07-16-000027",
+      publisher: "BBC News",
+      title: "Actor Sam Neill died from pneumonia, agent confirms",
+      published: "Thu, 16 Jul 2026 04:28:22 GMT",
+      archived: "2026-07-16T08:44:44.735Z",
+      status: "VERIFIED",
+      hash: "342628a3f08c5a79eff51c0fcfcb444d722684e984f4b2b413cfcc0594c59937",
+      summary:
+        "Neill died in Sydney on Monday, with his family saying his death was 'sudden and unexpected'.",
+      sourceUrl: "https://www.bbc.co.uk/news/articles/cddj7e8v767o?at_medium=RSS&at_campaign=rss",
+      country: "United Kingdom",
+      category: "News",
+    },
+    {
+      id: "REC-2026-07-16-000028",
+      publisher: "BBC News",
+      title: "UK economy returns to growth in May",
+      published: "Thu, 16 Jul 2026 08:43:28 GMT",
+      archived: "2026-07-16T08:44:44.735Z",
+      status: "VERIFIED",
+      hash: "6c7c10872b992ddf81e69a3a168082b1fd8832e7ebcd39fa9b5af539f64cd598",
+      summary:
+        "The modest growth reverses a slight contraction that had been seen the previous month.",
+      sourceUrl: "https://www.bbc.co.uk/news/articles/c8xnllq944go?at_medium=RSS&at_campaign=rss",
+      country: "United Kingdom",
+      category: "News",
+    },
+    {
       id: "REC-2026-07-16-000029",
       publisher: "BBC News",
-      title: "French MPs approve assisted dying law with strict rules after years of argument",
-      published: "Wed, 15 Jul 2026 17:29:26 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      title: "'Her ear was shattered' - home piercings leading to deformities, says expert",
+      published: "Thu, 16 Jul 2026 05:10:02 GMT",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "cc57e108963b80c1fbbf25fa2271bc7e639677bd94d7ec4088effb7b223b6c71",
+      hash: "33e0d3d9cf9733f9f5929c51f5797bfad9a8ae62b904e0f8018f633f80bd7a85",
       summary:
-        "The bill would allow assisted dying for terminally ill adults who meet strict criteria.",
-      sourceUrl: "https://www.bbc.co.uk/news/articles/cvg7g2z4pv3o?at_medium=RSS&at_campaign=rss",
+        "From embedded jewellery to scarring and infections, some in the industry want at-home kits banned.",
+      sourceUrl: "https://www.bbc.co.uk/news/articles/cn4d4l4vky1o?at_medium=RSS&at_campaign=rss",
       country: "United Kingdom",
       category: "News",
     },
@@ -429,9 +429,9 @@ const data: Snapshot = {
       publisher: "BBC News",
       title: "Bananas! Surprise as back garden plant bears fruit",
       published: "Thu, 16 Jul 2026 05:22:08 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "145f141d0a37f324a3cb05a9f4c93e2794cd4b3e26aa39b0db5c8778f2fb5893",
+      hash: "cdea53e71f0153408d95d3fedf24ea5af79358f3bb45d2afa4788fc62cb75481",
       summary:
         "Stephen Hind believes the current hot temperatures and climate change have encouraged the fruit.",
       sourceUrl: "https://www.bbc.co.uk/news/articles/cp8r86k3np0o?at_medium=RSS&at_campaign=rss",
@@ -443,9 +443,9 @@ const data: Snapshot = {
       publisher: "BBC News",
       title: "BBC News app",
       published: "Wed, 30 Apr 2025 14:04:28 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "38f949a8fb6d6a4cad3182af5ddac19f91c4febfd9ae717c1929017ab4fd2932",
+      hash: "8f1381b6f1fdbb2e88f10ce61d801e0a462eec4a2dfe675a90728fcf279b69d3",
       summary:
         "Top stories, breaking news, live reporting, and follow news topics that match your interests",
       sourceUrl: "https://www.bbc.co.uk/news/10628994?at_medium=RSS&at_campaign=rss",
@@ -457,9 +457,9 @@ const data: Snapshot = {
       publisher: "BBC News",
       title: "Keir Starmer Says Goodbye",
       published: "Wed, 15 Jul 2026 15:32:00 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "0ac5bece68d4329107ec16fc0cbeb5a8ee08459e5ef66f5ab0a2f7f2f8b008e2",
+      hash: "1320e9abdafbe42ecded43c2b95748e4c4c7fb360082913e3e00914dbd28a8cf",
       summary: "Sir Keir Starmer makes his final PMQs appearance as Prime Minister.",
       sourceUrl: "https://www.bbc.co.uk/sounds/play/p0nyjvkg?at_medium=RSS&at_campaign=rss",
       country: "United Kingdom",
@@ -470,9 +470,9 @@ const data: Snapshot = {
       publisher: "BBC News",
       title: "ICE fatally shoot two men in Maine and Texas",
       published: "Wed, 15 Jul 2026 17:54:00 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "22a1fee1d0c94cea19080f5b03cb8262cd7c0088b350be1be1403b07cd454eb4",
+      hash: "7b61204e783d87a6aec2db6697d50fac446442d7fefec1bfc9c8b5ae5491a0e7",
       summary: "Trump tells immigration officers not to pause vehicle stops after the killings",
       sourceUrl: "https://www.bbc.co.uk/sounds/play/p0nyzw2n?at_medium=RSS&at_campaign=rss",
       country: "United Kingdom",
@@ -483,9 +483,9 @@ const data: Snapshot = {
       publisher: "BBC News",
       title: "'Passive' and 'crumbled' - did Tuchel's defensive tactics cost England?",
       published: "Thu, 16 Jul 2026 06:42:54 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "a9044dcdfe4f49a140d28476eb5f73ff13c2856d4e96d01c796ef835815e50bc",
+      hash: "70ecac053b1c648b7dbccf840e353abe4d1bf62b9d78811c0558517cf207cd7a",
       summary:
         'England went 1-0 up against Argentina before slumping to a heartbreaking semi-final defeat. Did boss Thomas Tuchel\'s "negative" tactics cost them a place in the World Cup final?',
       sourceUrl:
@@ -496,11 +496,26 @@ const data: Snapshot = {
     {
       id: "REC-2026-07-16-000035",
       publisher: "BBC News",
+      title: "Romero labels Neville 'stupid' over criticism",
+      published: "Thu, 16 Jul 2026 07:33:49 GMT",
+      archived: "2026-07-16T08:44:44.735Z",
+      status: "VERIFIED",
+      hash: "4989e570c680856a85ab3cf481f069a74dba88707de31e62563ebc33d301f2bf",
+      summary:
+        'Argentina defender Cristian Romero says player-turned-pundit Gary Neville was "stupid" to criticise his centre-back partnership with Lisandro Martinez.',
+      sourceUrl:
+        "https://www.bbc.co.uk/sport/football/articles/ce8l1zg37x8o?at_medium=RSS&at_campaign=rss",
+      country: "United Kingdom",
+      category: "News",
+    },
+    {
+      id: "REC-2026-07-16-000036",
+      publisher: "BBC News",
       title: "Kane unsure if he will play at next World Cup",
       published: "Thu, 16 Jul 2026 06:35:15 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "8d1146c7a533dd17edd8aba2ffc2e099621393e8c70fc01dff8791fbe59ad8c2",
+      hash: "6951f3a065f35fb960692125341e4c6fa64b5b739814932468250aba8a9d56c4",
       summary:
         'Harry Kane says it is "too early" to judge whether he could play on for England until the 2030 World Cup following the painful semi-final defeat by Argentina.',
       sourceUrl:
@@ -509,28 +524,13 @@ const data: Snapshot = {
       category: "News",
     },
     {
-      id: "REC-2026-07-16-000036",
-      publisher: "BBC News",
-      title: "Argentina face disciplinary action over Falklands banner after semi-final",
-      published: "Wed, 15 Jul 2026 22:49:47 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
-      status: "VERIFIED",
-      hash: "57f6863bd9eaffbff5f5b8d9ca258894af1c8180bd771ac984c9dbe4adfaf511",
-      summary:
-        "Argentina face the prospect of disciplinary action from Fifa after their players celebrate the World Cup semi-final win against England with a banner in support of their country's claims to the Falkland Islands.",
-      sourceUrl:
-        "https://www.bbc.co.uk/sport/football/articles/c935pgr4dklo?at_medium=RSS&at_campaign=rss",
-      country: "United Kingdom",
-      category: "News",
-    },
-    {
       id: "REC-2026-07-16-000037",
       publisher: "BBC News",
       title: "Why England's loss to Argentina felt like most painful in 60 years of hurt",
       published: "Thu, 16 Jul 2026 01:35:24 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "4b195f42e9a7e26e60f5099b5f15ec80fe9e5545997a444b47904706cc451ef8",
+      hash: "139aee3825df6bb939d03adb103aeb2024a89672f33259aa0ecbc6386aed7552",
       summary:
         "England's years of hurt will now stretch beyond 60, but the late collapse to a World Cup semi-final defeat by Argentina may be the most painful wound of all.",
       sourceUrl:
@@ -541,15 +541,15 @@ const data: Snapshot = {
     {
       id: "REC-2026-07-16-000038",
       publisher: "BBC News",
-      title: "Romero labels Neville 'stupid' over criticism",
-      published: "Thu, 16 Jul 2026 07:33:49 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      title: "Argentina face disciplinary action over Falklands banner after semi-final",
+      published: "Wed, 15 Jul 2026 22:49:47 GMT",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "02e6b9f7f0cb23a44723057dcaa0b92417e8754e487046d46bde9e1b854e8546",
+      hash: "5537169777a5ccfb3be41da4b791c50fe942f72fca6ab463bdbaf52464882cad",
       summary:
-        'Argentina defender Cristian Romero says player-turned-pundit Gary Neville was "stupid" to criticise his centre-back partnership with Lisandro Martinez.',
+        "Argentina face the prospect of disciplinary action from Fifa after their players celebrate the World Cup semi-final win against England with a banner in support of their country's claims to the Falkland Islands.",
       sourceUrl:
-        "https://www.bbc.co.uk/sport/football/articles/ce8l1zg37x8o?at_medium=RSS&at_campaign=rss",
+        "https://www.bbc.co.uk/sport/football/articles/c935pgr4dklo?at_medium=RSS&at_campaign=rss",
       country: "United Kingdom",
       category: "News",
     },
@@ -558,9 +558,9 @@ const data: Snapshot = {
       publisher: "NASA",
       title: "Ontario Wildfire Smoke Moves East",
       published: "Thu, 16 Jul 2026 04:00:00 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "49a5a64d654eaa8867bba76a4ad882c2284ec184cdab5fcc857d2e782470c072",
+      hash: "d91e34da9ffb7ab8a57aa96b3e486e51647cc9f2393a92df3ce743e3884936d9",
       summary:
         '<div id="" class=" hds-module hds-module-full alignfull wp-block-nasa-blocks-secondary-navigation">\n<div class="hds-secondary-navigation-wrapper z-top width-100 padding-0">\n<div id="" class="hds-secondary-navigation width-full border-bottom-1px text-center hds-color-mode-dark hds-module hds-module-full alignfull wp-block-nasa-blocks-hdsnav"><button type="button" class="hds-secondary-nav-mobile-button display-flex tablet:display-flex desktop:display-none width-full flex-align-center bg-carbon-90 border-color-carbon-80 color-spacesuit-white" aria-expanded="false" aria-controls="hds-secondary-nav-track"><span>Earth Observatory</span><svg width="16" height="16" alt="" enable-background="new 0 0 400 400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg"><path d="m4.2 122.2 195.1 195.1 196.5-196.6-37.9-38-157.8 157.8-156.8-156.8z" /></svg></button></p>\n<div class="hds-secondary-nav-track grid-container grid-container-extrawide padding-0 tablet:padding-x-3 desktop:padding-x-2 hds-secon',
       sourceUrl:
@@ -573,9 +573,9 @@ const data: Snapshot = {
       publisher: "NASA",
       title: "NASA Uses Subscale Aircraft to Accelerate Flight Innovation",
       published: "Wed, 15 Jul 2026 21:56:38 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "fae44aa75f46823d4cc28c8a5bfd0290de2613f426edd9e0e6746d542f7caa0c",
+      hash: "fb076ac12ed06bdc2b342b8dc278fcb3ad044e734fb5fe9a8bee3dc0379483c9",
       summary:
         '<div id="" class="hds-article-hero-header nasa-gb-align-full bg-carbon-90 width-full maxw-full color-mode-dark hds-module hds-module-full alignfull wp-block-nasa-blocks-article-hero-header">\t\t<div class="hds-cover-wrapper width-full maxw-full minh-tablet grid-container minh-tablet flex-column padding-0">\n\t\t\t<div class="hds-foreground-wrapper display-flex flex-direction-column">\n\t\t\t\t<div class="grid-container grid-container-block margin-top-auto width-full maxw-desktop-lg padding-y-9 padding-x-3 desktop:padding-x-3 z-400">\n\t\t\t\t\t<div class="z-400 grid-col-12 tablet:grid-col-12 desktop:grid-col-7 z-400">\n\t\t\t\t\t\t<div class="margin-0">\n\t\t\t\t\t\t\t<div class="label color-spacesuit-white margin-bottom-2">4 Min Read</div>\n\t\t\t\t\t\t\t<h1 class="heading-41 line-height-md color-spacesuit-white-important">\n\t\t\t\t\t\t\t\tNASA Uses Subscale Aircraft to Accelerate Flight Innovation\t\t\t\t\t\t\t</h1>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class="grid-col-12 tablet:grid-col-12 desktop:grid-col-5"></div>\n\t\t\t\t\t<div class="skrim-',
       sourceUrl:
@@ -588,9 +588,9 @@ const data: Snapshot = {
       publisher: "NASA",
       title: "NASA Study of Pristine Meteorite Adds to Story of Ancient Asteroids",
       published: "Wed, 15 Jul 2026 19:28:53 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "fb5178d5869103f39c97683ac5dd76311d6221d1bcd2b75a2407c6eb64baffa4",
+      hash: "9294d75b3287554599a234ad9e58d78ad1292adea936587b01b5ecdf23efb10b",
       summary:
         '<div id="" class="padding-top-5 padding-bottom-3 width-full maxw-full hds-module hds-module-full alignfull wp-block-nasa-blocks-article-intro">\n<div class="width-full maxw-full article-header">\n<div class="margin-bottom-2 width-full maxw-full">\n<p class="label carbon-60 margin-0 margin-bottom-3 padding-0">6 min read</p>\n<h1 class="display-48 margin-bottom-2">NASA Study of Pristine Meteorite Adds to Story of Ancient Asteroids</h1>\n</div>\n</div>\n</div>\n<div id="" class="hds-media hds-module wp-block-image">\n<div class="margin-left-auto margin-right-auto nasa-block-align-inline">\n<div class="hds-media-wrapper margin-left-auto margin-right-auto">\n<figure class="hds-media-inner hds-cover-wrapper hds-media-ratio-cover "><a href="https://assets.science.nasa.gov/dynamicimage/assets/science/psd/ares/sciadv.aea2105-f2_HillsboroughClasts.jpg?w=3000&#038;h=1792&#038;fit=clip&#038;crop=faces%2Cfocalpoint" rel="noopener"><img fetchpriority="high" decoding="async" width="3000" height="1792" src="http',
       sourceUrl:
@@ -603,9 +603,9 @@ const data: Snapshot = {
       publisher: "NASA",
       title: "How NASA’s Artemis III Lander Test Will Pave Way for Moon Landings",
       published: "Wed, 15 Jul 2026 18:50:52 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "b2e61a05cdce7dc634ee99ca0242869d357d7b6bf7b1aee99f9ec7636ac8ab83",
+      hash: "64c39207842265238fff276a08485bb3e22f9f3fb8d642a8a61646e463cf37dd",
       summary:
         '<div id="" class="hds-article-hero-header nasa-gb-align-full bg-carbon-90 width-full maxw-full color-mode-dark hds-module hds-module-full alignfull wp-block-nasa-blocks-article-hero-header">\t\t<div class="hds-cover-wrapper width-full maxw-full minh-tablet grid-container minh-tablet flex-column padding-0">\n\t\t\t<div class="hds-foreground-wrapper display-flex flex-direction-column">\n\t\t\t\t<div class="grid-container grid-container-block margin-top-auto width-full maxw-desktop-lg padding-y-9 padding-x-3 desktop:padding-x-3 z-400">\n\t\t\t\t\t<div class="z-400 grid-col-12 tablet:grid-col-12 desktop:grid-col-7 z-400">\n\t\t\t\t\t\t<div class="margin-0">\n\t\t\t\t\t\t\t<div class="label color-spacesuit-white margin-bottom-2">7 Min Read</div>\n\t\t\t\t\t\t\t<h1 class="heading-41 line-height-md color-spacesuit-white-important">\n\t\t\t\t\t\t\t\tHow NASA’s Artemis III Lander Test Will Pave Way for Moon Landings\t\t\t\t\t\t\t</h1>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class="grid-col-12 tablet:grid-col-12 desktop:grid-col-5"></div>\n\t\t\t\t\t<div class=',
       sourceUrl:
@@ -618,9 +618,9 @@ const data: Snapshot = {
       publisher: "NASA",
       title: "Anil Menon Launches to Space Station",
       published: "Wed, 15 Jul 2026 18:48:36 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "156de2b90b389eabd1c08f4556df4c3d378c3c56b062981d7df126973b68d691",
+      hash: "08ba325339cb2bf9cc5cbc18aaf82f3af908d5b3e5140ea99cfcb89b4bd68978",
       summary:
         '<div id="" class="hds-media hds-module wp-block-image"><div class="margin-left-auto margin-right-auto nasa-block-align-inline"><div class="hds-media-wrapper margin-left-auto margin-right-auto"><figure class="hds-media-inner hds-cover-wrapper hds-media-ratio-none "><a href="https://www.nasa.gov/wp-content/uploads/2026/07/nhq20260714-admin-0014orig.jpg"><img decoding="async" width="1365" height="2048" src="https://www.nasa.gov/wp-content/uploads/2026/07/nhq20260714-admin-0014orig.jpg?w=1365" class="attachment-2048x2048 size-2048x2048" alt="An adult and two children watch a rocket launch. The adult woman carries one child on her shoulder and holds hands with the other child. Their backs are to the camera, so we can see the text on the back of their t-shirts, which reads &quot;Team Menon&quot; in white and yellow writing." style="transform: scale(1); transform-origin: 50% 50%; object-position: 50% 50%; object-fit: cover;" block_context="nasa-block" loading="lazy" srcset="https://www.nasa.g',
       sourceUrl: "https://www.nasa.gov/image-article/anil-menon-launches-to-space-station/",
@@ -632,9 +632,9 @@ const data: Snapshot = {
       publisher: "NASA",
       title: "Curiosity Finds Evidence of an Ancient Sandstorm",
       published: "Wed, 15 Jul 2026 18:16:45 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "c13ad2e216e093c599cc2fd9ad90a49fde7d6f76295050a19cdea311cc38a321",
+      hash: "0a30737ae4b200f7bbe9f9045b96248a8d82775575407dceb80f64bc9c1c5d4d",
       summary:
         '<div id="" class="hds-article-hero-header nasa-gb-align-full bg-carbon-90 width-full maxw-full color-mode-dark hds-module hds-module-full alignfull wp-block-nasa-blocks-article-hero-header">\t\t<div class="hds-cover-wrapper width-full maxw-full minh-tablet grid-container minh-tablet flex-column padding-0">\n\t\t\t<div class="hds-foreground-wrapper display-flex flex-direction-column">\n\t\t\t\t<div class="grid-container grid-container-block margin-top-auto width-full maxw-desktop-lg padding-y-9 padding-x-3 desktop:padding-x-3 z-400">\n\t\t\t\t\t<div class="z-400 grid-col-12 tablet:grid-col-12 desktop:grid-col-7 z-400">\n\t\t\t\t\t\t<div class="margin-0">\n\t\t\t\t\t\t\t<div class="label color-spacesuit-white margin-bottom-2">1 Min Read</div>\n\t\t\t\t\t\t\t<h1 class="heading-41 line-height-md color-spacesuit-white-important">\n\t\t\t\t\t\t\t\tCuriosity Finds Evidence of an Ancient Sandstorm\t\t\t\t\t\t\t</h1>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class="grid-col-12 tablet:grid-col-12 desktop:grid-col-5"></div>\n\t\t\t\t\t<div class="skrim-overlay skr',
       sourceUrl:
@@ -647,9 +647,9 @@ const data: Snapshot = {
       publisher: "NASA",
       title: "NASA’s Perseverance Rover Provides Sweeping View of Broom Point",
       published: "Wed, 15 Jul 2026 17:59:50 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "5a4d472319dfebe6062f8485f3a178ee4711a9b211ae454eb68d024721daf26c",
+      hash: "d48325af0cedd550ac437eed5ecd4888f452ede36dd61a617b2549cc7e0298b6",
       summary:
         '<div id="" class="hds-article-hero-header nasa-gb-align-full bg-carbon-90 width-full maxw-full color-mode-dark hds-module hds-module-full alignfull wp-block-nasa-blocks-article-hero-header">\t\t<div class="hds-cover-wrapper width-full maxw-full minh-tablet grid-container minh-tablet flex-column padding-0">\n\t\t\t<div class="hds-foreground-wrapper display-flex flex-direction-column">\n\t\t\t\t<div class="grid-container grid-container-block margin-top-auto width-full maxw-desktop-lg padding-y-9 padding-x-3 desktop:padding-x-3 z-400">\n\t\t\t\t\t<div class="z-400 grid-col-12 tablet:grid-col-12 desktop:grid-col-7 z-400">\n\t\t\t\t\t\t<div class="margin-0">\n\t\t\t\t\t\t\t<div class="label color-spacesuit-white margin-bottom-2">2 Min Read</div>\n\t\t\t\t\t\t\t<h1 class="heading-41 line-height-md color-spacesuit-white-important">\n\t\t\t\t\t\t\t\tNASA’s Perseverance Rover Provides Sweeping View of Broom Point\t\t\t\t\t\t\t</h1>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class="grid-col-12 tablet:grid-col-12 desktop:grid-col-5"></div>\n\t\t\t\t\t<div class="sk',
       sourceUrl:
@@ -662,9 +662,9 @@ const data: Snapshot = {
       publisher: "NASA",
       title: "Perseverance’s Trip to ‘Broom Point’",
       published: "Wed, 15 Jul 2026 17:27:10 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "3729e5f9e664dd65c59a41d918dc9f3f8c642abc3bf8c355a72c7fdc8cf64b47",
+      hash: "99061f07f300f6cd0f5af915bf5f917b96b6e21a590f64625a5c53e60349e9e9",
       summary:
         '<div id="" class="hds-article-hero-header nasa-gb-align-full bg-carbon-90 width-full maxw-full color-mode-dark hds-module hds-module-full alignfull wp-block-nasa-blocks-article-hero-header">\t\t<div class="hds-cover-wrapper width-full maxw-full minh-tablet grid-container minh-tablet flex-column padding-0">\n\t\t\t<div class="hds-foreground-wrapper display-flex flex-direction-column">\n\t\t\t\t<div class="grid-container grid-container-block margin-top-auto width-full maxw-desktop-lg padding-y-9 padding-x-3 desktop:padding-x-3 z-400">\n\t\t\t\t\t<div class="z-400 grid-col-12 tablet:grid-col-12 desktop:grid-col-7 z-400">\n\t\t\t\t\t\t<div class="margin-0">\n\t\t\t\t\t\t\t<div class="label color-spacesuit-white margin-bottom-2">2 Min Read</div>\n\t\t\t\t\t\t\t<h1 class="heading-41 line-height-md color-spacesuit-white-important">\n\t\t\t\t\t\t\t\tPerseverance’s Trip to ‘Broom Point’\t\t\t\t\t\t\t</h1>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class="grid-col-12 tablet:grid-col-12 desktop:grid-col-5"></div>\n\t\t\t\t\t<div class="skrim-overlay skrim-left mobi',
       sourceUrl: "https://science.nasa.gov/photojournal/perseverances-trip-to-broom-point/",
@@ -676,9 +676,9 @@ const data: Snapshot = {
       publisher: "NASA",
       title: "NASA’s Perseverance Rover Reads Record of Ancient Mars Impacts",
       published: "Wed, 15 Jul 2026 15:30:04 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "19dc815e146ed7b013c79e97650f850a16db8800c681a789b8e937ce0ebe1f30",
+      hash: "58265e19b8cf9451ae629895b40d37d339ae1382e363cbbac81c4ac81277d67c",
       summary:
         '<div id="" class="padding-top-5 padding-bottom-3 width-full maxw-full hds-module hds-module-full alignfull wp-block-nasa-blocks-article-intro"><div class="width-full maxw-full article-header"><div class="margin-bottom-2 width-full maxw-full"><p class="label carbon-60 margin-0 margin-bottom-3 padding-0">5 min read</p><h1 class="display-48 margin-bottom-2">Preparations for Next Moonwalk Simulations Underway (and Underwater)</h1></div></div></div>\n\n<div id="" class="hds-media hds-module wp-block-image"><div class="margin-left-auto margin-right-auto nasa-block-align-inline"><div class="hds-media-wrapper margin-left-auto margin-right-auto"><figure class="hds-media-inner hds-cover-wrapper hds-media-ratio-fit "><a href="https://www.nasa.gov/wp-content/uploads/2026/07/pia26574-selfie.jpg"><img decoding="async" width="2048" height="1220" src="https://www.nasa.gov/wp-content/uploads/2026/07/pia26574-selfie.jpg?w=2048" class="attachment-2048x2048 size-2048x2048" alt="" style="transform: scale(1);',
       sourceUrl:
@@ -691,9 +691,9 @@ const data: Snapshot = {
       publisher: "NASA",
       title: "Volunteer Measures Record Louisiana Rainfall",
       published: "Wed, 15 Jul 2026 12:32:00 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "5259a021caef8e9c2ceb5d2810100632c43ae23c3844607e02a9fb38229bba05",
+      hash: "d75dedc9b021198894023cb53c3df9974bfabf9c6eaf1294a1c51cc6b68ae829",
       summary:
         '<div id="" class=" hds-module hds-module-full alignfull wp-block-nasa-blocks-secondary-navigation"><div class="hds-secondary-navigation-wrapper z-top width-100 padding-0"><div id="" class="hds-secondary-navigation width-full border-bottom-1px text-center hds-color-mode-light hds-module hds-module-full alignfull wp-block-nasa-blocks-hdsnav"><button type="button" class="hds-secondary-nav-mobile-button display-flex tablet:display-flex desktop:display-none width-full flex-align-center bg-carbon-90 border-color-carbon-80 color-spacesuit-white" aria-expanded="false" aria-controls="hds-secondary-nav-track"><span>Explore This Section</span><svg width="16" height="16" alt="" enable-background="new 0 0 400 400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg"><path d="m4.2 122.2 195.1 195.1 196.5-196.6-37.9-38-157.8 157.8-156.8-156.8z" /></svg></button><div class="hds-secondary-nav-track grid-container grid-container-extrawide padding-0 tablet:padding-x-3 desktop:padding-x-2 hds-secondar',
       sourceUrl:
@@ -706,9 +706,9 @@ const data: Snapshot = {
       publisher: "The New York Times",
       title: "Almost Half of House Democrats Vote to End Aid to Israel",
       published: "Wed, 15 Jul 2026 21:42:59 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "88a80aca65106f210bd2fcb5c493b42e26839d316d4909b36c7dfba203433882",
+      hash: "fea8c9533819f628148707f34527d6b1795491df63c0d97d2e25a8f8b401a32a",
       summary:
         "The measure failed, but the level of support among Democrats exposed a stark shift in the party away from backing the Jewish state.",
       sourceUrl:
@@ -721,9 +721,9 @@ const data: Snapshot = {
       publisher: "The New York Times",
       title: "Iranian American Woman Held in Iran on Spying Charges Is Released",
       published: "Thu, 16 Jul 2026 03:21:53 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "e5218740f7f6a977fe5ddc105021b3e27ab80806dd5e5cd7bf29fc0d58bf3d58",
+      hash: "3149106186a3a7c63b4e57725bf88a312b389a38ea0fbeb920099df65f232e29",
       summary:
         "The dual Iranian-U.S. citizen, Dena Karari, had her passport seized in December 2024 and had not been able to leave Iran as she faced espionage charges.",
       sourceUrl:
@@ -736,9 +736,9 @@ const data: Snapshot = {
       publisher: "The New York Times",
       title: "U.S. Military Again Blockades Iranian Ports After Collapse of Cease-Fire",
       published: "Wed, 15 Jul 2026 23:02:36 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "050a23548216e745e776fddec0dc192179ca279eb5e1d0be3c5700a45ffde2ba",
+      hash: "d5464dc65ce60e6dc27695f931d5d9f151da9137389ebe8b1d79ea0f41ae7b97",
       summary:
         "President Trump ordered U.S. warships and aircraft to stop vessels going to and from Iran. Enforcing a blockade takes a huge commitment of warships and aircraft.",
       sourceUrl: "https://www.nytimes.com/2026/07/15/us/politics/us-blockade-iran.html",
@@ -751,9 +751,9 @@ const data: Snapshot = {
       title:
         "Todd Blanche, Trump’s Attorney General Pick, Faces Crucial Hurdle After Rocky Hearing",
       published: "Thu, 16 Jul 2026 00:49:30 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "45a6b18931486e5b8b482afdbaaa13704dc2b376d9e2f6a3b1d4a0db83994e8b",
+      hash: "461ba78590e854df969388c71dce73153b5413a7a05849cbe0e237e43cdedaaf",
       summary:
         "Even a single Republican “no” vote would block Mr. Blanche’s nomination from consideration by the full Senate, which could sink his confirmation.",
       sourceUrl:
@@ -766,9 +766,9 @@ const data: Snapshot = {
       publisher: "The New York Times",
       title: "Hegseth Plans to Screen All Troops, Including Women, for Low Testosterone",
       published: "Thu, 16 Jul 2026 01:48:51 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "f04a62eabe7267c8d83a1c9b269329cc9f87bb9535d506464fa0d75d26a1dafd",
+      hash: "3de8e7b88c41656b8b78cdeb86595d1464a8e6f7041661bf9c54d355f63c5899",
       summary:
         "Pete Hegseth, as defense secretary, has sought to cultivate an image as a manosphere-friendly leader.",
       sourceUrl: "https://www.nytimes.com/2026/07/15/us/politics/hegseth-troops-testosterone.html",
@@ -780,9 +780,9 @@ const data: Snapshot = {
       publisher: "The New York Times",
       title: "Trump Administration to Impose New Tariffs on Brazil",
       published: "Thu, 16 Jul 2026 04:43:45 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "9b55d1471af0b20206b7508a5c158abe14a61ea62fb68149b85be17cf19ab442",
+      hash: "711020e3da9506607bb5da4f1c1bf593a30ccc90e1c8a6f89afd95a3128730c7",
       summary:
         "The United States accused the country of unfair trade practices. The tariff will replace ones that the Supreme Court struck down.",
       sourceUrl: "https://www.nytimes.com/2026/07/15/business/economy/trump-brazil-tariffs.html",
@@ -794,9 +794,9 @@ const data: Snapshot = {
       publisher: "The New York Times",
       title: "Wildfire Smoke Spreads Across the Northeast as Temperatures Spike",
       published: "Thu, 16 Jul 2026 02:06:45 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "8c92dc5544eef6a7590596eda974232e689d4641a45c37923865234fca2efe65",
+      hash: "3f3c7b14e682257ef7dd0701c0ffa4ca5b5e6d56135ae75d06280cc840ae2a60",
       summary:
         "A heat dome is responsible for miserably high temperatures, and it’s also helping to push smoke from wildfires to the east.",
       sourceUrl:
@@ -809,9 +809,9 @@ const data: Snapshot = {
       publisher: "The New York Times",
       title: "Flash Flood Emergency Is Issued in Texas After Days of Pounding Rain",
       published: "Thu, 16 Jul 2026 01:47:57 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "2e6d85a44d7c0421b95ea6029465a9bbeced007265d5b0bb104c7ef15bc70d2c",
+      hash: "e609a30c9cb190fff0c7c76a43201fa4daeb4b0af1cc58ebab43bd3119715675",
       summary:
         "Roads became rivers on Wednesday as emergency officials in towns around San Antonio raced to rescue people who were stranded.",
       sourceUrl: "https://www.nytimes.com/2026/07/15/weather/texas-flooding-boerne.html",
@@ -823,9 +823,9 @@ const data: Snapshot = {
       publisher: "The New York Times",
       title: "Video Pushed Local Police to Come Clean. D.H.S. Is Ignoring the Lessons.",
       published: "Thu, 16 Jul 2026 01:15:30 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "2a00f224279ae0cab996f303db293bc39598c995cbab7962b773b23cfa61db53",
+      hash: "ced3f0e786afec7d1620fcfbf142c0279aa2d2de7e403883b419b9d1b82f5786",
       summary:
         "The agency has said little about two fatal encounters in the past week. Local police departments have learned to be forthcoming.",
       sourceUrl: "https://www.nytimes.com/2026/07/15/us/ice-public-statements.html",
@@ -837,9 +837,9 @@ const data: Snapshot = {
       publisher: "The New York Times",
       title: "F.B.I. Searches Houston ICE Shooting Van for Drugs",
       published: "Thu, 16 Jul 2026 00:06:33 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "b036b3aaf657c62b5cd2ae5c8d5a451b388f15adb78878c483e0c0b6f5eff421",
+      hash: "ae5bf4013405929e2b36e1f1c119e5cf0ae89d47f443e93a9a59d56e3ecd0927",
       summary:
         "Federal investigators believe illegal drugs were inside the vehicle, though the immigration agents involved in the encounter do not appear to have known that.",
       sourceUrl: "https://www.nytimes.com/2026/07/15/us/fbi-search-drugs-houston-ice-shooting.html",
@@ -851,9 +851,9 @@ const data: Snapshot = {
       publisher: "The New York Times",
       title: "Trump Says He’ll Seek to Replace Immigrant Truck Drivers With Veterans",
       published: "Thu, 16 Jul 2026 01:14:44 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "e16a260232e211fe979e69f7c5631fbd3fbb0ed87c9785d7b16229c7a4b79d81",
+      hash: "51ef8cadfeb4a25aafb70712f09b87dd3a93f737a8b5680333c9b194a0b8d9ae",
       summary:
         "The president has pushed to curtail the commercial licenses of immigrants, including legal residents, whom he has blamed for crashes.",
       sourceUrl:
@@ -866,9 +866,9 @@ const data: Snapshot = {
       publisher: "The New York Times",
       title: "India Is Moving Fast to Build A.I. Data Centers. A Coastal City May Pay the Price.",
       published: "Thu, 16 Jul 2026 05:24:49 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "2fae4193b429804a8c09ddf295c8e704172223be74c0134cfd49fa53d2f757cc",
+      hash: "69ae7404132397194c572530ebc3b616dcf825a9de1114b1a97830748e8da732",
       summary:
         "With India lagging in the technology, officials are embracing giant data centers. But critics say the megaprojects will use up energy and water, without providing long-term jobs.",
       sourceUrl: "https://www.nytimes.com/2026/07/16/world/asia/india-ai-data-centers-google.html",
@@ -878,11 +878,11 @@ const data: Snapshot = {
     {
       id: "REC-2026-07-16-000061",
       publisher: "The New York Times",
-      title: "Europe Wants to Break Free From American and Chinese Technology. But How?",
-      published: "Thu, 16 Jul 2026 04:01:09 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      title: "Europe Finds It Hard to Break Up With American and Chinese Technology",
+      published: "Thu, 16 Jul 2026 08:20:56 +0000",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "cd771f76b31ade193704f7a7caf776d13476ed2627b5a6a1e3ce60b67eed4b4a",
+      hash: "9583e30a5080ea8a215e5b21c81ae6f4959f4f3566cfd7e4fd65aa373421d86b",
       summary:
         "France and Germany want to quit relying on America and China for key technology like artificial intelligence, but they’re having to choose where to do it.",
       sourceUrl: "https://www.nytimes.com/2026/07/16/world/europe/digital-autonomy-ai.html",
@@ -892,11 +892,11 @@ const data: Snapshot = {
     {
       id: "REC-2026-07-16-000062",
       publisher: "The New York Times",
-      title: "Australia to Impose Energy and Water Guardrails on Data Centers Amid A.I. Boom",
-      published: "Wed, 15 Jul 2026 14:03:27 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      title: "Australia to Put Environmental Brakes on A.I. Data Centers",
+      published: "Thu, 16 Jul 2026 08:08:31 +0000",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "449738579db70187545d4fceefd1806b02021ba3a3ae5987fc07bdac839c0f70",
+      hash: "e254c97c98af0b4b03f605bf9cbacb3591bd4e873fedf84c11cca756aa901d9d",
       summary:
         "The country will also seek to protect the rights of creators of work used to train artificial intelligence models, as it aims to impose parameters on the growing industry.",
       sourceUrl:
@@ -909,9 +909,9 @@ const data: Snapshot = {
       publisher: "The New York Times",
       title: "New York Times Files Motion to Quash Subpoenas of Its Journalists",
       published: "Thu, 16 Jul 2026 01:38:22 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "6e4ef9423d0916d49861c282450fff27d09613fa322916c98a2fa8ca7f4c2c20",
+      hash: "f2470f21ec4eee63adcc092bfd247b8816e6f20b60915fe5dde6a1363bbbe5f4",
       summary:
         "The Justice Department is seeking to compel grand jury testimony as part of an investigation into Times reporting on the president’s new Air Force One jet.",
       sourceUrl:
@@ -924,9 +924,9 @@ const data: Snapshot = {
       publisher: "The New York Times",
       title: "Our Top Editor on Subpoenas of Times Journalists",
       published: "Wed, 15 Jul 2026 17:17:43 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "c855ca4771e480c424bab7fe7f91c42a078582fe1fcfa92783a6078184a9eaf6",
+      hash: "7fbfcfe1b9f0622b1ee49e318f866d14e41216036575f185079b2a45198e50fa",
       summary:
         "The Trump administration issued subpoenas to reporters who wrote about security concerns involving the new Air Force One. Joe Kahn, the executive editor of The New York Times, responds to what he calls a “naked attempt to intimidate” the newspaper.",
       sourceUrl:
@@ -940,9 +940,9 @@ const data: Snapshot = {
       title:
         "Investigators Seek Information From Government Officials as Part of Air Force One Leak Investigation",
       published: "Thu, 16 Jul 2026 00:36:50 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "404391c4429dc08a7ec3fa0d580991716db1e72dd32f17c6b4c3eebb3b779d44",
+      hash: "ee082d759c4e6e8771f3d2e49e5931348d24fa84b5400ffe52ac2c8bf96d712b",
       summary:
         "After The New York Times reported on security concerns related to the Qatari-donated jet, the F.B.I. sought to speak with several people who flew aboard the plane with President Trump last week and asked for their phones.",
       sourceUrl:
@@ -955,9 +955,9 @@ const data: Snapshot = {
       publisher: "The New York Times",
       title: "‘The Odyssey’ Review: Passion in Every Frame",
       published: "Thu, 16 Jul 2026 03:38:01 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "4025989cea7fc5aea2695862ef7d3496786e6ce19b1690621e61948e3873ac73",
+      hash: "86460ed9cbc62183cb43ca2253233bca4bdf3655eb651de124878c27f1c0a41a",
       summary:
         "Few directors close the divide between the art film and the blockbuster like Christopher Nolan.",
       sourceUrl: "https://www.nytimes.com/2026/07/15/movies/the-odyssey-review.html",
@@ -969,9 +969,9 @@ const data: Snapshot = {
       publisher: "The New York Times",
       title: "Archaeologists Unearth a 2,400-Year-Old Sanctuary for the Worship of Odysseus",
       published: "Wed, 15 Jul 2026 14:33:04 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "4f4fb2ea7ec093663d7c2b45911660d4d4bfff95509fa30edbd5b1d4e0b73faf",
+      hash: "e6d414427c32f613604d2cd2229febb16712ef5d6d081cb5af69968f06631734",
       summary:
         "The ruins of a 2,400-year-old complex suggest that, to the Greeks of antiquity, Homer’s protagonist was not just a character in a poem but a figure of genuine devotion.",
       sourceUrl: "https://www.nytimes.com/2026/07/15/science/archaeology-homer-odyssey-ithaca.html",
@@ -983,9 +983,9 @@ const data: Snapshot = {
       publisher: "The New York Times",
       title: "Cyclospora Outbreak: What to Know About Symptoms and Food Safety",
       published: "Wed, 15 Jul 2026 21:34:57 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "f35f8c377485f901a094ea9a3d9d21f0013d73464a87d7583743c423dd28498d",
+      hash: "b12d0cca774dcfabb27d348cfa12158f42e4e1225774c9501a8fb94ff9ae723c",
       summary:
         "The parasite has sickened thousands across the United States. Experts have tips on how to stay safe.",
       sourceUrl:
@@ -998,9 +998,9 @@ const data: Snapshot = {
       publisher: "The New York Times",
       title: "Inside Maine Democrats’ Search for a New Senate Nominee After Graham Platner’s Exit",
       published: "Thu, 16 Jul 2026 02:39:11 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "1012dcf1b06f3fc99eb6cbdfda61a68648162aea6994e70cd7ba6fbac3878ad6",
+      hash: "596132d9900c2797aeb8cba3fa2715e80f70840bee75f9655e1a4e4e2e9e1cf6",
       summary:
         "Democratic candidates are hastily building bare-bones campaigns and forgoing traditional outreach like TV ads in a sprint to appeal to party delegates, rather than Maine voters.",
       sourceUrl:
@@ -1013,9 +1013,9 @@ const data: Snapshot = {
       publisher: "The New York Times",
       title: "Here Are the Maine Democrats Running to Replace Graham Platner",
       published: "Wed, 15 Jul 2026 21:21:03 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "52ca18b49b67b5b629f568ce389630bcea73585424d299c188372a40c7ba68ad",
+      hash: "30975a1d5af42dd1f141bf3e1210ecf0cbde414d4c4f0886999efe0129fe7354",
       summary:
         "To win, they’ll have to convince Democrats at a July 25 convention that they’re the best candidate to take on Senator Susan Collins, a Republican.",
       sourceUrl:
@@ -1028,9 +1028,9 @@ const data: Snapshot = {
       publisher: "The New York Times",
       title: "G.O.P. Appears to Boost Socialist’s Primary Campaign for Wisconsin Governor",
       published: "Wed, 15 Jul 2026 23:34:31 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "e99f79a6aa5af55a122791a0e8fbb58fe7be84659bd5ba24852fd5cf4b3f21cd",
+      hash: "d9ce611a1eec6588e225de3f7addb55e4af005d16a9c0aced95dd20003c61a77",
       summary:
         "Republicans seem to view Francesca Hong as their weakest opponent in a general election. They are spending $2.2 million in an apparent attempt to aid her primary campaign.",
       sourceUrl:
@@ -1043,9 +1043,9 @@ const data: Snapshot = {
       publisher: "The New York Times",
       title: "Boat That Sank Near Alcatraz Rolled After Wave Struck, Officials Say",
       published: "Thu, 16 Jul 2026 00:50:34 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "283cd4e3d4bb17fc73361185d2e5ff4768d2670ee30461ad5b6c163046eabc39",
+      hash: "9129c1c2add040f9086cb44aacab3716e1b732afc496697f340eaab1d9c20a15",
       summary:
         "Rescuers described survivors trying to stay afloat in the San Francisco Bay. A brother of the boat’s owner died, and the authorities say they will end the search for the missing.",
       sourceUrl: "https://www.nytimes.com/2026/07/15/us/alcatraz-boat-captain.html",
@@ -1057,9 +1057,9 @@ const data: Snapshot = {
       publisher: "The New York Times",
       title: "Meet Earth’s Newest Monkey. (And Check Out Its Orange Lips.)",
       published: "Wed, 15 Jul 2026 18:31:04 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "a60d052e334c7cfd0aaabedfc089a078c07224342885f6ce930caf7c46041b75",
+      hash: "77dbec1305ef57dc1ac2a0412b17884794aa98f72103b9d573910b9a53f13e70",
       summary:
         "It is only the fifth new African monkey identified as a new species in the past 75 years.",
       sourceUrl:
@@ -1072,9 +1072,9 @@ const data: Snapshot = {
       publisher: "The New York Times",
       title: "An American Strike Killed Iranian Civilians. Where’s the Accountability?",
       published: "Thu, 16 Jul 2026 05:00:03 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "660bfe6b5d58837d390a4fb7b00cb87d2ca334670d17f3ebace97eb51a7956f7",
+      hash: "593a62e5556abb74680e1243146fd7ae6ca4b6d9ff35bd66dcc6145c1dbe00d6",
       summary:
         "The Trump administration has failed to publicly address the mistaken missile strike that killed children during the Iran war.",
       sourceUrl:
@@ -1087,9 +1087,9 @@ const data: Snapshot = {
       publisher: "The New York Times",
       title: "England Lost in the World Cup. They Were Always Going to Lose.",
       published: "Wed, 15 Jul 2026 22:49:11 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "14a5a920009a87ef672a21f21b071b315aaa7f0daf91a4751ab5f6f902279e09",
+      hash: "920cb01eb77fa9d3105897b6af5b983808184adfda81304c0ee59882a0820b46",
       summary:
         "The football team, like Britain itself, is burdened by the dead weight of impossible expectations.",
       sourceUrl:
@@ -1102,9 +1102,9 @@ const data: Snapshot = {
       publisher: "The New York Times",
       title: "Jimmy Fallon Pokes Fun at Joe Biden’s New Memoir",
       published: "Thu, 16 Jul 2026 06:09:54 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "8c8e102ec9f212d31028b18fad35889f2ba1a001efc60a2936be4f75b486b4ac",
+      hash: "d90995f69f2270019cb4519140c06140d1779f8c5b300edb1e87c455ede2ba01",
       summary:
         "“It’s the second book Biden has written,” Fallon said of the former president. “The first was ‘The Odyssey.’”",
       sourceUrl:
@@ -1117,9 +1117,9 @@ const data: Snapshot = {
       publisher: "The New York Times",
       title: "Superagent? Obviously. Secret Weapon in 2028? Maybe.",
       published: "Wed, 15 Jul 2026 17:11:53 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "1cca4527abe932cd220ac6ff53bb7ddaa2670f6db4197cc95b1ef78cd248bc58",
+      hash: "176960ccac134fda22ff33c2d31087226c9e5db9d30b822f57cdf37ca5a34dc6",
       summary:
         "Ari Emanuel’s empire has grown beyond Hollywood to include the U.F.C., WWE and some key figures in the manosphere. That could work out well for his brother Rahm Emanuel.",
       sourceUrl: "https://www.nytimes.com/2026/07/15/style/ari-emanuel-rahm-emanuel-2028.html",
@@ -1131,9 +1131,9 @@ const data: Snapshot = {
       publisher: "NPR",
       title: "The band playing when a Bangkok bar caught fire mourns its members among the 33 dead",
       published: "Thu, 16 Jul 2026 02:03:21 -0400",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "ad6246327f8a6c3358492992a9f46fad3a4f54752a16028fbbf79a7fa00703fa",
+      hash: "1c9e4c16428689448087854740eccab201f79b56118777afb377263d634f08a9",
       summary:
         "<img src='https://npr.brightspotcdn.com/dims3/default/strip/false/crop/4245x2830+0+0/resize/4245x2830!/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Fcb%2Fbe%2F67ee877846b3966296d119780e72%2Fap26196510884573.jpg' alt='Burned musical instruments sit in front of a music bar fire in Bangkok, Thailand, Monday, July 13, 2026.'/><p>Victims of this week's flash fire at a Bangkok music bar that took more than 30 lives included four of the six core members of the band playing when the blaze broke out.</p><p>(Image credit: Sakchai Lalit)</p><img src='https://media.npr.org/include/images/tracking/npr-rss-pixel.png?story=g-s1-133907' />",
       sourceUrl: "https://www.npr.org/2026/07/16/g-s1-133907/death-toll-bangkok-fire",
@@ -1145,9 +1145,9 @@ const data: Snapshot = {
       publisher: "NPR",
       title: "Fear and hope in Utah in the shadow of America's largest wildfire",
       published: "Wed, 15 Jul 2026 17:55:00 -0400",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "d967cce5f5f634bd2a81cb0ea193676fddcf88cb44c6cf2bafa4670db2b279cc",
+      hash: "616ec8208b938558ce47df8e53c8fbf971fb8ff8a858d61ebb9f39bc949d9fc0",
       summary:
         "<img src='https://npr.brightspotcdn.com/dims3/default/strip/false/crop/1536x2048+0+0/resize/1536x2048!/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F91%2Fb8%2F902e87f64ff1bf43b86da566ad12%2F1000001260.jfif' alt='The Babylon fire burns on the Manti-La Sal National Forest outside Monticello, Utah July 6, 2026'/><p>People in Monticello, Utah have been tense and preparing to evacuate since shortly after the Babylon fire started June 26th </p><p>(Image credit: Inciweb)</p><img src='https://media.npr.org/include/images/tracking/npr-rss-pixel.png?story=nx-s1-5892509' />",
       sourceUrl:
@@ -1161,9 +1161,9 @@ const data: Snapshot = {
       title:
         "Argentina is back in the World Cup final after a thrilling semifinal win over England",
       published: "Wed, 15 Jul 2026 17:10:43 -0400",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "94f5a95379e94ff233423a4d819b4c419ab9cf00f1304c114ed74f79eb8fbb69",
+      hash: "a5aa6039e3c67fb087c3d0e4428a4b13af31fd7a8921d73cec53d05d049c672a",
       summary:
         "<img src='https://npr.brightspotcdn.com/dims3/default/strip/false/crop/3328x2219+0+0/resize/3328x2219!/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Fa3%2F9e%2F8c31a1bf41168975fdcf0e2d0348%2Fgettyimages-2286274156.jpg' alt='Argentina's Lionel Messi celebrates the team's second goal by Lautaro Martínez during their World Cup semifinal against England on Wednesday in Atlanta. Argentina defeated the English 2-1 to advance to Sunday's final against Spain.'/><p>Argentina survived another heart-stopping match when it scored two late goals to topple England and extend the Three Lions' six-decade-long wait for another World Cup trophy.</p><p>(Image credit: Shaun Botterill)</p><img src='https://media.npr.org/include/images/tracking/npr-rss-pixel.png?story=nx-s1-5893895' />",
       sourceUrl:
@@ -1176,9 +1176,9 @@ const data: Snapshot = {
       publisher: "NPR",
       title: "Takeaways from Todd Blanche's confirmation hearing for attorney general",
       published: "Wed, 15 Jul 2026 17:09:09 -0400",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "05224fe31649feb368b2db0137045f52220e68d87961d16643b740dc5173e16c",
+      hash: "5fdf89a9ca449e7d498be51b96688e822140315fb60fddbfa26d584f97ff5472",
       summary:
         "<img src='https://npr.brightspotcdn.com/dims3/default/strip/false/crop/3124x2178+0+0/resize/3124x2178!/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F41%2F79%2F9ee4e83b4f16b05ff05cd1ede0d5%2Fgettyimages-2286252424.jpg' alt='Acting Attorney General Todd Blanche appears at his confirmation hearing in front of the Senate Judiciary Committee on July 15. During Blanche's tenure as acting Attorney General the Justice Department has been under scrutiny for pushing President Trump's 1.8 billion dollar \"anti-weaponization\" fund and its handling of the Epstein files.'/><p>Todd Blanche remained composed throughout the hours-long hearing, but faced several testy moments during questioning as he seeks to win the support of all Republican senators on the committee.</p><p>(Image credit: Eric Lee)</p><img src='https://media.npr.org/include/images/tracking/npr-rss-pixel.png?story=nx-s1-5895105' />",
       sourceUrl:
@@ -1191,9 +1191,9 @@ const data: Snapshot = {
       publisher: "NPR",
       title: "China and Xi favored over U.S. and Trump in many nations: Survey",
       published: "Wed, 15 Jul 2026 16:34:30 -0400",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "32ca31c97ab2c8993b943695bf567c8e2cbf2ea1da626f9f5d6ae28a06e09ac1",
+      hash: "d5762c7591e7093be7a3fe884cd8c5e83ba4714e55aaa8651f3b2300971512f3",
       summary:
         "<img src='https://npr.brightspotcdn.com/dims3/default/strip/false/crop/4941x3294+0+0/resize/4941x3294!/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Faa%2Ff2%2F13507ed14122a10ac856709ed67f%2Fap26195590491591.jpg' alt='FILE - President Donald Trump talks with China's President Xi Jinping at the Zhongnanhai leadership compound, May 15, 2026, in Beijing.'/><p>The change is driven by improved perceptions of China and declining views of the United States.</p><p>(Image credit: Mark Schiefelbein)</p><img src='https://media.npr.org/include/images/tracking/npr-rss-pixel.png?story=g-s1-133827' />",
       sourceUrl:
@@ -1207,9 +1207,9 @@ const data: Snapshot = {
       title:
         "Trump relished in being compared to dictators like Hitler and Stalin, journalist says",
       published: "Wed, 15 Jul 2026 14:56:56 -0400",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "afec3b4987127a44ccad26d72c280d843c685be2aad7e9bbb4848ebe4b83918c",
+      hash: "e8b1c08064a7ee7a4136ffccea3560bb3f27902375aa07f19d9de534aaee26e0",
       summary:
         "<img src='https://npr.brightspotcdn.com/dims3/default/strip/false/crop/5235x2945+0+273/resize/5235x2945!/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F69%2F88%2F8fabff2847bba2451f87f4415239%2Fap26017061372602.jpg' alt='A gold-colored item embossed with the word \"President\" sits on the Resolute desk in the Oval Office of the White House on Nov. 10, 2025.'/><p><em>The New York Times</em> journalist Jonathan Swan says the president is fixated on becoming a \"great man of history\" during his second term. Swan's new book, written with Maggie Haberman, is <em>Regime Change.</em></p><p>(Image credit: Jacquelyn Martin)</p><img src='https://media.npr.org/include/images/tracking/npr-rss-pixel.png?story=nx-s1-5893633' />",
       sourceUrl:
@@ -1222,9 +1222,9 @@ const data: Snapshot = {
       publisher: "NPR",
       title: "Hong Kong booksellers arrested for allegedly selling seditious books",
       published: "Wed, 15 Jul 2026 11:37:22 -0400",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "85a52708de1bf6164d6e6205f984ce8d9a4cc2fb7c102f2fc9c9a1e4878b8bb4",
+      hash: "267888b3f9578afd48b691bf195467556e77ab2b8c128f14279fcc66a53fece2",
       summary:
         "<img src='https://npr.brightspotcdn.com/dims3/default/strip/false/crop/4032x3024+0+0/resize/4032x3024!/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F91%2Fab%2Fa9c9d07f4749850175db76594249%2Fap26196497357507.jpg' alt='The exteriors of the Greenfield Book Store is seen in Mong Kok district, Hong Kong, on Wednesday, July 15 2026.'/><p>Hong Kong was once known for its freedom of publication, but political changes have created a challenging environment for independent bookstores.</p><p>(Image credit: Kanis Leung)</p><img src='https://media.npr.org/include/images/tracking/npr-rss-pixel.png?story=g-s1-133697' />",
       sourceUrl:
@@ -1237,9 +1237,9 @@ const data: Snapshot = {
       publisher: "NPR",
       title: "Cancer disparities researchers say federal funding changes have disrupted their work",
       published: "Wed, 15 Jul 2026 11:16:35 -0400",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "82f3e368ac08394025141197f4d2627473ae57f779075133e616447a2576c0d7",
+      hash: "a08de75ff25549a96527897f6815f1aba8d94d3e4d08074a9e120c20d02dd74d",
       summary:
         "<img src='https://npr.brightspotcdn.com/dims3/default/strip/false/crop/2000x1500+0+0/resize/2000x1500!/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F5e%2Fd7%2Fa69e292f473e971b7f0c4e88b535%2Fgettyimages-1428615151.jpg' alt='Cancer disparities cost lives and researchers push to understand what is behind these gaps. Federal funding for such work has slowed since last year.'/><p>In a survey, 93% of cancer researchers who study disparities said federal policy changes have affected them. Funding is harder to come by and they worry it's slowing progress in their field.</p><p>(Image credit: Andrew Brookes/Image Source)</p><img src='https://media.npr.org/include/images/tracking/npr-rss-pixel.png?story=nx-s1-5893653' />",
       sourceUrl:
@@ -1252,9 +1252,9 @@ const data: Snapshot = {
       publisher: "NPR",
       title: "China's economy grows 4.3% in Q2, slowest since late 2022",
       published: "Wed, 15 Jul 2026 10:11:41 -0400",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "7a9c056d605a3aa894eb22c7abaf98ce52d10f769239c46801f81a94e8312251",
+      hash: "2ce23fb76096061dff2e198b384dceb8c564d14307d56d1d02ddd649ad9a53e7",
       summary:
         "<img src='https://npr.brightspotcdn.com/dims3/default/strip/false/crop/3510x2089+0+0/resize/3510x2089!/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F19%2Fed%2Fc33fea8742d69b5efbff951c9a85%2Fap26181126175585.jpg' alt='Heavy equipment and cars are prepared for shipment by rail in Yantai, eastern China's Shandong province, on June 20, 2026.'/><p>Lagging consumer spending and business investment offset the boost from strong exports thanks partly to the boom in artificial intelligence.</p><p>(Image credit: AP)</p><img src='https://media.npr.org/include/images/tracking/npr-rss-pixel.png?story=g-s1-133672' />",
       sourceUrl:
@@ -1267,9 +1267,9 @@ const data: Snapshot = {
       publisher: "NPR",
       title: "Old rivals, new battle: Argentina and England clash in World Cup Semifinal",
       published: "Wed, 15 Jul 2026 10:05:39 -0400",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "9b0f0471ed6e7142eea6cbd6854a28322a050f4f14841b125af0d342a20b63db",
+      hash: "021148e879a5d2d61f5730c371b6c3b9786705d4290344befed6b1751ac89608",
       summary:
         "<img src='https://npr.brightspotcdn.com/dims3/default/strip/false/crop/2965x2065+0+0/resize/2965x2065!/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F16%2Fd9%2F3ac7259441cd992ef2df5939ac02%2Fgettyimages-682658.jpg' alt='England and Argentina fans sit side by side during the FIFA World Cup match in Sapporo, Japan, on June 7, 2002. England won 1-0. The old rivals meet again this year in a World Cup semifinal showdown.'/><p>Old rivals. New stakes. A World Cup final spot on the line. Argentina vs. England.</p><p>(Image credit: Stu Forster)</p><img src='https://media.npr.org/include/images/tracking/npr-rss-pixel.png?story=nx-s1-5893686' />",
       sourceUrl:
@@ -1280,25 +1280,11 @@ const data: Snapshot = {
     {
       id: "REC-2026-07-16-000088",
       publisher: "Wired",
-      title: "Priceline Promo Codes & Coupons: 10% Off July",
-      published: "Thu, 16 Jul 2026 05:00:00 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
-      status: "VERIFIED",
-      hash: "78160071bef0af035403dba8e28e8918d62c1376fe52840abe4db22e35fbf7d5",
-      summary:
-        "Unlock massive discounts on Priceline hotels, flights, and rental cars. Find verified Priceline coupon codes and deals for Express Deals, student discounts, and more.",
-      sourceUrl: "https://www.wired.com/story/priceline-promo-code/",
-      country: "United States",
-      category: "Technology",
-    },
-    {
-      id: "REC-2026-07-16-000089",
-      publisher: "Wired",
       title: "Lenovo Coupon Codes and Deals in July 2026",
       published: "Thu, 16 Jul 2026 05:00:00 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "15b7136ed6cc63fc3b891e8391f2d76e0a7c0ab246131c23a89e65f0ad084cab",
+      hash: "61af0b7fcaa84999ff5e3d7954d03b077421d771e0424602f7dd50e649377edb",
       summary:
         "Whether you’re shopping for a ThinkPad, Yoga laptop, or Legion gaming PC, these Lenovo discount codes and promotions can help you save big on your next tech upgrade.",
       sourceUrl: "https://www.wired.com/story/lenovo-coupon-code/",
@@ -1306,16 +1292,30 @@ const data: Snapshot = {
       category: "Technology",
     },
     {
-      id: "REC-2026-07-16-000090",
+      id: "REC-2026-07-16-000089",
       publisher: "Wired",
       title: "Surfshark Promo Codes: 87% Off | July 2026",
       published: "Thu, 16 Jul 2026 05:00:00 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "57ad01dc574c39f0623a53a4b5b15af55278488b1882b7957f0d65365baed60f",
+      hash: "7f8ece53b57c38f1b276041d6c1735756da080da7998c1f18130ce63cc93d57e",
       summary:
         "Save up to 87% with a Surfshark coupon code, 3 months of VPN free today, and more from WIRED.",
       sourceUrl: "https://www.wired.com/story/surfshark-coupon/",
+      country: "United States",
+      category: "Technology",
+    },
+    {
+      id: "REC-2026-07-16-000090",
+      publisher: "Wired",
+      title: "Priceline Promo Codes & Coupons: 10% Off July",
+      published: "Thu, 16 Jul 2026 05:00:00 +0000",
+      archived: "2026-07-16T08:44:44.735Z",
+      status: "VERIFIED",
+      hash: "1705940c1d647f270c5c7ad423e73b7bbaf3a99e84dc7db26e97469350b66284",
+      summary:
+        "Unlock massive discounts on Priceline hotels, flights, and rental cars. Find verified Priceline coupon codes and deals for Express Deals, student discounts, and more.",
+      sourceUrl: "https://www.wired.com/story/priceline-promo-code/",
       country: "United States",
       category: "Technology",
     },
@@ -1324,9 +1324,9 @@ const data: Snapshot = {
       publisher: "Wired",
       title: "HostGator Coupon Codes: 76% Off Hosting in July 2026",
       published: "Thu, 16 Jul 2026 05:00:00 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "1cf8e0aaf52c8e43cdfdf61466d3fa26ae07bcdece4c0020690561c461b06d98",
+      hash: "312287dc19526fb082aa6742359b2090a799422b0b2e94a7a2afa4fa9ffed929",
       summary:
         "Unlock massive savings on HostGator web hosting, WordPress, VPS, and business email plans with our exclusive HostGator promo codes and deals.",
       sourceUrl: "https://www.wired.com/story/hostgator-coupon/",
@@ -1338,9 +1338,9 @@ const data: Snapshot = {
       publisher: "Wired",
       title: "Verizon Promo Codes: $200 Verizon Gift Cards | July 2026",
       published: "Thu, 16 Jul 2026 05:00:00 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "593b83cf7e1bb3ef463ddc8f89257bf586cc570e312b3837bbf9677cb804cf55",
+      hash: "ef815abbd10a3965d4b60a934512d0f6b06926c8e3eb21e56a0cd5757ae22ce4",
       summary:
         "Ready for an upgrade? Apply our latest promotional codes today and choose a select service plan to score a discount with Verizon.",
       sourceUrl: "https://www.wired.com/story/verizon-promo-code/",
@@ -1352,9 +1352,9 @@ const data: Snapshot = {
       publisher: "Wired",
       title: "25% Off Adidas Promo Code | July 2026",
       published: "Thu, 16 Jul 2026 05:00:00 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "3f02d40aff0569c9cf800440d578e73c1083e04a8d9f0b9a1d1f0bc4ff4d5180",
+      hash: "000c8dfa0facdb6c5741317af3b7d41450f4ee3982082db0aeeb8077639b3821",
       summary:
         "Save 15% or 30% with Adidas promo codes, plus explore Adidas deals for 40% off trendy sneakers.",
       sourceUrl: "https://www.wired.com/story/adidas-promo-code/",
@@ -1366,9 +1366,9 @@ const data: Snapshot = {
       publisher: "Wired",
       title: "Sony Coupons: 45% Off Sony Headphones, WF-1000XM6 Earbuds, and Sony Cameras for July",
       published: "Thu, 16 Jul 2026 05:00:00 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "fe988f2a82f3d117f8c6768597a6f28778bf6583270615ed8974186c9ce6f48d",
+      hash: "e123f3bbee8a7c5868d0868d1595996deb16d31654930482ff96a840d0d5a6c1",
       summary:
         "Upgrade your setup with Sony’s newest releases. Save on industry-leading noise-canceling audio, and pro-level Alpha cameras.",
       sourceUrl: "https://www.wired.com/story/sony-promo-code/",
@@ -1380,9 +1380,9 @@ const data: Snapshot = {
       publisher: "Wired",
       title: "Can Bose Help Skullcandy Shake Its Bargain-Bin Reputation?",
       published: "Thu, 16 Jul 2026 00:00:00 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "460a84810d9e8e56b2e852aceccd861150f1027a704fa94f1984013042c960b7",
+      hash: "9e8f00e4b631be5b3ff683e93d7c268505625938605c61c2e7843933f68f0c0f",
       summary:
         "Skullcandy’s audio products aren’t exactly known for their stellar audio quality or noise cancellation, but its latest headphones are getting an assist from Bose to turn things around.",
       sourceUrl:
@@ -1395,9 +1395,9 @@ const data: Snapshot = {
       publisher: "Wired",
       title: "Smoke From Canada's Wildfires Turns Skies Sickly Orange Across the Eastern US",
       published: "Wed, 15 Jul 2026 23:05:03 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "d04284c8afad274fbb3aba98dd9485c8184edd2b5dd6a298cac9ac7a4c8b5728",
+      hash: "61031a7fb7dad21300071ca0c7660acb32873375689e734a8279dd599185863a",
       summary:
         "Roughly 100 fires are raging out of control in Ontario, sending smoke streaming 1,000 miles to the south and east.",
       sourceUrl: "https://www.wired.com/story/northeast-us-blanketed-in-canadian-wildfire-smoke/",
@@ -1409,9 +1409,9 @@ const data: Snapshot = {
       publisher: "Wired",
       title: "How To Watch the 2026 FIFA World Cup Finals: Spain vs. Argentina",
       published: "Wed, 15 Jul 2026 21:49:01 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "2f96d252a2f9c3485defe23b5473f3370de4d9ad0b035ac3f1abc13f6c640fe4",
+      hash: "2b24a37034bd327ca76c22de11939aa0d3248ec17d2d301eaaadcf1348289dc2",
       summary:
         "The end of the FIFA Men’s World Cup is nigh. Here’s how to watch the final games and the first ever World Cup halftime show.",
       sourceUrl: "https://www.wired.com/story/how-to-watch-the-fifa-2026-world-cup-07-15-2026/",
@@ -1424,9 +1424,9 @@ const data: Snapshot = {
       title:
         "Intel Officials Predict the Pentagon’s Bill for the Iran War Will Exceed $100 Billion",
       published: "Wed, 15 Jul 2026 21:00:00 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "f9f0ec2585ade084e4963696c3e2ed29bad730076783587d996593285b8319ac",
+      hash: "5f53ea760abcff2daf1f2a4c37d5c1c05d494dff77103e52deca986b7f97ece8",
       summary: "The Trump administration has not disclosed its cost estimates for the Iran war.",
       sourceUrl: "https://www.wired.com/story/pentagons-bill-for-iran-war-exceed-100-billion/",
       country: "United States",
@@ -1437,9 +1437,9 @@ const data: Snapshot = {
       publisher: "Wired",
       title: "Here’s the Truth About Whether Meta’s NameTag Face Recognition Tech ‘Exists’",
       published: "Wed, 15 Jul 2026 20:58:16 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "0f90d80cc5d572bf6d905127d632b9022a0925d4f94689aab4e47af33a1823d0",
+      hash: "c055c350137728e62141acd08ab00ecf409cd991654a3a57fbefc82d568a3e1e",
       summary:
         "Since WIRED reported on Meta’s NameTag face recognition system, company executives have made confusing and conflicting remarks about its very existence.",
       sourceUrl:
@@ -1452,9 +1452,9 @@ const data: Snapshot = {
       publisher: "Wired",
       title: "AI Isn’t Smarter Than a Baby—Yet",
       published: "Wed, 15 Jul 2026 18:30:00 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "90bb89574cb52eb7177d288cdc06e635ef7874335c6a9432b699bd85327b501e",
+      hash: "891867a4817db2cdbfe4193045a63905952f5d9b78cd3fa7821148bc292c11fe",
       summary:
         "Babies are tremendous learning machines, and key advances for AI may soon be found in the architecture of their little brains.",
       sourceUrl: "https://www.wired.com/story/ai-isnt-smarter-than-a-baby-yet/",
@@ -1466,9 +1466,9 @@ const data: Snapshot = {
       publisher: "Wired",
       title: "Thinking Machines Lab Drops Its First Model",
       published: "Wed, 15 Jul 2026 18:05:00 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "bcde52785a36f9c558a622dad0a4910d8b94ba1461d9ff431c64c0482051770e",
+      hash: "fb981f45cb7feca0dac8c3610a182b9627a472c68eb43dd02f3ef4cc6c55c2b7",
       summary:
         "Inkling, a 975-billion-parameter open source model, was trained to understand video and audio. It could help Thinking Machines establish itself among competitors like Anthropic and OpenAI.",
       sourceUrl:
@@ -1481,9 +1481,9 @@ const data: Snapshot = {
       publisher: "Wired",
       title: "Lionel Messi’s Final World Cup—and the Death of Early Retirement",
       published: "Wed, 15 Jul 2026 16:28:43 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "1876ac6847318808b2c5fdb50171e771a5650782f9d4f156204b1b0fa67fef4c",
+      hash: "a443b038f125f5e97ce2bd7a38f179364605c8e99a213c746a18b123b2fd85c8",
       summary:
         "Argentina’s Lionel Messi was supposed to be done years ago. Now, sports science is helping soccer’s biggest stars rewrite the rules of aging.",
       sourceUrl:
@@ -1496,9 +1496,9 @@ const data: Snapshot = {
       publisher: "Wired",
       title: "An Inventor of Apple’s FaceID Wants to Analyze Your Brain’s Health With AI",
       published: "Wed, 15 Jul 2026 12:00:00 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "148546635991688ca9d35a8c7b16205a2e4561d9dcc73c8ad14a248961e78d35",
+      hash: "f28700b8a5b987c0cb05c0b7757bc223a17153e9ea99437e94987c8bb662e6a5",
       summary:
         "Gidi Littwin’s new AI startup, Hemispheric, makes diagnostic brain scans for conditions like depression, PTSD, and Parkinson’s. He wants the technology to be as cheap and easy as for a blood test.",
       sourceUrl:
@@ -1511,9 +1511,9 @@ const data: Snapshot = {
       publisher: "Wired",
       title: "The Best iPad to Buy (and Some to Avoid) in 2026: Air, Pro, Mini",
       published: "Wed, 15 Jul 2026 11:01:00 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "b0acfcd183347ab5db157d288a60ce6ee35a61aba5c70b6737921320c2c179da",
+      hash: "de4a5a6f74b424b5d3cc2405b15b01c12c894b15575df6d2b41aaf5754ef7e53",
       summary:
         "Apple just raised its prices. Here’s an updated breakdown of the brand’s tablets to find the best one for your needs.",
       sourceUrl: "https://www.wired.com/gallery/the-best-ipad/",
@@ -1525,9 +1525,9 @@ const data: Snapshot = {
       publisher: "Wired",
       title: "MSI Claw 8 EX AI+ Review: Great Power, Shocking Price",
       published: "Wed, 15 Jul 2026 11:00:00 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "e0e9ee62cdd9f2b465be6b1aaf2cb77b72ca4bd6745df27d70aa5cb550c955c1",
+      hash: "1572db930ecc76bf21896d6a93b21e85b8ce63e6c5245cb5efce55da831ac3ab",
       summary: "But with great power comes a great price.",
       sourceUrl: "https://www.wired.com/review/msi-claw-8-ex-ai/",
       country: "United States",
@@ -1538,9 +1538,9 @@ const data: Snapshot = {
       publisher: "Wired",
       title: "4 Best Personal Safety Alarms: Garmin, Sabre, & More (2026)",
       published: "Wed, 15 Jul 2026 10:33:00 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "da9c2bb3b433884ad98107e1f9ea6775aead4678356d159fe8ab19f54a054dd9",
+      hash: "35e42c88b664b38da9705fffc51b0560f88709f0761fa26b2042ca248cf01a72",
       summary:
         "Make some noise for safety with our favorite alarms, from keychain sirens to wearable bracelets.",
       sourceUrl:
@@ -1553,9 +1553,9 @@ const data: Snapshot = {
       publisher: "Wired",
       title: "The Best Google Home Speaker (2026)",
       published: "Wed, 15 Jul 2026 10:32:00 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "ced093f696abec7a8b0fe4620c629d14df886afa74f0c76bd6fad26ccdfe016f",
+      hash: "75c8a94bca834191563be275c896e69bd087d020cca73532c3c67331cc7e3c24",
       summary:
         "There’s now only one worth buying—but you can still access new features on older models you might already own.",
       sourceUrl: "https://www.wired.com/story/best-google-home-speaker/",
@@ -1568,9 +1568,9 @@ const data: Snapshot = {
       title:
         "My Ebike Delivery Went Missing. When I Tried to Recover It, I Ended Up in Chatbot Hell",
       published: "Wed, 15 Jul 2026 10:00:00 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "1bd529eff1eb635660ab07256b08d760c3407436755b18e264f47afeaa7e7577",
+      hash: "b785b5eedad6b55e182a46ffea780bc73ef3196906bea1e7120434b84223b4fc",
       summary:
         "Companies’ increasing reliance on AI chatbots isn’t making the customer service experience smarter. It’s just making it more infuriating.",
       sourceUrl:
@@ -1583,9 +1583,9 @@ const data: Snapshot = {
       publisher: "Wired",
       title: "The Explosive Diarrhea Outbreak Is About to Get Much Bigger",
       published: "Wed, 15 Jul 2026 09:30:00 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "b61acf6699c4e80dbb921944347edbbc20ce5230dc69a9833c191ec24212b379",
+      hash: "57e8d47cc717ba4cf84c6e5b39b98d181dc28deba82f21ec7df996028459b9b8",
       summary:
         "Official case counts likely capture only a fraction of US cyclosporiasis infections, and the outbreak is likely to get worse before it gets better.",
       sourceUrl: "https://www.wired.com/story/explosive-diarrhea-outbreak-about-to-get-bigger/",
@@ -1597,9 +1597,9 @@ const data: Snapshot = {
       publisher: "Wired",
       title: "OpenAI Staffers Are Funding a Rival Super PAC to Take on Their Boss",
       published: "Wed, 15 Jul 2026 09:00:00 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "feeb6742582d33226ae727e3b8806aeedf122605c914dcc9d2486fcf2ddbd746",
+      hash: "1be87766d570cc4464513dfd45dc61df76f170ff9ffa7026abe54a80beb72204",
       summary:
         "OpenAI employees have donated more than $215,000 to a political effort opposing Leading the Future, a group backed by the company’s president, Greg Brockman.",
       sourceUrl:
@@ -1610,67 +1610,11 @@ const data: Snapshot = {
     {
       id: "REC-2026-07-16-000111",
       publisher: "Wired",
-      title: "Wayfair Coupons: Up to 80% Off July 2026",
-      published: "Wed, 15 Jul 2026 05:00:00 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
-      status: "VERIFIED",
-      hash: "cd4a24a337f233f05faa8d6b9d1bb152622a30a9c3e37d802dd4aefcb38d79bf",
-      summary:
-        "Get 10% off with Wayfair promo code, up to 80% off furniture, and more top coupons.",
-      sourceUrl: "https://www.wired.com/story/wayfair-promo-code/",
-      country: "United States",
-      category: "Technology",
-    },
-    {
-      id: "REC-2026-07-16-000112",
-      publisher: "Wired",
-      title: "Chegg Coupon Codes July 2026: Save on Study, Textbooks, & More",
-      published: "Wed, 15 Jul 2026 05:00:00 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
-      status: "VERIFIED",
-      hash: "7a423799b955b334fd7be95ca0bc6d697dbf2862151977785787f462a025eced",
-      summary:
-        "Unlock Chegg promo codes, student discounts, and free trials for Chegg Study and Chegg Writing.",
-      sourceUrl: "https://www.wired.com/story/chegg-coupon-code/",
-      country: "United States",
-      category: "Technology",
-    },
-    {
-      id: "REC-2026-07-16-000113",
-      publisher: "Wired",
-      title: "1Password Coupon: Score a Free Trial in July 2026",
-      published: "Wed, 15 Jul 2026 05:00:00 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
-      status: "VERIFIED",
-      hash: "059a68ad0aa67780313c7da50b945b362f59c5f03140bc0800a540ad8ac599f6",
-      summary:
-        "Save up to 28% on business and personal memberships with 1Password promo codes and deals.",
-      sourceUrl: "https://www.wired.com/story/1password-coupon/",
-      country: "United States",
-      category: "Technology",
-    },
-    {
-      id: "REC-2026-07-16-000114",
-      publisher: "Wired",
-      title: "HelloFresh Promo Codes: 55% Off for July 2026",
-      published: "Wed, 15 Jul 2026 05:00:00 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
-      status: "VERIFIED",
-      hash: "9585b1e497ecd5827859958f513cfc6a97f7540987bc19f73f7c8a9d1c44cadb",
-      summary:
-        "Get up to 55% off and free meal boxes using a HelloFresh coupon code in July 2026. Discover our best codes and discounts to let you save time and money.",
-      sourceUrl: "https://www.wired.com/story/hellofresh-coupon/",
-      country: "United States",
-      category: "Technology",
-    },
-    {
-      id: "REC-2026-07-16-000115",
-      publisher: "Wired",
       title: "Noom Promo Codes: 50% Off Best Deals & Free Trials for July 2026",
       published: "Wed, 15 Jul 2026 05:00:00 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "465b4b2bf9b6f3532728f6195a1be9f22bfff94bf7bc33146ad67aa26ce5d799",
+      hash: "04099868fe144efe5ed8cf1897f31ee6785eeec63071158385a8c11152ca9818",
       summary:
         "Discover the best ways to save on Noom subscriptions, including free trials, limited-time offers for GLP-1Rx Plus, and essential tips for redeeming your Noom discount.",
       sourceUrl: "https://www.wired.com/story/noom-promo-code/",
@@ -1678,13 +1622,13 @@ const data: Snapshot = {
       category: "Technology",
     },
     {
-      id: "REC-2026-07-16-000116",
+      id: "REC-2026-07-16-000112",
       publisher: "Wired",
       title: "Hydrow Discount Code: Save Up to $150 | July 2026",
       published: "Wed, 15 Jul 2026 05:00:00 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "c8c7ea3f8e4bbc1bafc6cd221b8e092ee6e1ab3b35e2a756515c0ef0f0003ec5",
+      hash: "1a1d720ed650a6629b1e91edff928a784882131adc390acceda9a8eee8e8ccbb",
       summary:
         "Save on rowers and accessories with Hydrow coupons, including an exclusive discount of $50.",
       sourceUrl: "https://www.wired.com/story/hydrow-discount-code/",
@@ -1692,54 +1636,82 @@ const data: Snapshot = {
       category: "Technology",
     },
     {
-      id: "REC-2026-07-16-000117",
+      id: "REC-2026-07-16-000113",
       publisher: "Wired",
       title: "Naturepedic Promo Codes: Get 20% Off Plus Free Pillows",
       published: "Wed, 15 Jul 2026 05:00:00 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "e01e8460262883c61ca1f96e0e7d5fadabb9864f58d77090a42541fe728106a1",
+      hash: "ad6846753bf153f67756d7cf6ba00b30e61daed62f6cd8cd1f8447f161e860ce",
       summary: "Shop the Naturepedic sale this 2026.",
       sourceUrl: "https://www.wired.com/story/naturepedic-promo-code/",
       country: "United States",
       category: "Technology",
     },
     {
+      id: "REC-2026-07-16-000114",
+      publisher: "Wired",
+      title: "1Password Coupon: Score a Free Trial in July 2026",
+      published: "Wed, 15 Jul 2026 05:00:00 +0000",
+      archived: "2026-07-16T08:44:44.735Z",
+      status: "VERIFIED",
+      hash: "b9ca4dea2a46f634cd4f8b0bf6bc51a7ecb3cd7be2822626ca4dfe1a3e1fb6cd",
+      summary:
+        "Save up to 28% on business and personal memberships with 1Password promo codes and deals.",
+      sourceUrl: "https://www.wired.com/story/1password-coupon/",
+      country: "United States",
+      category: "Technology",
+    },
+    {
+      id: "REC-2026-07-16-000115",
+      publisher: "Wired",
+      title: "HelloFresh Promo Codes: 55% Off for July 2026",
+      published: "Wed, 15 Jul 2026 05:00:00 +0000",
+      archived: "2026-07-16T08:44:44.735Z",
+      status: "VERIFIED",
+      hash: "eba2717a4b156e6579a979eef0d090cee5e743b443131c1a879a0fd76b127ae0",
+      summary:
+        "Get up to 55% off and free meal boxes using a HelloFresh coupon code in July 2026. Discover our best codes and discounts to let you save time and money.",
+      sourceUrl: "https://www.wired.com/story/hellofresh-coupon/",
+      country: "United States",
+      category: "Technology",
+    },
+    {
+      id: "REC-2026-07-16-000116",
+      publisher: "Wired",
+      title: "Wayfair Coupons: Up to 80% Off July 2026",
+      published: "Wed, 15 Jul 2026 05:00:00 +0000",
+      archived: "2026-07-16T08:44:44.735Z",
+      status: "VERIFIED",
+      hash: "90e6f3c250199e4f9f519cef089c8aee82141120180d20d6188803c1fc1100a1",
+      summary:
+        "Get 10% off with Wayfair promo code, up to 80% off furniture, and more top coupons.",
+      sourceUrl: "https://www.wired.com/story/wayfair-promo-code/",
+      country: "United States",
+      category: "Technology",
+    },
+    {
+      id: "REC-2026-07-16-000117",
+      publisher: "Wired",
+      title: "Chegg Coupon Codes July 2026: Save on Study, Textbooks, & More",
+      published: "Wed, 15 Jul 2026 05:00:00 +0000",
+      archived: "2026-07-16T08:44:44.735Z",
+      status: "VERIFIED",
+      hash: "7afd8631f6257eb9312dbe947d6249dd3b159ed6f0f3de28793e3f0456358950",
+      summary:
+        "Unlock Chegg promo codes, student discounts, and free trials for Chegg Study and Chegg Writing.",
+      sourceUrl: "https://www.wired.com/story/chegg-coupon-code/",
+      country: "United States",
+      category: "Technology",
+    },
+    {
       id: "REC-2026-07-16-000118",
-      publisher: "Wired",
-      title: "Womanizer Coupons: Save 15% in July",
-      published: "Wed, 15 Jul 2026 05:00:00 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
-      status: "VERIFIED",
-      hash: "e7e7f6e63e6d66cb78c42ad8eb04f0cfa1cd8b9d397ae2162053a13a76948a7e",
-      summary:
-        "Save on the Womanizer Duo Premium and more with our latest Womanizer discount codes.",
-      sourceUrl: "https://www.wired.com/story/womanizer-coupon/",
-      country: "United States",
-      category: "Technology",
-    },
-    {
-      id: "REC-2026-07-16-000119",
-      publisher: "Wired",
-      title: "Logitech Promo Codes and Deals: Up to $100 Off",
-      published: "Wed, 15 Jul 2026 05:00:00 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
-      status: "VERIFIED",
-      hash: "ce0b67448056d6dbd4a94da710b24d63795204dedf9bfff625829672a3919d4a",
-      summary:
-        "Score up to $100 off refurbished premium products, free shipping on orders of $29+, and more at Logitech.",
-      sourceUrl: "https://www.wired.com/story/logitech-promo-code/",
-      country: "United States",
-      category: "Technology",
-    },
-    {
-      id: "REC-2026-07-16-000120",
       publisher: "Wired",
       title: "T-Mobile Promo Codes: 25% Off | July 2026",
       published: "Wed, 15 Jul 2026 05:00:00 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "f668a670851c4e3ea07c43be977436f2eae59d895e50773f6b06ccc4afabbd35",
+      hash: "fbd272a9f85086491da14a6cc50a1d0f10e214fb98d5f50acf8cdc929f1f4d35",
       summary:
         "Discover how to save on T-Mobile Business Internet and phone plans, from sign-up perks and switching rewards to bundled offers and free lines.",
       sourceUrl: "https://www.wired.com/story/t-mobile-business-promo-code/",
@@ -1747,42 +1719,70 @@ const data: Snapshot = {
       category: "Technology",
     },
     {
-      id: "REC-2026-07-16-000121",
+      id: "REC-2026-07-16-000119",
       publisher: "Wired",
       title: "Western Digital Promo Code: 15% Off",
       published: "Wed, 15 Jul 2026 05:00:00 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "268eb87a86362859ff93aa24d82247e10c137c8c6831170f4b8f9f4df1e0d40d",
+      hash: "ca1f2fb330e20f03f4029476cdc534f38cf14cd08fe5c16bc6d9a32797bcba56",
       summary: "Get 15% off your first order at Western Digital when you register your email.",
       sourceUrl: "https://www.wired.com/story/western-digital-promo-code/",
       country: "United States",
       category: "Technology",
     },
     {
-      id: "REC-2026-07-16-000122",
+      id: "REC-2026-07-16-000120",
       publisher: "Wired",
       title: "Ring Promo Code: 50% Off",
       published: "Wed, 15 Jul 2026 05:00:00 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "e10c8d214ba1a1c8e2b4832d54f18e40a5bf516fce4afbc714a87d73d39f6073",
+      hash: "7cbfeb5a3f2a526a31dac12d5c7be07bbcea0bfa01ae4ab04ef9f0c319631f63",
       summary: "Discover how to save on Ring cameras, doorbells, outdoor cameras, and more.",
       sourceUrl: "https://www.wired.com/story/ring-promo-code/",
       country: "United States",
       category: "Technology",
     },
     {
-      id: "REC-2026-07-16-000123",
+      id: "REC-2026-07-16-000121",
       publisher: "Wired",
       title: "Shark Promo Codes for July 2026",
       published: "Wed, 15 Jul 2026 05:00:00 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "6b9d127a7b3efe862e7f142a07376593eab105e1b166a68277f4e16b7d22d130",
+      hash: "f0554a4f1945b0aeb9da22419f3b48f56f18e6b8a44616f77b5d8999813afd7e",
       summary:
         "Shark makes some seriously powerful vacuums, from handheld vacs to steam mops. Don’t miss $100 off, 10% off, and more limited-time coupons from WIRED.",
       sourceUrl: "https://www.wired.com/story/shark-promo-code/",
+      country: "United States",
+      category: "Technology",
+    },
+    {
+      id: "REC-2026-07-16-000122",
+      publisher: "Wired",
+      title: "Womanizer Coupons: Save 15% in July",
+      published: "Wed, 15 Jul 2026 05:00:00 +0000",
+      archived: "2026-07-16T08:44:44.735Z",
+      status: "VERIFIED",
+      hash: "05147e932fd38e587b1aaff05b0e8a0085347b7517aa10d1971cd2fb99dc67f8",
+      summary:
+        "Save on the Womanizer Duo Premium and more with our latest Womanizer discount codes.",
+      sourceUrl: "https://www.wired.com/story/womanizer-coupon/",
+      country: "United States",
+      category: "Technology",
+    },
+    {
+      id: "REC-2026-07-16-000123",
+      publisher: "Wired",
+      title: "Logitech Promo Codes and Deals: Up to $100 Off",
+      published: "Wed, 15 Jul 2026 05:00:00 +0000",
+      archived: "2026-07-16T08:44:44.735Z",
+      status: "VERIFIED",
+      hash: "1e0ef7c897a63dae1bc6617274cdf675f9e477fabee2a8acfe12ebb9ce9b911b",
+      summary:
+        "Score up to $100 off refurbished premium products, free shipping on orders of $29+, and more at Logitech.",
+      sourceUrl: "https://www.wired.com/story/logitech-promo-code/",
       country: "United States",
       category: "Technology",
     },
@@ -1791,9 +1791,9 @@ const data: Snapshot = {
       publisher: "Wired",
       title: "The UK Is Planning a Social Media Curfew for 16- and 17-Year-Olds",
       published: "Tue, 14 Jul 2026 22:08:30 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "524fd459b25c925cd7e8102a64092f5b5d85eeacf2758d0bb90dbe926b774d49",
+      hash: "75a4c5cf700841ac5d92860603ae1e46a727028a3ab03c2a7b7a5776b2c5a00c",
       summary:
         "The restrictions, which can be turned off, will include a crackdown on “addictive” app features and will be in addition to a total ban on children under 16 accessing platforms like TikTok and YouTube.",
       sourceUrl:
@@ -1806,9 +1806,9 @@ const data: Snapshot = {
       publisher: "Wired",
       title: "YouTube and X Have Become ‘Gateways’ to Nudify Apps",
       published: "Tue, 14 Jul 2026 16:05:18 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "fc5a6a3d06c10774bcb78bd3559cb451da6835903c451a217aea905810f4512b",
+      hash: "83155140ec3466e9f0c2c770eac9d043269a2469e7542a6a4729655e5fcac9c1",
       summary:
         "A new study found that social media platforms are referring people to sites where they can create nonconsensual, sexually explicit deepfakes for as little as $1 an image.",
       sourceUrl: "https://www.wired.com/story/youtube-and-x-have-become-gateways-to-nudify-apps/",
@@ -1820,9 +1820,9 @@ const data: Snapshot = {
       publisher: "Wired",
       title: "New York Governor Signs First Statewide Data Center Moratorium",
       published: "Tue, 14 Jul 2026 14:54:41 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "a94e976d17377c20e1a323e2100af2d27d9009e16958bf3150fb504363806c51",
+      hash: "8c46d55ff5ff954edef078025c2b4e08ea1141d4dc131864ecd4146b9df44951",
       summary:
         "“We have no choice but to address the challenges created by these massive facilities,” New York governor Kathy Hochul said. The executive order will pause construction for one year.",
       sourceUrl:
@@ -1835,9 +1835,9 @@ const data: Snapshot = {
       publisher: "Wired",
       title: "Plex Keeps Getting Worse. Is Jellyfin a Decent Replacement?",
       published: "Tue, 14 Jul 2026 12:00:00 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "ac77c7b2cbb566283a9932ae6965d0c0820d5f1b4ae5f272867d6ee9f020c960",
+      hash: "86877c8532c4207ed75eeb915a2ed5e7675b3fafbf020071cecfd2859f0d302b",
       summary:
         "If you want to stream local media, this free and open source media server is just as good as Plex. But if you rely on remote access or live TV, prepare to tinker.",
       sourceUrl:
@@ -1850,9 +1850,9 @@ const data: Snapshot = {
       publisher: "Wired",
       title: "Best RGB TVs (2026): My Picks After Testing the Hottest TVs",
       published: "Tue, 14 Jul 2026 11:30:00 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "55bb9808692621698c13aef69645615f1ecd21e5c3a0068bea64a40de2ef8bbc",
+      hash: "0fd9db02f84668142ac8d4f96c06713c1e1069f8ee16b916cfa535cfb305712c",
       summary:
         "RGB TVs are the latest hotness in the world of televisions, and I’ve tested many of the latest models to see which you should buy.",
       sourceUrl: "https://www.wired.com/story/best-rgb-tvs/",
@@ -1864,9 +1864,9 @@ const data: Snapshot = {
       publisher: "Wired",
       title: "9 Tips to Get More Out of Google Chat",
       published: "Tue, 14 Jul 2026 11:30:00 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "25cb3d2271ca487c3e880e0904f391b2ed2edd762ef98c202f89aba992fe568f",
+      hash: "476587c875a81ea5c54e7db77ff455303801dcccd82d0fa9a32cbb395b3c5e16",
       summary: "There’s more to Google’s messaging app than you might realize.",
       sourceUrl: "https://www.wired.com/story/9-tips-to-get-more-out-of-google-chat/",
       country: "United States",
@@ -1877,9 +1877,9 @@ const data: Snapshot = {
       publisher: "Wired",
       title: "Oura Ring 5 Review: Still the Smart Ring to Beat",
       published: "Tue, 14 Jul 2026 11:07:00 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "90476b92333178a8aaa57a0059915ce9abb2ec2a4b91d3821f843b3d85fb075b",
+      hash: "6dc3e61efe020d5ed1ebe66499864ff14155cc00b9d030a81d7ab85fdd6819dd",
       summary:
         "It’s not the upgrade Ring 4 owners have been waiting for, but it’s easily the best smart ring Oura has ever made.",
       sourceUrl: "https://www.wired.com/review/oura-ring-5/",
@@ -1891,9 +1891,9 @@ const data: Snapshot = {
       publisher: "Wired",
       title: "This German Man Is on a Quest to Cut the Perfect Slice of Bread",
       published: "Tue, 14 Jul 2026 11:00:00 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "08e26fd81deb10b225689d6a89825dede3f896133117f59b627fb3e3ad730809",
+      hash: "04e243ce7d87a1103066aa8989e78f1974247bdc83916c11bf895a56b4d76559",
       summary:
         "Armed with high-end knives and digital calipers, Germanbreadcutter has entranced thousands of fans, one loaf at a time.",
       sourceUrl:
@@ -1906,9 +1906,9 @@ const data: Snapshot = {
       publisher: "Wired",
       title: "This Luddite Puppet Hopes You’re Not Reading This on Your Smartphone",
       published: "Tue, 14 Jul 2026 10:30:00 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "b0312965eeb63b2d527a29c22a147aead50e94ecc64dfa2ca3ce014086fb95c1",
+      hash: "fa19f2b03412392dea3e40c8bfe104c69327740f8b97d9f8bc73431e2c0db701",
       summary:
         "On this week’s episode of The Big Interview podcast, WIRED’s senior culture editor Manisha Krishnan talks to Gowanus about eschewing Big Tech, going outside, and rejection in the age of dating apps.",
       sourceUrl: "https://www.wired.com/story/the-big-interview-podcast-summer-of-ludd-gowanus/",
@@ -1920,9 +1920,9 @@ const data: Snapshot = {
       publisher: "Wired",
       title: "The Chatbot That Foretold Why People Share Secrets With ChatGPT",
       published: "Tue, 14 Jul 2026 10:00:00 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "50ab76356f39f7f9ae7cee932c9ee8ec598f6a9dfae3f1b2ca8767b31c1de756",
+      hash: "04a5ad608b67000e3d2ec40361ae255fe04c5bee6ffed8e4dba15c277aa97ee2",
       summary:
         "In the 1960s an MIT professor named Joseph Weizenbaum created a chatbot called ELIZA. The conversations people had with it set precedents for the chatbots to come.",
       sourceUrl: "https://www.wired.com/story/inventing-eliza-book-excerpt-chatbot/",
@@ -1934,9 +1934,9 @@ const data: Snapshot = {
       publisher: "Wired",
       title: "Sotheby’s Big T. Rex Auction Raises Concerns Hype and Wealth Are Upending Science",
       published: "Tue, 14 Jul 2026 09:30:00 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "022acabc3076bc55ac3992afa088c4888f971473f33e7dc50b112aeb8fa53743",
+      hash: "ea20014d15940da1358e688e3c3bcc01f5386b4d8686bf5cc63df50e7f3b3158",
       summary:
         "Private buyers are increasingly outbidding museums for fossils. That’s making it difficult—or even impossible—for researchers to improve our understanding of the past.",
       sourceUrl:
@@ -1949,9 +1949,9 @@ const data: Snapshot = {
       publisher: "Wired",
       title: "DOGE Used AI for Housing Policy. The Government Won’t Say How",
       published: "Tue, 14 Jul 2026 09:00:00 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "6b56a8a67063a91e34bbdac806dc681aa123a7c950001fde435f65133e0eed62",
+      hash: "845e909365b78fd00584211b80b620950624c653b3dab14c9c48762cf90b0fc4",
       summary:
         "In response to a public records request, HUD has withheld documents about DOGE’s use of AI—in part by citing a privilege that doesn’t exist.",
       sourceUrl: "https://www.wired.com/story/doge-deployed-ai-housing-policy/",
@@ -1964,9 +1964,9 @@ const data: Snapshot = {
       title:
         "The US Approves Launch of Mirror Satellite That Can Reflect Sunlight and Illuminate the Earth at Night",
       published: "Tue, 14 Jul 2026 08:30:00 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "9db46a91b8beb9142bad1060cdbef1b68c54f3284f98db51b75fe066a7414d35",
+      hash: "53cebb2b5b0e886a5d2353bb44cbfd3324e92c760a6f5051a8719473019c9597",
       summary:
         "The FCC authorized Reflect Orbital to launch the mirror satellite Eärendil-1. “For optical astronomy, this poses an existential threat,” the European Southern Observatory said.",
       sourceUrl: "https://www.wired.com/story/reflect-orbital-earendil-mirror-satellite-fcc/",
@@ -1978,9 +1978,9 @@ const data: Snapshot = {
       publisher: "Wired",
       title: "Hotels.com Coupon Codes for July 2026",
       published: "Tue, 14 Jul 2026 05:00:00 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "89eeba92d33d5ba307e07b205a131c2c8c2279e491930719e07f8d5bb84b39f8",
+      hash: "78d318a7e948ddbed1a63ea40f4fe1fcd6bdb16568003ee506f56d881d44771d",
       summary:
         "Unlock significant savings on hotels, resorts, and getaways with our verified Hotels.com promo codes and gift card discounts. Plan your perfect trip today!",
       sourceUrl: "https://www.wired.com/story/hotels-com-coupon/",
@@ -1992,9 +1992,9 @@ const data: Snapshot = {
       publisher: "Ars Technica",
       title: "Hundreds rally at Bethesda HQ to protest Xbox layoffs, and Ars was there",
       published: "Wed, 15 Jul 2026 22:36:28 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "62e606bb08dc8e086eb84b410644a744c5598527cd20412a2e2868620e86c64e",
+      hash: "86c4e6a67f5c86ae7846c789233f975c145f9f4732de7f04f19794cfcc702a8d",
       summary:
         '<p>ROCKVILLE, Maryland—Hundreds of Bethesda Game Studios and Zenimax Online Studios employees and their supporters braved nearly 100°F temperatures to protest <a href="https://arstechnica.com/gaming/2026/07/the-incredible-shrinking-xbox-five-studios-3200-employees-let-go/">sweeping layoffs across Xbox</a> during a lunchtime rally in front of parent company Zenimax\'s headquarters today. The rally was one of five organized today by Zenimax Workers United and its parent union, the Communication Workers of America, <a href="https://bsky.app/profile/videogameworkers.bsky.social/post/3mqcjworgic2t">at offices across Texas, California, and Montreal</a>.</p>\n<p>Attendees held up signs with messages like "Layoffs... layoffs never change" and "Our players deserve better" as union organizers and employees rallied the crowd with speeches and songs. The overwhelming message was one of solidarity and a willingness to push back against job cuts they say have decimated their development and quality as',
       sourceUrl:
@@ -2007,9 +2007,9 @@ const data: Snapshot = {
       publisher: "Ars Technica",
       title: "Buzz Aldrin sells famous felt-tip pen that helped launch Apollo from the Moon",
       published: "Wed, 15 Jul 2026 22:10:41 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "11212bfcb040bf1ef943d2add56f4dff599077c2545ef6893e36cb901ce5a166",
+      hash: "8684ce680638d91b033c110d11fcfd7f5b27ac07e04aeb939c00faec40ca0176",
       summary:
         '<p>A dried-out felt-tip marker and a snapped-off piece of molded black plastic sold for $857,600 at a Sotheby\'s auction on Wednesday.</p>\n<p>What otherwise might have been worthless bits of trash <a href="https://www.collectspace.com/news/news-071526a-buzz-aldrin-apollo-11-pen-switch-sothebys-auction.html" target="_blank" rel="noopener">commanded the highest bids</a> due to where the two items were 57 years ago—lifting off aboard NASA\'s Apollo 11 spacecraft on humanity\'s first mission to land astronauts on the Moon. More than flown odds and ends, one was the problem that almost stranded Neil Armstrong and Buzz Aldrin on the lunar surface, and the other was the simple solution to saving the mission.</p>\n<p>"Houston, Tranquility. Do you have a way of showing the configuration of the engine arm circuit breaker?" radioed Aldrin to Mission Control after realizing he or Armstrong had inadvertently broken off the top of the circuit breaker switch that would enable their ascent engine to ignit',
       sourceUrl:
@@ -2022,9 +2022,9 @@ const data: Snapshot = {
       publisher: "Ars Technica",
       title: "Sheetz is quitting VMware, migrating 11,000 virtual machines",
       published: "Wed, 15 Jul 2026 21:41:56 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "77af508d6354bae82a8b21a245b33758ad5d7e9b519c73361c409188f0dc40fa",
+      hash: "99f3c9b48dea3d93de9c1cbf3225a9393918f226c3d03dae90e9c85c40e68362",
       summary:
         '<p>Sheetz, a US convenience store chain, is moving its <a href="https://sheetzmenuu.com/sheetz-locations/">838 locations </a>off VMware.</p>\n<p>Sheetz has used VMware virtualization across two Dell R440/R450-series servers at each of its locations since 2019. Now it’s migrating 12 to 14 virtual machines (VMs) in each of its stores from VMware vSphere to StorMagic’s SvHCI, “with an additional two VMs to be replaced over the coming months to transition from Windows 10 to Windows 11,” Scott Robertson, infrastructure team manager at Sheetz, told Ars Technica via email. Ultimately, Sheetz will move about 11,000 VMs from Broadcom\'s virtualization platform. Sheetz is still running the original Dell server hardware.</p>\n<p>So far, Sheetz has finished migrating more than 600 stores, averaging 200 per month, according to a company announcement today. Sheetz should be finished with the migration in four months, the announcement said.</p><p><a href="https://arstechnica.com/information-technology/2',
       sourceUrl:
@@ -2037,9 +2037,9 @@ const data: Snapshot = {
       publisher: "Ars Technica",
       title: "Judge: Trump can’t deport researchers just for working in content moderation",
       published: "Wed, 15 Jul 2026 21:26:02 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "781059bf2d6ee3a8ac5d20460240a74abe2eca48913b7e166cf9de23b74abf8e",
+      hash: "6a7e10b4e840b8e9f688bd91b7b365edf578f84a9042eb00e61f0a556b9bb16d",
       summary:
         '<p>This week, the Coalition for Independent Technology Research (CITR) won a key battle in its fight to reverse a visa-restriction policy that the Trump administration had used to attempt to revoke green cards and deport non-US citizens who work on misinformation, disinformation, fact-checking, content moderation, compliance, and trust and safety.</p>\n<p>In an <a href="https://cdn.arstechnica.net/wp-content/uploads/2026/07/Coalition-for-Independent-Technology-Research-v-Rubio-Opinion-7-14-26-.pdf">opinion</a> published Tuesday, US District Judge James Boasberg granted a preliminary injunction blocking the State Department from enforcing the policy until the CITR’s lawsuit is resolved.</p>\n<p>On its face, the policy does not require visa denials or deportations. Instead, it authorizes immigration investigations into individuals suspected of helping foreign adversaries attempt to manipulate public opinion by suppressing US speech.</p><p><a href="https://arstechnica.com/tech-policy/2026/0',
       sourceUrl:
@@ -2052,9 +2052,9 @@ const data: Snapshot = {
       publisher: "Ars Technica",
       title: "Engineer identifies and explains every &#039;90s computer seen in Jurassic Park",
       published: "Wed, 15 Jul 2026 21:04:22 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "e0f4169d6e59714f17ee97f788400783906ca97a5bc5fdd5167d64e79b25fe3f",
+      hash: "1c5da009abc2e1338e1d0d0be4bb60515e56bc0f73694046f474dd9535152563",
       summary:
         '<p><!-- obsidian --></p>\n<p><em>Jurassic Park</em>, while beloved as a film, has been the subject of snarky memes for the infamous line in which one of the characters declares, "This is a Unix system, I know this!" while using a computer with an unusual 3D file manager interface.</p>\n<p>Despite the memes, the film\'s production team was meticulous in accurately sourcing the right PCs (and adjacent details) for the sets—not too much of a surprise, given writer Michael Crichton\'s <a href="https://michaelcrichton.com/biography/programmer/">background</a> with computing and his obsessive attention to detail in the book the film is based on.</p><p><a href="https://arstechnica.com/gadgets/2026/07/engineer-identifies-and-explains-every-90s-computer-seen-in-jurassic-park/">Read full article</a></p>\n<p><a href="https://arstechnica.com/gadgets/2026/07/engineer-identifies-and-explains-every-90s-computer-seen-in-jurassic-park/#comments">Comments</a></p>\n',
       sourceUrl:
@@ -2067,9 +2067,9 @@ const data: Snapshot = {
       publisher: "Ars Technica",
       title: "Windows 0-day drops the same day Microsoft releases record number of patches",
       published: "Wed, 15 Jul 2026 19:59:48 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "e7c856f3da91c496d54bf2edfc90ffd1a50168384fb1861100ce91cf83d99ca2",
+      hash: "514b716d6db47c05f6055a541ff5eff11d08fa9d210c12679510f535f9c36ac7",
       summary:
         '<p>Right on the heels of Microsoft releasing a <a href="https://krebsonsecurity.com/2026/07/microsoft-patches-a-record-570-security-flaws/">record number</a> of security patches, a researcher has published exploit code that can enable low-privilege Windows accounts to make sensitive changes to administrator accounts.</p>\n<p>The exploit, which multiple researchers <a href="https://infosec.exchange/@wdormann/116925149776495861">say</a> <a href="https://infosec.exchange/@GossiTheDog@cyberplace.social/116924831427611458">works</a>, is sending Microsoft scrambling, yet again, to patch a zero-day released by an anonymous researcher who has complained about the software maker’s handling of their bug reports. To date, the pseudonymous NightmareEclypse has published nine such exploits, including <a href="https://blog.projectnightcrawler.dev/posts/2026-07-14-legacyhive-public-disclosure/">Tuesday’s HiveLegacy</a>. The researcher said the proof-of-concept code included in the report was stripped ',
       sourceUrl:
@@ -2082,9 +2082,9 @@ const data: Snapshot = {
       publisher: "Ars Technica",
       title: "FCC to repeal 39% TV ownership cap in boost for Trump-friendly news orgs",
       published: "Wed, 15 Jul 2026 18:52:22 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "7dcdb6e695110d6fcb7b4fa5912d6c8d93db1de7e7ab4baffe60fc944b008ad6",
+      hash: "a01a26737b08178cff5f60195561f211c6680b552f12f4e4f57201a3d7138b9e",
       summary:
         '<p>The Federal Communications Commission will vote to repeal the National Television Ownership Rule that is supposed to prevent a single broadcast station owner from reaching more than 39 percent of all TV households in the US. The proposed change sets up a likely court battle over the FCC claim that it has authority to repeal a limit set by Congress.</p>\n<p>FCC Chairman Brendan Carr has already treated the rule as more of a suggestion. In March, the Carr FCC <a href="https://arstechnica.com/tech-policy/2026/03/fcc-lets-nexstar-buy-tegna-creating-trump-approved-broadcaster-reaching-80-of-us/">granted a waiver</a> allowing Nexstar Media Group to buy Tegna in a deal that let it reach over half of TV households. The Carr FCC argued that Congress gave it authority to modify or waive the rule.</p>\n<p>Carr now plans to repeal the 39 percent limit and replace it with a "case-by-case review" of each proposed merger, the chairman announced today in an <a href="https://www.breitbart.com/politics',
       sourceUrl:
@@ -2097,9 +2097,9 @@ const data: Snapshot = {
       publisher: "Ars Technica",
       title: "In memoriam: 7 of our favorite Sam Neill films",
       published: "Wed, 15 Jul 2026 18:39:58 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "13781f739642ee8a32334ebb25a4d48f03a5804b8b73d69344164fb90c3e7ce8",
+      hash: "cf57b8145b5efdd7fb5032d0c83c7b49026a3a67c02c0166b749ed8ad2a54c88",
       summary:
         "<p>New Zealand actor Sam Neill, who starred as Dr. Alan Grant in the 1993 blockbuster <em>Jurassic Park</em> and its 2022 sequel, <em>Jurassic World Dominion</em>, <a href=\"https://www.nytimes.com/2026/07/13/movies/sam-neill-dead.html\">died on Monday</a> in Sydney, Australia. He was 78.</p>\n<p>While American audiences likely know Neill best for <em>Jurassic Park</em>, he had a long and varied career in film and television. His sheer versatility won him fans around the world. He played the grown Damien in <em>Omen III: The Final Conflict</em>; a Russian officer in <em>The Hunt for Red October</em>; and even made brief cameos (as an actor playing Odin in a theatrical troupe) in <em>Thor: Ragnarok</em> and <em>Thor: Love and Thunder</em>. (The less said about 1997's space horror travesty, <em>Event Horizon</em>, the better, although it has its fans, and Neill made the most of his role.) Yet some of his best performances were in smaller, critically acclaimed independent films such as 1993'",
       sourceUrl:
@@ -2112,9 +2112,9 @@ const data: Snapshot = {
       publisher: "Ars Technica",
       title: "Third-party app stores coming to Google Play next week as Epic settlement withdrawn",
       published: "Wed, 15 Jul 2026 16:55:12 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "a975271b72c76723961f62b506087e32887ae6df5e9a76799096fdea61be4ecb",
+      hash: "8d06a57e0fdd93b3403590b9e258925bcf0404e7cec6028e7691a06116fca997",
       summary:
         "<p>Big changes are coming to Android apps, but they're not the changes Google wanted. The <a href=\"https://arstechnica.com/gadgets/2026/03/google-and-epic-look-to-bury-the-hatchet-with-new-app-store-settlement/\">settlement between Google and Epic</a> that aimed to put to rest the companies' long-running antitrust battle is being withdrawn, and that means third-party app stores are coming to the Play Store. Google has confirmed that it will begin distributing rival app stores next week, setting the stage for competing platforms to take a bite out of Google's Android revenue stream.</p>\n<p>This case has the potential to upend software distribution on Android, and it's all because of V-Bucks. In 2020, Epic Games was frustrated that it had to pay a 30 percent cut to Apple and Google every time someone bought a bundle of V-Bucks in a mobile version of <em>Fortnite</em>. The publisher added a direct purchase option to the game in violation of both Apple's and Google's rules. Naturally, <em>F",
       sourceUrl:
@@ -2127,9 +2127,9 @@ const data: Snapshot = {
       publisher: "Ars Technica",
       title: "OpenAI&#039;s first branded hardware is... a light-up keyboard?",
       published: "Wed, 15 Jul 2026 16:00:33 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "ef350b424654c9528760e5d8b75bf5c56861a7772d596737c68e28b369ee5c90",
+      hash: "011aa89f28672ba14fae2464467bac8617317378661f27257085742c04e8032e",
       summary:
         '<p>As rumors <a href="https://arstechnica.com/ai/2026/01/openai-plans-new-voice-model-in-early-2026-audio-based-hardware-in-2027/">continue to swirl</a> about OpenAI\'s work on <a href="https://www.bloomberg.com/news/articles/2026-07-14/openai-s-first-device-will-be-moveable-screenless-speaker-built-as-ai-companion">a personalized smart speaker</a> and other hardware, the company is today rolling out its first branded device. The $230 Codex Micro is a specialized, RGB-lit mini-keyboard designed to let users monitor and quickly interact with multiple Codex agents with a glance and a few clicks.</p>\n<p>The device is described as a "limited-run collaboration" with <a href="https://worklouder.cc/">Work Louder</a>, which already sells a <a href="https://worklouder.cc/creator-micro-2">very similar-looking Creator Micro line</a> of customizable square keyboards targeted at creative professionals. The Codex Micro differentiates itself from those mainly through six frosted keys in the top two ro',
       sourceUrl:
@@ -2142,9 +2142,9 @@ const data: Snapshot = {
       publisher: "Ars Technica",
       title: "A most improbable astronaut just went to space",
       published: "Wed, 15 Jul 2026 11:30:07 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "14763dfe217c48a569abea28f69156a446dd68802bc271e53d1d97c8fb3e1407",
+      hash: "ba175fe929b704775e9312b5e04911b7fd40df57b24942b5f6def646c65db177",
       summary:
         '<p>Anil Menon, a NASA flight surgeon, felt crushed nine years ago as his hopes and aspirations collapsed around him.</p>\n<p>For the fourth time, he had diligently applied to become an astronaut at the US space agency, seeking to fulfill a lifelong dream. Although he made it to the final round, NASA had once again rejected his application at the end of the grueling process.</p>\n<p>"I was so sad, and I admitted defeat," Menon said. "I just did not see a pathway forward. So I pretty much, at that point in time, gave up on being an astronaut. I thought there was a zero percent chance."</p><p><a href="https://arstechnica.com/space/2026/07/a-most-improbable-astronaut-just-went-to-space/">Read full article</a></p>\n<p><a href="https://arstechnica.com/space/2026/07/a-most-improbable-astronaut-just-went-to-space/#comments">Comments</a></p>\n',
       sourceUrl:
@@ -2157,9 +2157,9 @@ const data: Snapshot = {
       publisher: "Ars Technica",
       title: "How hard is it to build orbital data centers, actually?",
       published: "Wed, 15 Jul 2026 11:00:09 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "f65b2fa4f4cd3ad19cdb183e6815b337a40c253db94a18fc01e577417483ad07",
+      hash: "4d3243e6aa857989348287439b301258efe6d416c313cfd5ab8c5493d2fa2440",
       summary:
         "<p>SpaceX has pinned the <a href=\"https://arstechnica.com/space/2026/05/spacex-submits-detailed-financial-filing-ahead-of-going-public-in-june/\">bulk of its future value</a> on orbital data centers. Not rockets. Not spacecraft.</p>\n<p>Instead, it envisions launching and maintaining a constellation of 1 million satellites capable of generating 120 GW to power tens of millions—and potentially up to 100 million—frontier-class GPUs for data center services.</p>\n<p>The company's founder, Elon Musk, revealed plans for this massive constellation months ago, but until recently, the scope of the individual satellites was largely unknown. That changed in June, when Musk and Ian Dahl, director of satellite engineering for SpaceX, spoke in <a href=\"https://www.youtube.com/watch?v=VvjV0gzi5Zg\">a promotional video</a> about the company's plans to develop the first iteration of an orbital data center, called an AI1 satellite. The video finally provided the company's numbers about the satellite's size",
       sourceUrl:
@@ -2173,9 +2173,9 @@ const data: Snapshot = {
       title:
         "Sotheby&#039;s big T. rex auction raises concerns hype and wealth are upending science",
       published: "Wed, 15 Jul 2026 10:30:39 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "10d99e11a95f4e9e615eba7df8e76e628a64f3c43fe566b5dc8d75aea47cbbb8",
+      hash: "d69cf9ee5a219f5fb4a14af8444dfed0cba9bb7d06409821f9d177a74011382e",
       summary:
         '<p>Forget the sale of the century. The auction house Sotheby’s has geared up for the sale of the epoch. On July 14 it opened live bidding on assorted <a href="https://www.wired.com/tag/fossils/">fossils</a>, but the pièce de résistance is lot 20, a rare 67-million-year-old <em>Tyrannosaurus rex</em> skeleton.</p>\n<p>The specimen—dubbed Gus—is billed as one of the largest, most complete <em>T. rexes</em> ever found. Gus is expected to fetch up to $30 million and will go to the highest bidder, whether public museum or private collector. The latter have played an increasingly prominent role in buying fossils, with auction houses, according to <a href="https://www.wired.com/video/watch/tech-support-paleontologist-answers-fossil-questions">paleontologists</a>, contributing to the trend by building hype. But when private collectors swoop in and buy <a href="https://www.wired.com/story/dinosaur-t-rex-auction-sale-private-fossil-trade/">fossils at auction</a> as luxury assets, those pieces of ',
       sourceUrl:
@@ -2188,9 +2188,9 @@ const data: Snapshot = {
       publisher: "Ars Technica",
       title: "Microsoft’s Secure Boot has been broken for a decade and no one noticed until now",
       published: "Tue, 14 Jul 2026 22:20:48 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "7c0dce5a236f47bcf49481812881b9bf82295acc74023b766202fdbf50f0cb4a",
+      hash: "0e0efe95cbebc652a81f3c3f3155297728989cd585fe0d876ee6ab783ef791ef",
       summary:
         '<p>An industry-wide standard Microsoft invented to protect Windows, and later Linux, devices from firmware infections has been trivial to bypass for 13 of its 14 years of existence. The discovery was made by researchers at security firm ESET after identifying 11 firmware images, at least one from 2013, that were known to be defective but remained signed by the software company anyway.</p>\n<p>The images are known as <a href="https://en.wikipedia.org/wiki/Shim_(computing)">shims</a>, which were invented to extend Secure Boot to Linux devices and utility software. Using a technique simple enough to be performed by novice hackers, these old, forgotten shims can be used to completely circumvent the protection, which is embedded into the UEFI (Unified Extensible Firmware Interface) of the device\'s motherboard. The gaffe is the result of the failure by Microsoft, which oversees the signing of shims, to revoke the publicly available images once vulnerabilities were found in them.</p>\n<h2>Threa',
       sourceUrl:
@@ -2203,9 +2203,9 @@ const data: Snapshot = {
       publisher: "Ars Technica",
       title: 'Trump admin puts Americans in Congo on "do-not-board" list, barring return',
       published: "Tue, 14 Jul 2026 22:09:31 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "8fac372b43caa533ce6ee86c500c2550319139dbe1beb8d048f2b0b49f9aa3d7",
+      hash: "f59546a45dcaaf9bfa4b949322518ea996f0e53c18c60a4eb08a6239fad36a59",
       summary:
         '<p>The Trump administration on Monday barred US citizens in the Democratic Republic of the Congo from returning home amid an Ebola outbreak that continues to outpace response efforts.</p>\n<p><a href="https://www.reuters.com/business/healthcare-pharmaceuticals/us-block-citizens-congo-immediate-travel-home-citing-ebola-2026-07-14/?utm_campaign=KHN%3A%20First%20Edition&amp;utm_medium=email&amp;_hsenc=p2ANqtz-9l4sCHgZujBf5PgaqKmJfpDkJ5MavZd5ZYD24Q50H9h39xAEY3cfiGD0BRgH5zC2LUVFIoK4NL8shkztLqx7yuOWzkbg&amp;_hsmi=428313270&amp;utm_content=428313270&amp;utm_source=hs_email">Reuters first reported</a> late Monday that Americans currently in the DRC or those who have recently traveled to the Ebola-stricken country have been put on a "do-not-board" list. They cannot travel back to the US until they have spent 21 days in a third country. The order, taken under a transportation authority known as Title 49, was independently <a href="https://www.politico.com/news/2026/07/14/american-ebola-relief-wor',
       sourceUrl:
@@ -2218,9 +2218,9 @@ const data: Snapshot = {
       publisher: "Ars Technica",
       title: "Lawsuit claims Meta&#039;s layoff decisions were made by AI, not humans",
       published: "Tue, 14 Jul 2026 20:05:53 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "1a2b74725e7e7460a235782339b852d4193b2a7ab694e447c9161b84828746ec",
+      hash: "76b456a8501a18f173e6a40a4ef0b86905a672ab5c69010ea3ae43da78e3ff1f",
       summary:
         '<p>Meta\'s AI-fueled layoffs of 8,000 employees targeted workers with disabilities and those who took protected medical or family leaves, alleged a lawsuit filed by 26 employees who were selected for termination. Meta used internal AI tools to select employees for layoffs, according to the <a href="https://storage.courtlistener.com/recap/gov.uscourts.cand.474171/gov.uscourts.cand.474171.1.0.pdf">complaint</a> filed yesterday by 26 "Doe" plaintiffs in US District Court for the Northern District of California.</p>\n<p>"Meta did not assemble the termination list through the considered judgment of managers who knew the work. Instead, Meta used a constellation of internal artificial-intelligence systems—including a system referred to internally as \'Metamate,\' employee-trained \'second-brain\' agents, keystroke- and activity-monitoring data, AI-token-usage dashboards, and algorithmically assisted performance ranking and calibration—to score, rank, and select employees for inclusion on the list,"',
       sourceUrl:
@@ -2233,9 +2233,9 @@ const data: Snapshot = {
       publisher: "Ars Technica",
       title: "Probe into explosive diarrheal cases points to Taco Bell and bad lettuce",
       published: "Tue, 14 Jul 2026 19:00:02 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "ce01043a9e66de54b280a1178d5365c7ea7f5a7da1817857d1653e6e9e2d7ad2",
+      hash: "b404bfc38a57c1e61c4fca64538487bb454911aa65acf3f95d67cdad94b8c044",
       summary:
         '<p>Lettuce and salad greens have become the prime suspects in an explosive outbreak of the diarrheal parasite <em>Cyclospora</em>, which is surging nationwide but erupting to extraordinary heights in Michigan.</p>\n<p>In recent years, Michigan has typically reported around 50 cases of cyclosporiasis, which causes urgent bouts of watery diarrhea, abdominal cramps, and nausea. But, this year, <a href="https://www.michigan.gov/mdhhs/keep-mi-healthy/infectious-diseases/infectious-disease-outbreaks">as of July 14</a>, the state has reported 3,309 cases of the food-borne pathogen. Of those 44 have been hospitalized.</p>\n<p>Based on interviews with more than 1,000 people sickened in Michigan, the latest data is pointing to leafy greens as the source, according to the Michigan Department of Health and Human Services (MDHHS).</p><p><a href="https://arstechnica.com/health/2026/07/taco-bell-eyed-in-explosive-diarrheal-outbreak-leafy-greens-suspected/">Read full article</a></p>\n<p><a href="https://',
       sourceUrl:
@@ -2248,9 +2248,9 @@ const data: Snapshot = {
       publisher: "Ars Technica",
       title: "US military sent explosive drone boats into combat for the first time",
       published: "Tue, 14 Jul 2026 18:00:01 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "bd47ad167ca3b90e7fb1e78b0b92b150e38cf2aca796d945b3a9ea6f7a760e26",
+      hash: "68c8dfc47022c0300bc336f74554acf75cafc6dff99e062545b9999c71386a96",
       summary:
         '<p>For the first time in its history, the US military sent explosive-laden drone boats into combat by attacking an Iranian midget submarine and naval port. The unprecedented use of such kamikaze sea drones by the United States comes nearly a decade after Iranian and Houthi forces first demonstrated such weapons.</p>\n<p>The US military shared a video showing three “one-way attack surface drones” exploding after approaching an Iranian midget submarine and ship maintenance facility at Iran’s Bandar Abbas Naval Base on the night of July 12. US Central Command, the US military combat command responsible for Middle East operations, described the strikes in a <a href="https://x.com/CENTCOM/status/2076679617440530442">social media post</a> as the “first time American forces have employed sea drones in combat operations.”</p>\n<p>The US drone boats were able to “make a low-speed, uncontested approach” to their targets before exploding, according to <a href="https://news.usni.org/2026/07/13/video',
       sourceUrl:
@@ -2263,9 +2263,9 @@ const data: Snapshot = {
       publisher: "Ars Technica",
       title: "These painted e-tattoos could be the future of wearable biosensors",
       published: "Tue, 14 Jul 2026 17:31:58 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "650603d4a05181f6d20fe28285952f24c64457ccc99d106a8120ca298ab4f6c9",
+      hash: "63d17bacccb6fb278d49b87416883e02b7bab0bf81019a4728ea08e1c3a4dc5f",
       summary:
         '<figure class="video ars-wp-video ars-wp-video--horizontal">\n  <div class="" style="">\n    <div class="wrapper ars-wp-video-wrapper relative" style="aspect-ratio: 1.7777777777778;">\n      <video class="wp-video-shortcode absolute w-full h-full object-contain left-0 top-0" id="video-2162723-1" width="1920" height="1080" preload="metadata" controls="controls"><source type="video/mp4" src="https://cdn.arstechnica.net/wp-content/uploads/2026/07/Tattoo-Video-1.mp4?_=1"></source>Credit: Wanqing Zhang</video>\n    </div>\n\n    <figcaption>\n      <span class="icon caption-arrow icon-drop-indicator"></span>\n      <div class="caption font-impact dusk:text-gray-300 mb-4 mt-2 inline-flex flex-row items-stretch gap-1 text-base leading-tight text-gray-400 dark:text-gray-300">\n    <div class="caption-icon bg-[left_top_5px] w-[10px] shrink-0"></div>\n    <div class="caption-content">\n      Credit: Wanqing Zhang\n\n          </div>\n  </div>\n    </figcaption>\n  </div>\n</figure>\n\n<p>Scientists at Pennsylvania',
       sourceUrl:
@@ -2278,9 +2278,9 @@ const data: Snapshot = {
       publisher: "Ars Technica",
       title: "Google revamps image search for its 25th anniversary with more images and more AI",
       published: "Tue, 14 Jul 2026 16:28:14 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "2b83523b404f04135acf53e53a9e53fa460ef9a9b0b2ac9c944a9e58b5c889b3",
+      hash: "c6406aa02252af043b4c9e1e2bfeafbc0ff7cd44a30d7c3465cc8abc214d84f6",
       summary:
         "<p>Believe it or not, there was a time when searching the web for images was not possible. Twenty-five years ago, Google launched image search, and it's celebrating by looking back at its biggest visual milestones and <a href=\"https://blog.google/products-and-platforms/products/search/google-images-25th-anniversary/\">refreshing the experience</a> for today's searchers. The celebration also includes expanded AI because that's just how Google rolls in 2026.</p>\n<p>Google claims the impetus for image search a quarter-century ago was the green Versace dress Jennifer Lopez wore to the 2000 Grammy Awards. If you were alive at the time, you probably remember the one. Google engineers understood that people searching for the dress didn't want to read about it—they just wanted to see it. The company got to work building image search, launching the first version in July 2001. Twenty-five years later, it's easy to take for granted that you can search for Lopez's green dress or whatever else strik",
       sourceUrl:
@@ -2293,9 +2293,9 @@ const data: Snapshot = {
       publisher: "The Guardian",
       title: "Moroccan intelligence insider reveals widespread use of Pegasus hacking software",
       published: "Thu, 16 Jul 2026 04:30:13 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "35104d93189f3a4f230b1ba04b30dc4e3d0e66cd665e0fd8d085c689b69f2fa8",
+      hash: "68f8ead3fd806fe9ed52485f03d9c9beac1e53a74f6ba12a4d6c9c992bfae903",
       summary:
         '<p>Whistleblower suggests internal security services deployed spyware from 2017 against key domestic and foreign targets</p><p>A former member of Morocco’s domestic intelligence service has helped to provide an unprecedented insight into how the north African state used hacking software – including Pegasus spyware – to target journalists, human rights defenders, French politicians and Spanish cabinet ministers and police officers.</p><p>Pegasus, which is manufactured by the Israel-based NSO Group, allows its operator to access everything on a target’s mobile phone, including emails, text messages and photographs. It can also activate the phone’s recorder and camera, turning it into a listening device.</p> <a href="https://www.theguardian.com/news/2026/jul/16/morocco-intelligence-insider-reveals-widespread-use-hacking-software-pegasus">Continue reading...</a>',
       sourceUrl:
@@ -2308,9 +2308,9 @@ const data: Snapshot = {
       publisher: "The Guardian",
       title: "How global heating supercharged floods in West Africa, displacing thousands",
       published: "Thu, 16 Jul 2026 00:01:08 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "4b4c22ff5798c05b640633c15d3ae47c0879c124babef71b66ae21e6b3bc12ab",
+      hash: "057fc78ef89ed221ec6c7881897dafd2745526512ea45d8629ddfbe6d87137a6",
       summary:
         '<p>Adaptation to frightening new normal and reducing emissions further and faster is critical, scientists warn</p><p>Dozens of people drowned, hundreds had to be rescued and thousands were displaced when floods struck the coasts of west Africa last month.</p><p>Now scientists have concluded that the rains that caused the floods were supercharged by climate breakdown. Global heating, they say, turned what should have been a routine weather event into a climate catastrophe.</p> <a href="https://www.theguardian.com/world/2026/jul/16/how-global-heating-supercharged-floods-west-africa-displacing-thousands">Continue reading...</a>',
       sourceUrl:
@@ -2323,9 +2323,9 @@ const data: Snapshot = {
       publisher: "The Guardian",
       title: "New US Ebola patient arrives in Germany for treatment",
       published: "Tue, 14 Jul 2026 12:27:06 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "c5c093db9c22f7f0987b804b9ae355d618c69d1d818a3c485eb0d7e38c71d260",
+      hash: "0aa70152f61d37b3d225d189c18c2cf33167651d583002b9bd0000513c21d59d",
       summary:
         '<p>Aid worker flown to Berlin as Trump administration bars Americans from traveling to US on commercial flights</p><p>A US national who contracted <a href="https://www.theguardian.com/world/ebola">Ebola</a> in the <a href="https://www.theguardian.com/world/congo">Democratic Republic of the Congo</a> has arrived in <a href="https://www.theguardian.com/world/germany">Germany</a> for treatment, the health ministry in Berlin said on Monday, weeks after another American infected with Ebola in the DRC was treated in Berlin.</p><p>Meanwhile, the <a href="https://www.theguardian.com/us-news/trump-administration">Trump administration</a> on Monday said it was blocking American citizens in ⁠the DRC from traveling to the US on commercial flights, Reuters reported, citing a White House official.</p> <a href="https://www.theguardian.com/world/2026/jul/14/american-ebola-patient-arrives-germany">Continue reading...</a>',
       sourceUrl:
@@ -2339,9 +2339,9 @@ const data: Snapshot = {
       title:
         "Killings continue on Del Monte farm in Kenya, families say, after G4S hired for security",
       published: "Mon, 13 Jul 2026 14:00:49 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "1555455ec517f01c19973b603bb3910e6d1a5aef09dcf9aded94ee70d67d8693",
+      hash: "325acf0590e49e2b20aecd4a18bbb40aebd9f102a373e391e571ce3da67866df",
       summary:
         '<p>Exclusive: Three men killed in incidents over past year allegedly involving G4S guards, who replaced in-house team after previous deaths</p><p>Bereaved families and politicians have raised alarm about continued killings on Del Monte’s pineapple farm in Kenya despite the company hiring a British security firm to replace its in-house security team after previous deaths were exposed by the Guardian.</p><p>The multinational food company appointed G4S to guard the farm, which is estimated to cover at least 40 sq km, the area of a small city, after the Guardian detailed <a href="https://www.theguardian.com/world/2023/jun/21/guards-at-del-monte-pineapple-farm-accused-of-killings-in-kenya">allegations of brutal assaults and killings</a> of people suspected of trespassing on its land. Kenyan police have been working with G4S to guard the site.</p> <a href="https://www.theguardian.com/world/2026/jul/13/del-monte-pineapple-farm-kenya-deaths-g4s">Continue reading...</a>',
       sourceUrl:
@@ -2354,9 +2354,9 @@ const data: Snapshot = {
       publisher: "The Guardian",
       title: "First patients enrolled in record-breaking Ebola treatment trial in DRC",
       published: "Sun, 12 Jul 2026 08:00:12 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "f50a51997dc145c32c4a02a70a943922a1e3c931deafd53ccc6282afbfb26e22",
+      hash: "b2fb04eda51fbd2dc598dd2333454038acf37b10fab86321e0ab60ba71bba0b2",
       summary:
         '<p>Two drugs are being trialled in the Ituri region in a programme set up just six weeks after the outbreak was declared, with hopes it will reduce mortality rates</p><p>There is no approved drug to help the medical teams scrabbling to save lives in the Ebola outbreak in the Democratic Republic of the Congo – but there are hopes that could change within months as the first patients are enrolled in a treatment trial.</p><p>It is a record pace to set up and start this kind of research, scientists said, with patients enrolled just six weeks after the <a href="https://www.who.int/news/item/17-05-2026-epidemic-of-ebola-disease-in-the-democratic-republic-of-the-congo-and-uganda-determined-a-public-health-emergency-of-international-concern">outbreak being declared a public health emergency</a> of international concern by the World Health Organization (WHO) on 17 May.</p> <a href="https://www.theguardian.com/global-development/2026/jul/12/record-breaking-ebola-treatment-trial-drc">Continue rea',
       sourceUrl:
@@ -2367,30 +2367,30 @@ const data: Snapshot = {
     {
       id: "REC-2026-07-16-000163",
       publisher: "The Guardian",
-      title: "Brazil condemns US move to impose 25% tariffs next week",
-      published: "Thu, 16 Jul 2026 05:01:23 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      title:
+        "‘Malvinas are Argentinian’: World Cup holders celebrate win over England with Falklands banner",
+      published: "Thu, 16 Jul 2026 08:13:50 GMT",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "cf8d99bdb4aea6c578caad448b757e26143c6f91a592d2a3a1771f76df702719",
+      hash: "eee3b87b9156ff899be5559f60b9f9d3d324cd8894161dc37e7a5d8579ff0644",
       summary:
-        '<p>Trade office cites investigation of Brazilian trade practices while Marco Rubio says Lula’s policies ‘bad for Americans and bad for Brazilians’ </p><p>Brazil has condemned the US decision to impose 25% tariffs on certain Brazilian products, after the Trump administration found a range of what it deemed unfair trade practices by the South American country.</p><p>“The Brazilian government repudiates the decision announced today by the United States government regarding the imposition of 25 percent tariffs on Brazilian products,” the office of President Luiz Inácio Lula da Silva said in a statement on X, denying it had engaged in unfair trade practices.</p> <a href="https://www.theguardian.com/us-news/2026/jul/16/brazil-us-tariffs">Continue reading...</a>',
-      sourceUrl: "https://www.theguardian.com/us-news/2026/jul/16/brazil-us-tariffs",
+        '<ul><li><p>Banner refers to Falkland Islands conflict in 1982</p></li><li><p>UK business secretary calls for Fifa investigation </p></li></ul><p>The Argentina players celebrated <a href="https://www.theguardian.com/football/2026/jul/15/england-argentina-world-cup-semi-final-match-report">their World Cup win over England</a> with a banner saying “<em>Las Malvinas son Argentinas</em>”, making reference to <a href="https://www.theguardian.com/football/2026/jul/15/argentina-england-tensions-world-cup-football">the 1982 Falklands war</a>.</p><p>Argentina were 1-0 down with five minutes to go of the semi-final in Atlanta but rallied and scored twice in quick succession <a href="https://www.theguardian.com/football/live/2026/jul/15/england-v-argentina-world-cup-2026-semi-final-live">to reach a second straight World Cup final</a>, where they will face Spain in New Jersey on Sunday.</p> <a href="https://www.theguardian.com/football/2026/jul/15/malvinas-is-argentinian-world-cup-holders-celebrate',
+      sourceUrl:
+        "https://www.theguardian.com/football/2026/jul/15/malvinas-is-argentinian-world-cup-holders-celebrate-win-over-england-with-banner",
       country: "United Kingdom",
       category: "News",
     },
     {
       id: "REC-2026-07-16-000164",
       publisher: "The Guardian",
-      title:
-        "‘Malvinas are Argentinian’: World Cup holders celebrate win over England with Falklands banner",
-      published: "Wed, 15 Jul 2026 22:03:19 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      title: "Brazil condemns US move to impose 25% tariffs next week",
+      published: "Thu, 16 Jul 2026 05:01:23 GMT",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "97309154c897e66deb2fb3e26b697aca5e7f2d3bd2f4c4af4a7ecb295376a1a8",
+      hash: "a7bd8b510789a6a11dc66558401865033f9b99fb86527426d5772da53dad8cb9",
       summary:
-        '<ul><li><p>Banner refers to Falkland Islands conflict in 1982</p></li><li><p>Players celebrate on the pitch with the message</p></li></ul><p>The Argentina players celebrated <a href="https://www.theguardian.com/football/2026/jul/15/england-argentina-world-cup-semi-final-match-report">their World Cup win over England</a> with a banner saying “<em>Las Malvinas son Argentinas</em>”, making reference to <a href="https://www.theguardian.com/football/2026/jul/15/argentina-england-tensions-world-cup-football">the 1982 Falklands war</a>.</p><p>Argentina were 1-0 down with five minutes to go of the semi-final in Atlanta but rallied and scored twice in quick succession <a href="https://www.theguardian.com/football/live/2026/jul/15/england-v-argentina-world-cup-2026-semi-final-live">to reach a second straight World Cup final</a>, where they will face Spain in New Jersey on Sunday.</p> <a href="https://www.theguardian.com/football/2026/jul/15/malvinas-is-argentinian-world-cup-holders-celebrate-win',
-      sourceUrl:
-        "https://www.theguardian.com/football/2026/jul/15/malvinas-is-argentinian-world-cup-holders-celebrate-win-over-england-with-banner",
+        '<p>Trade office cites investigation of Brazilian trade practices while Marco Rubio says Lula’s policies ‘bad for Americans and bad for Brazilians’ </p><p>Brazil has condemned the US decision to impose 25% tariffs on certain Brazilian products, after the Trump administration found a range of what it deemed unfair trade practices by the South American country.</p><p>“The Brazilian government repudiates the decision announced today by the United States government regarding the imposition of 25 percent tariffs on Brazilian products,” the office of President Luiz Inácio Lula da Silva said in a statement on X, denying it had engaged in unfair trade practices.</p> <a href="https://www.theguardian.com/us-news/2026/jul/16/brazil-us-tariffs">Continue reading...</a>',
+      sourceUrl: "https://www.theguardian.com/us-news/2026/jul/16/brazil-us-tariffs",
       country: "United Kingdom",
       category: "News",
     },
@@ -2399,9 +2399,9 @@ const data: Snapshot = {
       publisher: "The Guardian",
       title: "Mexico asks US state attorneys general to investigate immigrant ICE deaths",
       published: "Wed, 15 Jul 2026 20:58:43 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "84d26ba6a188d62fb47952ec5fabc0fd3e8810d6f5e0e06ea8b80d7510b3af72",
+      hash: "98978d3d991ecfd180be50d4d49271d9821419e9f3e05e8fa6d18c6054ab556d",
       summary:
         '<p>Since start of Trump’s second term, 14 Mexican immigrants have died in ICE custody and three in agency operations</p><p>Mexico formally requested that US state attorneys general criminally investigate cases of immigrants who have died in Immigration and Customs Enforcement (ICE) custody or during raids, the Mexican government said Tuesday.</p><p>The request follows the death of Mexican immigrant <a href="https://www.theguardian.com/us-news/2026/jul/15/ice-houston-texas-lorenzo-salgado-araujo">Lorenzo Salgado Araujo</a>, who was shot and killed by an ICE agent in Houston. Since the beginning of <a href="https://www.theguardian.com/us-news/donaldtrump">Donald Trump</a>’s second term, 17 Mexican immigrants have died during immigration enforcement, 14 in ICE custody and three in agency operations.</p> <a href="https://www.theguardian.com/us-news/2026/jul/15/mexico-investigate-ice-deaths">Continue reading...</a>',
       sourceUrl: "https://www.theguardian.com/us-news/2026/jul/15/mexico-investigate-ice-deaths",
@@ -2413,9 +2413,9 @@ const data: Snapshot = {
       publisher: "The Guardian",
       title: "Wildfires in Ontario make Toronto air quality worst in world",
       published: "Wed, 15 Jul 2026 16:08:39 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "19726c7e366665a39c15c3faa319174add8d92800a0ee64aaea6cef35fc0f7f5",
+      hash: "f1e954139040d0a9da4cb41fe8728ec74b1a3be6aa3faed08a3089e1c2e192b6",
       summary:
         '<p>Environment Canada has issued health warnings after sky over city turns yellow</p><p>Smoke from more than 100 active wildfires in northern Ontario have made Toronto’s air quality the current worst in the world and caused yellow, smoky air in cities across the north-east US.</p><p>Environment Canada issued health warnings on Wednesday after the sky over country’s largest city turned a sickly yellow and was ranked the worst in the world according to <a href="https://www.iqair.com/ca/world-air-quality-ranking">IQAir</a>, the Swiss technology company that racks global air quality.</p> <a href="https://www.theguardian.com/world/2026/jul/15/wildfires-in-ontario-make-toronto-canada-air-quality-worst-in-world">Continue reading...</a>',
       sourceUrl:
@@ -2428,9 +2428,9 @@ const data: Snapshot = {
       publisher: "The Guardian",
       title: "Venezuela’s interim government and opposition to begin formal talks",
       published: "Wed, 15 Jul 2026 11:46:23 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "85be402c48f8a70af323f526a7d2a94e1c4ffb456a6807de1d04e5bb3722197d",
+      hash: "b7328456ae3532d271be78f1aa56f5bb5fd8dee8540656491841ddd4be8e88d2",
       summary:
         '<p>Nobel laureate María Corina Machado will not lead negotiations over new elections, contrary to expectations</p><p>The interim government of Venezuela has announced it will begin formal talks with the opposition aimed at “strengthening democracy” in the country.</p><p>The move is backed by the US, which says it is seeking a “democratic transition” in a country still recovering from the <a href="https://www.theguardian.com/news/ng-interactive/2026/jul/12/a-revolution-in-ruins-fury-amid-the-rubble-of-a-housing-project-in-quake-hit-venezuela">twin earthquakes</a> that killed more than 4,700 people.</p> <a href="https://www.theguardian.com/world/2026/jul/15/venezuela-interim-government-opposition-talks-democracy-maria-corina-machado">Continue reading...</a>',
       sourceUrl:
@@ -2443,9 +2443,9 @@ const data: Snapshot = {
       publisher: "The Guardian",
       title: "Fears for New Zealand’s native species as first bird flu case emerges",
       published: "Thu, 16 Jul 2026 02:23:46 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "c60277171c90e151a20ffa93df1b6a10d6ac0e876ff6ba6baa43fec491548d44",
+      hash: "95bef9421b44d6b1741b3f430ecc19aa1153f201fc380a18918adc10c8e1a8d3",
       summary:
         '<p>Minister urges public to report cases of three or more sick or dead birds in a group after brown skua seabird tests positive for H5N1 on Wellington beach</p><p>The deadly H5N1 bird flu has been confirmed in New Zealand for the first time, sparking alarm that some of the country’s most beloved and vulnerable native birds could be wiped out if it spreads.</p><p>A single ocean-going seabird, a brown skua, returned a confirmed positive test on Wednesday, after it was found on Petone beach in Wellington on 10 July, said Andrew Hoggard, the biosecurity minister.</p> <a href="https://www.theguardian.com/world/2026/jul/16/new-zealand-first-h5n1-bird-flu-case">Continue reading...</a>',
       sourceUrl:
@@ -2458,9 +2458,9 @@ const data: Snapshot = {
       publisher: "The Guardian",
       title: "China’s economy grows at 4.3%, one of its lowest rates on record",
       published: "Wed, 15 Jul 2026 10:48:27 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "e0ddb5569b3495b31800767c3b6150f638fe57423492664d49c176d809619b29",
+      hash: "f63f3421b13fd2d4ada0767f02135f8d9012e12072aac608fbdaa744c85c12d5",
       summary:
         '<p>Worse-than-expected figures for three months to June come amid concerns over lopsided economy</p><ul><li><p><a href="https://www.theguardian.com/business/live/2026/jul/15/china-growth-thames-water-stock-markets-live-news-updates"><strong>Business live – latest updates</strong></a></p></li></ul><p>China has posted worse-than-expected growth figures for the three months to June as its economy expanded by just 4.3% – one of its lowest quarterly readings on record.</p><p>The rate, which came in under the government’s target of 4.5% to 5%, was one of the weakest since reporting on official quarterly GDP figures began in the early 1990s.</p> <a href="https://www.theguardian.com/business/2026/jul/15/china-economy-low-quarterly-growth-economic-concerns">Continue reading...</a>',
       sourceUrl:
@@ -2473,9 +2473,9 @@ const data: Snapshot = {
       publisher: "The Guardian",
       title: "Japan officials hunt bear that raided couple’s fridge amid string of break-ins",
       published: "Wed, 15 Jul 2026 04:27:29 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "581b236cfb9603fae30a7b9caf6d4e6e9076198d2536b43051fbe7e957d085f3",
+      hash: "54c9a477465053154da55a0d43cbcc75adc79df0b7ffdb6a9310a000dfeb6abc",
       summary:
         '<p>Officials set up traps and electric fences after 14 break-ins recored in one town in two weeks, amid fears of a repeat offender</p><p>Authorities are searching for a bear that sneaked into the home of an elderly couple and raided their fridge amid concerns it may be behind 14 break-ins across a Japanese town in the past fortnight.</p><p>On Monday evening, Mitsuo Matsubara, 87, was confronted by a large Asiatic black bear when he went to investigate a noise in his kitchen. His <a href="https://www.youtube.com/watch?v=ouBJ5ajmm98">fridge was open</a>, and food was strewn across the floor. His wife called the police.</p> <a href="https://www.theguardian.com/world/2026/jul/15/japan-bear-raids-fridge">Continue reading...</a>',
       sourceUrl: "https://www.theguardian.com/world/2026/jul/15/japan-bear-raids-fridge",
@@ -2487,9 +2487,9 @@ const data: Snapshot = {
       publisher: "The Guardian",
       title: "Singapore court orders Bloomberg to pay ministers $356,000 in defamation case",
       published: "Wed, 15 Jul 2026 02:03:57 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "017d38e0d68423939d260556e3881611eb14f367568d701f22184ace83b08daa",
+      hash: "268760190096a050297d506fc813e148e9383b21b4d8e56aae7feccbc23185ff",
       summary:
         '<p>Bloomberg’s editor-in-chief, John Micklethwait, stands by reporting, saying ministers who sued ‘imposed an extremely strained meaning on what was a solid ​story’</p><p>Bloomberg News and one of its reporters have been ordered to pay S$460,000 (US$355,734) in damages after an article it published was found to have defamed two Singapore government ministers, the city-state’s high court said in a judgment released on Tuesday.</p><p>Bloomberg and the reporter, Low De Wei, are liable to jointly pay S$230,000 to each minister, comprising S$170,000 in general damages and S$60,000 in aggravated damages, ⁠the judgment said.</p> <a href="https://www.theguardian.com/world/2026/jul/15/bloomberg-singapore-defamation-case">Continue reading...</a>',
       sourceUrl:
@@ -2502,9 +2502,9 @@ const data: Snapshot = {
       publisher: "The Guardian",
       title: "Bangkok bar fire: death toll reaches 30 as police say negligence is ‘primary theory’",
       published: "Tue, 14 Jul 2026 12:56:36 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "22c2a566c1b9a72c38906a6d3e55c9aac3bf29436b4c4a3c2036838cc9a014fc",
+      hash: "0c3810fbe0cf7528aeb720db0d0070e98bc7be37f910177192f3874ef9959bd7",
       summary:
         '<p>Bar owner offers ‘deepest apologies’ as police investigate whether exits were either blocked or hard to access</p><p>The Bangkok pub that became the scene of the city’s deadliest blaze in 17 years has said it will cooperate with an investigation into alleged negligence, as the death toll rose to 30.</p><p>The local district office said on Tuesday that three more people had died after the <a href="https://www.theguardian.com/world/2026/jul/12/at-least-27-killed-in-blaze-at-bangkok-pub-thai-officials-say">devastating fire that broke out</a> in the early hours of Monday. An initial assessment by disaster officials found an electrical short ‌circuit in an air conditioner located in the ‌ceiling had caused the fire.</p> <a href="https://www.theguardian.com/world/2026/jul/14/bangkok-bar-pub-fire-death-toll-thailand">Continue reading...</a>',
       sourceUrl:
@@ -2516,13 +2516,13 @@ const data: Snapshot = {
       id: "REC-2026-07-16-000173",
       publisher: "The Guardian",
       title:
-        "Australia news live: Telstra CEO to front Senate inquiry; Victoria’s police chief arrests man in Melbourne CBD",
+        "Assistant multicultural affairs minister ‘appalled’ by Tony Abbott’s anti-immigration video – as it happened",
       published: "Thu, 16 Jul 2026 07:47:06 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "91580c4e901942a7cfce5e59187efb93a85681526c0fa4873b57715d24b32867",
+      hash: "120be9bce724768286548f1fdf82a4897bfe9c37515c8b658ce07e595922e530",
       summary:
-        '<p>Follow today’s news live</p><ul><li><p>Get our <a href="https://www.theguardian.com/email-newsletters?CMP=cvau_sfl">breaking news email</a>, <a href="https://app.adjust.com/w4u7jx3">free app</a> or <a href="https://www.theguardian.com/australia-news/series/full-story?CMP=cvau_sfl">daily news podcast</a></p></li></ul><p><strong>Michelle Rowland says mandatory minimum standards for datacentres don’t apply to existing developments</strong></p><p>The attorney general, <strong>Michelle Rowland</strong>,<strong> </strong>told ABC News that mandatory minimum standards for datacentres would apply to new developments, not existing ones.</p><p>The scope and the timing of those is something that I think will be properly determined by national cabinet.</p><p>This is an issue that not only state governments but local councils have been dealing with as well.</p><p>It goes from being this hunched-over ball of fluff at the top of a tree looking down at you, to suddenly spreading out its limbs and f',
+        '<p>This blog is now closed</p><ul><li><p><a href="https://www.theguardian.com/australia-news/2026/jul/16/liberal-party-gender-quotas-angus-taylor-response">Liberals say ‘all options’ should be considered despite Angus Taylor hosing down gender quota proposal</a></p></li><li><p>Get our <a href="https://www.theguardian.com/email-newsletters?CMP=cvau_sfl">breaking news email</a>, <a href="https://app.adjust.com/w4u7jx3">free app</a> or <a href="https://www.theguardian.com/australia-news/series/full-story?CMP=cvau_sfl">daily news podcast</a></p></li></ul><p><strong>Michelle Rowland says mandatory minimum standards for datacentres don’t apply to existing developments</strong></p><p>The attorney general, <strong>Michelle Rowland</strong>,<strong> </strong>told ABC News that mandatory minimum standards for datacentres would apply to new developments, not existing ones.</p><p>The scope and the timing of those is something that I think will be properly determined by national cabinet.</p><p>This',
       sourceUrl:
         "https://www.theguardian.com/australia-news/live/2026/jul/16/divine-playhouse-josh-thomas-workplace-drug-survey-anthony-albanese-labor-angus-taylor-coalition-one-nation-pauline-hanson-ntwnfb",
       country: "United Kingdom",
@@ -2532,11 +2532,11 @@ const data: Snapshot = {
       id: "REC-2026-07-16-000174",
       publisher: "The Guardian",
       title:
-        "Snake in a chain: lucky escape for Australian woman after bite from deadly reptile caught in bike wheel",
+        "Snake in a chain: lucky escape for Australian woman after bite from deadly eastern brown caught in bike wheel",
       published: "Thu, 16 Jul 2026 06:52:54 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "9866c64a1b6852651ce7b062533f4aa90af7f36f6ff42ca62f1df2ac16ea7d8c",
+      hash: "e006c44921430ec81956e93c717694e2fb426c1685dca5c162ab5abbecf57be1",
       summary:
         '<p>Woman in her 60s was riding on popular cycling trail in northern NSW when she ran over the two-metre-long eastern brown snake, one of the world’s most venomous</p><p>A woman in her 60s is recovering after being bitten by a two-metre-long eastern brown snake that had become entangled in her bike chain in regional Australia.</p><p>She was riding on the northern rivers rail trail near Burringbar, in the Tweed shire in northern New South Wales, when she ran over the snake.</p> <a href="https://www.theguardian.com/australia-news/2026/jul/16/snake-bike-chain-northern-rivers-rail-trail-tweed-nsw-australia">Continue reading...</a>',
       sourceUrl:
@@ -2550,9 +2550,9 @@ const data: Snapshot = {
       title:
         "Police release images of clothes to help identify victims of alleged Sydney childcare paedophile",
       published: "Thu, 16 Jul 2026 05:52:50 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "4a4027b5647070f013658aa12b05d8620c13b37944514d15cc2b0de1283c1da1",
+      hash: "e929e87013fad1f8699de601b9c18203c5958a5e98afd729ab3a57cc2bc40004",
       summary:
         '<p>AFP release images of children’s clothes found on electronic devices seized as part of investigation into Hamish Tait </p><ul><li><p>Get our <a href="https://www.theguardian.com/email-newsletters?CMP=cvau_sfl">breaking news email</a>, <a href="https://app.adjust.com/w4u7jx3">free app</a> or <a href="https://www.theguardian.com/australia-news/series/full-story?CMP=cvau_sfl">daily news podcast</a></p></li></ul><p>A tiny dinosaur puffer jacket could lead police to more victims of a former childcare worker and alleged prolific child sex offender.</p><p>Federal police have released pictures of clothing from children they want to identify, urging parents and carers who recognise the items to come forward.</p> <a href="https://www.theguardian.com/australia-news/2026/jul/16/hamish-tait-childcare-alleged-paedophile-police-release-clothes-images-ntwnfb">Continue reading...</a>',
       sourceUrl:
@@ -2566,9 +2566,9 @@ const data: Snapshot = {
       title:
         "Australian patients’ medical records could be sold on dark web after clinics’ data breach",
       published: "Thu, 16 Jul 2026 05:46:29 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "b70df0e42f48ed7f48271fdc071b0e00eb1957adc670da337c6a0a8f39b876fe",
+      hash: "78605fdfa8476c71aff56c92236f747011a8d4f5c402b0cf8ad90ef8b6ccbd62",
       summary:
         '<p>‘Malicious actor’ obtains sensitive data including Medicare numbers, treatment details and pathology results in cyber-attack on Partnered Health</p><ul><li><p><a href="https://www.theguardian.com/australia-news/live/2026/jul/16/divine-playhouse-josh-thomas-workplace-drug-survey-anthony-albanese-labor-angus-taylor-coalition-one-nation-pauline-hanson-ntwnfb">Follow our Australia news live blog for latest updates</a></p></li><li><p>Get our <a href="https://www.theguardian.com/email-newsletters?CMP=cvau_sfl">breaking news email</a>, <a href="https://app.adjust.com/w4u7jx3">free app</a> or <a href="https://www.theguardian.com/australia-news/series/full-story?CMP=cvau_sfl">daily news podcast</a></p></li></ul><p>Australians’ medical records and patient information could be sold on the hidden market, an expert has warned, after a cyber-attack at one of the nation’s biggest healthcare providers.</p><p>Partnered Health <a href="https://www.theguardian.com/australia-news/2026/jul/15/patient-re',
       sourceUrl:
@@ -2582,9 +2582,9 @@ const data: Snapshot = {
       title:
         "Liberals say ‘all options’ should be considered despite Angus Taylor hosing down gender quota proposal",
       published: "Thu, 16 Jul 2026 04:42:01 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "1ed31387c57ebeff70487a490558e16b3e3c081f896d51c2512d64166b86e583",
+      hash: "bbaefc1ff8488aeaed1b6db43b6e1dc7e1065ee2ef7f4b0c7587c1a3a671318c",
       summary:
         '<p>Anne Ruston called for the party to act with ‘urgency’ after discussion paper suggested ways to improve engagement with women, multicultural communities and young people</p><ul><li><p>Get our <a href="https://www.theguardian.com/email-newsletters?CMP=cvau_sfl">breaking news email</a>, <a href="https://app.adjust.com/w4u7jx3">free app</a> or <a href="https://www.theguardian.com/australia-news/series/full-story?CMP=cvau_sfl">daily news podcast</a></p></li></ul><p>Angus Taylor has hosed down a proposal for the Liberal party to consider introducing gender quotas, while one of his senior shadow cabinet ministers has implored the party to act on such ideas with “urgency”.</p><p>After a discussion paper that canvassed the idea was circulated to supporters on Wednesday, the party’s leader said he has never been supportive of quotas – shortly before his deputy, Jane Hume, intervened to say all options would be considered.</p> <a href="https://www.theguardian.com/australia-news/2026/jul/16/li',
       sourceUrl:
@@ -2595,13 +2595,14 @@ const data: Snapshot = {
     {
       id: "REC-2026-07-16-000178",
       publisher: "The Guardian",
-      title: "Keir Starmer arrives in Kyiv for farewell visit as British PM – Europe live",
-      published: "Thu, 16 Jul 2026 07:45:11 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      title:
+        "Zelenskyy faces outrage over defence minister sacking as Starmer makes farewell Ukraine visit as UK PM – Europe live",
+      published: "Thu, 16 Jul 2026 08:25:24 GMT",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "9342ea563362c8830c8a96a6bfddca2262be465837483e87a1f7b14cd1d6ff1f",
+      hash: "7982350bb8dc0ede2da88dd040ca134bf80eab17428c588c689292477a485012",
       summary:
-        '<p>Arrival of outgoing British leader in Ukraine comes as Zelenskyy faces outrage after removing popular defence minister</p><p>and<em> </em><strong>Artem Mazhulin</strong><em><br>\n  in Kyiv</em></p><p><strong>Fedorov’s six months in office coincided with a dramatic improvement in Ukraine’s position on the battlefield.</strong> Kyiv has repeatedly hit Russian oil refineries with long-range drones, embarrassing <strong>Vladimir Putin</strong> and <a href="https://www.theguardian.com/world/2026/jun/28/putin-admits-ukrainian-strikes-driving-russian-fuel-shortages">creating nationwide fuel shortages</a>.</p> <a href="https://www.theguardian.com/world/live/2026/jul/16/europe-ukraine-russia-zelenskyy-starmer-macron-merz-latest-news-updates">Continue reading...</a>',
+        '<p>Arrival of outgoing British leader in Ukraine comes as Zelenskyy faces outrage after removing Mykhailo Fedorov</p><p><em>in Brussels</em></p><p><strong>Meanwhile, the EU has failed to agree the latest round of sanctions against the Kremlin.</strong></p> <a href="https://www.theguardian.com/world/live/2026/jul/16/europe-ukraine-russia-zelenskyy-starmer-macron-merz-latest-news-updates">Continue reading...</a>',
       sourceUrl:
         "https://www.theguardian.com/world/live/2026/jul/16/europe-ukraine-russia-zelenskyy-starmer-macron-merz-latest-news-updates",
       country: "United Kingdom",
@@ -2612,9 +2613,9 @@ const data: Snapshot = {
       publisher: "The Guardian",
       title: "Germany warns US against election interference after it announces grants scheme",
       published: "Thu, 16 Jul 2026 07:17:39 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "545f8eae64ed947e924a7a5268e1809412e05a7b09a2f123c06b850a5d0ecb31",
+      hash: "9d2cb176c8bd950990942fa9947d88c0e39f8a4f6f4347e167c3afa3e8d79d5b",
       summary:
         '<p>State department says plan will provide funding to ‘address national sovereignty, migration, censorship and lawfare’</p><p>Friedrich Merz has warned Donald Trump’s administration against interfering in German elections after the US state department announced a scheme to fund Maga-aligned causes in Europe.</p><p>The German chancellor was responding to a new US initiative offering grants of up to $3m (£2.2m) for European charities, thinktanks and individuals.</p> <a href="https://www.theguardian.com/us-news/2026/jul/15/germany-warns-against-election-interference-as-us-offers-funding-to-maga-aligned-causes-in-europe">Continue reading...</a>',
       sourceUrl:
@@ -2627,9 +2628,9 @@ const data: Snapshot = {
       publisher: "The Guardian",
       title: "Volodymyr Zelenskyy dismisses Ukraine’s defence minister on eve of Starmer visit",
       published: "Thu, 16 Jul 2026 05:03:15 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "893622eaf18abb33354fb49202a3f18d4612c26966561dc7296baa863ca4cea0",
+      hash: "72201663a36fffc74a430ddad714fb09c33e9e84821833256b573020ab48d8d3",
       summary:
         '<p>Mykhailo Fedorov, credited with transforming the ministry, ousted in reshuffle after six months in post</p><p>Volodymyr Zelenskyy has dismissed Ukraine’s popular defence minister, despite pleas from foreign partners and civil society for him to keep his job, as part of wide-ranging government reshuffle.</p><p>In a post on Telegram Mykhailo Fedorov announced that he was leaving his position, saying it had been a “great honour” to serve the Ukrainian people. He was widely credited with transforming the defence ministry and reducing corruption.</p> <a href="https://www.theguardian.com/world/2026/jul/15/volodymyr-zelenskyy-dismisses-ukraines-popular-defence-minister">Continue reading...</a>',
       sourceUrl:
@@ -2642,9 +2643,9 @@ const data: Snapshot = {
       publisher: "The Guardian",
       title: "Revealed: Bucharest tourists hiring rentals that could collapse in an earthquake",
       published: "Thu, 16 Jul 2026 05:00:15 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "614085c4ec0ca8a8c6855e1619b0cd7c60f16c6c554dda9d6aeba168d85a594e",
+      hash: "25090d44f820480445847110a949b93b39c2d0eb0a3c2a1862669ed7b262ca3a",
       summary:
         '<p>Exclusive: More than 200 illegal holiday properties found in buildings at the highest level of seismic risk</p><p>Tourists in the Romanian capital, Bucharest, are staying in illegal accommodation listed on Airbnb and Booking.com in buildings considered so seismically vulnerable they could collapse in the event of a major earthquake, according to exclusive data shared with the Guardian.</p><p>Analysis of data collected by Re:Rise, a Romanian organisation working on seismic risk reduction, identified at least 207 illegal tourist rental properties advertised across the two platforms in Bucharest at the end of May, with a combined capacity to host more than 1,000 visitors each night.</p> <a href="https://www.theguardian.com/world/2026/jul/16/tourists-bucharest-rentals-collapse-earthquake-analysis">Continue reading...</a>',
       sourceUrl:
@@ -2657,9 +2658,9 @@ const data: Snapshot = {
       publisher: "The Guardian",
       title: "Maltese politicians ‘involved’ in plot to kill Daphne Caruana Galizia, court hears",
       published: "Wed, 15 Jul 2026 19:58:23 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "ec54d29140589f5b232820d727b6a1098051b9125a430a00e91ab51504ad2e7f",
+      hash: "23985327ce3aad26afcfd4bc75bfa68785b60953c3ff4aabbc0ed722dffb0c27",
       summary:
         '<p>Former economy minister Chris Cardona and ex-chief of staff Keith Schembri named as being involved in 2017 murder of journalist</p><p>Two political figures who previously held powerful government roles in Malta were accused of plotting to kill the journalist Daphne Caruana Galizia during court testimony on Wednesday.</p><p>The allegations, against a former economy minister and a former chief of staff to the prime minister, were made during a chaotic day at the courts of justice in Valletta, where the businessman Yorgen Fenech is on trial for ordering the assassination of Caruana Galizia in 2017.</p> <a href="https://www.theguardian.com/world/2026/jul/15/malta-politicians-plot-to-kill-daphne-caruana-galizia-court-hears">Continue reading...</a>',
       sourceUrl:
@@ -2672,12 +2673,12 @@ const data: Snapshot = {
       publisher: "The Guardian",
       title:
         "US strikes expand to northern Iran as Tehran fires on Bahrain, Kuwait and Jordan – Middle East crisis live",
-      published: "Thu, 16 Jul 2026 07:44:22 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      published: "Thu, 16 Jul 2026 08:17:06 GMT",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "4ef068bb2e8b9edd25205767c789bc2a6f10357b2ab0e797b52e56e0aba8f810",
+      hash: "f0c91ba3af096ed339f0f72266e7387d2d28dff426902777ccf89fd43dd3da0d",
       summary:
-        '<p>Iran reports explosions in several cities including capital while US military says it also hit and disabled tanker in strait of Hormuz </p><ul><li><p><a href="https://www.theguardian.com/world/2026/jul/16/us-attacks-oil-tanker-strait-of-hormuz-iran-tehran-strikes">US attacks oil tanker in strait of Hormuz as strikes reported in Tehran</a></p></li></ul><p><strong>Iran has warned it would retaliate if its infrastructure is attacked,</strong> after Trump threatened that the US military could target Iranian bridges.</p><p>In a statement carried by state media, Ebrahim Zolfaghari, a spokesperson for the Iranian military’s Khatam al-Anbiya central headquarters, said <strong>“all infrastructure in the region will be crushed”.</strong></p> <a href="https://www.theguardian.com/world/live/2026/jul/16/iran-us-donald-trump-war-strait-hormuz-oil-israel-lebanon-latest-news-updates">Continue reading...</a>',
+        '<p>Iran reports explosions in several cities including capital while US military says it also hit and disabled tanker in strait of Hormuz </p><ul><li><p><a href="https://www.theguardian.com/world/2026/jul/16/us-attacks-oil-tanker-strait-of-hormuz-iran-tehran-strikes">US attacks oil tanker in strait of Hormuz as strikes reported in Tehran</a></p></li></ul><p>Iran’s army spokesperson <strong>Mohammad Akraminia</strong> said Tehran did not want to confront its regional neighbours, <a href="https://www.theguardian.com/world/live/2026/jul/16/iran-us-donald-trump-war-strait-hormuz-oil-israel-lebanon-latest-news-updates?page=with%3Ablock-6a5888808f08c251661cf7b2#block-6a5888808f08c251661cf7b2">despite an earlier statement</a> by another military official threatening to “crush” infrastructure across the Middle East.</p><p><strong>“Iran has no conflict with the neighbouring and Islamic countries of the region</strong> and has always emphasised the development of cooperation and brotherly relati',
       sourceUrl:
         "https://www.theguardian.com/world/live/2026/jul/16/iran-us-donald-trump-war-strait-hormuz-oil-israel-lebanon-latest-news-updates",
       country: "United Kingdom",
@@ -2688,9 +2689,9 @@ const data: Snapshot = {
       publisher: "The Guardian",
       title: "US says latest attack wave on Iran completed – as it happened",
       published: "Thu, 16 Jul 2026 03:32:53 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "860426db3bc0e66b4c0d8e3e15951f1b03b320ba39dabbd65fb59bfd0e682d7b",
+      hash: "0c2d23b58d0d1ea3a2802456303b99a613c38ab3e9a8af4a247dd7822779cdf3",
       summary:
         '<p>This blog is now closed – our latest full report <a href="https://www.theguardian.com/world/2026/jul/16/us-attacks-oil-tanker-strait-of-hormuz-iran-tehran-strikes">is here</a></p><p><strong>For a second day in a row, US strikes targeted Iran’s southern port city of Bushehr,</strong> home to the country’s only civilian nuclear plant, according to the state news agency IRNA quoting a local official.</p><p>“In continuation of the brutality of the American enemy, three points in the city of Bushehr were attacked today,” Mohammad Mozaffari, the governor of Bushehr, was quoted as saying.</p><p>In the recent attacks on the southern part of the country, <strong>more than 30 civilians lost their lives.</strong> While expressing our condolences and sympathy to the bereaved families, we honour the memory of the fallen. The government will stand by the people with all its might. The south of Iran is the beating heart of this land. The south of Iran, the soul of Iran.”</p> <a href="https://www.t',
       sourceUrl:
@@ -2703,9 +2704,9 @@ const data: Snapshot = {
       publisher: "The Guardian",
       title: "US attacks oil tanker in strait of Hormuz as strikes reported in Tehran",
       published: "Thu, 16 Jul 2026 02:40:19 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "3bcd68dea0f23c9f1748f5b1b89f9bad8ae142f100d015aca19df7a0a215dd8c",
+      hash: "33714cb6eee6c7daade30dbe3b230e48f641560b7a091491731706990af8c0b0",
       summary:
         '<p>US disables unladen oil tanker using Hellfire missiles in strait of Hormuz amid concerns strikes could spiral into open conflict</p><p>The US has fired on an oil tanker attempting to reach Kharg Island in the strait of Hormuz as part of its blockade on Iranian ports, as Tehran came under attack for the first time in this latest round of strikes.</p><p>The US said on Thursday morning it had disabled an unladen oil tanker, during a fifth day of strikes, firing Hellfire missiles into the ship’s smokestack after it ignored multiple warnings.</p> <a href="https://www.theguardian.com/world/2026/jul/16/us-attacks-oil-tanker-strait-of-hormuz-iran-tehran-strikes">Continue reading...</a>',
       sourceUrl:
@@ -2718,9 +2719,9 @@ const data: Snapshot = {
       publisher: "The Guardian",
       title: "Chaos and confusion bring US no closer to resolution on strait of Hormuz",
       published: "Wed, 15 Jul 2026 17:32:52 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "d8bbc534205b1d387cc6f6f6af8ee3827b00b24aa6efba2c7e9e031b70b2561f",
+      hash: "7cd1dd52611aba1ddfd2fdce251421a8a3299244cc7c668c86e0d5abc710a9ac",
       summary:
         '<p>Five months of U-turns and false boasts leave Donald Trump in worse position than when he started</p><p>Donald Trump has taken the war with Iran into a new, murkier phase as the two sides move further and further from the <a href="https://www.theguardian.com/world/2026/jun/28/fresh-hostilities-gulf-us-iran-memorandum-interpretations-lebanon-ceasefire-strait-of-hormuz">vague memorandum of understanding</a> (MoU) signed on 17 June.</p><p>And as during the opening phase of the conflict, the US leader’s objectives and methods are clouded in confusion, daily U-turns and boasts that within hours are revealed to be false.</p> <a href="https://www.theguardian.com/world/2026/jul/15/chaos-confusion-no-closer-resolution-strait-hormuz-us-iran-donald-trump">Continue reading...</a>',
       sourceUrl:
@@ -2733,9 +2734,9 @@ const data: Snapshot = {
       publisher: "The Guardian",
       title: "Iran threatens to halt all Middle East energy exports amid renewed US blockade",
       published: "Wed, 15 Jul 2026 17:01:59 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "c80adb382ca5f304f75424fda8db9506201e9afb4eeaf12c9d8dcae3ccbde384",
+      hash: "fa71249003084133373f086ed573df251a4026cbd317c9e680224456e893f748",
       summary:
         '<p>Tehran shuts strait of Hormuz and carries out retaliatory strikes as Trump threatens to attack site linked to Iran’s nuclear programme</p><ul><li><p><a href="https://www.theguardian.com/world/live/2026/jul/15/us-iran-war-live-updates-strikes-trump-power-plants-bridges-middle-east-crisis-latest-news">Middle East crisis – live updates</a></p></li></ul><p>Iran threatened to halt all energy exports from the Middle East after the US <a href="https://www.theguardian.com/world/2026/jul/14/us-strikes-iran-bahrain-jordan-uae-tankers">reimposed a blockade</a> of its ports and ships, as the two countries traded strikes for a fifth day and Donald Trump threatened to attack a site linked to Iran’s nuclear programme while he weighed further expanding US strikes next week.</p><p>The US blockade came into force early on Wednesday, and was followed by a 90-minute wave of strikes against Iran’s coastal defence systems and missile sites, according to the US military. Iranian authorities said the previ',
       sourceUrl:
@@ -2748,9 +2749,9 @@ const data: Snapshot = {
       publisher: "The Guardian",
       title: "More than 500 feared dead after reports of two shipwrecks off Myanmar, UN says",
       published: "Thu, 16 Jul 2026 07:22:41 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "86ceb3d163232419d72c83d9709e4432f4a422d4dc20bfa9598a1a89f08091c5",
+      hash: "9889188fadd3ced3299ca4dbc05ddfe366d04605e6b72e5689fffb8c744c0f35",
       summary:
         '<p>Vessels believed to have departed from Myanmar in late June, with mostly Muslim Rohingya minority onboard</p><p>The United Nations has said more than 500 people are feared dead after reports of two large shipwrecks off Myanmar since late June.</p><p>The UN’s International Organization for Migration (IOM) and its refugee agency UNHCR voiced alarm in a joint statement at reports “that two boats carrying more than 500 people may have capsized off the coast of Myanmar in recent days”.</p> <a href="https://www.theguardian.com/world/2026/jul/16/hundreds-of-refugees-feared-dead-after-two-suspected-shipwrecks-off-myanmar-un">Continue reading...</a>',
       sourceUrl:
@@ -2763,9 +2764,9 @@ const data: Snapshot = {
       publisher: "The Guardian",
       title: "Protests engulf Indian state after rape and murder of 11-year-old girl",
       published: "Fri, 10 Jul 2026 13:43:13 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "a8309a4c54b64fe81b80d53adb07fb767cff359dfc83ef9cd8321e99ed7b7207",
+      hash: "04c7ef459a6885366a963c9242d6319bbf3925140ab5b395e0f194a12c333b23",
       summary:
         '<p>Innocent man lynched by mob in West Bengal as police killing of suspect further escalates tensions</p><p>Protests have engulfed the Indian state of West Bengal after the rape and murder of an 11-year-old girl, the subsequent lynching of an innocent man and the police killing of one of the accused.</p><p>Outrage erupted on Sunday after the body of a missing girl was recovered from a pond in a town just outside the state capital, Kolkata.</p> <a href="https://www.theguardian.com/world/2026/jul/10/protests-west-bengal-state-india-girl-murder-rape">Continue reading...</a>',
       sourceUrl:
@@ -2779,9 +2780,9 @@ const data: Snapshot = {
       title:
         "US charges Indian criminal gang leader with organising murder of Canadian Sikh activist",
       published: "Wed, 08 Jul 2026 18:34:20 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "179911804be54fcb28fafb0d6d6f1ada6256477a25a485c3035e2f4508899e0c",
+      hash: "c586b560472713ea400a9d7deb0c1be2e083e1bd9e4c91f58a174ee492d10163",
       summary:
         '<p>Lawrence Bishnoi, who is in prison in India, is accused of orchestrating assassination of Hardeep Singh Nijjar in 2023</p><p>US and Canadian authorities say they have “dismantled” the leadership of a notorious Indian criminal group, charging dozens of operatives who have “inflicted pain and cruelty on people, victims around the globe”, including a high-profile murder in Canada that strained diplomatic relations between Canada and India.</p><p>At a press conference on Tuesday, members of the FBI and Canada’s Royal Canadian Mounted Police (RCMP) said as part of Operation Hard Ball – a multiyear federal investigation into murder-for-hire plots, shootings, extortion and drug trafficking – they had charged 37 people, some of whom were already in custody. Authorities are still searching for seven fugitives in the US, two in India and one in Europe.</p> <a href="https://www.theguardian.com/world/2026/jul/08/murder-canada-sikh-activist-hardeep-singh-nijjar-indian-criminal-gang-leader-charge',
       sourceUrl:
@@ -2794,9 +2795,9 @@ const data: Snapshot = {
       publisher: "The Guardian",
       title: "Pakistan locates wreckage of Boeing 737 cargo plane that went missing off coast",
       published: "Wed, 08 Jul 2026 15:56:38 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "1d0f1005d4a646abc1f3180957fe7ffb4c8bbabee303569e682d45f55b7d5020",
+      hash: "91145b7d2ffa0176f88728a62f343459fcb4ef518b0975964a5655131837b791",
       summary:
         '<p>Early flight data shows K2 Airways plane crashed into sea with five crew on board south-west of Karachi</p><p>Pakistan has located the wreckage of a Boeing cargo plane, the country’s airports authority said, adding that rescuers were searching for the five crew members on board when the aircraft went missing.</p><p>The plane was approaching Karachi from Sharjah in the United Arab Emirates when radar showed it “rapidly descending” on Tuesday evening after reporting a “navigational system issue”, according to the Pakistan Airports Authority (PAA).</p> <a href="https://www.theguardian.com/world/2026/jul/08/boeing-737-cargo-plane-missing-near-karachi">Continue reading...</a>',
       sourceUrl:
@@ -2810,9 +2811,9 @@ const data: Snapshot = {
       title:
         "A rock star welcome and human rights protests to greet India’s prime minister Narendra Modi in Australia",
       published: "Tue, 07 Jul 2026 15:00:04 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "f07dffaa9da6b33d947ccab5a8535b3463931cf8a13e34f52974f5cb8e829e97",
+      hash: "1fd0ad2a4d45882a31628141f6cd7fc772b0cca751f70fdf754841702ecb86f5",
       summary:
         '<p>Amnesty International says Albanese has opportunity to ‘reaffirm mutual commitment’ to rule of law as thousands in diaspora expected at stadium event</p><ul><li><p><a href="https://www.theguardian.com/australia-news/live/2026/jul/08/anthony-albanese-pacific-diplomacy-state-of-origin-labor-coalition-recession-unemployment-ntwnfb">Follow our Australia news live blog for latest updates</a></p></li><li><p>Get our <a href="https://www.theguardian.com/email-newsletters?CMP=cvau_sfl">breaking news email</a>, <a href="https://app.adjust.com/w4u7jx3">free app</a> or <a href="https://www.theguardian.com/australia-news/series/full-story?CMP=cvau_sfl">daily news podcast</a></p></li></ul><p>The Indian prime minister Narendra Modi’s first visit to Australia in three years has sparked calls for the federal government to raise human rights concerns, as excitement builds within the nation’s Indian diaspora.</p><p>Modi’s visit begins on Wednesday evening and marks his third since becoming prime minis',
       sourceUrl:
@@ -2823,11 +2824,43 @@ const data: Snapshot = {
     {
       id: "REC-2026-07-16-000193",
       publisher: "The Guardian",
+      title:
+        "Starmer nationalises British Steel and visits Ukraine on last full day as Labour leader – UK politics live",
+      published: "Thu, 16 Jul 2026 08:35:03 GMT",
+      archived: "2026-07-16T08:44:44.735Z",
+      status: "VERIFIED",
+      hash: "1d250535488ef3e34ecd1c74a7355b8fbd249cbf680c331de4df48044eaa03f7",
+      summary:
+        '<p>Outgoing PM moves to cements his legacy before his replacement by Andy Burnham as party leader tomorrow</p><p>Reform UK is taking some credit for the British Steel nationalisation, because the party called for this earlier this year.</p><p><strong>Richard Tice</strong>, the Reform UK deputy leader, issued this statement, asking for an assurance that the Chinese company Jingye won’t be paid compensation.</p><p>Reform UK called for the nationalisation of British Steel back in April last year to secure Britain’s critical virgin steelmaking capabilities for the next 50 years. It’s good to see the government has finally listened.</p><p>We now need a bold strategy that backs British industry by ensuring the use of British steel in both public and private sector procurement, as well as scrapping net zero which is crippling our industry with sky-high energy costs. We must be proudly patriotic in buying British steel.</p> <a href="https://www.theguardian.com/politics/live/2026/jul/16/keir-st',
+      sourceUrl:
+        "https://www.theguardian.com/politics/live/2026/jul/16/keir-starmer-andy-burnham-labour-farage-badenoch-widdecombe-latest-news-updates",
+      country: "United Kingdom",
+      category: "News",
+    },
+    {
+      id: "REC-2026-07-16-000194",
+      publisher: "The Guardian",
+      title:
+        "UK investigation to determine if TikTok fails to protect children from harmful content",
+      published: "Thu, 16 Jul 2026 08:29:21 GMT",
+      archived: "2026-07-16T08:44:44.735Z",
+      status: "VERIFIED",
+      hash: "5f8ff2d5265d1ff87d93e7c87b9fc4cd312d6df4e8b6b00093670c4bebd0d808",
+      summary:
+        '<p>Ofcom concerned platform’s age verification is ineffective, leaving some at risk of seeing posts about self-harm and suicide</p><p>TikTok is under formal investigation over concerns it has failed to protect children from harmful content, the UK’s online regulator, Ofcom, has announced.</p><p>The social media platform’s approach to checking the ages of users has sparked “particular concerns” at the watchdog, almost a year after measures to protect children from the worst of online content came into effect under <a href="https://www.theguardian.com/world/2025/jul/24/thursday-briefing-everything-you-need-to-know-about-the-new-internet-safety-rules">the Online Safety Act.</a></p> <a href="https://www.theguardian.com/technology/2026/jul/16/tiktok-uk-investigation-ofcom-child-protection-self-harm-suicide">Continue reading...</a>',
+      sourceUrl:
+        "https://www.theguardian.com/technology/2026/jul/16/tiktok-uk-investigation-ofcom-child-protection-self-harm-suicide",
+      country: "United Kingdom",
+      category: "News",
+    },
+    {
+      id: "REC-2026-07-16-000195",
+      publisher: "The Guardian",
       title: "UK economy grew by 0.1% in May despite impact of Iran war",
       published: "Thu, 16 Jul 2026 07:36:05 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "65a2d1d5343dcdfc942ca7d50bf172a4b461eb107f57cf53e3bd685080ad3544",
+      hash: "df09ca0459e3360e38cb01b210fe1cf9a420cf221902cfa1259457d0708a9de1",
       summary:
         '<p>Rise in GDP follows a 0.1% decline in April, figures from the Office for National Statistics show</p><p>The UK economy returned to growth in May, despite the impact of the Iran war on energy costs, official figures show.</p><p>The Office for National Statistics said GDP rose 0.1% in May, in line with economists’ forecasts, <a href="https://www.theguardian.com/business/2026/jun/12/uk-economy-gdp-shrank-april-iran-war-held-back-growth#:~:text=UK%20economy%20shrank%20by%200.1,growth%20(GDP)%20%7C%20The%20Guardian">after a 0.1% decline in April</a>.</p> <a href="https://www.theguardian.com/business/2026/jul/16/uk-economy-grew-gdp-despite-iran-war">Continue reading...</a>',
       sourceUrl:
@@ -2836,13 +2869,13 @@ const data: Snapshot = {
       category: "News",
     },
     {
-      id: "REC-2026-07-16-000194",
+      id: "REC-2026-07-16-000196",
       publisher: "The Guardian",
       title: "British Steel is taken into public ownership to save UK supply",
       published: "Thu, 16 Jul 2026 07:26:55 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "b7132ec79cf2da585289aacd0697a78bdd22f40388f07aaf9981b84c445529c9",
+      hash: "56d9a5e079d410299a7deb0a72da17d573d93caa6ad2a5b6594cba59065e1c34",
       summary:
         '<p>Scunthorpe factory is expropriated from China’s Jingye and ministers will ask a valuer to assess compensation</p><p>British Steel has formally been taken into public ownership 15 months after the government stepped in to prevent the closure of its steelworks in Scunthorpe and the loss of 4,000 jobs.</p><p>Keir Starmer on Thursday said that it was in the national interest for the government to take over the factory from its Chinese owner, Jingye, in one of the last significant actions overseen by him as prime minister after the Steel Industry (Nationalisation) Act received Royal Assent on Wednesday.</p> <a href="https://www.theguardian.com/business/2026/jul/16/british-steel-public-ownership-save-uk-supply-scunthorpe">Continue reading...</a>',
       sourceUrl:
@@ -2851,13 +2884,13 @@ const data: Snapshot = {
       category: "News",
     },
     {
-      id: "REC-2026-07-16-000195",
+      id: "REC-2026-07-16-000197",
       publisher: "The Guardian",
       title: "British girl, 15, stranded in Rome for six weeks due to new passport rules",
       published: "Thu, 16 Jul 2026 06:00:17 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "591d3e3e2814dcd720f330aedd1fc4f0326697cee76bc853931584763f49ab3c",
+      hash: "932af4c611698af6372e94b702b38d507232d43b4bd721c5c230146deca3ebf9",
       summary:
         '<p>The dual national, who missed six weeks of school, is latest of several children affected by recent Home Office policy</p><p>A British girl was prevented from returning to her school in the UK for six weeks after a trip to see her grandmother in Italy because of the Home Office’s new rule requiring dual British nationals to have a British passport to get back into the country.</p><p>The 15-year-old, who was stranded in Rome in April, is just <a href="https://www.theguardian.com/politics/2026/mar/21/british-teenagers-stranded-abroad-dual-national-rules-home-office-passports">the latest of a number of children</a> and young adults hit by a new Labour government rule that came into force in February.</p> <a href="https://www.theguardian.com/politics/2026/jul/16/british-girl-stranded-rome-six-weeks-new-passport-rules">Continue reading...</a>',
       sourceUrl:
@@ -2866,44 +2899,13 @@ const data: Snapshot = {
       category: "News",
     },
     {
-      id: "REC-2026-07-16-000196",
-      publisher: "The Guardian",
-      title:
-        "‘It’s like home’: Brixton market traders fight to stop site being sold to big business",
-      published: "Thu, 16 Jul 2026 05:00:16 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
-      status: "VERIFIED",
-      hash: "3c2d50a02e42048d7461f4b424dfb4eff5afa16330b00c8069074d2548e6fa42",
-      summary:
-        '<p>Campaign hopes to buy site for community, fearing it could go same route of corporate gentrification as Camden and Old Spitalfields</p><p>Traders at Brixton market say they are in a battle of “people over profit” after submitting a last-minute plan to stop the site being bought by a private equity firm which they fear could price out longstanding independent businesses.</p><p>Those behind the Buy Back Brixton campaign said they are through to the second stage of a bidding process, competing against multinational companies to buy Brixton Village and Market Row for community ownership.</p> <a href="https://www.theguardian.com/uk-news/2026/jul/16/brixton-market-traders-fight-big-business-london">Continue reading...</a>',
-      sourceUrl:
-        "https://www.theguardian.com/uk-news/2026/jul/16/brixton-market-traders-fight-big-business-london",
-      country: "United Kingdom",
-      category: "News",
-    },
-    {
-      id: "REC-2026-07-16-000197",
-      publisher: "The Guardian",
-      title: "All newborns in England to be screened for spinal muscular atrophy from 2027",
-      published: "Thu, 16 Jul 2026 05:00:16 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
-      status: "VERIFIED",
-      hash: "865667ef9ef70522c0073800a26acfbe5077467cdad13cc4c3272e5ca52b22db",
-      summary:
-        '<p>Campaigners hail ‘landmark moment’ in early detection and treatment of rare muscle-wasting disease</p><p>Every baby born in England will be screened for a rare muscle-wasting disease, starting next year, the Department of Health and Social Care announced on Thursday.</p><p>Campaigners said the “landmark moment” should lead to babies who were found to have <a href="https://www.nhs.uk/conditions/spinal-muscular-atrophy-sma/">spinal muscular atrophy (SMA)</a> being treated early and thus growing up without any of its debilitating symptoms.</p> <a href="https://www.theguardian.com/society/2026/jul/16/newborns-babies-england-spinal-muscular-atrophy-sma-screening">Continue reading...</a>',
-      sourceUrl:
-        "https://www.theguardian.com/society/2026/jul/16/newborns-babies-england-spinal-muscular-atrophy-sma-screening",
-      country: "United Kingdom",
-      category: "News",
-    },
-    {
       id: "REC-2026-07-16-000198",
       publisher: "The Guardian",
       title: "R Kelly formally appeals to Donald Trump to commute his 31-year prison sentence",
       published: "Thu, 16 Jul 2026 02:20:41 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "fb7e3434b2e125b3e2f494a2b4dc0b94cb460a08662105fd6863b01357c3dd54",
+      hash: "7475260e7ef581b92ed47e3be1aa7c5acc8fd74dd40db2024940134cbeb6f847",
       summary:
         '<p>The R&amp;B singer was found guilty of racketeering, sex trafficking and producing child abuse images, with his lawyer lobbying the US president for more than a year</p><p>R Kelly has formally appealed to the US president, Donald Trump, for a reduction of his 31-year prison sentence for racketeering, sex trafficking and child abuse images, in a filing to the Department of Justice.</p><p>The 59-year-old R&amp;B singer, whose full name is Robert Sylvester Kelly, was found guilty in 2021 of leading a criminal enterprise that recruited women and underage girls for illegal sexual activity and pornography, for which he was <a href="https://www.theguardian.com/us-news/2022/jun/29/r-kelly-sentenced-sexual-abuse">sentenced to 30 years in prison</a>. In 2022 he was found guilty on three counts of child abuse images and three counts of child enticement and sentenced to <a href="https://www.theguardian.com/us-news/2023/feb/23/r-kelly-chicago-sentencing-20-years-child-sex-abuse-images-enticement',
       sourceUrl:
@@ -2917,9 +2919,9 @@ const data: Snapshot = {
       title:
         "Over 100 House Democrats vote to end military aid to Israel in significant rebuke to US ally – as it happened",
       published: "Thu, 16 Jul 2026 01:54:01 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "7abdd081d48060b027298dd67410f23f7365974a09c22b5279f4036f7fdc462e",
+      hash: "de6cc19a4ca72c467a8b2d79bf94d6d769499609b8a3235acccb73ea7fa15549",
       summary:
         '<p>This live blog is now closed.</p><ul><li><p><a href="https://www.theguardian.com/news/2026/feb/17/sign-up-for-the-breaking-news-us-email-to-get-newsletter-alerts-direct-to-your-inbox?utm_medium=ACQUISITIONS_STANDFIRST&amp;utm_campaign=BN22326&amp;utm_content=signup&amp;utm_term=standfirst&amp;utm_source=GUARDIAN_WEB">Sign up for the Breaking News US email</a></p></li></ul><p>In his opening statement before senators today, Todd Blanche, said that he is <strong>“pleased to testify again today to tell everybody here that we are doing just that-we are keeping America safe”</strong>.</p><p>The nominee for attorney general, who has been leading the justice department in an acting capacity since Pam Bondi was fired in April.</p> <a href="https://www.theguardian.com/us-news/live/2026/jul/15/todd-blanche-attorney-general-senate-donald-trump-ice-darline-graham-lindsey-graham-us-politics-live-news">Continue reading...</a>',
       sourceUrl:
@@ -2932,9 +2934,9 @@ const data: Snapshot = {
       publisher: "The Guardian",
       title: "New York Times files motion to quash justice department’s subpoenas",
       published: "Thu, 16 Jul 2026 00:32:16 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "6efa8b2e2825768f45d6ac06f066b6a06e1c1eeffa1b198843dc7b897fabe0f2",
+      hash: "3da8455a643b4125340df5a61d68670242cacba6fed2bb807540baa6f7e9fee7",
       summary:
         '<p>Journalists who had reported on security concerns around the new Air Force One, a gift from Qatar, received summons</p><p>The New York Times on Wednesday filed a motion to quash subpoenas the justice department served journalists who reported on security concerns involving the new Air Force One, a gift from Qatar, teeing up a significant court fight over press freedom and the government’s ability to force reporters to identify sources.</p><p>“As we set out in our motion, these subpoenas are brought in bad faith to punish the Times for its coverage. They violate the constitutional rights of the Times and its journalists. We are going to court to defend our journalists’ rights to report freely on the administration and to provide the public with stories that matter,” David McCraw, the newspaper’s senior vice-president and deputy general counsel, said in a statement.</p> <a href="https://www.theguardian.com/us-news/2026/jul/15/new-york-times-subpoenas-air-force-one">Continue reading...',
       sourceUrl:
@@ -2947,9 +2949,9 @@ const data: Snapshot = {
       publisher: "The Guardian",
       title: "Trump says Iran has released US citizen detained since 2024",
       published: "Thu, 16 Jul 2026 00:20:51 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "3768cb88eb3ce2490e23fc5118363471691f547822c51be09070528d4cf78dad",
+      hash: "6770ba15e794cb45b35784b68cd7f5eb5a6d1f7c6b0a7b900c00bad145f9a494",
       summary:
         '<p>Dena Karari, dual US-Iranian citizen, ‘now safely outside of Iran, and in good condition’, president posts on Truth Social</p><p>Donald Trump said Wednesday Iran had agreed to release an American citizen who was “wrongfully detained” since December 2024.</p><p>“She is now safely outside of Iran, and in good condition,” Trump <a href="https://truthsocial.com/@realDonaldTrump/posts/116926450735170990">wrote on social media</a>, without naming the woman. “The United States of America appreciates this gesture of Goodwill by Iran!”</p> <a href="https://www.theguardian.com/us-news/2026/jul/15/trump-iran-detained-citizen-released">Continue reading...</a>',
       sourceUrl:
@@ -2962,9 +2964,9 @@ const data: Snapshot = {
       publisher: "The Guardian",
       title: "New $1 coin featuring Trump in production at US Mint, treasury says",
       published: "Wed, 15 Jul 2026 23:59:46 GMT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "f56e5ce69f6a72ac91db0686b13db266239e61899eea65399dee5cca2711dd93",
+      hash: "5af3821dbe9533372b8f9ebb812f09a902c14675af091e6f3e4ff11279e1190d",
       summary:
         '<p>Coin commemorating 250th anniversary will be released this fall and marks first time a living president appears on currency</p><p>The treasury department announced on Wednesday that the US Mint has started producing a new commemorative $1 coin featuring Donald Trump as part of the nation’s 250th anniversary celebration.</p><p>The coin is scheduled for release this fall. Treasury officials said its final design was approved earlier this year by the US Commission of Fine Arts, whose members were appointed by Trump.</p> <a href="https://www.theguardian.com/us-news/2026/jul/15/trump-coin-us-mint-production">Continue reading...</a>',
       sourceUrl: "https://www.theguardian.com/us-news/2026/jul/15/trump-coin-us-mint-production",
@@ -2974,15 +2976,16 @@ const data: Snapshot = {
     {
       id: "REC-2026-07-16-000203",
       publisher: "Der Spiegel",
-      title: "WM 2026: Elf Krieger – wie Argentinien spektakulär über England siegte",
-      published: "Thu, 16 Jul 2026 08:57:00 +0200",
-      archived: "2026-07-16T08:02:28.999Z",
+      title:
+        "Thomas Tuchel: In England werfen sie dem Nationaltrainer jetzt »pure Feigheit« vor. Was hat er sich bei seinen Wechseln gedacht?",
+      published: "Thu, 16 Jul 2026 10:13:00 +0200",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "122e33526009a87cfbe6536b398d0fbdb6618f004a306c6b211ed5a2931c0590",
+      hash: "9df94983db3cacb143058dd74ae0fdbfeb4dbddcebbe1d00771752e36f6c1092",
       summary:
-        "Wieder geriet Argentinien in Not. Und schon wieder stand am Ende ein Triumph. Über eine Mannschaft, die an die eigene Unschlagbarkeit zu glauben scheint – und sich an ihrem martialischen Auftreten selbst berauscht.",
+        "Die beiden Teams waren lange ebenbürtig, dann ging England gegen Argentinien in Führung – und brach völlig ein. Nun wird hitzig über Trainer Tuchel debattiert. Und über eine Entscheidung in der Trinkpause.",
       sourceUrl:
-        "https://www.spiegel.de/sport/fussball/wm-2026-argentinien-schlaegt-england-elf-krieger-a-3bbef0b3-3978-49b7-a28d-e29b0a413291#ref=rss",
+        "https://www.spiegel.de/sport/fussball/thomas-tuchel-in-england-werfen-sie-dem-nationaltrainer-jetzt-pure-feigheit-vor-was-hat-er-sich-bei-seinen-wechseln-gedacht-a-4f5ecaf5-4949-4911-8087-dafe46032eba#ref=rss",
       country: "Germany",
       category: "News",
     },
@@ -2991,9 +2994,9 @@ const data: Snapshot = {
       publisher: "Der Spiegel",
       title: "Instagram-Funktion von Muse Image einkassiert: Mark Zuckerberg und die KI-Blamage",
       published: "Thu, 16 Jul 2026 09:55:00 +0200",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "a5e643a43411afb300ad4c4e59d61eb590b5eb77d5d56d372f9c7a2fe3684e5e",
+      hash: "73db4d31f58e52a474d08583dcf6fd4365c403c7bd7216ec677f88dad0d22366",
       summary:
         "Meta muss eine neue KI-Funktion nach scharfer Kritik wieder zurückziehen. Das offenbart eine Schwachstelle der KI-Branche: Sie verbrennt Milliarden – und schafft es kaum, das Vertrauen der Nutzer zu gewinnen.",
       sourceUrl:
@@ -3007,9 +3010,9 @@ const data: Snapshot = {
       title:
         "Deindustrialisierung: Was der schleichende Rückzug von BASF für Ludwigshafen bedeutet",
       published: "Thu, 16 Jul 2026 07:46:00 +0200",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "28b3a1c05f0e35d03e773af15dfe043a53fbb053e2cc2f8f94188b26ccc36b00",
+      hash: "b0dc0f75ad09cd022686be3b178a56cb4b5b0ac21f73be779d1524b743284425",
       summary:
         "Der größte zusammenhängende Chemiestandort der Welt macht seit Jahren Verluste, BASF investiert neuerdings mehr in China als am Stammsitz. Die Stadt wird zum Inbegriff der deutschen Deindustrialisierung.",
       sourceUrl:
@@ -3023,9 +3026,9 @@ const data: Snapshot = {
       title:
         "Marokko: Wie das Land die digitale »Monsterwaffe« gegen unliebsame Kritiker einsetzte",
       published: "Thu, 16 Jul 2026 06:33:00 +0200",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "12335097702b2a1b51afb9193767c22fdcc8056d3e5d1db48a3f782f9a387795",
+      hash: "19011838319199dd3e831cb51e35b12b919aa9a0c47ae8cfa9bc894bac538216",
       summary:
         "Marokko bestreitet, Spionagesoftware gegen Aktivisten und Journalisten eingesetzt zu haben. Insider des dortigen Geheimdienstes belegen nun das Gegenteil. Und zeichnen das Bild eines Hightech-Überwachungsstaats.",
       sourceUrl:
@@ -3038,9 +3041,9 @@ const data: Snapshot = {
       publisher: "Der Spiegel",
       title: "Iran-Krieg: USA intensivieren Angriffe und Donald Trump lobt Teheran",
       published: "Thu, 16 Jul 2026 04:22:00 +0200",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "c3d9f43dbd39159d92d8248d22dfed8a5aa4b2e1712b2b5a8e166ee022e5aa4c",
+      hash: "949c856e551b069b669c47ea7eae87c4598c750a284274ea2a307a2f57da8bf9",
       summary:
         "Die nächste Nacht, die nächsten Bombardements: Die USA starten neue Angriffe, Iran schickt Drohnen, Donald Trump verbreitet die übliche Kriegsrhetorik. Mittendrin findet der US-Präsident auch lobende Worte für den Gegner.",
       sourceUrl:
@@ -3051,12 +3054,11 @@ const data: Snapshot = {
     {
       id: "REC-2026-07-16-000208",
       publisher: "Der Spiegel",
-      title:
-        "Jeffrey Epstein: JD Vance räumt Fehler im Umgang mit Akten über den Sexualstraftäter ein",
+      title: "Jeffrey Epstein: »Total vermasselt« – JD Vance räumt Fehler bei Akten ein",
       published: "Thu, 16 Jul 2026 07:51:00 +0200",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "f37535a55f101adeeb05e08f28f6df8a008d9ed6e225e10e116de56287f6fc1d",
+      hash: "8505492ba793988f959f252d51adff44498c2554fd8930e7d5b27982acd5ead9",
       summary:
         "Die US-Regierung steht wegen ihres Umgangs mit den Epstein-Akten in der Kritik. Nun spricht Trumps Stellvertreter JD Vance über Versäumnisse in der Kommunikation – und kommentiert eine Verschwörungstheorie rund um den israelischen Mossad.",
       sourceUrl:
@@ -3069,9 +3071,9 @@ const data: Snapshot = {
       publisher: "Der Spiegel",
       title: "Schongau: Trieb den Täter Hass auf Mädchen an?",
       published: "Thu, 16 Jul 2026 05:57:00 +0200",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "54f6e2646b1b71ff133839c683b9b96c6e18f9437c8217e9c87085695e412d42",
+      hash: "2663ef33a98dcfb0996fac32b5ce6e735e3bcecb10fac171c7d76dfa60170ae5",
       summary:
         "Das »Manifest« des mutmaßlichen Messerangreifers an einer bayerischen Schule strotzt vor Gewaltfantasien und Frauenfeindlichkeit. Die Spuren führen in dunkle Onlineszenen.",
       sourceUrl:
@@ -3084,9 +3086,9 @@ const data: Snapshot = {
       publisher: "Der Spiegel",
       title: "Wetter in Deutschland: Erst kracht’s – dann wird es kühler",
       published: "Thu, 16 Jul 2026 03:19:00 +0200",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "175e83f0eb797f240450e31392821f8959fb045a9dded92334960a7a5542743e",
+      hash: "f9ca8b23e5136be53e62fff3b3d6874d4f0a8a13860cfef89568721a9aa0aadb",
       summary:
         "Gute Nachrichten für alle Hitzegeplagten: Richtung Wochenende purzeln die Temperaturen. Der Donnerstag könnte allerdings vielerorts noch einmal turbulent werden.",
       sourceUrl:
@@ -3099,9 +3101,9 @@ const data: Snapshot = {
       publisher: "Der Spiegel",
       title: "Dynamische Stromtarife: Warum sich flexible Preise seltener lohnen als gedacht",
       published: "Thu, 16 Jul 2026 06:01:00 +0200",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "33e0e5e2b7a233b76de738388ba7b4c35a35b4e941fd5f5a8208edfb480079b0",
+      hash: "9e9b3b40da7dc12d9435f75eb58e4399bc1c30f10cb8317b21a9971d0aad1a85",
       summary:
         "Strom billig kaufen bei viel Wind und Sonne – das ist die Idee dynamischer Tarife. Doch die Verträge mit schwankenden Preisen lohnen sich oft nicht, zeigt eine neue Auswertung. Eine Ausnahme sind Haushalte mit Elektroauto.",
       sourceUrl:
@@ -3114,9 +3116,9 @@ const data: Snapshot = {
       publisher: "Der Spiegel",
       title: "Zendaya trägt antike Ohrringe und erntet Kritik. Aber warum?",
       published: "Thu, 16 Jul 2026 05:34:00 +0200",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "884040ab8eaacbf4c3a7ed4bd4719bd171bcc4137a5e65863b66f9689b429c68",
+      hash: "8f9d05859a975920b6b8fd278d40f53b1bea7cffcf288036e54b7d6481d8540b",
       summary: "Zendaya trägt antike Ohrringe und erntet Kritik. Aber warum?",
       sourceUrl:
         "https://www.spiegel.de/kultur/zendaya-traegt-antike-ohrringe-und-erntet-kritik-aber-warum-a-73988e70-a779-446f-81b0-e162f3b89abc#ref=rss",
@@ -3128,9 +3130,9 @@ const data: Snapshot = {
       publisher: "Der Spiegel",
       title: "E-Auto: Kaufen oder leasen? Hier erfahren Sie, was besser ist",
       published: "Wed, 15 Apr 2026 05:30:00 +0200",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "17cb5bcd889c61cdb2cb2d09cba0cdb74763b672fe1253b267ffab55e0ea3b66",
+      hash: "79e066d958cfda69596acb6e6ece5621d127128e7625a6989a4628bc71dc36a9",
       summary:
         "Wenn die Spritpreise steigen, werden Elektroautos attraktiver. Nun gibt der Staat auch noch bis zu 6000 Euro Prämie dazu. Doch sind Sie wirklich der Typ für ein neues E-Auto – und wie sollten Sie es am besten finanzieren?",
       sourceUrl:
@@ -3141,11 +3143,11 @@ const data: Snapshot = {
     {
       id: "REC-2026-07-16-000214",
       publisher: "Der Spiegel",
-      title: "Kaiserslautern: Mann wird reanimiert – Autofahrerin blockiert Rettungswagen",
+      title: "Kaiserslautern: Autofahrerin blockiert Rettungswagen nach Reanimation",
       published: "Thu, 16 Jul 2026 08:47:00 +0200",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "664afd8c0d1c56adc3a05d8247c494f69a97b61fc2021338c6b846c49e7958f2",
+      hash: "9d31dcbbc609a37b93dd292bcd16f02c3ce72abe175b7496f7239b036a8140d3",
       summary:
         "Rettungskräfte kämpfen um ein Leben, doch der Transport des Patienten ins Krankenhaus kann nicht starten: Eine 66-Jährige weigert sich, die Durchfahrt mit ihrem Auto freizugeben – etwa zehn Minuten lang.",
       sourceUrl:
@@ -3157,27 +3159,11 @@ const data: Snapshot = {
       id: "REC-2026-07-16-000215",
       publisher: "Der Spiegel",
       title:
-        "Tour de France 2026: Tadej Pogačar staunt bei 11. Etappe über Rekordtempo von 50,9 km/h",
-      published: "Wed, 15 Jul 2026 19:40:00 +0200",
-      archived: "2026-07-16T08:02:28.999Z",
-      status: "VERIFIED",
-      hash: "8a9e23ab7ec7ed322c0980a0100c5b03289356ce269c4cef42490fb5918e601b",
-      summary:
-        "Durchschnittlich 50,9 Kilometer pro Stunde: Das Peloton fuhr so schnell wie noch nie. Da musste sich nach einem Toilettenstopp sogar Superstar Tadej Pogačar kurz anstrengen.",
-      sourceUrl:
-        "https://www.spiegel.de/sport/radsport/tour-de-france-2026-11-etappe-tadej-pogacar-staunt-ueber-rekordtempo-von-50-9-km-h-a-96638e51-fe8b-4060-bd41-4199ce68ef11#ref=rss",
-      country: "Germany",
-      category: "News",
-    },
-    {
-      id: "REC-2026-07-16-000216",
-      publisher: "Der Spiegel",
-      title:
         "Laura Viktoria Härtig stirbt offenbar nach Kollision mit ehemaligem Skifahrer Peter Runggaldier",
       published: "Wed, 15 Jul 2026 22:02:00 +0200",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "c6eb21c67a06218b895359fefd35eaec903b49a058baacc771e06209b0147e8b",
+      hash: "20519b94ec83d9e4611d09d65d57a5248cc1e8fdae8805c807ee4f18c607e6c9",
       summary:
         "Laura Viktoria Härtig ist Medienberichten zufolge bei einer Radtour mit dem Motorrad von Ex-Skifahrer Peter Runggaldier zusammengeprallt. Demnach starb die Influencerin knapp drei Wochen nach dem Unfall in ihren Flitterwochen.",
       sourceUrl:
@@ -3186,13 +3172,13 @@ const data: Snapshot = {
       category: "News",
     },
     {
-      id: "REC-2026-07-16-000217",
+      id: "REC-2026-07-16-000216",
       publisher: "Der Spiegel",
       title: "»Meccha Chameleon«: Was Eltern über das gehypte Versteckspiel wissen sollten",
       published: "Thu, 16 Jul 2026 06:19:00 +0200",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "6856b9a44d179aa6087a3edf65ad2d04c197dad17c3aa7a19cf93abe34b66a17",
+      hash: "511b8f123665232eeed6a14c79bbb1bf893187065c0aae2febe2ae0d7fb74d5e",
       summary:
         "Millionen Kinder und Jugendliche spielen gerade ein neues Onlinespiel. Doch in dem eigentlich harmlosen Game können sie auf Hakenkreuze, sexuelle Darstellungen und weitere Probleme treffen. Doch es gibt Schutzmaßnahmen.",
       sourceUrl:
@@ -3201,13 +3187,13 @@ const data: Snapshot = {
       category: "News",
     },
     {
-      id: "REC-2026-07-16-000218",
+      id: "REC-2026-07-16-000217",
       publisher: "Der Spiegel",
       title: "Bewerbung mit KI: SAP-Recruiterin erzählt, woran sie echte Kompetenz erkennt",
       published: "Thu, 16 Jul 2026 08:18:00 +0200",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "8a933bb73464531c724979d6c087f986e8b39c1ad9d9dda7086a26955694454d",
+      hash: "ad98fa60524472403b02f92b628c2b85026aefc52bbb1b4d60462be94586ebf5",
       summary:
         "Bewerbung schreiben ohne ChatGPT? Macht heute kaum noch jemand, glaubt Recruiterin Diana Gajic. Sie sichtet an manchen Tagen Hunderte Unterlagen. Und verrät, wie man aus der Masse hervorsticht.",
       sourceUrl:
@@ -3216,28 +3202,28 @@ const data: Snapshot = {
       category: "News",
     },
     {
-      id: "REC-2026-07-16-000219",
+      id: "REC-2026-07-16-000218",
       publisher: "Der Spiegel",
-      title: "»Odyssee« von Christopher Nolan: Man liebt oder hasst diesen Film",
-      published: "Wed, 15 Jul 2026 18:01:00 +0200",
-      archived: "2026-07-16T08:02:28.999Z",
+      title: "Roland Emmerich plant KI-Film über Autorennen von Menschen und Aliens",
+      published: "Thu, 16 Jul 2026 10:31:00 +0200",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "9bea857a1b01b7af88792dc47659e84cdd14632c3eba2247bda979ee5161b407",
+      hash: "a1e6015b6dd2e9f32337e315623a83e2e91e8b9446a503dc0bb8611d3312fd14",
       summary:
-        "Christopher Nolans »Odyssee« wurde schon vor dem Kinostart ordentlich runtergemotzt. Zu Unrecht. Der Film ist ein obsessives Männerdrama. Mit einem durch Selbsthass getriebenen Antihelden.",
+        "In Hollywood wird viel über den Einsatz von künstlicher Intelligenz diskutiert. Erfolgsregisseur Roland Emmerich hat nun verraten, dass er gern einen KI-Film drehen möchte. Die Handlung klingt sehr speziell.",
       sourceUrl:
-        "https://www.spiegel.de/kultur/christopher-nolans-odyssee-mit-matt-damon-man-liebt-oder-hasst-diesen-film-a-78be5790-d650-4f7d-806a-4580189a1da2#ref=rss",
+        "https://www.spiegel.de/kultur/kino/roland-emmerich-plant-ki-film-ueber-autorennen-von-menschen-und-aliens-a-00080eb0-4a98-48e5-8c1e-4878569f7032#ref=rss",
       country: "Germany",
       category: "News",
     },
     {
-      id: "REC-2026-07-16-000220",
+      id: "REC-2026-07-16-000219",
       publisher: "Der Spiegel",
       title: "»Star Wars«-Lichtschwert für fast vier Millionen Dollar versteigert",
       published: "Thu, 16 Jul 2026 09:11:00 +0200",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "689179a3e144e480cff9b82ea11cb905f825eea5895dfc4ac63e2786a6995f42",
+      hash: "12d234a77512f5f58717cd1083c18bf8c1b110ed93aa91114e00015952e4aa48",
       summary:
         "Das Lichtschwert kam 1980 im Film »Das Imperium schlägt zurück« zum Einsatz: Luke Skywalker zückte es in einem legendären Zweikampf mit Darth Vader. Nun hat die Requisite bei einer Auktion den Besitzer gewechselt.",
       sourceUrl:
@@ -3246,13 +3232,13 @@ const data: Snapshot = {
       category: "News",
     },
     {
-      id: "REC-2026-07-16-000221",
+      id: "REC-2026-07-16-000220",
       publisher: "Der Spiegel",
       title: "Jens Spahn und Ehemann Daniel Funke sind Eltern geworden",
       published: "Wed, 15 Jul 2026 17:28:00 +0200",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "4b5991863951f3ad4362bd2643f04cde61c2225165fd507f1449c79e15611337",
+      hash: "b993fd9b86a94375c45d13b98312ebb28ab400faac66e6fb12f568cff1640875",
       summary:
         "Der CDU-Politiker Jens Spahn und sein Ehemann Daniel Funke haben die Geburt ihres Kindes bekannt gegeben. Zur Welt gebracht wurde Sohn Georg demnach in den USA von einer Leihmutter.",
       sourceUrl:
@@ -3261,13 +3247,13 @@ const data: Snapshot = {
       category: "News",
     },
     {
-      id: "REC-2026-07-16-000222",
+      id: "REC-2026-07-16-000221",
       publisher: "Der Spiegel",
       title: "Suizidhilfe und ihre Folgen: Angehörige werfen DGHS Leichtfertigkeit vor",
       published: "Wed, 15 Jul 2026 11:19:00 +0200",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "c3a74ac54ce855bbab39a5907a29666bbea2b65691f857798f2705c4c975ae67",
+      hash: "8160fd53f9611b1c1ab975bcd90a79cf72d5638748630087a287aa5be738b0d0",
       summary:
         "Wie seriös ist Deutschlands größte Suizidhilfeorganisation, die DGHS? Angehörige werfen ihr Leichtfertigkeit vor – und dass sie teils vom Geld der Toten profitiere.",
       sourceUrl:
@@ -3276,13 +3262,13 @@ const data: Snapshot = {
       category: "News",
     },
     {
-      id: "REC-2026-07-16-000223",
+      id: "REC-2026-07-16-000222",
       publisher: "Der Spiegel",
       title: "Trennung: Wie Luna und Nicholas sich zweimal verloren und wiederfanden",
       published: "Sun, 12 Jul 2026 05:30:00 +0200",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "87380c8216b491faa3e209a6b1a60629f3318aa528a0cca411adc1f715b76d6c",
+      hash: "43a4acbaf222643dc21f766c639bf016df5ddf14ae6e0bc9ac64fcabb8c6c203",
       summary:
         "Manche Beziehungen enden für immer. Andere beginnen erst so richtig, wenn es zum Bruch kommt. So wie bei Luna und Nicholas.",
       sourceUrl:
@@ -3291,13 +3277,13 @@ const data: Snapshot = {
       category: "News",
     },
     {
-      id: "REC-2026-07-16-000224",
+      id: "REC-2026-07-16-000223",
       publisher: "Der Spiegel",
       title: "Sennheiser Momentum 5 im Test: Dieser Kopfhörer hat kein Mindesthaltbarkeitsdatum",
       published: "Sat, 11 Jul 2026 19:37:00 +0200",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "7b4f9b861163c77338d397b84a0efce74c10fda1dfe08b1bf13c34b10c1f94a1",
+      hash: "2099501e50c836dbde1ca26e72c9693dd24b5065f165e7c052dced4ef97d987d",
       summary:
         "Der neue Momentum 5 soll die Umwelt besser ruhig stellen können als sein Vorgänger. Vor allem aber soll er länger halten. Klingt das auch gut?",
       sourceUrl:
@@ -3306,13 +3292,13 @@ const data: Snapshot = {
       category: "News",
     },
     {
-      id: "REC-2026-07-16-000225",
+      id: "REC-2026-07-16-000224",
       publisher: "Der Spiegel",
       title: "Eis essen: Warum ist Eis in der Eisdiele cremiger als im Gefrierschrank daheim?",
       published: "Mon, 13 Jul 2026 13:05:00 +0200",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "bd95ebd10badc8cef13fac6876ec9ab819c8be33d04ae47bb047d6f2b1081a2f",
+      hash: "f69475991e1fc093e6580e3a86843a1d3f65132ca18746dd5449b27e0fba632a",
       summary:
         "Das Speiseeis aus der eigenen Gefriertruhe ist steinhart und muss erst antauen. In Eisdielen wird es dagegen herrlich weich serviert. Wie kommt es zu diesem Unterschied? DEIN SPIEGEL erklärt’s.",
       sourceUrl:
@@ -3321,33 +3307,50 @@ const data: Snapshot = {
       category: "News",
     },
     {
+      id: "REC-2026-07-16-000225",
+      publisher: "Le Monde",
+      title:
+        "EN DIRECT, guerre en Ukraine : « Ne touchez pas à Fedorov », « Ramenez Fedorov »… des rassemblements dans plusieurs villes ukrainiennes pour protester contre le départ du ministre de la défense",
+      published: "Thu, 16 Jul 2026 07:10:19 +0200",
+      archived: "2026-07-16T08:44:44.735Z",
+      status: "VERIFIED",
+      hash: "7d565ca88e87e9c7c2c39b01b4e0e1f3fd4b30d5b4c15d93b38df518b117e03e",
+      summary:
+        "Ces manifestations, organisées à la veille de l’examen par le Parlement d’un remaniement gouvernemental, ont été annoncées après des informations faisant état du remplacement imminent de M. Fedorov et la publication par celui-ci d’un message d’adieu.",
+      sourceUrl:
+        "https://www.lemonde.fr/international/live/2026/07/16/en-direct-guerre-en-ukraine-l-aiea-deplore-la-mort-de-l-ingenieur-en-chef-de-la-centrale-nucleaire-de-zaporijia_6722853_3210.html",
+      country: "France",
+      category: "News",
+    },
+    {
       id: "REC-2026-07-16-000226",
       publisher: "Le Monde",
       title:
-        "« Je pensais qu’on allait gagner. On a été inexistants » : des supporters des Bleus « dégoûtés » après la sévère défaite contre l’Espagne",
-      published: "Wed, 15 Jul 2026 09:30:00 +0200",
-      archived: "2026-07-16T08:02:28.999Z",
+        "De nouvelles preuves démontrent que le Maroc a bien utilisé le logiciel espion Pegasus",
+      published: "Thu, 16 Jul 2026 06:30:02 +0200",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "c6b1d4679b50862edc63c8a4ffc2a42e2eb7c0702724d36f5fb63cb29dcf0d57",
+      hash: "db88b18e9dad21acb94ef0eab47a10b76b861742676ba58d17972cf50b98e23c",
       summary:
-        "En région parisienne comme dans le Nord ou en Haute-Garonne, le public a vite compris, mardi soir, que l’équipe de France se dirigeait vers une défaite. Mais les spectateurs veulent aussi se souvenir de plusieurs semaines de communion.",
+        "Le royaume chérifien continue de nier avoir été utilisateur du puissant logiciel de l’entreprise NSO Group, malgré les révélations du « Monde » et de ses partenaires en 2021. De nouveaux éléments et témoignages le confirment à nouveau.",
       sourceUrl:
-        "https://www.lemonde.fr/sport/article/2026/07/15/c-est-pas-grave-mon-bonhomme-le-foot-c-est-pas-grave-les-fans-tricolores-resignes-apres-la-defaite-de-la-france-en-demi-finales-de-la-coupe-du-monde_6723518_3242.html",
+        "https://www.lemonde.fr/pixels/article/2026/07/16/de-nouvelles-preuves-demontrent-que-le-maroc-a-utilise-le-logiciel-espion-pegasus_6723736_4408996.html",
       country: "France",
       category: "News",
     },
     {
       id: "REC-2026-07-16-000227",
       publisher: "Le Monde",
-      title: "Fin de vie : l’aide à mourir, un « long cheminement » pour Emmanuel Macron",
-      published: "Wed, 15 Jul 2026 06:00:14 +0200",
-      archived: "2026-07-16T08:02:28.999Z",
+      title:
+        "EN DIRECT, canicule : l’incendie de Die, dans la Drôme, « considéré comme fixé », selon la préfète ; Emmanuel Macron attendu à Fontainebleau",
+      published: "Thu, 16 Jul 2026 07:08:28 +0200",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "701611ebd6b2190562ae0a994b28365dc24904e34398bcba50077d04ce3569bc",
+      hash: "56b24f93ed6a3e2efeac6e1745f5d63f59adacbdba7f42ea9dd7f9bda22c81ca",
       summary:
-        "Après avoir douté de la nécessité d’une nouvelle législation, craint de mécontenter les représentants des cultes et redouté de fracturer la société, le chef de l’Etat s’est finalement résolu à faire évoluer la loi sur l’aide à mourir. La proposition de loi devrait être adoptée, cet après-midi, à l’Assemblée nationale.",
+        "L’Ile-de-France et le Sud-Est sont toujours placés en en vigilance orange pour fortes chaleurs ou orages, neuf départements seront également en vigilance feu élevé, notamment dans le sud de la France.",
       sourceUrl:
-        "https://www.lemonde.fr/politique/article/2026/07/15/fin-de-vie-l-aide-a-mourir-un-long-cheminement-pour-emmanuel-macron_6723495_823448.html",
+        "https://www.lemonde.fr/planete/live/2026/07/16/en-direct-incendies-emmanuel-macron-se-rend-a-fontainebleau-foret-emblematique-en-partie-detruite-par-les-flammes_6723261_3244.html",
       country: "France",
       category: "News",
     },
@@ -3355,15 +3358,15 @@ const data: Snapshot = {
       id: "REC-2026-07-16-000228",
       publisher: "Le Monde",
       title:
-        "EN DIRECT, guerre au Moyen-Orient : de nouvelles frappes américaines signalées contre Bouchehr, dans le sud-ouest de l’Iran",
-      published: "Wed, 15 Jul 2026 07:10:44 +0200",
-      archived: "2026-07-16T08:02:28.999Z",
+        "« C’est “Mad Max” sur l’Océan » : des go fast chargés de tonnes de cocaïne déferlent sur les côtes européennes",
+      published: "Thu, 16 Jul 2026 05:59:44 +0200",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "f52e4ab7e29027c351b3e12323fc8bdd7280971f030242b61ee1705d683dcd81",
+      hash: "aab58fb32273c5726727bd39b995086d37007099edff25047dd22fe13904646c",
       summary:
-        "« Trois points de la ville de Bouchehr ont été visés par l’armée terroriste américaine », a déclaré mercredi le gouverneur de la province du même nom, cité par l’agence Fars. L’armée iranienne a par ailleurs annoncé la mort de sept militaires lors d’autres frappes américaines dans le sud-est du pays.",
+        "Dans l’Atlantique, des centaines de hors-bords ultrapuissants, conçus sur mesure pour transporter des tonnes de cocaïne, viennent récupérer la marchandise auprès de navires qui empruntent les routes commerciales entre l’Amérique du Sud, l’Afrique et l’Europe, révèle une enquête du « Monde », en partenariat avec NDR, WDR, le « Süddeutsche Zeitung », « NRC », « IrpiMedia » et le « Washington Post ».",
       sourceUrl:
-        "https://www.lemonde.fr/international/live/2026/07/15/en-direct-guerre-au-moyen-orient-le-detroit-d-ormuz-restera-ferme-jusqu-a-la-fin-des-actes-d-agression-des-etats-unis-dit-l-iran_6722873_3210.html",
+        "https://www.lemonde.fr/videos/article/2026/07/16/c-est-mad-max-sur-l-ocean-les-go-fast-charges-de-cocaine-a-l-assaut-des-cotes-europeennes_6723728_1669088.html",
       country: "France",
       category: "News",
     },
@@ -3371,15 +3374,15 @@ const data: Snapshot = {
       id: "REC-2026-07-16-000229",
       publisher: "Le Monde",
       title:
-        "EN DIRECT, incendies : les deux feux de la forêt de Fontainebleau sont « fixés » mais pas « éteints »",
-      published: "Wed, 15 Jul 2026 06:57:50 +0200",
-      archived: "2026-07-16T08:02:28.999Z",
+        "EN DIRECT, guerre au Moyen-Orient : Téhéran menace de réduire à néant des infrastructures de la région si les siennes sont attaquées",
+      published: "Thu, 16 Jul 2026 05:53:46 +0200",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "719eabede30609688cd74422d2019c95f1246a44d17f9fb6d2ff98268664552c",
+      hash: "168182464e8b07af935eab3a95220054cc5a3538c984a627ce9c2a3da3c06a56",
       summary:
-        "Les deux feux ont parcouru un peu plus de 2 000 hectares depuis dimanche, a annoncé mardi soir le préfet de Seine-et-Marne, précisant que les personnes évacuées pourront regagner leur domicile, mais pas avant mercredi.",
+        "L’armée iranienne a annoncé, jeudi matin, avoir ciblé des installations militaires américaines en Jordanie avec des drones, selon la télévision d’Etat, après que les Etats-Unis ont mené de nouvelles frappes sur le territoire iranien.",
       sourceUrl:
-        "https://www.lemonde.fr/planete/live/2026/07/15/en-direct-incendies-les-deux-feux-de-la-foret-de-fontainebleau-sont-fixes-mais-pas-eteints_6723261_3244.html",
+        "https://www.lemonde.fr/international/live/2026/07/16/en-direct-guerre-au-moyen-orient-les-etats-unis-ont-lance-de-nouvelles-frappes-contre-l-iran-teheran-cible-des-installations-americaines-en-jordanie_6722873_3210.html",
       country: "France",
       category: "News",
     },
@@ -3387,62 +3390,61 @@ const data: Snapshot = {
       id: "REC-2026-07-16-000230",
       publisher: "Le Monde",
       title:
-        "Présidentielle 2027 : Jean-Luc Mélenchon, en meeting en Bretagne, s’adresse aux « enfants » des Jacobins pour défendre ses « écorégions »",
-      published: "Wed, 15 Jul 2026 07:53:48 +0200",
-      archived: "2026-07-16T08:02:28.999Z",
+        "« Les Malouines sont argentines » : une banderole déployée par les joueurs argentins après leur victoire face à l’Angleterre",
+      published: "Thu, 16 Jul 2026 08:31:54 +0200",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "3e9b12e9e66d37e891d967de40025a461c7eb9a6b7f246f98de6f1cc0e03d521",
+      hash: "00a41c5c7a6c918e512b4bc2c463a2ef17525aca1da1a18fe4c022bcc31f374b",
       summary:
-        "Attendu sur les questions de ruralité et d’agriculture, le 14 juillet, à Paimpont (Ille-et-Vilaine), le candidat de LFI a surtout évoqué son projet de nouvelles régions, dessinées à partir des bassins versants. Et a glissé son veto quant à un éventuel rapprochement de la Loire-Atlantique avec la Bretagne.",
+        "A l’issue de la demi-finale de Coupe du monde, plusieurs joueurs argentins ont déployé sur la pelouse du stade d’Atlanta une banderole faisant référence au litige territorial avec l’Angleterre.",
       sourceUrl:
-        "https://www.lemonde.fr/politique/article/2026/07/15/en-bretagne-jean-luc-melenchon-s-adresse-aux-enfants-des-jacobins-pour-defendre-ses-ecoregions_6723503_823448.html",
+        "https://www.lemonde.fr/sport/article/2026/07/16/coupe-du-monde-2026-une-banderole-les-malouines-sont-argentines-deployee-par-des-joueurs-de-l-albiceleste_6723744_3242.html",
       country: "France",
       category: "News",
     },
     {
       id: "REC-2026-07-16-000231",
       publisher: "Le Monde",
-      title: "« L’Odyssée » : Christopher Nolan peine à se mesurer à Homère",
-      published: "Wed, 15 Jul 2026 08:30:04 +0200",
-      archived: "2026-07-16T08:02:28.999Z",
+      title:
+        "La mise en cause de deux inspecteurs du travail vire à l’affaire politique pour le ministère",
+      published: "Thu, 16 Jul 2026 07:47:21 +0200",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "f08f172d2e5925640431d51998075465c2e87ba63246a40761baad7ed05bed8f",
+      hash: "fcb5d427865bfd45415308038e117378f05c73c9c6ce2d8764b5c832581de816",
       summary:
-        "A la recherche d’une esthétique originale susceptible de figurer le chef-d’œuvre épique de l’Antiquité, le cinéaste joue la carte du grandiose, avec un casting de prestige et d’énormes moyens, sans parvenir à convaincre.",
+        "Remarqués pendant la controverse autour du travail le 1ᵉʳ-Mai, deux agents représentant le syndicat SUD ont été convoqués jeudi à un conseil de discipline. Ils sont soutenus par les organisations syndicales et des parlementaires de gauche.",
       sourceUrl:
-        "https://www.lemonde.fr/culture/article/2026/07/15/l-odyssee-christopher-nolan-peine-a-se-mesurer-a-homere_6723507_3246.html",
+        "https://www.lemonde.fr/politique/article/2026/07/16/la-mise-en-cause-de-deux-inspecteurs-du-travail-vire-a-l-affaire-politique-pour-le-ministere_6723740_823448.html",
       country: "France",
       category: "News",
     },
     {
       id: "REC-2026-07-16-000232",
       publisher: "Le Monde",
-      title:
-        "EN DIRECT, guerre en Ukraine : trois morts dans des attaques russes nocturnes contre des ports dans la région d’Odessa",
-      published: "Wed, 15 Jul 2026 06:58:52 +0200",
-      archived: "2026-07-16T08:02:28.999Z",
+      title: "La ville de Toronto devient irrespirable, sous la fumée des feux de forêt",
+      published: "Thu, 16 Jul 2026 00:22:16 +0200",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "a541302eb285faeb7e1894f07f3ae431511490d846104deacfd91e10357a0692",
+      hash: "c3f38e0aa64eeef9b618cc860e9b26ebdce75d13a71b1c660b8ce6025294669a",
       summary:
-        "La Russie a revendiqué des frappes contre trois cargos situés près de la ville portuaire d’Odessa et contre des installations navales et pétrolières de cet oblast ukrainien bordé par la mer Noire.",
+        "La fumée émanant des incendies en cours dans le nord-ouest de l’Ontario a plongé la métropole dans un épais nuage de pollution, poussant les autorités à appeler les habitants à ne pas sortir. L’est des Etats-Unis est également affecté.",
       sourceUrl:
-        "https://www.lemonde.fr/international/live/2026/07/15/en-direct-guerre-en-ukraine-les-dernieres-informations-au-15-juillet-2026_6722853_3210.html",
+        "https://www.lemonde.fr/international/article/2026/07/16/au-canada-toronto-suffoque-sous-la-fumee-des-feux-de-foret-et-enregistre-l-une-des-pires-qualites-de-l-air-au-monde_6723623_3210.html",
       country: "France",
       category: "News",
     },
     {
       id: "REC-2026-07-16-000233",
       publisher: "Le Monde",
-      title:
-        "« Vive la République ! vive la France ! vive Nice ! » : l’hommage aux « enfants de la promenade »",
-      published: "Wed, 15 Jul 2026 08:45:40 +0200",
-      archived: "2026-07-16T08:02:28.999Z",
+      title: "En Allemagne, Friedrich Merz reste prudemment optimiste sur l’avenir de sa coalition",
+      published: "Thu, 16 Jul 2026 09:30:06 +0200",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "51904ace014698f579a064aa93c05b5a5236f00c4ea638552997b14ba078f7eb",
+      hash: "b13bab6698b2b4eb436f5c3b2670123c3b36c66d268b1fd7bf84d4e7042aa0a7",
       summary:
-        "Emmanuel Macron a présidé, mardi, un hommage solennel aux victimes et aux héros de l’attentat du 14 juillet 2016 sur la promenade des Anglais à Nice, pour lesquels un moment de recueillement a été observé au début de la demi-finale des Bleus au Mondial.",
+        "Echaudé par plusieurs crises politiques qui ont fait craindre pour la viabilité de son alliance, le chancelier s’est abstenu de tout triomphalisme sur les réformes obtenues, lors de sa conférence de presse d’été, mercredi.",
       sourceUrl:
-        "https://www.lemonde.fr/politique/article/2026/07/15/vive-la-republique-vive-la-france-vive-nice-l-hommage-aux-enfants-de-la-promenade_6723513_823448.html",
+        "https://www.lemonde.fr/international/article/2026/07/16/en-allemagne-friedrich-merz-reste-prudemment-optimiste-sur-l-avenir-de-sa-coalition_6723747_3210.html",
       country: "France",
       category: "News",
     },
@@ -3450,31 +3452,30 @@ const data: Snapshot = {
       id: "REC-2026-07-16-000234",
       publisher: "Le Monde",
       title:
-        "Aux Etats-Unis, les ambitions de Donald Trump sur le budget de la défense freinées par les démocrates",
-      published: "Wed, 15 Jul 2026 10:00:03 +0200",
-      archived: "2026-07-16T08:02:28.999Z",
+        "Droits de douane : le Brésil devient la première cible des Etats-Unis, qui ont annoncé taxer à 25 % certains produits",
+      published: "Thu, 16 Jul 2026 08:54:09 +0200",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "4ee58c8e516eedf60f19fde9e6c02a41948b25947001aec825fe64fa943aa962",
+      hash: "34c5d435642d2d6e4400255f355ba3b8944b36c86c09c93cebb04fc704f54122",
       summary:
-        "L’opposition démocrate a bloqué, mardi 14 juillet, l’examen au Sénat de la loi d’autorisation de la défense nationale. Un geste présenté comme une riposte à la guerre contre l’Iran déclenchée en février par Donald Trump sans l’aval du Congrès.",
+        "La présidence du Brésil a aussitôt rejeté ces droits de douane « illégaux », promettant que des mesures de « réciprocité » seront prises dans le cadre d’une loi votée par le Parlement en 2025.",
       sourceUrl:
-        "https://www.lemonde.fr/international/article/2026/07/15/aux-etats-unis-les-ambitions-de-donald-trump-sur-le-budget-de-la-defense-freinees-par-les-democrates_6723522_3210.html",
+        "https://www.lemonde.fr/economie/article/2026/07/16/droits-de-douane-le-bresil-devient-la-premiere-cible-des-etats-unis-qui-ont-annonce-imposer-de-25-certains-produits_6723745_3234.html",
       country: "France",
       category: "News",
     },
     {
       id: "REC-2026-07-16-000235",
       publisher: "Le Monde",
-      title:
-        "Affaire Grégory : les faits reprochés Jacqueline Jacob sont prescrits, selon son avocat",
-      published: "Wed, 15 Jul 2026 10:06:16 +0200",
-      archived: "2026-07-16T08:02:28.999Z",
+      title: "L’empereur Marc Aurèle, stoïcien à Rome comme sur le champ de bataille",
+      published: "Thu, 16 Jul 2026 08:00:07 +0200",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "e96910dbd77a4c323acd59f300be951e7cc799da4fed57725bfce6682eaba6e3",
+      hash: "44775a7b0fba80a306d1ccc03c8964cc4e6cdd17525e892b93a20bc107517e1a",
       summary:
-        "La grand-tante de Grégory Villemin aurait notamment écrit, selon un expert, la lettre anonyme qui a revendiqué l’assassinat de Grégory Villemin, retrouvé noyé et ligoté à l’âge de 4 ans dans la Vologne le 16 octobre 1984.",
+        "« Quand gouvernent sages et philosophes » (1/5). Le Romain réussit comme peu d’autres à concilier exercice du pouvoir et vie de sagesse.",
       sourceUrl:
-        "https://www.lemonde.fr/societe/article/2026/07/15/affaire-gregory-les-faits-reproches-jacqueline-jacob-sont-prescrits-selon-son-avocat_6723525_3224.html",
+        "https://www.lemonde.fr/series-d-ete/article/2026/07/16/l-empereur-marc-aurele-stoicien-a-rome-comme-sur-le-champ-de-bataille_6723742_3451060.html",
       country: "France",
       category: "News",
     },
@@ -3482,31 +3483,30 @@ const data: Snapshot = {
       id: "REC-2026-07-16-000236",
       publisher: "Le Monde",
       title:
-        "Présidentielle 2027 : en Gironde, Raphaël Glucksmann entretient le suspense sur sa candidature",
-      published: "Wed, 15 Jul 2026 08:07:26 +0200",
-      archived: "2026-07-16T08:02:28.999Z",
+        "Fin de vie : le Parlement approuve définitivement le droit à l’« aide à mourir » ; Emmanuel Macron salue un « débat respectueux » et un « engagement tenu »",
+      published: "Wed, 15 Jul 2026 19:32:19 +0200",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "b7c4da5269a6fcb20036c624497a1253295ff2f8d25654f8626a10236150ce0e",
+      hash: "698944b51a49db5f382f8a389ec557a7124991ff1331f7c328d34ca39cba402f",
       summary:
-        "L’eurodéputé Place publique refuse toujours de faire officiellement acte de candidature à la future primaire du camp social-démocrate, validée par les militants socialistes le 9 juillet.",
+        "Pour entériner cette promesse du président de la République maintes fois retardée, le gouvernement avait donné le dernier mot à l’Assemblée nationale, qui a approuvé le texte par 291 voix contre 241, mercredi 15 juillet.",
       sourceUrl:
-        "https://www.lemonde.fr/politique/article/2026/07/15/en-gironde-raphael-glucksmann-entretient-le-suspense-sur-sa-candidature_6723506_823448.html",
+        "https://www.lemonde.fr/politique/article/2026/07/15/fin-de-vie-le-parlement-approuve-definitivement-le-droit-a-l-aide-a-mourir_6723602_823448.html",
       country: "France",
       category: "News",
     },
     {
       id: "REC-2026-07-16-000237",
       publisher: "Le Monde",
-      title:
-        "« Il faut rendre inéligibles à vie tout homme ou toute femme politique condamnés pour une infraction à la probité »",
-      published: "Wed, 15 Jul 2026 05:00:04 +0200",
-      archived: "2026-07-16T08:02:28.999Z",
+      title: "British Steel, le sidérurgiste britannique, a été officiellement nationalisé",
+      published: "Thu, 16 Jul 2026 10:15:52 +0200",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "cb2d3093787801a6ed0920d374fd9055d96a02a6f5aa20153fe574c3f6dacc40",
+      hash: "f279cc2e39a05b9689b61695c32da5fb2bd8e310a35cf0ef1b53920dc249a74e",
       summary:
-        "Les dirigeants politiques jugés pour détournement de biens publics ou prise illégale d’intérêts ont tendance à considérer l’inéligibilité comme la seule réelle sanction parmi l’éventail des peines qu’ils encourent, soutient Eric Halphen, magistrat honoraire, dans une tribune au « Monde ».",
+        "Cette nationalisation était attendue après l’adoption par le Parlement d’une loi spéciale et ramène British Steel dans le giron de l’État britannique après sa privatisation en 1988.",
       sourceUrl:
-        "https://www.lemonde.fr/idees/article/2026/07/15/il-faut-rendre-ineligibles-a-vie-tout-homme-ou-toute-femme-politique-condamnes-pour-une-infraction-a-la-probite_6723449_3232.html",
+        "https://www.lemonde.fr/economie/article/2026/07/16/au-royume-uni-le-siderurgiste-british-steel-nationalise_6723751_3234.html",
       country: "France",
       category: "News",
     },
@@ -3514,15 +3514,15 @@ const data: Snapshot = {
       id: "REC-2026-07-16-000238",
       publisher: "Le Monde",
       title:
-        "La « mégafusion » entre Warner et Paramount attaquée en justice par 12 Etats américains et le syndicat des scénaristes",
-      published: "Wed, 15 Jul 2026 05:41:55 +0200",
-      archived: "2026-07-16T08:02:28.999Z",
+        "Antoine Rajerison, le député des paysans qui brave la junte militaire au pouvoir à Madagascar",
+      published: "Thu, 16 Jul 2026 09:58:45 +0200",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "b6b73bd9a742314df5a2460d882d54f92f332dfc3ea1794857054522d4dd1e7d",
+      hash: "5d5f0fb1f99f1d1388d24f593b6b7ab7da78e02870687b03fe0b79d9662d4965",
       summary:
-        "Le projet de fusion à 110 milliards de dollars des deux studios « menace la santé économique et créative de l’industrie américaine du divertissement », selon le syndicat professionnel, qui a entamé une procédure judiciaire.",
+        "L’ingénieur agronome engagé dans la défense des populations rurales est l’une des seules voix à oser critiquer ouvertement le régime de transition dirigé par le colonel Michaël Randrianirina.",
       sourceUrl:
-        "https://www.lemonde.fr/cinema/article/2026/07/15/rachat-de-warner-par-paramount-le-syndicat-des-scenaristes-americains-s-y-oppose-au-meme-titre-que-douze-etats-americains_6723488_3476.html",
+        "https://www.lemonde.fr/afrique/article/2026/07/16/antoine-rajerison-le-depute-des-paysans-qui-brave-la-junte-militaire-au-pouvoir-a-madagascar_6723748_3212.html",
       country: "France",
       category: "News",
     },
@@ -3530,56 +3530,130 @@ const data: Snapshot = {
       id: "REC-2026-07-16-000239",
       publisher: "Le Monde",
       title:
-        "Aux Etats-Unis, l’administration Trump ordonne la suspension des contrôles routiers effectués par l’ICE après la mort de deux personnes",
-      published: "Wed, 15 Jul 2026 05:47:11 +0200",
-      archived: "2026-07-16T08:02:28.999Z",
+        "Tour de France 2026 : le parcours de la douzième étape (circuit Nevers Magny-Cours - Chalon-sur-Saône)",
+      published: "Thu, 16 Jul 2026 08:00:07 +0200",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "0f2abf1148463768d6ad7440f43f5b2e9ab0420323ff63073a3ee5b94dbd29e1",
+      hash: "43a94a874f278ac221febab5eeea372f45a378f2b0f9572e8c9b962801778026",
       summary:
-        "La décision survient au lendemain de la mort par balles d’un Colombien de 25 ans à Biddeford, petite ville du Maine, alors qu’il se trouvait dans sa voiture.",
+        "Les coureurs s’affrontent sur un tracé relativement plat de près de 180 kilomètres. La victoire à l’issue de cette journée semble promise aux sprinteurs.",
       sourceUrl:
-        "https://www.lemonde.fr/international/article/2026/07/15/l-administration-trump-ordonne-la-suspension-des-controles-routiers-de-l-ice_6723489_3210.html",
+        "https://www.lemonde.fr/sport/article/2026/07/16/tour-de-france-2026-le-parcours-de-la-douzieme-etape-circuit-nevers-magny-cours-chalon-sur-saone_6723743_3242.html",
       country: "France",
       category: "News",
     },
     {
       id: "REC-2026-07-16-000240",
       publisher: "Le Monde",
-      title: "La Grande Mosquée de Paris a 100 ans : retour sur un projet grandiose et polémique",
-      published: "Wed, 15 Jul 2026 09:08:35 +0200",
-      archived: "2026-07-16T08:02:28.999Z",
+      title: "A Rio de Janeiro, les colonies de pêcheurs pourraient disparaître",
+      published: "Thu, 16 Jul 2026 03:00:01 +0200",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "28504187897a00258b289f485a7751a9af10c0495f223dcd4ef153d331450bfb",
+      hash: "7434a74d633a923a4fa37f6de23166ea055e7294dccd745617072730bbe8e1bd",
       summary:
-        "Inaugurée en juillet 1926, la Grande Mosquée de Paris symbolise la volonté de la France de reconnaître le rôle des musulmans auprès de la nation en leur offrant un lieu de culte, tout autant que celle de contrôler l’islam français.",
+        "Créés il y a plus d’un siècle, les groupements de pêche artisanale voient leurs prises réduites, principalement du fait de la pollution et des navires industriels. La relève n’est pas assurée.",
       sourceUrl:
-        "https://www.lemonde.fr/le-monde-des-religions/article/2026/07/15/la-grande-mosquee-de-paris-a-100-ans-retour-sur-un-projet-grandiose-et-polemique_6146438_6038515.html",
+        "https://www.lemonde.fr/planete/article/2026/07/16/a-rio-de-janeiro-les-colonies-de-pecheurs-pourraient-disparaitre_6723689_3244.html",
       country: "France",
       category: "News",
     },
     {
       id: "REC-2026-07-16-000241",
-      publisher: "Le Monde",
-      title: "Tour de France 2026 : le parcours de la onzième étape (Vichy-Nevers)",
-      published: "Wed, 15 Jul 2026 08:00:00 +0200",
-      archived: "2026-07-16T08:02:28.999Z",
+      publisher: "Al Jazeera",
+      title: "US releases video of strikes on Iran",
+      published: "Thu, 16 Jul 2026 08:26:24 +0000",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "78acfdec7ccaf8b66ce1ae39b27c999039af14b86ef30f7ee05750ac7ec084ef",
-      summary:
-        "Le peloton traverse les départements de l’Allier et de la Nièvre, pour une étape longue de 161,3 kilomètres qui, sauf surprise, ne devrait pas échapper aux sprinteurs.",
+      hash: "71c7f58a0e3989c89a31259dfefbfd6ff13dd85224a8eaa68e5aa2bd3fba8e4c",
+      summary: "US releases video of strikes on Iran ",
       sourceUrl:
-        "https://www.lemonde.fr/sport/article/2026/07/15/tour-de-france-2026-le-parcours-de-la-onzieme-etape-vichy-nevers_6723504_3242.html",
-      country: "France",
+        "https://www.aljazeera.com/video/newsfeed/2026/7/16/us-releases-video-of-strikes-on-iran?traffic_source=rss",
+      country: "Qatar",
       category: "News",
     },
     {
       id: "REC-2026-07-16-000242",
       publisher: "Al Jazeera",
+      title: "US strikes Iran, tanker, as Tehran hits Kuwait, Jordan: What’s the latest",
+      published: "Thu, 16 Jul 2026 08:23:40 +0000",
+      archived: "2026-07-16T08:44:44.735Z",
+      status: "VERIFIED",
+      hash: "ffd6253697d8ff823b0b52308973b30717afe01c5cc5cd6e117c5cc7ca5c03e1",
+      summary:
+        "Strikes have hit closer to Tehran for the first time since the latest wave of attacks started.",
+      sourceUrl:
+        "https://www.aljazeera.com/news/2026/7/16/us-strikes-iran-tanker-as-tehran-hits-kuwait-jordan-whats-the-latest?traffic_source=rss",
+      country: "Qatar",
+      category: "News",
+    },
+    {
+      id: "REC-2026-07-16-000243",
+      publisher: "Al Jazeera",
+      title: "Greece pins hopes on heat-seeking satellites to predict wildfires",
+      published: "Thu, 16 Jul 2026 08:21:40 +0000",
+      archived: "2026-07-16T08:44:44.735Z",
+      status: "VERIFIED",
+      hash: "2f115397c0a3c2b4addf70187b9887158c94ed4283d703e210caf6477d81252b",
+      summary:
+        "The country, which suffers each summer, builds an arsenal of high-tech surveillance to help pre-position firefighters.",
+      sourceUrl:
+        "https://www.aljazeera.com/news/2026/7/16/greece-pins-hopes-on-heat-seeking-satellites-to-predict-wildfires?traffic_source=rss",
+      country: "Qatar",
+      category: "News",
+    },
+    {
+      id: "REC-2026-07-16-000244",
+      publisher: "Al Jazeera",
+      title: "US launches new attacks on Iran as Tehran targets Gulf sites",
+      published: "Thu, 16 Jul 2026 08:18:23 +0000",
+      archived: "2026-07-16T08:44:44.735Z",
+      status: "VERIFIED",
+      hash: "c9e243f8e2ef7bfe8cda2f29659d3fcd151ba8fc5cdab8f0ff573a219353b5fc",
+      summary:
+        "Iran&#039;s Health Ministry has said at least 35 people have been killed and more than 300 injured since fighting resumed.",
+      sourceUrl:
+        "https://www.aljazeera.com/news/2026/7/16/us-launches-new-attacks-on-iran-as-tehran-targets-gulf-sites?traffic_source=rss",
+      country: "Qatar",
+      category: "News",
+    },
+    {
+      id: "REC-2026-07-16-000245",
+      publisher: "Al Jazeera",
+      title: "‘Escaping Beijing’: Why some young Chinese are quitting the capital",
+      published: "Thu, 16 Jul 2026 08:10:20 +0000",
+      archived: "2026-07-16T08:44:44.735Z",
+      status: "VERIFIED",
+      hash: "a76498b55303fe6094a22949da138d8e30de72b1da832ba2c77455495b979191",
+      summary:
+        "A slowing economy and rising prices are making it harder for young Chinese to thrive in the city. ",
+      sourceUrl:
+        "https://www.aljazeera.com/news/2026/7/16/escaping-beijing-why-some-young-chinese-are-quitting-the-capital?traffic_source=rss",
+      country: "Qatar",
+      category: "News",
+    },
+    {
+      id: "REC-2026-07-16-000246",
+      publisher: "Al Jazeera",
+      title: "Pete Hegseth says US military to start testosterone screening for over 30s",
+      published: "Thu, 16 Jul 2026 07:57:55 +0000",
+      archived: "2026-07-16T08:44:44.735Z",
+      status: "VERIFIED",
+      hash: "94377cae8ddde45e1559687bc4aed318d1479edf1c988d73911b6ad4433dc9f0",
+      summary:
+        "US Defense Secretary says plan is &#039;about restoring and optimising ... natural capabilities&#039; of troops.",
+      sourceUrl:
+        "https://www.aljazeera.com/news/2026/7/16/pete-hegseth-says-us-military-to-start-testosterone-screening-for-over-30s?traffic_source=rss",
+      country: "Qatar",
+      category: "News",
+    },
+    {
+      id: "REC-2026-07-16-000247",
+      publisher: "Al Jazeera",
       title: "Trump’s intelligence chief nominee won’t say Biden won 2020 election",
       published: "Thu, 16 Jul 2026 05:01:36 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "cd915122c77300d211c1e42ee81a46caa0c3b84ebf2a7ea909c532aae5c9eeb9",
+      hash: "7e6306288edbca5166e833623e1e78aaf3574bf983fb7740066646abb0033108",
       summary:
         "US President Trump’s nominee for top intel official, Jay Clayton, evaded directly stating that Biden won 2020 election ",
       sourceUrl:
@@ -3588,13 +3662,13 @@ const data: Snapshot = {
       category: "News",
     },
     {
-      id: "REC-2026-07-16-000243",
+      id: "REC-2026-07-16-000248",
       publisher: "Al Jazeera",
       title: "UK proposes voluntary overnight social media curfew for older teens",
       published: "Thu, 16 Jul 2026 04:57:34 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "2841e2fe0488f25bdea7e1b2497094020ef9918f84ac64af672f6a4a38b9598b",
+      hash: "65474c1d9f9100c5756f2918dcc4b978545222101e8f4d161fc2f709ac3fec5a",
       summary:
         "Latest government measure aimed at curbing digital harm comes after under-16 social media ban announced last month.",
       sourceUrl:
@@ -3603,13 +3677,13 @@ const data: Snapshot = {
       category: "News",
     },
     {
-      id: "REC-2026-07-16-000244",
+      id: "REC-2026-07-16-000249",
       publisher: "Al Jazeera",
       title: "Argentina’s Falklands banner sparks controversy at World Cup",
       published: "Thu, 16 Jul 2026 04:54:10 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "579a95ae69661a430e994b9051c6a4312f4feff31bbe9ea2deacd86806412fba",
+      hash: "1338d98b733c6204d572db5185b041b9242469afedcbbf10e1d980a91f401409",
       summary:
         "Argentina players held up a banner declaring ‘Las Malvinas son Argentinas’ after beating England.",
       sourceUrl:
@@ -3618,13 +3692,13 @@ const data: Snapshot = {
       category: "News",
     },
     {
-      id: "REC-2026-07-16-000245",
+      id: "REC-2026-07-16-000250",
       publisher: "Al Jazeera",
       title: "Former US Ambassador says Iran miscalculated Trump’s resolve",
       published: "Thu, 16 Jul 2026 04:18:22 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "8350a4f7be067d2a2c4e09df37b124bb3a5bf5ed6ad37401b86a2d8fbfbb328e",
+      hash: "730920fbd5db90b366f9ce9a600738be4066623d6e4fe828c35a18cd72e20a5e",
       summary:
         "Nightly strikes between the US and Iran have been the heaviest since the Memorandum of Understanding (MOU) agreement.",
       sourceUrl:
@@ -3633,13 +3707,13 @@ const data: Snapshot = {
       category: "News",
     },
     {
-      id: "REC-2026-07-16-000246",
+      id: "REC-2026-07-16-000251",
       publisher: "Al Jazeera",
       title: "Senior Chinese delegation visits North Korea for talks",
       published: "Thu, 16 Jul 2026 03:45:33 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "6e55abba71bf0cc8209e17fd61477a8adddd5965bf6ff5bf6039797a0a85766b",
+      hash: "147303c1d6927ea0f60f7cb00e5b5a0c91e9391e505d188220b9778ed40353a0",
       summary:
         "China&#039;s fourth-highest-ranked official, Wang Huning, held talks with a top official of North Korea&#039;s governing party.",
       sourceUrl:
@@ -3648,13 +3722,13 @@ const data: Snapshot = {
       category: "News",
     },
     {
-      id: "REC-2026-07-16-000247",
+      id: "REC-2026-07-16-000252",
       publisher: "Al Jazeera",
       title: "South Korea’s international adoptees seek justice, not homecoming",
       published: "Thu, 16 Jul 2026 03:41:50 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "ae5dea83c88ac873b62b8bb4848f593c728a453ce735c4f40bb30529889d5644",
+      hash: "5781492fb700e08328d1aa693476f563930674d3e3e0acdacba5894897c5d9b2",
       summary:
         "South Korea&#039;s government has acknowledged wrongs, but advocates say accountability is still lacking.",
       sourceUrl:
@@ -3663,13 +3737,13 @@ const data: Snapshot = {
       category: "News",
     },
     {
-      id: "REC-2026-07-16-000248",
+      id: "REC-2026-07-16-000253",
       publisher: "Al Jazeera",
       title: "Toronto engulfed by wildfire smoke as US cities threatened",
       published: "Thu, 16 Jul 2026 02:31:26 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "26c6738f13fb9634ef14fb6ffed124ed0ef724d0a6a0742647202cf673499953",
+      hash: "acf2e10bd2c7dc58c50ea3e7f3ab630f71745c962ecaf5a4970520a62e9c09cb",
       summary:
         "Monitor ranks Toronto as having the worst air quality on earth, surpassing Kinshasa, DR Congo, and New Delhi, India.",
       sourceUrl:
@@ -3678,13 +3752,13 @@ const data: Snapshot = {
       category: "News",
     },
     {
-      id: "REC-2026-07-16-000249",
+      id: "REC-2026-07-16-000254",
       publisher: "Al Jazeera",
       title: "Iran launches strikes on Gulf, even as FM visits Qatar",
       published: "Thu, 16 Jul 2026 02:10:58 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "c29dc94187de5a842102864476fbfb93edec74eeab590ec8426641beb3328d98",
+      hash: "f8aeb8cd6f6e0fe35df161e27eb3523763b9ff136205c6262c584c860a28dc44",
       summary:
         "Iranian FM Araghchi visits Qatar to pay respects following the death of the Father Emir, Sheikh Hamad bin al Thani ",
       sourceUrl:
@@ -3693,13 +3767,13 @@ const data: Snapshot = {
       category: "News",
     },
     {
-      id: "REC-2026-07-16-000250",
+      id: "REC-2026-07-16-000255",
       publisher: "Al Jazeera",
       title: "Two killed in Russian missile fire on Kyiv after Ukraine-EU drone deal",
       published: "Thu, 16 Jul 2026 01:58:45 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "7a342f42893277ab91c19a63d1748c38f480d9fd553b09df8bcc7db088a52f98",
+      hash: "ac1a9b0b0f26f2f2a616f27fd6fb6ab21aa74d108dcfdb9dbc6f1ddc48acb267",
       summary:
         "Mayor Vitali Klitschko says emergency services are battling blazes across the Ukrainian capital.",
       sourceUrl:
@@ -3708,13 +3782,13 @@ const data: Snapshot = {
       category: "News",
     },
     {
-      id: "REC-2026-07-16-000251",
+      id: "REC-2026-07-16-000256",
       publisher: "Al Jazeera",
       title: "France’s Morocco reset: What French PM Lecornu’s visit to Rabat signals",
       published: "Thu, 16 Jul 2026 01:55:54 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "0530930c7093a2a13de30de54ab299703f2a09251a30b1a8b616c0b2fa5162ee",
+      hash: "41717ba6b8bba00d5f13fa37fed4f658e390e1984f1b91ebbfffa7f08810a859",
       summary:
         "The trip highlights how Paris and Rabat are turning a diplomatic rapprochement into a broader strategic partnership.",
       sourceUrl:
@@ -3723,13 +3797,13 @@ const data: Snapshot = {
       category: "News",
     },
     {
-      id: "REC-2026-07-16-000252",
+      id: "REC-2026-07-16-000257",
       publisher: "Al Jazeera",
       title: "Iranian doctor says US strike damaged children’s cancer hospital",
       published: "Thu, 16 Jul 2026 01:36:58 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "39d946a598ecfe993e9ebf2de2d31f2a6e734a4cdbc9cbe2fda24360cb631468",
+      hash: "954a5f36eaed8abc0cf813548107b783b1fc4b3f3fa2d7a25c51bd4b8b42084a",
       summary:
         "Iranians are inspecting the damage from days of US strikes on key cities in the country’s south and west. ",
       sourceUrl:
@@ -3738,13 +3812,13 @@ const data: Snapshot = {
       category: "News",
     },
     {
-      id: "REC-2026-07-16-000253",
+      id: "REC-2026-07-16-000258",
       publisher: "Al Jazeera",
       title: "Celebrations erupt in Argentina’s capital after World Cup semifinal win",
       published: "Thu, 16 Jul 2026 01:27:32 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "c62ca05fa963e726f8ee7107010d5ab83da869cc4a35e9ce0094d7cd5e8599f5",
+      hash: "412f213871ed3fc10f64620de1afa4fadd4396bcb6691d69dbcf0c7ce0089773",
       summary:
         "Jubilant fans leapt with joy in Buenos Aires after Argentina defeated England 2-1 in Wednesday’s World Cup semifinal.",
       sourceUrl:
@@ -3753,13 +3827,13 @@ const data: Snapshot = {
       category: "News",
     },
     {
-      id: "REC-2026-07-16-000254",
+      id: "REC-2026-07-16-000259",
       publisher: "Al Jazeera",
       title: "Wildfire smoke engulfs Toronto, Canada and turns its skies orange",
       published: "Thu, 16 Jul 2026 00:47:07 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "6b35eeff7ae17fb30a7e0b57a0fea48027ee31d6f85b8bb1239667fc4df620c5",
+      hash: "1b2f1e91698547d818baf0841414e48f16f0823bbc9678e080d93778b10ea4d5",
       summary: "Wildfire smoke turned skies orange over Toronto and the rest of Ontario.",
       sourceUrl:
         "https://www.aljazeera.com/video/newsfeed/2026/7/16/wildfire-smoke-engulfs-toronto-canada-and-turns-its-skies-orange?traffic_source=rss",
@@ -3767,13 +3841,13 @@ const data: Snapshot = {
       category: "News",
     },
     {
-      id: "REC-2026-07-16-000255",
+      id: "REC-2026-07-16-000260",
       publisher: "Al Jazeera",
       title: "‘Epic squared’: Scaloni lauds Argentina’s back-to-back World Cup comebacks",
       published: "Thu, 16 Jul 2026 00:15:34 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "3695ab447962a7f45cde565c27b9cb7d15347a3ea38f7dc8652e8f0a600b31b8",
+      hash: "c07fbfd396b21b8b170d81ceef5b331bc3bb27e70e7509203130c54b95e6ab34",
       summary:
         "&#039;There was blood in the water, and we went for it,&#039; Argentina coach said of the relentless late attacks against England.",
       sourceUrl:
@@ -3782,13 +3856,13 @@ const data: Snapshot = {
       category: "News",
     },
     {
-      id: "REC-2026-07-16-000256",
+      id: "REC-2026-07-16-000261",
       publisher: "Al Jazeera",
       title: "Iran war live: Tehran threatens to ‘crush’ infrastructure if US attacks",
       published: "Thu, 16 Jul 2026 00:00:48 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "d0470d2c01115cc7206f04428fa452489b74d11c07a1da17b06642bffd493cc1",
+      hash: "ea40f69d2a2703297b38204f4d471023c1b76c7823806574adb403c5c727df1b",
       summary:
         "Tehran vows to respond to any US attacks on its infrastructure with reciprocal strikes on Middle East sites.",
       sourceUrl:
@@ -3797,13 +3871,13 @@ const data: Snapshot = {
       category: "News",
     },
     {
-      id: "REC-2026-07-16-000257",
+      id: "REC-2026-07-16-000262",
       publisher: "Al Jazeera",
       title: "Tuchel defends tactics after Argentina send England packing from World Cup",
       published: "Wed, 15 Jul 2026 23:58:12 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "710dfa12664adc2618fd4f76559a1c7a2c85d4d21da650ab1b00d7269faf26c5",
+      hash: "6d5a12051efba5c0a7531034b97893045c92f672013ac9abaee5150e4250ec37",
       summary:
         "England manager Tuchel swapped Reece James for Dan Burn, and Declan Rice for defender Nico O’Reilly in the 82nd minute.",
       sourceUrl:
@@ -3812,13 +3886,13 @@ const data: Snapshot = {
       category: "News",
     },
     {
-      id: "REC-2026-07-16-000258",
+      id: "REC-2026-07-16-000263",
       publisher: "Al Jazeera",
       title: "Argentina players brandish political Falklands flag after England match",
       published: "Wed, 15 Jul 2026 23:36:16 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "415535fcc339a4412717b8de3f5ed6fbd4727dd5b1d986ae54666e6a56d53e43",
+      hash: "15f93f8ccb447009c5d434059e1f85614f2313d505f56b64bc023b2006353f00",
       summary:
         "The banner, held up by Lisandro Martinez and Giovani Lo Celso, goes against FIFA’s Stadium Code of Conduct.",
       sourceUrl:
@@ -3827,13 +3901,13 @@ const data: Snapshot = {
       category: "News",
     },
     {
-      id: "REC-2026-07-16-000259",
+      id: "REC-2026-07-16-000264",
       publisher: "Al Jazeera",
       title: "US Justice Department refuses New Mexico’s request for Epstein files",
       published: "Wed, 15 Jul 2026 23:13:20 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "f1cd06e2cd15b3fb447737ccccccaf8b0cc2095b0b850b7e205378d9bd88b11d",
+      hash: "c63e7b8c0b14f17e534786a09e60c5427588f1ce4140986d26e6c668d8cc1cb9",
       summary:
         "New Mexico says the withheld records are critical to its criminal investigation into alleged abuse at Epstein’s ranch.",
       sourceUrl:
@@ -3842,13 +3916,13 @@ const data: Snapshot = {
       category: "News",
     },
     {
-      id: "REC-2026-07-16-000260",
+      id: "REC-2026-07-16-000265",
       publisher: "Al Jazeera",
       title: "‘Really big news’: What to know about Trump’s primetime speech on Thursday",
       published: "Wed, 15 Jul 2026 23:02:57 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "dc67437e4b6ff15adbf0fcd003767a3382ef12e39863f3353cb6f2315a76363f",
+      hash: "b3d86b18364d0bf41242a80b7a5548abd119cd8bf2f37c9b4096b55d69672698",
       summary:
         "The address comes as the White House revives scrutiny of the 2020 election and pushes new voting restrictions.",
       sourceUrl:
@@ -3857,103 +3931,13 @@ const data: Snapshot = {
       category: "News",
     },
     {
-      id: "REC-2026-07-16-000261",
-      publisher: "Al Jazeera",
-      title: "Iran says peace deal voided, fighting ‘existential war’ after US attacks",
-      published: "Wed, 15 Jul 2026 21:46:57 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
-      status: "VERIFIED",
-      hash: "ff3cc9e72542a45197d0e0071e58701d41f4a078086a2fa969d2806c3aca90ea",
-      summary:
-        "The US announced a new wave of attacks Wednesday night, amid reported explosions in Bandar Abbas, Chabahar and Ahvaz.",
-      sourceUrl:
-        "https://www.aljazeera.com/news/2026/7/15/iran-says-peace-deal-voided-fighting-existential-war-after-us-attacks?traffic_source=rss",
-      country: "Qatar",
-      category: "News",
-    },
-    {
-      id: "REC-2026-07-16-000262",
-      publisher: "Al Jazeera",
-      title: "Argentina stun England in 2-1 comeback win to reach 2026 World Cup final",
-      published: "Wed, 15 Jul 2026 21:37:08 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
-      status: "VERIFIED",
-      hash: "62491100d1c7480442dce82b320c42ba54b8dd296f962da69fb30638f0a73ade",
-      summary:
-        "Holders Argentina will face Spain in the final after snatching victory from England in ⁠a highly charged encounter.",
-      sourceUrl:
-        "https://www.aljazeera.com/sports/2026/7/15/argentina-stun-england-in-2-1-comeback-win-to-reach-2026-world-cup-final?traffic_source=rss",
-      country: "Qatar",
-      category: "News",
-    },
-    {
-      id: "REC-2026-07-16-000263",
-      publisher: "Al Jazeera",
-      title: "xAI sues user for exploiting AI tool to sexualise minors",
-      published: "Wed, 15 Jul 2026 21:31:44 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
-      status: "VERIFIED",
-      hash: "ac2e5d3304c4b37a6a5e55e59167839e044d519dcb60b11adf63ac332a372e60",
-      summary:
-        "Lawsuit accuses Terry Harwood of misusing xAI to bypass safeguards and produce explicit deepfakes involving minors.",
-      sourceUrl:
-        "https://www.aljazeera.com/economy/2026/7/15/xai-sues-user-for-exploiting-ai-tool-to-sexualise-minors?traffic_source=rss",
-      country: "Qatar",
-      category: "News",
-    },
-    {
-      id: "REC-2026-07-16-000264",
-      publisher: "Al Jazeera",
-      title: "Authors, publishers sue Google over alleged AI copyright infringement",
-      published: "Wed, 15 Jul 2026 21:21:20 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
-      status: "VERIFIED",
-      hash: "ffa1ebf56d42e378a9d85136b259c4595f1a8d2a04a9bba86c26bf2f5aa789c9",
-      summary:
-        "Hachette and Elsevier lead US legal action against Google, alleging misuse of books for Gemini AI model training.",
-      sourceUrl:
-        "https://www.aljazeera.com/economy/2026/7/15/authors-publishers-sue-google-over-alleged-ai-copyright-infringement?traffic_source=rss",
-      country: "Qatar",
-      category: "News",
-    },
-    {
-      id: "REC-2026-07-16-000265",
-      publisher: "Al Jazeera",
-      title: "Sheinbaum rejects US claim that Mexico’s government is linked to cartels",
-      published: "Wed, 15 Jul 2026 20:52:12 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
-      status: "VERIFIED",
-      hash: "e37dd44ecb120e61cdedf225d123f61b958a0b49ca91d6b67a3fe815f0e35d57",
-      summary:
-        "Sheinbaum has denounced remarks from DEA head Terry Cole as a baseless &#039;political statement&#039; about Mexico.",
-      sourceUrl:
-        "https://www.aljazeera.com/news/2026/7/15/sheinbaum-rejects-us-claim-that-mexicos-government-is-linked-to-cartels?traffic_source=rss",
-      country: "Qatar",
-      category: "News",
-    },
-    {
       id: "REC-2026-07-16-000266",
-      publisher: "Al Jazeera",
-      title: "What are the obstacles to peace between Israel and Lebanon?",
-      published: "Wed, 15 Jul 2026 20:46:03 +0000",
-      archived: "2026-07-16T08:02:28.999Z",
-      status: "VERIFIED",
-      hash: "897636c5ab6eb08ba56f136389ed53f6af71add33e25ad8a58cff91f3ee23b57",
-      summary:
-        "Another round of talks is under way between Israel and Lebanon to try to advance the ceasefire agreement.",
-      sourceUrl:
-        "https://www.aljazeera.com/video/inside-story/2026/7/15/what-are-the-obstacles-to-peace-between-israel-and-lebanon?traffic_source=rss",
-      country: "Qatar",
-      category: "News",
-    },
-    {
-      id: "REC-2026-07-16-000267",
       publisher: "ScienceDaily",
       title: "More than 400 sick as CDC searches for the source of a mystery outbreak",
       published: "Thu, 16 Jul 2026 00:25:05 EDT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "b5b9bd6bb6d43aba906ba0268f39fe3573b92056d67b8c1e450d404bb492d0ed",
+      hash: "7a97e60f43f0e29cd53387cb2a3aa66f444c9f2bd85cedb33c97bee92baac0a0",
       summary:
         "A growing Cyclospora outbreak has sickened more than 400 people in four states, and investigators are still searching for the contaminated food responsible. The CDC warns the actual number of cases is likely much higher and urges anyone with symptoms to seek medical care.",
       sourceUrl: "https://www.sciencedaily.com/releases/2026/07/260715083530.htm",
@@ -3961,13 +3945,13 @@ const data: Snapshot = {
       category: "Science",
     },
     {
-      id: "REC-2026-07-16-000268",
+      id: "REC-2026-07-16-000267",
       publisher: "ScienceDaily",
       title: "Quantum breakthrough links light and magnetism in atomically thin materials",
       published: "Thu, 16 Jul 2026 00:16:48 EDT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "38b91191617fb8835efb5fd3b0da122b8eef51c03bd082073853df744550fea3",
+      hash: "d9ffb7c54d3f77b209707a8ac71906c191dfa8e1bd26a817cc0b5caa190f7a7f",
       summary:
         "A new review highlights exciting progress in atomically thin quantum materials where light and magnetism work together in ways never before possible. In these materials, light-generated excitons can interact directly with magnetic behavior, creating opportunities to control magnetic states using light alone. Scientists believe this could pave the way for advanced optical memory, quantum devices, and ultra-efficient photonic technologies.",
       sourceUrl: "https://www.sciencedaily.com/releases/2026/07/260715083523.htm",
@@ -3975,14 +3959,14 @@ const data: Snapshot = {
       category: "Science",
     },
     {
-      id: "REC-2026-07-16-000269",
+      id: "REC-2026-07-16-000268",
       publisher: "ScienceDaily",
       title:
         "The hidden skeleton “gatekeeper” inside brain cells could help fight Alzheimer&#039;s",
       published: "Wed, 15 Jul 2026 10:37:59 EDT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "87978d3a199ed88040b51d4f66305850bc386fc887902287dc7ac1d7a6a991e6",
+      hash: "4c8b9dc55e18411db60b2b31a9fcc90bf55e6aca6faa212d27f377b0ff3ed71a",
       summary:
         "Researchers have discovered that a microscopic skeleton inside neurons does much more than hold cells together. It acts as a gatekeeper that controls what brain cells absorb and when they absorb it. When this protective structure weakens, neurons rapidly take in harmful proteins associated with Alzheimer&#039;s disease, suggesting that stabilizing it could become a promising new strategy for preventing brain cell damage.",
       sourceUrl: "https://www.sciencedaily.com/releases/2026/07/260714225542.htm",
@@ -3990,13 +3974,13 @@ const data: Snapshot = {
       category: "Science",
     },
     {
-      id: "REC-2026-07-16-000270",
+      id: "REC-2026-07-16-000269",
       publisher: "ScienceDaily",
       title: "Are humans really the ultimate super-predator?",
       published: "Wed, 15 Jul 2026 07:04:02 EDT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "d19eff238b3141a9496191919d41b903b7fe08a3186e9fa47c4eb27ca2e88485",
+      hash: "c4caabcac2465bfa1f3d045752ef194174d4a14b7564c212e1daa74acfe1487d",
       summary:
         'Humans are often described as the planet&#039;s ultimate "super-predator," but wild animals do not fear every human the same way. After analyzing three decades of research, scientists found that animals become much more alert and spend less time feeding when people pose a real threat, such as hunters or fishers. In contrast, tourists, researchers, and other non-lethal humans trigger far weaker and less predictable reactions.',
       sourceUrl: "https://www.sciencedaily.com/releases/2026/07/260714225540.htm",
@@ -4004,13 +3988,13 @@ const data: Snapshot = {
       category: "Science",
     },
     {
-      id: "REC-2026-07-16-000271",
+      id: "REC-2026-07-16-000270",
       publisher: "ScienceDaily",
       title: "Astronomers just found four hidden white dwarf stars near Earth",
       published: "Wed, 15 Jul 2026 02:30:25 EDT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "19b7f435ad6659fac060869cd9eeb922c2db816308968b01d71a57b1e4cd1c1d",
+      hash: "33d7a5189e9b93481c89a51692ecdee8e278b5f0104f4a7a0470cb8898e438b3",
       summary:
         "Four nearby white dwarf stars have been discovered hiding in plain sight beside brighter red dwarf companions. Hubble&#039;s ultraviolet observations finally revealed the long-hidden stellar remnants, including one just 25 light-years away that took nearly three decades to confirm. The findings match long-standing predictions and suggest our corner of the galaxy may contain many more undiscovered white dwarf binaries.",
       sourceUrl: "https://www.sciencedaily.com/releases/2026/07/260714225528.htm",
@@ -4018,13 +4002,13 @@ const data: Snapshot = {
       category: "Science",
     },
     {
-      id: "REC-2026-07-16-000272",
+      id: "REC-2026-07-16-000271",
       publisher: "ScienceDaily",
       title: "Going to museums, movies, and theater may help your body stay younger",
       published: "Wed, 15 Jul 2026 00:45:47 EDT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "15696050ffe73f58297b968528bc4e2a398bfbec88b2605cfc998de4a5a18016",
+      hash: "86de6da3a6adf9186f57f05b057a8b7c202d7008004141c951c0a121454567db",
       summary:
         "Going to the cinema, visiting museums, or attending concerts may do more than entertain. Researchers found that older adults who regularly participated in cultural activities tended to have bodies that functioned like those of people about three years younger. They believe stronger social ties, better mental health, and healthier habits could help explain the link, although more research is needed to determine whether cultural activities directly slow aging.",
       sourceUrl: "https://www.sciencedaily.com/releases/2026/07/260714225526.htm",
@@ -4032,13 +4016,13 @@ const data: Snapshot = {
       category: "Science",
     },
     {
-      id: "REC-2026-07-16-000273",
+      id: "REC-2026-07-16-000272",
       publisher: "ScienceDaily",
       title: "This pet gecko could help scientists unlock the secrets of cancer",
       published: "Wed, 15 Jul 2026 09:47:30 EDT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "650a38ad8ef3c3081d7a997b1e7a69908742afe95c129fb73ce0d10f54d4e0d7",
+      hash: "3e5ddc0336e397499ebd03e2de4068900a848974d25b66e765b74aa43644197f",
       summary:
         "An unusual leopard gecko that naturally develops aggressive tumors may become an important new model for cancer research. Scientists found its tumors share key genetic changes with human cancers, offering a rare opportunity to study the disease as it develops naturally.",
       sourceUrl: "https://www.sciencedaily.com/releases/2026/07/260714225525.htm",
@@ -4046,13 +4030,13 @@ const data: Snapshot = {
       category: "Science",
     },
     {
-      id: "REC-2026-07-16-000274",
+      id: "REC-2026-07-16-000273",
       publisher: "ScienceDaily",
       title: "Scientists finally solved why some frogs survive a deadly fungus",
       published: "Tue, 14 Jul 2026 23:39:03 EDT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "f0b5ae23fac51e7db858d8a34a33ad8a77dd6330c9d4877f193734bced723487",
+      hash: "b89d21d6ebc28d8c660cef139641854b9132ab5e144bfbad85ae54897494cf33",
       summary:
         "A deadly fungus has wiped out amphibian populations around the globe, yet some mysteriously recover. Researchers discovered that survivors develop powerful immune defenses while they are still tadpoles, giving them a head start before the fungus can attack after metamorphosis. The study also uncovered a vast collection of previously unknown antimicrobial peptides that could someday inspire new drugs to fight infections.",
       sourceUrl: "https://www.sciencedaily.com/releases/2026/07/260714225523.htm",
@@ -4060,13 +4044,13 @@ const data: Snapshot = {
       category: "Science",
     },
     {
-      id: "REC-2026-07-16-000275",
+      id: "REC-2026-07-16-000274",
       publisher: "ScienceDaily",
       title: "Eating chili peppers may raise the risk of one deadly cancer",
       published: "Tue, 14 Jul 2026 09:27:21 EDT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "c34551435b2fa233b297b27ee6a30096fcc854dfc986c8a4a62b1dc632ff8b13",
+      hash: "93dc339c4c443d18350321c909a24a59390ea14c92f1528fc38fb1bdd1c6ce70",
       summary:
         "A major review found that people who consumed the most chili peppers had a substantially higher risk of esophageal cancer, though the evidence was less clear for stomach and colorectal cancers. Researchers emphasize that the findings show an association, not proof of cause and effect, and that more research is needed to determine whether moderate consumption carries similar risks.",
       sourceUrl: "https://www.sciencedaily.com/releases/2026/07/260713084921.htm",
@@ -4074,13 +4058,13 @@ const data: Snapshot = {
       category: "Science",
     },
     {
-      id: "REC-2026-07-16-000276",
+      id: "REC-2026-07-16-000275",
       publisher: "ScienceDaily",
       title: "Archaeologists found Homer&#039;s Iliad inside a 1,600-year-old Egyptian mummy",
       published: "Wed, 15 Jul 2026 08:21:11 EDT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "79dde70a89e5665fe020af6515d7cba0e6c116fcc241cd23032ae5a437605347",
+      hash: "2c96363b39b12eaa05f82fba3cbacf002e3cbcdbd4c6cc13785b281861795987",
       summary:
         'A 1,600-year-old mummy discovered in Egypt has revealed something archaeologists had never seen before: a fragment of Homer’s Iliad used during embalming. The papyrus was identified as part of the famous "Catalogue of Ships," one of the best-known sections of the ancient epic. Researchers say it is the first archaeological evidence of a Greek literary text being intentionally incorporated into the mummification process, adding a fascinating new chapter to the history of both literature and ancient burial customs.',
       sourceUrl: "https://www.sciencedaily.com/releases/2026/07/260713084918.htm",
@@ -4088,13 +4072,13 @@ const data: Snapshot = {
       category: "Science",
     },
     {
-      id: "REC-2026-07-16-000277",
+      id: "REC-2026-07-16-000276",
       publisher: "ScienceDaily",
       title: "Scientists finally solved how a common gut bacterium triggers colon cancer",
       published: "Thu, 16 Jul 2026 01:37:21 EDT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "3c2b3cba4f0e15e177751a9991080d9453eab641b9f9e8c89a882dde6a32b7eb",
+      hash: "f4bcdd6843669651163f6320ce5374383fd7cdcf9c549fb38549ddd0c020f498",
       summary:
         "Researchers solved a long-standing mystery behind how a bacterial toxin associated with colorectal cancer damages the colon. The toxin first binds to a receptor called claudin-4, giving it access to attack the cells&#039; protective barrier. After identifying this weak point, the team designed a decoy protein that successfully blocked the toxin in mice. The discovery could pave the way for new therapies to prevent inflammation and colon tumors.",
       sourceUrl: "https://www.sciencedaily.com/releases/2026/07/260713084910.htm",
@@ -4102,13 +4086,13 @@ const data: Snapshot = {
       category: "Science",
     },
     {
-      id: "REC-2026-07-16-000278",
+      id: "REC-2026-07-16-000277",
       publisher: "ScienceDaily",
       title: "Popular weight-loss drugs Ozempic and Wegovy may slow biological aging",
       published: "Tue, 14 Jul 2026 05:47:41 EDT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "8bf24f03d7e66fddc2826f46d710ca509ec79c17a6e3cdaa856a02715270afad",
+      hash: "a63ef7c13e1479f1fb6c877ffba70571f223830f0dc72fb6a115d151b53fc1c1",
       summary:
         "Researchers found that semaglutide, the active ingredient in Ozempic and Wegovy, slowed biological aging markers in adults with HIV, marking the first clinical evidence that the drug may influence human aging. Although the findings are encouraging, scientists say larger studies are needed before concluding that the medication can help people age more slowly.",
       sourceUrl: "https://www.sciencedaily.com/releases/2026/07/260713084907.htm",
@@ -4116,13 +4100,13 @@ const data: Snapshot = {
       category: "Science",
     },
     {
-      id: "REC-2026-07-16-000279",
+      id: "REC-2026-07-16-000278",
       publisher: "ScienceDaily",
       title: "Chewing bubble gum after beetroot may help lower blood pressure",
       published: "Tue, 14 Jul 2026 20:24:05 EDT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "90b31f0231b97a043b0b39dc39924e886bb725b40bf98d3f7028fc6dcc3b21f4",
+      hash: "b2738b067b2b0dda8e606cdfd40d7aa7e27bff7d82cf2c3af20adbcee7dd3362",
       summary:
         "A new study found that chewing sugary gum after eating nitrate-rich vegetables or drinking beetroot juice helped the body produce more beneficial nitrite, leading to a temporary drop in blood pressure. Researchers hope the discovery will lead to healthier ways to enhance the cardiovascular and performance benefits of dietary nitrate without relying on sugar.",
       sourceUrl: "https://www.sciencedaily.com/releases/2026/07/260713084904.htm",
@@ -4130,13 +4114,13 @@ const data: Snapshot = {
       category: "Science",
     },
     {
-      id: "REC-2026-07-16-000280",
+      id: "REC-2026-07-16-000279",
       publisher: "ScienceDaily",
       title: "NASA captured the Black Sea turning brilliant turquoise from space",
       published: "Wed, 15 Jul 2026 09:21:38 EDT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "fb2b6ff4dd8333f2d2d00de488b398ec32010359478e191b4db87d62fe93ce02",
+      hash: "b5a0b38d7e8b74b3f7b34e011e28ffe1fe20e2e955ced5550975cac03d9b9888",
       summary:
         "NASA&#039;s PACE satellite captured the Black Sea glowing turquoise during its annual phytoplankton bloom. The vivid color comes from massive numbers of coccolithophores, microscopic organisms whose reflective shells brighten the water enough to be seen from space. An astronaut aboard the International Space Station also photographed the bloom spreading through the Bosphorus, revealing swirling currents.",
       sourceUrl: "https://www.sciencedaily.com/releases/2026/07/260713084900.htm",
@@ -4144,13 +4128,13 @@ const data: Snapshot = {
       category: "Science",
     },
     {
-      id: "REC-2026-07-16-000281",
+      id: "REC-2026-07-16-000280",
       publisher: "ScienceDaily",
       title: "NASA&#039;s Perseverance just completed a marathon on Mars",
       published: "Tue, 14 Jul 2026 01:32:12 EDT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "f935279b20ce7492afe6c006cbe15ff1fb5e34bac11374d0cbf5acd5018f4f99",
+      hash: "b5547933fd65987f72ef5dfa9561a5aed4c5e85c2f184fed5615fa294a874b8e",
       summary:
         "NASA&#039;s Perseverance rover has reached an impressive new milestone on Mars, completing the equivalent of a full marathon by driving 26.2 miles (42.195 kilometers) across the Red Planet. It accomplished the feat in just five years and four months, reaching the distance on its 1,890th Martian day, less than half the time it took the previous record holder, NASA&#039;s Opportunity rover.",
       sourceUrl: "https://www.sciencedaily.com/releases/2026/07/260713084858.htm",
@@ -4158,13 +4142,13 @@ const data: Snapshot = {
       category: "Science",
     },
     {
-      id: "REC-2026-07-16-000282",
+      id: "REC-2026-07-16-000281",
       publisher: "ScienceDaily",
       title: "NASA selects 41 space technologies for future Moon and Mars exploration",
       published: "Wed, 15 Jul 2026 03:43:02 EDT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "5e6e7cf0dc34d7efb3d7eceae1fa43162281dc2bdb8a4b86775efa4de1f96370",
+      hash: "05a25529ec4b098700234b3d341817707d856092b95063d3a21a592590a870ad",
       summary:
         "NASA has chosen 41 commercial technology projects that could solve critical challenges for future missions to the Moon and Mars. From powering lunar outposts to protecting spacecraft from Moon dust, the innovations are designed to push both space exploration and the commercial space economy forward.",
       sourceUrl: "https://www.sciencedaily.com/releases/2026/07/260713084855.htm",
@@ -4172,13 +4156,13 @@ const data: Snapshot = {
       category: "Science",
     },
     {
-      id: "REC-2026-07-16-000283",
+      id: "REC-2026-07-16-000282",
       publisher: "ScienceDaily",
       title: "NASA selects four new Moon missions to build a permanent lunar base",
       published: "Tue, 14 Jul 2026 00:40:26 EDT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "419df15005d333804ee71a5ba255871e5dac539278bd25501bc16cb652a79b06",
+      hash: "5cd23a028b75d02eea053e79e9a6a5bfc567a976f92e7670206d9742aa8c5da3",
       summary:
         "NASA is ramping up its lunar ambitions by awarding nearly $600 million for four commercial Moon landings planned for late 2028. Each mission will carry the same trio of science instruments to improve lunar navigation, study dangerous dust kicked up during landings, and map the Moon&#039;s radiation environment. The agency also revealed plans for new rovers, communication satellites, and additional cargo missions as it lays the groundwork for a permanent Moon Base.",
       sourceUrl: "https://www.sciencedaily.com/releases/2026/07/260713084853.htm",
@@ -4186,13 +4170,13 @@ const data: Snapshot = {
       category: "Science",
     },
     {
-      id: "REC-2026-07-16-000284",
+      id: "REC-2026-07-16-000283",
       publisher: "ScienceDaily",
       title: "Alan Turing&#039;s biggest AI assumption may have been wrong",
       published: "Mon, 13 Jul 2026 23:12:35 EDT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "408fef05b03c6a2b5b0b130695536078d129b3d4ed6ba5b2fecc0746d9a0b4b2",
+      hash: "a923928ac90e80dbfa9493e5596cbfb1db880c990cc53f219adc9776886fbb3c",
       summary:
         "A new book claims AI has been built on a flawed assumption dating back to Alan Turing&#039;s famous 1950 paper. Peter J. Denning argues that the most important parts of human intelligence, including common sense, intuition, culture, and practical know-how, cannot be encoded into computers. He believes this makes true human-level AI impossible, regardless of how large language models become.",
       sourceUrl: "https://www.sciencedaily.com/releases/2026/07/260713084850.htm",
@@ -4200,14 +4184,14 @@ const data: Snapshot = {
       category: "Science",
     },
     {
-      id: "REC-2026-07-16-000285",
+      id: "REC-2026-07-16-000284",
       publisher: "ScienceDaily",
       title:
         "Why have humans collected crystals for 780,000 years? Chimpanzees may hold the answer",
       published: "Tue, 14 Jul 2026 22:56:14 EDT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "e4e0b82483afc6b8af03ce5b13af23ab09488ee54a808858f77ba05c6c853f8c",
+      hash: "584129de42274134228a18fd4aff4d48d8847b9b7f0fb9a0f10fbb5781857476",
       summary:
         "Chimpanzees showed a remarkable attraction to crystals, choosing them over ordinary stones and studying them with intense curiosity. The results suggest that the same unusual features may have fascinated early humans long before crystals had any practical use.",
       sourceUrl: "https://www.sciencedaily.com/releases/2026/07/260713000813.htm",
@@ -4215,13 +4199,13 @@ const data: Snapshot = {
       category: "Science",
     },
     {
-      id: "REC-2026-07-16-000286",
+      id: "REC-2026-07-16-000285",
       publisher: "ScienceDaily",
       title: "This dinosaur fossil captures the final moments of a T. rex attack",
       published: "Tue, 14 Jul 2026 02:48:52 EDT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "28082f7f5263978dfd20d56e5b77d834e248230f48f17cd4b5b0451af76dc4a1",
+      hash: "dd889ca3016cb674a47a61058f3ba759416c0e796dcffc7096ca8427fd22577d",
       summary:
         "A fossilized Edmontosaurus skull with a Tyrannosaurus tooth still embedded in its face has given scientists rare evidence of a dramatic predator-prey encounter. The discovery suggests the giant carnivore delivered an incredibly powerful face-to-face bite, offering new clues about how Tyrannosaurus hunted.",
       sourceUrl: "https://www.sciencedaily.com/releases/2026/07/260713000811.htm",
@@ -4229,13 +4213,13 @@ const data: Snapshot = {
       category: "Science",
     },
     {
-      id: "REC-2026-07-16-000287",
+      id: "REC-2026-07-16-000286",
       publisher: "ScienceDaily",
       title: "A 37-year soil experiment revealed a hidden climate threat",
       published: "Tue, 14 Jul 2026 07:56:17 EDT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "6e9b415de0472e8fff4a02c5c0c10566a43109c4dfdfcf4bd1fc19730a19637a",
+      hash: "af8f1466a884bd87ed517475ee30d2c06be43b7c5943c830466cfd94c7e71909",
       summary:
         "The world&#039;s longest-running soil warming experiment has revealed an unexpected climate concern. After nearly four decades, researchers found that warming can cause microbes to break down stable soil carbon that scientists once believed was largely protected. That releases extra carbon dioxide into the atmosphere, potentially accelerating global warming.",
       sourceUrl: "https://www.sciencedaily.com/releases/2026/07/260713000809.htm",
@@ -4243,13 +4227,13 @@ const data: Snapshot = {
       category: "Science",
     },
     {
-      id: "REC-2026-07-16-000288",
+      id: "REC-2026-07-16-000287",
       publisher: "ScienceDaily",
       title: "Physicists say quantum mechanics may not need imaginary numbers after all",
       published: "Mon, 13 Jul 2026 03:22:08 EDT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "4975125b14840528884f1e6f1ecd8226fec9a05a6e606b7701c03aaefbe9b13e",
+      hash: "3c2bf11cb1208b19bc18cac3a7621a4a7ccaa575a5d632a9b6e21dae08362d85",
       summary:
         "Physicists from Heinrich Heine University Düsseldorf (HHU) have examined a fundamental property of quantum mechanics in collaboration with the German Aerospace Center (DLR). In the scientific journal Physical Review Letters, they show that this theory does not necessarily need to be formulated with imaginary numbers – real numbers can in fact also be used. The American Physical Society has also dedicated a “Highlight” to these findings in its Physics Magazine.",
       sourceUrl: "https://www.sciencedaily.com/releases/2026/07/260713000807.htm",
@@ -4257,13 +4241,13 @@ const data: Snapshot = {
       category: "Science",
     },
     {
-      id: "REC-2026-07-16-000289",
+      id: "REC-2026-07-16-000288",
       publisher: "ScienceDaily",
       title: "Yale scientists found a hidden network inside the eye",
       published: "Mon, 13 Jul 2026 21:15:50 EDT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "ed44984730e9c4f9a640858eef03434f9a9668f642684202f7d8e2978da17f0c",
+      hash: "14d6a4ee7940f4863ca4fc5925f25c695068da9b6c040bf2e231abeeb90dff47",
       summary:
         'Researchers have discovered that the retina uses an unexpected communication network that lets separate visual pathways cooperate instead of working alone. A newly identified "commander" cell appears to coordinate this system, helping the eye detect faint details that might otherwise be missed.',
       sourceUrl: "https://www.sciencedaily.com/releases/2026/07/260713000804.htm",
@@ -4271,13 +4255,13 @@ const data: Snapshot = {
       category: "Science",
     },
     {
-      id: "REC-2026-07-16-000290",
+      id: "REC-2026-07-16-000289",
       publisher: "ScienceDaily",
       title: "Losing just 80 minutes of sleep a night could make you gain weight",
       published: "Mon, 13 Jul 2026 09:24:13 EDT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "772dfda5ede5a03f859160e5f4ed8b5076edbae5f641aa7475866f8167456670",
+      hash: "050a51d2f680fb46cf3611b6b6a60808b2c799b134a22a8f6639df0741d95b38",
       summary:
         "Sleeping about an hour and 20 minutes less each night for six weeks caused participants to gain weight and spend more time inactive. Researchers found that even mild, realistic sleep loss, similar to what many adults experience, had measurable effects. They warn that if this pattern continues over months or years, the health consequences could become much more significant, including a higher risk of diabetes and heart disease.",
       sourceUrl: "https://www.sciencedaily.com/releases/2026/07/260713000800.htm",
@@ -4285,13 +4269,13 @@ const data: Snapshot = {
       category: "Science",
     },
     {
-      id: "REC-2026-07-16-000291",
+      id: "REC-2026-07-16-000290",
       publisher: "ScienceDaily",
       title: "Stephen Hawking&#039;s black hole laws just got a major upgrade",
       published: "Mon, 13 Jul 2026 06:41:43 EDT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "f1ea45aac48fa0b2d6677a546049715d432e928574098f1ace4c468dc1cd0599",
+      hash: "547b1d91f8fb22cd1a261f6f7d35a9368f1e51354130788801fecb3adfb9f6e8",
       summary:
         "Scientists have developed a new framework that could finally apply the laws of thermodynamics to real, ever-changing black holes instead of only perfectly stable ones. The advance may improve our understanding of black hole mergers, evaporation, and the powerful gravitational wave events detected by observatories like LIGO.",
       sourceUrl: "https://www.sciencedaily.com/releases/2026/07/260713000757.htm",
@@ -4299,13 +4283,13 @@ const data: Snapshot = {
       category: "Science",
     },
     {
-      id: "REC-2026-07-16-000292",
+      id: "REC-2026-07-16-000291",
       publisher: "ScienceDaily",
       title: "A 200-year-old physics experiment could help build future computers",
       published: "Mon, 13 Jul 2026 08:49:50 EDT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "1326f188937a18b10710564fa228b2e71af41d78df46c1be443763c01b520368",
+      hash: "df8f31d38c44610cc84e4f079ea73822ee164ed95c0a2bdb020b3df47271e568",
       summary:
         "Scientists at Nanyang Technological University in Singapore have discovered a surprisingly simple way to create exotic light structures called optical skyrmions using a 200-year-old optical effect known as the Poisson spot. Instead of relying on expensive, highly engineered materials, they simply shine a laser at a tiny circular disc, producing stable swirling patterns in light that researchers believe could one day help power advanced data storage, communications, and computing technologies.",
       sourceUrl: "https://www.sciencedaily.com/releases/2026/07/260713000755.htm",
@@ -4313,13 +4297,13 @@ const data: Snapshot = {
       category: "Science",
     },
     {
-      id: "REC-2026-07-16-000293",
+      id: "REC-2026-07-16-000292",
       publisher: "ScienceDaily",
       title: "Where you live could shape your dementia risk, massive study finds",
       published: "Mon, 13 Jul 2026 06:03:41 EDT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "fb7ca844e7a72a259b1689d0ea3ef7b3f0c367cc0fdc935c0a3969e32aaa6a5b",
+      hash: "89ff3288320267665fcd7f544ec439b4146895b650991b4ddc64ae79c470a6fa",
       summary:
         "Researchers analyzing data from more than 214,000 people found that dementia risk factors differ widely across countries, challenging the idea of a one-size-fits-all prevention strategy. At the same time, they uncovered surprisingly consistent patterns that could help shape smarter, more targeted public health efforts.",
       sourceUrl: "https://www.sciencedaily.com/releases/2026/07/260713000753.htm",
@@ -4327,13 +4311,13 @@ const data: Snapshot = {
       category: "Science",
     },
     {
-      id: "REC-2026-07-16-000294",
+      id: "REC-2026-07-16-000293",
       publisher: "ScienceDaily",
       title: "Scientists discover a hidden heart valve risk linked to gum disease",
       published: "Mon, 13 Jul 2026 01:52:18 EDT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "4910f1ed69d6aad7a63d4f710bf83756c92a60c8a881c826fc0947a7ba1dbb6d",
+      hash: "315ba4066d37dce1636be8ee6949e2736e695b35d5ba3b254ab4d7550b438764",
       summary:
         "Researchers found that bacteria linked to gum disease may help drive the development of calcific aortic valve stenosis by triggering inflammation and calcium buildup in the heart valve. The early findings suggest that keeping gums healthy could play a role in reducing the risk of this serious heart condition.",
       sourceUrl: "https://www.sciencedaily.com/releases/2026/07/260713000751.htm",
@@ -4341,13 +4325,13 @@ const data: Snapshot = {
       category: "Science",
     },
     {
-      id: "REC-2026-07-16-000295",
+      id: "REC-2026-07-16-000294",
       publisher: "ScienceDaily",
       title: "Scientists discover how the brain rewires itself to truly multitask",
       published: "Sun, 12 Jul 2026 03:42:58 EDT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "a17b73a039c1fd565fae94d014522a53d0574f64790dc8739e76076f16188f27",
+      hash: "344c8da8f3e5e870afb1ef76c7fd32d120adbde26f7649fbe42978300f20598b",
       summary:
         'Practice may do more than make perfect. Researchers found that extensive training physically reorganizes the brain, allowing learned tasks to bypass the prefrontal cortex and run through specialized circuits instead. By freeing the brain&#039;s "thinking" center, people became better at performing another task at the same time, challenging the long-held idea that humans only switch rapidly between tasks rather than truly multitask.',
       sourceUrl: "https://www.sciencedaily.com/releases/2026/07/260712011912.htm",
@@ -4355,13 +4339,13 @@ const data: Snapshot = {
       category: "Science",
     },
     {
-      id: "REC-2026-07-16-000296",
+      id: "REC-2026-07-16-000295",
       publisher: "ScienceDaily",
       title: "Why are healthy young non-smokers developing lung cancer?",
       published: "Mon, 13 Jul 2026 07:34:52 EDT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "b9b1a8043f91edd7fc88c39d03ee8902ea843aa24be625ee3015423f58ca05d4",
+      hash: "86d89161ff8e5679c62395c89798df8b715fea61d8096f23266aab0e9db71b0a",
       summary:
         "An unexpected study found that young non-smokers with healthier diets had higher rates of lung cancer, raising questions about whether pesticide exposure from conventionally grown produce could play a role. Researchers stress that the findings are preliminary and require further studies before any conclusions can be drawn.",
       sourceUrl: "https://www.sciencedaily.com/releases/2026/07/260712011758.htm",
@@ -4369,13 +4353,13 @@ const data: Snapshot = {
       category: "Science",
     },
     {
-      id: "REC-2026-07-16-000297",
+      id: "REC-2026-07-16-000296",
       publisher: "ScienceDaily",
       title: "Scientists discovered the brain doesn&#039;t make decisions the way we thought",
       published: "Mon, 13 Jul 2026 08:12:27 EDT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "0409a362d81eec8aba897bc6dbd4e53944c90c6b8342d5c2f69213932a24a0ff",
+      hash: "83cb3bc806157bcd3e0708b6647d8df3808f394d4ca9a4c9a46bc20b591bea03",
       summary:
         "A new study suggests the brain begins making decisions much earlier than scientists previously thought. Researchers found that even primary sensory regions are influenced by higher brain areas through rapid feedback loops, rather than simply passing information forward. This more dynamic view of brain function could help engineers design future AI systems that think more like biological brains while using far less power.",
       sourceUrl: "https://www.sciencedaily.com/releases/2026/07/260712011757.htm",
@@ -4383,13 +4367,13 @@ const data: Snapshot = {
       category: "Science",
     },
     {
-      id: "REC-2026-07-16-000298",
+      id: "REC-2026-07-16-000297",
       publisher: "ScienceDaily",
       title: "Exercise doesn&#039;t just strengthen the heart. It rewires it",
       published: "Mon, 13 Jul 2026 20:47:33 EDT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "0bbcd525d67619c15688c3144559bd4a0ca87d479bc4e21c8ccac07487ffb7d7",
+      hash: "1e4485b266e3c40bd97a377a9236a66f848849598e9b81999f586b925696d858",
       summary:
         "Exercise doesn&#039;t just make the heart stronger. It also rewires the nerves that regulate it, a discovery that could pave the way for more personalized treatments for common heart conditions such as arrhythmias and angina.",
       sourceUrl: "https://www.sciencedaily.com/releases/2026/07/260712011755.htm",
@@ -4397,13 +4381,13 @@ const data: Snapshot = {
       category: "Science",
     },
     {
-      id: "REC-2026-07-16-000299",
+      id: "REC-2026-07-16-000298",
       publisher: "ScienceDaily",
       title: "Common constipation drug may help clear depression brain fog",
       published: "Wed, 15 Jul 2026 20:49:09 EDT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "cd5b322aed98d9fbec275446e4b8352efb96dffc0fa8773709d2f669a373c861",
+      hash: "a386de1bf01238a762933540666dd01b21eb52b3403b9ea83d22cd073b0ab7a6",
       summary:
         'An existing constipation drug may have an unexpected new use: helping clear the "brain fog" that often lingers after depression. In a small clinical trial, people with a history of depression who took the medication prucalopride for about a week performed better on tests of memory, attention, and thinking speed than those who received a placebo. The drug targets a serotonin receptor found in both the gut and the brain, and researchers saw no significant side effects.',
       sourceUrl: "https://www.sciencedaily.com/releases/2026/07/260712011751.htm",
@@ -4411,13 +4395,13 @@ const data: Snapshot = {
       category: "Science",
     },
     {
-      id: "REC-2026-07-16-000300",
+      id: "REC-2026-07-16-000299",
       publisher: "ScienceDaily",
       title: "Are there aliens on exoplanet K2-18b? Scientists just scanned it for signals",
       published: "Tue, 14 Jul 2026 09:04:12 EDT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "0c5906cf5b2f2fd7b84fd1ae773bb98d1f5ae8c295647d566ab1a88df5f9afe4",
+      hash: "28384a1ca0207b9419ee4f0390445e2afe2a6ebb726a210de7df65467ef633a0",
       summary:
         "K2-18b is one of the most promising worlds for the search for extraterrestrial life, so astronomers conducted an unusually powerful radio survey using both the VLA and MeerKAT telescopes. Advanced software analyzed millions of signals, filtering out Earth-based interference and other false positives. No convincing artificial radio transmissions were found, but the project demonstrated a powerful new approach that will make future SETI searches faster and far more effective.",
       sourceUrl: "https://www.sciencedaily.com/releases/2026/07/260712011748.htm",
@@ -4425,14 +4409,14 @@ const data: Snapshot = {
       category: "Science",
     },
     {
-      id: "REC-2026-07-16-000301",
+      id: "REC-2026-07-16-000300",
       publisher: "ScienceDaily",
       title:
         "NASA&#039;s James Webb Space Telescope reveals a strange atmosphere on a hellish lava planet",
       published: "Wed, 15 Jul 2026 23:19:50 EDT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "7a52a8346662257494883debb0956400713f877b32c8569d8ba2f0dc7470f062",
+      hash: "341fba6995c47eb59e94b42bf6d4814789ace4c00f3eb68c06408ca1db041ddd",
       summary:
         "NASA&#039;s James Webb Space Telescope has revealed new details about the blistering lava planet 55 Cancri e, where temperatures are high enough to melt rock. The data indicate the planet likely has a hydrogen-rich atmosphere shaped by gases escaping from its molten interior, with signs that volcanic outgassing may even create temporary clouds.",
       sourceUrl: "https://www.sciencedaily.com/releases/2026/07/260712011743.htm",
@@ -4440,13 +4424,13 @@ const data: Snapshot = {
       category: "Science",
     },
     {
-      id: "REC-2026-07-16-000302",
+      id: "REC-2026-07-16-000301",
       publisher: "ScienceDaily",
       title: "Scientists discover why peach fuzz can suddenly make you itch",
       published: "Tue, 14 Jul 2026 00:16:23 EDT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "fa2b9ae1d56e2bfae7c546687af8f28be26a1cf4e0c7fa329fd4a569d3715e66",
+      hash: "0b73cb4d082dcbea0c9437116c25baa46d838751ff8f75c24aa54e20f0564a22",
       summary:
         "A newly discovered network of fine hairs and specialized nerve cells appears to form a dedicated system for sensing mechanical itch, offering fresh insight into why chronic itching occurs. Because humans show signs of having the same pathway, the research could pave the way for more effective treatments for conditions such as eczema.",
       sourceUrl: "https://www.sciencedaily.com/releases/2026/07/260712011740.htm",
@@ -4454,13 +4438,13 @@ const data: Snapshot = {
       category: "Science",
     },
     {
-      id: "REC-2026-07-16-000303",
+      id: "REC-2026-07-16-000302",
       publisher: "ScienceDaily",
       title: "Spider-like creatures help uncover the surprising origins of fatherhood",
       published: "Sun, 12 Jul 2026 19:49:47 EDT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "6a6a0d2b3acf3fae628c8f9f052c2799dff1cb5bb7328fca5b60e57905c20ebb",
+      hash: "b531881cd0e2aa5fc2448f2e0c7fafc853ca501d2c21fbb9337ef01764ed55f0",
       summary:
         "Citizen scientists have helped researchers solve a long-standing mystery about how parental care evolved in harvestmen. Using photos and observations from iNaturalist, scientists more than doubled the known cases of egg-guarding behavior and discovered that maternal and paternal care followed different evolutionary paths. The project, completed in just days with help from public data, shows how citizen science is transforming biological research on a global scale.",
       sourceUrl: "https://www.sciencedaily.com/releases/2026/07/260712011737.htm",
@@ -4468,14 +4452,14 @@ const data: Snapshot = {
       category: "Science",
     },
     {
-      id: "REC-2026-07-16-000304",
+      id: "REC-2026-07-16-000303",
       publisher: "ScienceDaily",
       title:
         "Columbia scientists discover surprising link between serotonin and heart valve disease",
       published: "Sat, 11 Jul 2026 23:11:19 EDT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "5e888d32521f2138bdae14268b693aef8c2bef40770dddc66d2886e5339e1d96",
+      hash: "c45497ba055055b7d6532ed09f96d2898943cb619cbe649658cd613c98190c0b",
       summary:
         "Scientists have uncovered evidence that serotonin, the chemical best known for regulating mood, may also speed the progression of a common heart valve disease in some people. The research suggests that patients with degenerative mitral regurgitation who take SSRI antidepressants and carry a specific genetic variant may develop severe valve damage sooner, potentially requiring surgery at a younger age.",
       sourceUrl: "https://www.sciencedaily.com/releases/2026/07/260711010131.htm",
@@ -4483,13 +4467,13 @@ const data: Snapshot = {
       category: "Science",
     },
     {
-      id: "REC-2026-07-16-000305",
+      id: "REC-2026-07-16-000304",
       publisher: "ScienceDaily",
       title: "New dark matter theory could solve multiple cosmic mysteries at once",
       published: "Mon, 13 Jul 2026 22:30:53 EDT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "3e25da76643b6b116ccd5735aea2e0156359f049749abf84a42a645302dbc50c",
+      hash: "f084b574dc9f94686d0ac6c3288122067e1af23f447274993fdaf9dbb80229a6",
       summary:
         "Dark matter may be far more complicated than scientists once believed. A new study suggests it could consist of at least two different kinds of particles that slowly separate over time, with heavier particles sinking toward the centers of galaxies and lighter ones drifting outward. This simple idea could explain several puzzling cosmic observations that have frustrated astronomers for years, from unusually diffuse dwarf galaxies to surprisingly dense dark matter clumps that bend light through gravitational lensing.",
       sourceUrl: "https://www.sciencedaily.com/releases/2026/07/260711010128.htm",
@@ -4497,13 +4481,13 @@ const data: Snapshot = {
       category: "Science",
     },
     {
-      id: "REC-2026-07-16-000306",
+      id: "REC-2026-07-16-000305",
       publisher: "ScienceDaily",
       title: "Deep-sea life has a secret food source scientists never expected",
       published: "Sun, 12 Jul 2026 08:14:55 EDT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "33b032545f0ca7510d7243fa8345f1c803a803c87337fb0642155b318507ecf5",
+      hash: "89c7155bb99409f06f20d3f66d2623ec142b701a26e7d0a72a7b08f0ccae7fe6",
       summary:
         "Scientists discovered that extreme deep-sea pressure squeezes valuable nutrients out of sinking organic particles, providing an unexpected food source for ocean microbes. The finding could rewrite our understanding of both deep-ocean ecosystems and how carbon is stored on Earth.",
       sourceUrl: "https://www.sciencedaily.com/releases/2026/07/260711010127.htm",
@@ -4511,13 +4495,13 @@ const data: Snapshot = {
       category: "Science",
     },
     {
-      id: "REC-2026-07-16-000307",
+      id: "REC-2026-07-16-000306",
       publisher: "ScienceDaily",
       title: "Second pregnancy changes the brain in surprising new ways",
       published: "Sat, 11 Jul 2026 07:37:04 EDT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "d7d7859229d77dc8120dba64e34eba59a446959cbcabba5d605d5909d2d9ef94",
+      hash: "ae31b49fbbddffd2b33eca792a2db1303c387313069cd4416d1db71f6cd81710",
       summary:
         "Researchers found that every pregnancy rewires the brain in its own way, with a second pregnancy bringing a different pattern of changes than the first. The discoveries could lead to better ways to recognize and treat maternal mental health challenges, including peripartum depression.",
       sourceUrl: "https://www.sciencedaily.com/releases/2026/07/260711010125.htm",
@@ -4525,13 +4509,13 @@ const data: Snapshot = {
       category: "Science",
     },
     {
-      id: "REC-2026-07-16-000308",
+      id: "REC-2026-07-16-000307",
       publisher: "ScienceDaily",
       title: "Physicists finally build a quantum material predicted more than a decade ago",
       published: "Sat, 11 Jul 2026 03:03:53 EDT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "1906fb62dab9ab3249a7dbf17c3dd9c07d10263150618a1078799525bf5141f1",
+      hash: "14ba811d34c870286c293f42c5ee54ed487c0332da709f020f529501ccb75f64",
       summary:
         "Researchers have achieved a major milestone by creating a long-sought two-dimensional quantum material and confirming its unusual conducting edge states. The ability to control these states through strain could make the material a promising platform for future room-temperature quantum electronics.",
       sourceUrl: "https://www.sciencedaily.com/releases/2026/07/260711010123.htm",
@@ -4539,13 +4523,13 @@ const data: Snapshot = {
       category: "Science",
     },
     {
-      id: "REC-2026-07-16-000309",
+      id: "REC-2026-07-16-000308",
       publisher: "ScienceDaily",
       title: "Scientists finally solved the mystery of Earth&#039;s greatest mass extinction",
       published: "Sun, 12 Jul 2026 00:02:00 EDT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "0f0347c0d7263bf8221f8a1d1cd2a977e341fdca195a41e5fdf60154a9cf4e6d",
+      hash: "fece5fc470020ee892f46169a17909f7999ba20f8009e939df6b83cd8b765110",
       summary:
         "Why do beaches today have seashells from clams and snails instead of brachiopods? A new study suggests the answer lies in Earth&#039;s greatest mass extinction, when warming oceans and falling oxygen levels wiped out animals that couldn&#039;t adapt. Species with body plans and metabolisms better suited to the changing conditions survived and went on to dominate the seas, offering a glimpse of how modern marine life could respond to climate change.",
       sourceUrl: "https://www.sciencedaily.com/releases/2026/07/260711010122.htm",
@@ -4553,13 +4537,13 @@ const data: Snapshot = {
       category: "Science",
     },
     {
-      id: "REC-2026-07-16-000310",
+      id: "REC-2026-07-16-000309",
       publisher: "ScienceDaily",
       title: "Physicists recreate black hole energy extraction in the lab",
       published: "Sun, 12 Jul 2026 08:28:41 EDT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "62fa0030aafa6af8e41df573808e7943346ad51f2a17871b05ab04d5b07e06a5",
+      hash: "d43f499c87bb60f5751aa597ba637165214f0e707eb8dfa5dece6f62f69fe697",
       summary:
         "Researchers have recreated the physics of extracting energy from a spinning black hole using a stationary device that produces synthetic ultrafast rotation. The achievement transforms a long-standing theoretical idea into a practical experiment and could inspire new advances in optics, wireless communications, and quantum science.",
       sourceUrl: "https://www.sciencedaily.com/releases/2026/07/260711010120.htm",
@@ -4567,13 +4551,13 @@ const data: Snapshot = {
       category: "Science",
     },
     {
-      id: "REC-2026-07-16-000311",
+      id: "REC-2026-07-16-000310",
       publisher: "ScienceDaily",
       title: "Experimental drug reverses severe fatty liver disease by repairing the gut",
       published: "Sat, 11 Jul 2026 09:22:55 EDT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "5b014538c28c11f6f1d8d5af1d104e301bead53b7ef63c1641c30d12caf37253",
+      hash: "ac758bc177f1bf35082054a255e1ba03a418bd389d37b95f64b3fd69b9af4263",
       summary:
         "An experimental drug called DT-109 reversed severe fatty liver disease in animal studies by repairing the gut and preventing harmful toxins from damaging the liver. The discovery could open the door to a new class of treatments for MASH and potentially other diseases tied to gut health.",
       sourceUrl: "https://www.sciencedaily.com/releases/2026/07/260711010116.htm",
@@ -4581,13 +4565,13 @@ const data: Snapshot = {
       category: "Science",
     },
     {
-      id: "REC-2026-07-16-000312",
+      id: "REC-2026-07-16-000311",
       publisher: "ScienceDaily",
       title: "Tiny bubbles could revolutionize inkjet printing",
       published: "Sat, 11 Jul 2026 02:32:37 EDT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "1c9daf58ca0661d8646759be4b4ec06606a899743c776a6096c31c05e337b4b6",
+      hash: "cbac0fef0e31ea3acb0e2b38ab72ab8110b4c93c3d86af8e65dd790fcfb368a9",
       summary:
         "Ultra-fine bubbles may offer a cleaner way to perfect inkjet printing for next-generation electronics. By simply changing the number of bubbles in each droplet, researchers were able to dramatically reshape the final printed pattern without leaving behind unwanted chemical residues.",
       sourceUrl: "https://www.sciencedaily.com/releases/2026/07/260711010112.htm",
@@ -4595,13 +4579,13 @@ const data: Snapshot = {
       category: "Science",
     },
     {
-      id: "REC-2026-07-16-000313",
+      id: "REC-2026-07-16-000312",
       publisher: "ScienceDaily",
       title: "Scientists warn invasive Asian mantises are threatening Europe&#039;s wildlife",
       published: "Sat, 11 Jul 2026 08:53:55 EDT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "e9c2ae51d3a57a3b1f203951b7e510d46bce7da2763879b099b234197d2b75f9",
+      hash: "80ccf3ddd9e628ce333a9fabb2348560b052d289bf4b131e46d0bf4a609c6721",
       summary:
         "Two striking Asian praying mantis species that have rapidly spread across Europe have now been officially classified as invasive, raising new concerns about their impact on native wildlife. Boosted by climate change and urban environments, these fast-breeding predators are expanding northward, where they prey on native insects, pollinators, and even small vertebrates while also reducing native mantis populations through deadly mating interactions.",
       sourceUrl: "https://www.sciencedaily.com/releases/2026/07/260710003540.htm",
@@ -4609,13 +4593,13 @@ const data: Snapshot = {
       category: "Science",
     },
     {
-      id: "REC-2026-07-16-000314",
+      id: "REC-2026-07-16-000313",
       publisher: "ScienceDaily",
       title: "Future moon landings could wipe out clues to how life began on Earth",
       published: "Sun, 12 Jul 2026 20:48:16 EDT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "ed73a6d8dcd87bdf8078390a804ceb4151ebf55024f91e96caa76d73868c145c",
+      hash: "c314a50cdf74497d42e54710f12c1aac22ed7fee5ff3e3e2673dc607f4d93c75",
       summary:
         "A new study suggests spacecraft exhaust could quickly contaminate the moon&#039;s most scientifically valuable regions, potentially masking ancient clues about how life began on Earth. Researchers say future lunar missions should consider new ways to reduce and monitor this pollution before it becomes widespread.",
       sourceUrl: "https://www.sciencedaily.com/releases/2026/07/260710003537.htm",
@@ -4623,13 +4607,13 @@ const data: Snapshot = {
       category: "Science",
     },
     {
-      id: "REC-2026-07-16-000315",
+      id: "REC-2026-07-16-000314",
       publisher: "ScienceDaily",
       title: "Alzheimer&#039;s tau protein has a surprising secret role in memory",
       published: "Sun, 12 Jul 2026 08:53:12 EDT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "4e0adafa65c1b11ce9c4c85ab1baa8923adf654e9d1835496d3fbc954a3ad179",
+      hash: "52720970d7abf111696700c271029eeb292e7d7dec7e8bea61fd0331326282ae",
       summary:
         "Researchers found that tau is essential for turning new experiences into lasting memories by helping organize the brain&#039;s memory-storing cells. The mouse study also revealed how abnormal tau may contribute to Alzheimer&#039;s by disrupting both the formation of new memories and the recall of existing ones.",
       sourceUrl: "https://www.sciencedaily.com/releases/2026/07/260710003535.htm",
@@ -4637,13 +4621,13 @@ const data: Snapshot = {
       category: "Science",
     },
     {
-      id: "REC-2026-07-16-000316",
+      id: "REC-2026-07-16-000315",
       publisher: "ScienceDaily",
       title: "The biggest problem with solid-state batteries may finally be solved",
       published: "Fri, 10 Jul 2026 08:29:27 EDT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "d2a7e5e6b852d4be99dbc599203626bd88a246ee9edce0cabed54583d173a4d0",
+      hash: "455aadf51ffa37003c5a8c0347503ec28575bc44647fd30054b3bcadc6dc9e2c",
       summary:
         "Researchers solved the mystery of how soft lithium dendrites crack the hard ceramic inside solid-state batteries, triggering short circuits. The breakthrough could help engineers build safer, longer-lasting batteries for smartphones, electric vehicles, and other electronics.",
       sourceUrl: "https://www.sciencedaily.com/releases/2026/07/260710003533.htm",
@@ -4651,14 +4635,14 @@ const data: Snapshot = {
       category: "Science",
     },
     {
-      id: "REC-2026-07-16-000317",
+      id: "REC-2026-07-16-000316",
       publisher: "ScienceDaily",
       title:
         "Yale scientists may have found how Parkinson&#039;s disease spreads through the brain",
       published: "Sat, 11 Jul 2026 22:06:14 EDT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "441a57769d3ecbf3c8bfff818539df193424b169384c6a0120d09e8fac4bbb76",
+      hash: "d46e14fc2b7183d052521e4045506e56a360eaf48637683557cbcb03ba2400ca",
       summary:
         "Yale scientists discovered two neuron surface proteins that appear to help spread the toxic protein linked to Parkinson’s disease. Blocking these proteins in mice dramatically reduced disease progression, offering a potential new target for future therapies.",
       sourceUrl: "https://www.sciencedaily.com/releases/2026/07/260710003529.htm",
@@ -4666,13 +4650,13 @@ const data: Snapshot = {
       category: "Science",
     },
     {
-      id: "REC-2026-07-16-000318",
+      id: "REC-2026-07-16-000317",
       publisher: "ScienceDaily",
       title: "Europe just unveiled a new rival to SpaceX’s Starship",
       published: "Fri, 10 Jul 2026 21:14:33 EDT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "3d1f4cfaabe6a9c069f087c2f835d982d079cbd5bd9acbe8d11ccfd8bf6efdd1",
+      hash: "b77ff7dbe7d6dc82152b3328238e6b344eedb000aa76baea8c52992adeaeb3d2",
       summary:
         "A detailed independent study found that SpaceX&#039;s Starship is every bit as revolutionary as expected, while revealing both its impressive capabilities and its biggest remaining hurdles. It also introduces an ambitious European rocket concept that could offer a very different route to affordable super heavy launches.",
       sourceUrl: "https://www.sciencedaily.com/releases/2026/07/260710003526.htm",
@@ -4680,13 +4664,13 @@ const data: Snapshot = {
       category: "Science",
     },
     {
-      id: "REC-2026-07-16-000319",
+      id: "REC-2026-07-16-000318",
       publisher: "ScienceDaily",
       title: "The galaxy’s coldest “stars” may actually be alien megastructures",
       published: "Fri, 10 Jul 2026 02:04:44 EDT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "9656810a3ef87c64118c50ca30e1a1c9c7a17d74dc40512bd4648ac660dfb817",
+      hash: "6299ef037a4978cb666a585a2fcfe1a710e934fefca75db8f1930dc411920885",
       summary:
         "Scientists have identified new clues that could help astronomers spot one of the most famous hypothetical alien megastructures: a Dyson sphere. The study finds that red dwarfs and white dwarfs are the most promising stars to examine, since advanced civilizations could potentially build energy-harvesting swarms around them more easily. These objects would stand out by glowing in infrared light instead of visible light, lacking the dusty signatures of ordinary stars, and possibly flickering in unusual ways.",
       sourceUrl: "https://www.sciencedaily.com/releases/2026/07/260710003524.htm",
@@ -4694,13 +4678,13 @@ const data: Snapshot = {
       category: "Science",
     },
     {
-      id: "REC-2026-07-16-000320",
+      id: "REC-2026-07-16-000319",
       publisher: "ScienceDaily",
       title: "This ultrasound treatment may help stop arthritis before it starts",
       published: "Sun, 12 Jul 2026 06:07:21 EDT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "7068205c8f69d413cae3811f7e99af3452bc964d60a4d65aee290fed35d6c693",
+      hash: "12811a320fa0feefabe0b34a7f5e78cb3c16c52284afe506d2d0498b538e6cd3",
       summary:
         "A simple, non-invasive ultrasound treatment could one day help injured joints heal instead of remaining trapped in a cycle of damaging inflammation. Researchers at The University of Alabama in Huntsville found that continuous low-intensity ultrasound encouraged key immune cells called macrophages to shift from an inflammatory state toward one that supports tissue repair.",
       sourceUrl: "https://www.sciencedaily.com/releases/2026/07/260710003521.htm",
@@ -4708,13 +4692,13 @@ const data: Snapshot = {
       category: "Science",
     },
     {
-      id: "REC-2026-07-16-000321",
+      id: "REC-2026-07-16-000320",
       publisher: "ScienceDaily",
       title: "NASA satellites are watching Earth&#039;s newest island rise from the sea",
       published: "Fri, 10 Jul 2026 18:57:49 EDT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "7793cbcda785c2a5954efab35a59c8752acf26a2d49f79d89aacc014ab1e5fbf",
+      hash: "a29d38662e2b3a940ed6c01129aeeb9cca7ddef530d252f1ed040e9be8c3b9e9",
       summary:
         "A newly discovered underwater volcanic eruption north of Papua New Guinea is unfolding in one of the world&#039;s most poorly mapped ocean basins. Satellites have spotted steam plumes, ash, thermal hotspots, and huge floating pumice rafts, suggesting magma is rising surprisingly close to the surface. Scientists are now watching closely to see if the eruption creates a new island, offering a rare opportunity to observe the birth of new land as it happens.",
       sourceUrl: "https://www.sciencedaily.com/releases/2026/07/260710003517.htm",
@@ -4722,13 +4706,13 @@ const data: Snapshot = {
       category: "Science",
     },
     {
-      id: "REC-2026-07-16-000322",
+      id: "REC-2026-07-16-000321",
       publisher: "ScienceDaily",
       title: "Why gold never tarnishes has finally been explained",
       published: "Sat, 11 Jul 2026 22:36:05 EDT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "dd0ad919308d2e04ffe1857e389cf61333e3ddc880261f8d0c216f0a7bed78a5",
+      hash: "6858a96272a77b6fc556b8eb2c9c29e7e7495990fa3bbb78725dabf7dae3ae75",
       summary:
         "Gold may have a secret self-defense system that helps it resist tarnishing. Researchers discovered that atoms on gold surfaces reorganize themselves into patterns that block oxygen from reacting with the metal, suppressing oxidation by up to a trillion-fold. Beyond explaining why gold jewelry stays bright for generations, the finding could help scientists create more powerful gold-based catalysts for manufacturing and clean energy.",
       sourceUrl: "https://www.sciencedaily.com/releases/2026/07/260710003511.htm",
@@ -4736,13 +4720,13 @@ const data: Snapshot = {
       category: "Science",
     },
     {
-      id: "REC-2026-07-16-000323",
+      id: "REC-2026-07-16-000322",
       publisher: "ScienceDaily",
       title: "This alien planet never has sunrise or sunset. It may support life",
       published: "Thu, 09 Jul 2026 17:27:22 EDT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "37fa94b023c086e2786ccd659b03d091f19805ebd90f6a15b322a63725d81a69",
+      hash: "3527722b72755e41e01c291a0ce8a60fad92fd4d25eca7de269cfb7a5a9ca334",
       summary:
         "A planet with one side permanently roasting and the other frozen in endless darkness might still have a chance of supporting life. Researchers found that heat inside a tidally locked exoplanet could circulate in a stable, continuous loop, helping moderate temperatures in certain regions. Their laboratory model suggests these worlds may be more hospitable than previously thought, despite their extreme surface conditions.",
       sourceUrl: "https://www.sciencedaily.com/releases/2026/07/260709160657.htm",
@@ -4750,13 +4734,13 @@ const data: Snapshot = {
       category: "Science",
     },
     {
-      id: "REC-2026-07-16-000324",
+      id: "REC-2026-07-16-000323",
       publisher: "ScienceDaily",
       title: "This frog bacterium wiped out cancer tumors in mice with a single dose",
       published: "Fri, 10 Jul 2026 00:13:15 EDT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "42a84b2c9f8d268f2db75ed1f4d5d9b30c4b43bf30b163c5b3484702314b9ed6",
+      hash: "ff64629716c1778616ff9a25323470b3095a92a0cf948bb87b051b9e77481506",
       summary:
         "A naturally occurring bacterium from amphibian intestines completely eliminated colorectal tumors in mice with a single treatment by both attacking cancer cells and activating the immune system. The findings point to a promising new type of cancer therapy that could one day work against many solid tumors.",
       sourceUrl: "https://www.sciencedaily.com/releases/2026/07/260709160655.htm",
@@ -4764,13 +4748,13 @@ const data: Snapshot = {
       category: "Science",
     },
     {
-      id: "REC-2026-07-16-000325",
+      id: "REC-2026-07-16-000324",
       publisher: "ScienceDaily",
       title: "Europe&#039;s most active volcano may have a secret origin",
       published: "Fri, 10 Jul 2026 07:16:59 EDT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "b29b2e23431d5929583505ab24a03a0453e60656bbad8f5aee7bd3edde94cfd8",
+      hash: "5242d84f1734e0246959b0abae6461971670bbc2ff4d78fbe3287eee94dd0f0e",
       summary:
         "Mount Etna has long puzzled geologists because it doesn&#039;t fit any of the three classic ways volcanoes are thought to form. A new study suggests it may instead be fueled by ancient pockets of magma that are pushed upward through cracks created by shifting tectonic plates. If confirmed, Etna could belong to a rare fourth category of volcano, revealing that much larger volcanoes can form through processes previously associated only with small submarine eruptions.",
       sourceUrl: "https://www.sciencedaily.com/releases/2026/07/260709160653.htm",
@@ -4778,13 +4762,13 @@ const data: Snapshot = {
       category: "Science",
     },
     {
-      id: "REC-2026-07-16-000326",
+      id: "REC-2026-07-16-000325",
       publisher: "ScienceDaily",
       title: "This electric field trick boosted heat flow by nearly 300%",
       published: "Sat, 11 Jul 2026 08:18:02 EDT",
-      archived: "2026-07-16T08:02:28.999Z",
+      archived: "2026-07-16T08:44:44.735Z",
       status: "VERIFIED",
-      hash: "8786298076eb55217adaac40f13995604271d127e2f2f70dfd2b30c559453eb6",
+      hash: "23e705ea22e53734d2d4d0a0efac180412f4480a9effe63a348af4000cb546c3",
       summary:
         "Researchers discovered that electricity can dramatically reshape how heat flows through certain ceramic materials, increasing heat conduction by almost threefold in a preferred direction. The unexpected result could lead to much more efficient cooling technologies and energy-saving devices.",
       sourceUrl: "https://www.sciencedaily.com/releases/2026/07/260709160651.htm",

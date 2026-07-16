@@ -201,3 +201,109 @@ Consequences:
 - Tests run ~1.2s cold, ~0.3s cached
 - 53 initial tests across 3 test files
 - Mocking HTTP in snapshot generator tests can use `vi.fn()` when needed
+
+---
+
+### ADR-007: Storage abstraction via SnapshotStore interface
+
+Date: 2026-07-16
+
+Decision:
+Define a `SnapshotStore` interface (`save`, `load`, `list`) in
+`src/lib/storage.ts` with a `LocalSnapshotStore` implementation. Future R2
+integration will add `R2SnapshotStore` without changing business logic.
+
+Context:
+Snapshots need to be preserved long-term. The obvious target is Cloudflare R2,
+but R2 is not yet configured. A storage abstraction allows development with
+local filesystem storage and migration to R2 without refactoring.
+
+Options considered:
+
+- Direct R2 integration from the start (blocked — no R2 bucket, no credentials)
+- Direct filesystem writes only (creates R2 migration work later)
+- Storage interface with swappable implementations (chosen)
+
+Chosen approach:
+A minimal interface (`SnapshotStore`) with a single filesystem implementation
+(`LocalSnapshotStore`). The generator calls `persistSnapshot()` which uses the
+store. In CI, the data directory is archived as GitHub Actions artifacts.
+
+Consequences:
+
+- Adding R2 is a new class implementing the same interface
+- The generator and app code never reference filesystem or R2 directly
+- Artifacts provide 90-day retention without any external service
+- The interface is small (3 methods) and unlikely to need changes
+
+---
+
+### ADR-008: GitHub Actions for scheduled snapshot generation
+
+Date: 2026-07-16
+
+Decision:
+Use GitHub Actions scheduled workflows (cron) for daily snapshot generation
+instead of Cloudflare Workers Cron Triggers.
+
+Context:
+The project needs daily automated snapshot generation. Two options exist:
+Cloudflare Workers Cron Triggers (runs on Workers infrastructure) or GitHub
+Actions scheduled workflows (runs on GitHub infrastructure). R2 is not yet
+configured, and the snapshot generator requires Node.js filesystem access
+(`node:fs`) which is not available in Workers without polyfills.
+
+Options considered:
+
+- Cloudflare Workers Cron Triggers (tighter integration, but R2 not configured)
+- GitHub Actions scheduled workflow (simpler, works with local filesystem,
+  artifact archival)
+- Self-hosted cron (more control, more maintenance)
+
+Chosen approach:
+GitHub Actions schedule at 06:00 UTC daily with `workflow_dispatch` for manual
+triggering. The workflow runs the full generator pipeline, validates integrity,
+and archives data as artifacts (90-day retention).
+
+Consequences:
+
+- Snapshot runs on GitHub infrastructure (not Cloudflare)
+- Artifacts provide temporary preservation without R2
+- `workflow_dispatch` enables testing without waiting for cron
+- Future migration: replace with Workers Cron Triggers when R2 is active
+- Generator must complete within GitHub Actions 6-hour timeout (actual: ~30s)
+
+---
+
+### ADR-009: GitHub Actions artifacts as interim snapshot storage
+
+Date: 2026-07-16
+
+Decision:
+Store generated snapshot JSON files as GitHub Actions artifacts with 90-day
+retention. This is a temporary measure until Cloudflare R2 is configured.
+
+Context:
+Daily snapshots must be preserved. R2 is the target but not yet configured.
+GitHub Actions artifacts provide free storage with 90-day retention, URL
+download access, and require no additional setup.
+
+Options considered:
+
+- GitHub Actions artifacts (free, 90-day retention, no setup)
+- Git LFS (commits binary blobs to repo, pollutes history)
+- Committing to a separate `data` branch (increases repo size, no retention
+  enforcement)
+
+Chosen approach:
+After `npm run snapshot`, the `data/` directory is uploaded as a workflow
+artifact. The TypeScript module (`src/lib/snapshot-data.ts`) is also uploaded
+for reference. Both use `actions/upload-artifact@v4`.
+
+Consequences:
+
+- Snapshots are preserved for 90 days (extendable if needed)
+- Downloadable via GitHub Artifacts UI or API
+- No external service dependencies
+- Artifacts are automatically deleted after retention period
+- Migration to R2: replace artifact upload with R2 store call

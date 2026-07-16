@@ -4,12 +4,19 @@ import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { XMLParser } from "fast-xml-parser";
+import { LocalSnapshotStore } from "../src/lib/storage";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const ROOT = resolve(__dirname, "..");
-const DATA_DIR = resolve(ROOT, "data");
+export const ROOT = resolve(__dirname, "..");
+export const DATA_DIR = resolve(ROOT, "data");
 
-interface RawArticle {
+interface FetchResult {
+  articles: RawArticle[];
+  ok: boolean;
+  source: string;
+}
+
+export interface RawArticle {
   title: string;
   description: string;
   link: string;
@@ -19,7 +26,7 @@ interface RawArticle {
   category: string;
 }
 
-interface Record {
+interface SnapshotRecord {
   id: string;
   publisher: string;
   title: string;
@@ -42,7 +49,7 @@ interface Snapshot {
   countries: number;
   status: string;
   hash: string;
-  records: Record[];
+  records: SnapshotRecord[];
 }
 
 const FEEDS = [
@@ -206,7 +213,7 @@ export function parseFeedItems(
   return articles;
 }
 
-async function fetchFeed(feed: (typeof FEEDS)[number]): Promise<RawArticle[]> {
+async function fetchFeed(feed: (typeof FEEDS)[number]): Promise<FetchResult> {
   try {
     const response = await fetch(feed.url, {
       signal: AbortSignal.timeout(15000),
@@ -214,13 +221,24 @@ async function fetchFeed(feed: (typeof FEEDS)[number]): Promise<RawArticle[]> {
     });
     if (!response.ok) {
       console.warn(`  [${response.status}] ${feed.source}`);
-      return [];
+      return { articles: [], ok: false, source: feed.source };
     }
     const xml = await response.text();
-    return parseFeedItems(xml, feed);
+    return { articles: parseFeedItems(xml, feed), ok: true, source: feed.source };
   } catch (err) {
     console.warn(`  [error] ${feed.source}: ${err instanceof Error ? err.message : String(err)}`);
-    return [];
+    return { articles: [], ok: false, source: feed.source };
+  }
+}
+
+export async function loadPreviousSnapshot(): Promise<Snapshot | null> {
+  try {
+    const { readFileSync } = await import("node:fs");
+    const latestPath = resolve(DATA_DIR, "latest.json");
+    const data = readFileSync(latestPath, "utf-8");
+    return JSON.parse(data) as Snapshot;
+  } catch {
+    return null;
   }
 }
 
@@ -228,7 +246,7 @@ export function buildRecords(
   articles: RawArticle[],
   isoDate: string,
   archivedAt: string,
-): Record[] {
+): SnapshotRecord[] {
   return articles.map((a, i) => {
     const id = `REC-${isoDate}-${String(i + 1).padStart(6, "0")}`;
     const hashSource = `${id}|${a.title}|${a.description}|${a.link}|${a.source}|${archivedAt}`;
@@ -250,7 +268,7 @@ export function buildRecords(
 }
 
 export function buildSnapshot(
-  records: Record[],
+  records: SnapshotRecord[],
   isoDate: string,
   dateStr: string,
   generated: string,
@@ -293,15 +311,50 @@ export default data;
   return { dateFile, latestFile, tsFile };
 }
 
+export async function persistSnapshot(snapshot: Snapshot, isoDate: string) {
+  const store = new LocalSnapshotStore(DATA_DIR);
+  await store.save("latest", snapshot);
+  await store.save(isoDate, snapshot);
+}
+
 async function main() {
   mkdirSync(DATA_DIR, { recursive: true });
 
   console.log("Fetching RSS feeds...");
-  const results = await Promise.allSettled(FEEDS.map((f) => fetchFeed(f)));
+  const results = await Promise.all(FEEDS.map((f) => fetchFeed(f)));
+
   const allArticles: RawArticle[] = [];
+  const failedSources: string[] = [];
+
   for (const r of results) {
-    if (r.status === "fulfilled") allArticles.push(...r.value);
+    allArticles.push(...r.articles);
+    if (!r.ok) failedSources.push(r.source);
   }
+
+  if (failedSources.length > 0) {
+    console.log(`\n${failedSources.length} feed(s) failed: ${failedSources.join(", ")}`);
+    const prev = await loadPreviousSnapshot();
+    if (prev) {
+      for (const source of failedSources) {
+        const prevRecords = prev.records.filter((r) => r.publisher === source);
+        if (prevRecords.length > 0) {
+          console.log(`  Rolling over ${prevRecords.length} records from ${source}`);
+          for (const rec of prevRecords) {
+            allArticles.push({
+              title: rec.title,
+              description: rec.summary,
+              link: rec.sourceUrl,
+              published: rec.published,
+              source: rec.publisher,
+              country: rec.country,
+              category: rec.category,
+            });
+          }
+        }
+      }
+    }
+  }
+
   console.log(`\nTotal articles fetched: ${allArticles.length}`);
 
   if (allArticles.length === 0) {
@@ -322,6 +375,7 @@ async function main() {
   const records = buildRecords(allArticles, isoDate, archivedAt);
   const snapshot = buildSnapshot(records, isoDate, dateStr, generated);
   const files = writeSnapshotFiles(snapshot, isoDate);
+  await persistSnapshot(snapshot, isoDate);
 
   console.log(`\nSnapshot saved to:`);
   console.log(`  ${files.dateFile}`);
