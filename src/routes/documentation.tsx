@@ -7,7 +7,8 @@ export const Route = createFileRoute("/documentation")({
       { title: "Documentation — Public Internet Record" },
       {
         name: "description",
-        content: "Documentation for the Public Internet Record: formats, integrity model, and access.",
+        content:
+          "Documentation for the Public Internet Record: formats, integrity model, and access.",
       },
       { property: "og:title", content: "Documentation — Public Internet Record" },
       {
@@ -30,11 +31,21 @@ function Docs() {
           Table of Contents
         </span>
         <ul className="mt-1 list-none space-y-0.5">
-          <li>1. <a href="#overview">Overview</a></li>
-          <li>2. <a href="#records">Record Structure</a></li>
-          <li>3. <a href="#snapshots">Snapshot Format</a></li>
-          <li>4. <a href="#integrity">Integrity Model</a></li>
-          <li>5. <a href="#access">Access and Licensing</a></li>
+          <li>
+            1. <a href="#overview">Overview</a>
+          </li>
+          <li>
+            2. <a href="#records">Record Structure</a>
+          </li>
+          <li>
+            3. <a href="#snapshots">Snapshot Format</a>
+          </li>
+          <li>
+            4. <a href="#integrity">Integrity Model</a>
+          </li>
+          <li>
+            5. <a href="#access">Access and Licensing</a>
+          </li>
         </ul>
       </nav>
 
@@ -43,9 +54,9 @@ function Docs() {
         <hr className="mt-1" />
         <p className="mt-2 text-[13px] leading-relaxed">
           The Public Internet Record is a permanent, publicly accessible archive of primary source
-          documents published on the open web. The project was established in 1998 by a consortium of
-          archivists, librarians, historians, and government record keepers. Its sole purpose is the
-          faithful preservation of the public record.
+          documents published on the open web. The project was established in 1998 by a consortium
+          of archivists, librarians, historians, and government record keepers. Its sole purpose is
+          the faithful preservation of the public record.
         </p>
       </section>
 
@@ -80,7 +91,9 @@ function Docs() {
       </section>
 
       <section id="access" className="mt-6">
-        <h2 className="text-[13px] font-bold uppercase tracking-[0.06em]">5. Access and Licensing</h2>
+        <h2 className="text-[13px] font-bold uppercase tracking-[0.06em]">
+          5. Access and Licensing
+        </h2>
         <hr className="mt-1" />
         <p className="mt-2 text-[13px] leading-relaxed">
           Access to the archive is free of charge and free of registration. The archive metadata is

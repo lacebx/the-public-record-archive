@@ -19,7 +19,8 @@ function ApiPage() {
       <h1 className="text-[14px] font-bold uppercase tracking-[0.06em]">Public API</h1>
       <hr className="mt-1" />
       <p className="mt-2 text-[12px] text-[color:var(--muted-foreground)]">
-        Read-only HTTP API. No authentication required. All responses are cacheable and reproducible.
+        Read-only HTTP API. No authentication required. All responses are cacheable and
+        reproducible.
       </p>
 
       <section className="mt-5">
@@ -28,7 +29,7 @@ function ApiPage() {
         </div>
         <hr className="mt-1" />
         <pre className="mt-2 border border-[color:var(--border)] p-3 text-[12px]">
-{`https://api.public-record.org/v1`}
+          {`https://api.public-record.org/v1`}
         </pre>
       </section>
 
@@ -81,7 +82,7 @@ function ApiPage() {
         </div>
         <hr className="mt-1" />
         <pre className="mt-2 overflow-x-auto border border-[color:var(--border)] p-3 text-[12px]">
-{`$ curl https://api.public-record.org/v1/records/REC-2026-07-16-000091
+          {`$ curl https://api.public-record.org/v1/records/REC-2026-07-16-000091
 {
   "id": "REC-2026-07-16-000091",
   "publisher": "Reuters",

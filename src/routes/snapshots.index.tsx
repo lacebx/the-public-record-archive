@@ -1,8 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteShell } from "../components/site-shell";
-import { PREVIOUS_SNAPSHOTS, SNAPSHOT } from "../lib/records";
+import { getSnapshot } from "../lib/data";
 
 export const Route = createFileRoute("/snapshots/")({
+  loader: async () => {
+    const snapshot = await getSnapshot();
+    return { snapshot };
+  },
   head: () => ({
     meta: [
       { title: "Snapshots — Public Internet Record" },
@@ -18,10 +22,8 @@ export const Route = createFileRoute("/snapshots/")({
 });
 
 function SnapshotsIndex() {
-  const rows = [
-    { date: SNAPSHOT.isoDate, articles: SNAPSHOT.articles, sources: SNAPSHOT.sources, hash: SNAPSHOT.hash.slice(0, 24) + "..." },
-    ...PREVIOUS_SNAPSHOTS,
-  ];
+  const { snapshot } = Route.useLoaderData();
+
   return (
     <SiteShell>
       <h1 className="text-[14px] font-bold uppercase tracking-[0.06em]">Snapshots</h1>
@@ -42,23 +44,21 @@ function SnapshotsIndex() {
           </tr>
         </thead>
         <tbody>
-          {rows.map((s) => (
-            <tr key={s.date}>
-              <td>
-                <Link to="/snapshots/$date" params={{ date: s.date }}>
-                  {s.date}
-                </Link>
-              </td>
-              <td>{s.articles.toLocaleString("en-US")}</td>
-              <td>{s.sources}</td>
-              <td className="break-all">{s.hash}</td>
-              <td>
-                <Link to="/snapshots/$date" params={{ date: s.date }}>
-                  view
-                </Link>
-              </td>
-            </tr>
-          ))}
+          <tr key={snapshot.isoDate}>
+            <td>
+              <Link to="/snapshots/$date" params={{ date: snapshot.isoDate }}>
+                {snapshot.isoDate}
+              </Link>
+            </td>
+            <td>{snapshot.articles.toLocaleString("en-US")}</td>
+            <td>{snapshot.sources}</td>
+            <td className="break-all">{snapshot.hash.slice(0, 24)}&hellip;</td>
+            <td>
+              <Link to="/snapshots/$date" params={{ date: snapshot.isoDate }}>
+                view
+              </Link>
+            </td>
+          </tr>
         </tbody>
       </table>
     </SiteShell>

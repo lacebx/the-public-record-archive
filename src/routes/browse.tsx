@@ -1,14 +1,25 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, useSearch } from "@tanstack/react-router";
+import { z } from "zod";
 import { SiteShell } from "../components/site-shell";
-import { RECORDS } from "../lib/records";
+import { getSnapshot } from "../lib/data";
+
+const browseSearchSchema = z.object({
+  category: z.string().optional().default(""),
+});
 
 export const Route = createFileRoute("/browse")({
+  validateSearch: (s) => browseSearchSchema.parse(s),
+  loader: async () => {
+    const snapshot = await getSnapshot();
+    return { snapshot };
+  },
   head: () => ({
     meta: [
       { title: "Browse Records — Public Internet Record" },
       {
         name: "description",
-        content: "Browse the complete list of verified records in the Public Internet Record archive.",
+        content:
+          "Browse the complete list of verified records in the Public Internet Record archive.",
       },
       { property: "og:title", content: "Browse Records — Public Internet Record" },
       { property: "og:description", content: "Complete list of verified records." },
@@ -18,14 +29,23 @@ export const Route = createFileRoute("/browse")({
 });
 
 function Browse() {
-  const categories = Array.from(new Set(RECORDS.map((r) => r.category))).sort();
+  const { snapshot } = Route.useLoaderData();
+  const { category } = useSearch({ from: "/browse" });
+
+  const records = snapshot.records;
+  const categories = Array.from(new Set(records.map((r) => r.category))).sort();
+
+  const filtered = category
+    ? records.filter((r) => r.category.toLowerCase() === category.toLowerCase())
+    : records;
+
   return (
     <SiteShell>
       <h1 className="text-[14px] font-bold uppercase tracking-[0.06em]">Browse Records</h1>
       <hr className="mt-1" />
       <p className="mt-2 text-[12px] text-[color:var(--muted-foreground)]">
-        Records are listed in reverse chronological order of archival. All entries are cryptographically
-        verified and immutable.
+        Records are listed in reverse chronological order of archival. All entries are
+        cryptographically verified and immutable.
       </p>
 
       <section className="mt-5">
@@ -33,11 +53,22 @@ function Browse() {
           Filter by Category
         </div>
         <div className="mt-1 flex flex-wrap gap-x-3 gap-y-1 text-[12px]">
-          <a href="#all">All</a>
+          <Link
+            to="/browse"
+            search={{ category: "" }}
+            className={!category ? "underline font-bold" : ""}
+          >
+            All
+          </Link>
           {categories.map((c) => (
-            <a key={c} href={`#${c.toLowerCase()}`}>
+            <Link
+              key={c}
+              to="/browse"
+              search={{ category: c }}
+              className={category.toLowerCase() === c.toLowerCase() ? "underline font-bold" : ""}
+            >
               {c}
-            </a>
+            </Link>
           ))}
         </div>
       </section>
@@ -54,7 +85,7 @@ function Browse() {
             </tr>
           </thead>
           <tbody>
-            {RECORDS.map((r) => (
+            {filtered.map((r) => (
               <tr key={r.id}>
                 <td className="whitespace-nowrap">{r.id}</td>
                 <td>{r.publisher}</td>
@@ -72,8 +103,7 @@ function Browse() {
       </section>
 
       <p className="mt-4 text-[11px] text-[color:var(--muted-foreground)]">
-        Showing {RECORDS.length} of 5,824 records in the current snapshot.{" "}
-        <a href="#older">Load older records &raquo;</a>
+        Showing {filtered.length} of {records.length} records in the current snapshot.
       </p>
     </SiteShell>
   );

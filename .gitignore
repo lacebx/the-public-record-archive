@@ -16,6 +16,9 @@ dist-ssr
 .nitro
 *.local
 
+# Generated snapshot data
+data/*.json
+
 # Wrangler / Cloudflare
 .wrangler/
 .dev.vars

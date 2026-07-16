@@ -1,12 +1,13 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { SiteShell } from "../components/site-shell";
-import { RECORDS } from "../lib/records";
+import { getSnapshot } from "../lib/data";
 
 export const Route = createFileRoute("/record/$id")({
-  loader: ({ params }) => {
-    const record = RECORDS.find((r) => r.id === params.id);
+  loader: async ({ params }) => {
+    const snapshot = await getSnapshot();
+    const record = snapshot.records.find((r) => r.id === params.id);
     if (!record) throw notFound();
-    return { record };
+    return { record, snapshot };
   },
   head: ({ loaderData }) => {
     if (!loaderData) {
@@ -33,7 +34,10 @@ export const Route = createFileRoute("/record/$id")({
       <hr className="mt-1" />
       <p className="mt-3 text-[12px]">
         The requested record identifier is not present in the current archive.{" "}
-        <Link to="/browse">Browse all records</Link>.
+        <Link to="/browse" search={{}}>
+          Browse all records
+        </Link>
+        .
       </p>
     </SiteShell>
   ),
@@ -42,9 +46,6 @@ export const Route = createFileRoute("/record/$id")({
 
 function RecordPage() {
   const { record } = Route.useLoaderData();
-  const related = RECORDS.filter(
-    (r) => r.category === record.category && r.id !== record.id,
-  ).slice(0, 4);
 
   return (
     <SiteShell>
@@ -120,7 +121,7 @@ function RecordPage() {
           <tbody>
             <tr>
               <td className="w-[220px]">Original Retrieval</td>
-              <td>{record.archived}, HTTP 200, 42.1 KB</td>
+              <td>{record.archived}, HTTP 200</td>
             </tr>
             <tr>
               <td>Archival Node</td>
@@ -160,24 +161,6 @@ function RecordPage() {
           </tbody>
         </table>
       </section>
-
-      {related.length > 0 && (
-        <section className="mt-6">
-          <div className="text-[11px] uppercase tracking-widest text-[color:var(--muted-foreground)]">
-            Related Records
-          </div>
-          <hr className="mt-1" />
-          <ul className="mt-2 list-none space-y-1 text-[12px]">
-            {related.map((r) => (
-              <li key={r.id}>
-                <Link to="/record/$id" params={{ id: r.id }}>
-                  {r.publisher}: {r.title}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </section>
-      )}
 
       <hr className="rule-double mt-8" />
       <div className="py-2 text-center text-[11px] text-[color:var(--muted-foreground)]">
