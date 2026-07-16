@@ -286,6 +286,77 @@ verification support.
 
 **PR:** https://github.com/lacebx/the-public-record-archive/pull/36 (closes #8)
 
-**Remaining work after Issue #8:
+**Remaining work after Issue #8:**
+
 - Begin Issue #4: Persist snapshot JSON to Cloudflare R2
 - Requires: Cloudflare R2 bucket setup, credential configuration
+
+---
+
+### Session: 2026-07-16 — Issue #4: Persistent Cloudflare R2 storage
+
+**Goal:** Implement R2SnapshotStore with S3-compatible API for saving snapshots,
+archive bundles, manifests, and checksums to Cloudflare R2. Graceful fallback
+when R2 is not configured.
+
+**Milestone:** Milestone 1: Persistent Archive
+
+**Branch:** `feature/r2-storage`
+
+**Changes made:**
+
+- Installed `@aws-sdk/client-s3` for S3-compatible R2 API
+- Updated `src/lib/storage.ts`:
+  - Added `r2Config()` helper (reads env vars, returns config or null)
+  - Added `R2SnapshotStore` implementing `SnapshotStore` interface:
+    - `save(isoDate, snapshot)` → uploads snapshot.json to R2
+    - `saveLatest(snapshot)` → maintains snapshots/latest.json
+    - `load(isoDate)` → downloads + parses snapshot.json from R2
+    - `loadLatest()` → reads snapshots/latest.json
+    - `list()` → enumerates dates from R2 keys (handles pagination)
+    - `saveArchive(isoDate, buffer)` → uploads tar.gz archive
+    - `saveManifest(isoDate, manifest)` → uploads manifest.json
+    - `saveChecksums(isoDate, checksums)` → uploads checksums.txt
+  - Key structure: `snapshots/YYYY/MM/DD/{type}`
+  - All S3 imports are dynamic (only loaded when R2 is configured)
+- Updated `scripts/generate-snapshot.ts`:
+  - `persistSnapshot()` now syncs to R2 after local save when env vars set
+  - Syncs snapshot.json, archive.tar.gz, manifest.json, checksums.txt
+  - Errors logged but do not fail the run (graceful degradation)
+- Updated `src/lib/data.ts`:
+  - `getSnapshotByDate()` tries R2 first, then local store, then bundled data
+- Created `tests/storage.test.ts` — 18 tests covering:
+  - `r2Config()` with various env var combinations
+  - R2SnapshotStore constructor validation
+  - `save()`, `saveLatest()` — correct path and content type
+  - `load()` — success and error cases
+  - `list()` — sorting, pagination, empty on error
+  - `saveArchive()`, `saveManifest()`, `saveChecksums()` — correct paths
+  - Error propagation for failed uploads
+  - LocalSnapshotStore fallback tests (missing file, empty directory)
+- Updated `docs/ai/` — all memory files updated
+
+**Files modified:**
+
+- `src/lib/storage.ts` — added r2Config, R2SnapshotStore
+- `scripts/generate-snapshot.ts` — updated persistSnapshot with R2 sync
+- `src/lib/data.ts` — updated getSnapshotByDate with R2 fallback
+- `tests/storage.test.ts` — 18 new tests
+- `docs/ai/ARCHITECTURE.md`, `docs/ai/CONTEXT.md`, `docs/ai/DECISIONS.md`,
+  `docs/ai/HANDOFF.md`, `docs/ai/WORK_LOG.md`
+- `package.json`, `package-lock.json` — added @aws-sdk/client-s3
+
+**Verification:**
+
+- `npm test` — 83/83 passed
+- `npm run lint` — 0 errors
+- `npm run typecheck` — 0 errors
+- `npm run build` — succeeds (S3 client bundled for server, ~366 KB)
+
+**PR:** (to be opened, closes #4)
+
+**Remaining work after Issue #4:**
+
+- **CRITICAL**: Create Cloudflare R2 bucket + set GitHub secrets
+- Review Milestone 2 issues on GitHub roadmap
+- Potential optimization: use native Workers R2 binding instead of S3 client

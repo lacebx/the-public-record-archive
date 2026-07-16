@@ -80,21 +80,28 @@ scripts/generate-snapshot.ts
 ### Data Flow (Target — after R2 integration)
 
 ```
-Daily 06:00 UTC (GitHub Actions or Cron Trigger)
+Daily 06:00 UTC (GitHub Actions)
         │
         ▼
 scripts/generate-snapshot.ts
         │
-        ├──► Cloudflare R2 /snapshots/YYYY-MM-DD.json    ← R2SnapshotStore.save()
-        ├──► Cloudflare R2 /snapshots/latest.json        ← R2SnapshotStore.save()
-        └──► src/lib/snapshot-data.ts                    ← Build-time cache of latest
+        ├──► data/YYYY-MM-DD.json                      ← LocalSnapshotStore.save()
+        ├──► data/latest.json                          ← LocalSnapshotStore.save()
+        ├──► src/lib/snapshot-data.ts                  ← Build-time cache (committed)
+        │
+        ├──► R2: snapshots/YYYY/MM/DD/snapshot.json   ← R2SnapshotStore.save()
+        ├──► R2: snapshots/YYYY/MM/DD/archive.tar.gz   ← R2SnapshotStore.saveArchive()
+        ├──► R2: snapshots/YYYY/MM/DD/manifest.json    ← R2SnapshotStore.saveManifest()
+        ├──► R2: snapshots/YYYY/MM/DD/checksums.txt    ← R2SnapshotStore.saveChecksums()
+        ├──► R2: snapshots/latest.json                 ← R2SnapshotStore.saveLatest()
+        └──► GitHub Actions Artifact                   ← Archival (90-day retention)
                 │
                 ▼
           TanStack Start SSR Runtime
                 │
-                ├──► getSnapshot() → returns bundled or fetches from R2
-                ├──► getSnapshotByDate(date) → fetches from R2, falls back to bundled
-                └──► listSnapshots() → R2SnapshotStore.list()
+                ├──► getSnapshot() → returns bundled snapshot
+                ├──► getSnapshotByDate(date) → tries R2, then local store, then bundled
+                └──► listSnapshots() → R2SnapshotStore.list() (future)
 ```
 
 ### Route Structure
@@ -138,19 +145,28 @@ export class LocalSnapshotStore implements SnapshotStore {
   // reads/writes JSON files to local filesystem
 }
 
-// Future:
-// export class R2SnapshotStore implements SnapshotStore {
-//   constructor(private bucket: R2Bucket) {}
-//   // reads/writes to Cloudflare R2
-// }
+export class R2SnapshotStore implements SnapshotStore {
+  constructor()
+  // saves/loads JSON files via S3-compatible API to Cloudflare R2
+  // additional methods: saveLatest(), saveArchive(), saveManifest(), saveChecksums()
+  // key structure: snapshots/YYYY/MM/DD/{snapshot.json, archive.tar.gz, manifest.json, checksums.txt}
+  // requires env vars: R2_ACCOUNT_ID, R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY
+  // uses dynamic import of @aws-sdk/client-s3 (only loaded when R2 is configured)
+}
 ```
+
+The `r2Config()` helper returns configuration when all required env vars are set,
+or `null` otherwise. This is used by both the generator and app to decide
+whether to attempt R2 operations.
 
 Used by:
 
-- `scripts/generate-snapshot.ts` — calls `persistSnapshot()` which uses
-  `LocalSnapshotStore` to write data files.
-- `src/lib/data.ts` — `getSnapshotByDate()` falls back to
-  `LocalSnapshotStore.load()` when the date doesn't match the bundled snapshot.
+- `scripts/generate-snapshot.ts` — `persistSnapshot()` saves locally first,
+  then syncs to R2 if configured (snapshot.json, archive.tar.gz, manifest.json,
+  checksums.txt).
+- `src/lib/data.ts` — `getSnapshotByDate()` tries `R2SnapshotStore.load()` first
+  (if R2 configured), then falls back to `LocalSnapshotStore.load()`, then to
+  bundled snapshot.
 
 ### Key Modules
 
@@ -158,7 +174,7 @@ Used by:
 | -------------------------------- | ------------------------------------------------- |
 | `scripts/generate-snapshot.ts`   | RSS fetching, parsing, hashing, output generation |
 | `src/lib/data.ts`                | Type definitions, server functions, data access   |
-| `src/lib/storage.ts`             | SnapshotStore interface + LocalSnapshotStore      |
+| `src/lib/storage.ts`             | SnapshotStore interface + LocalSnapshotStore + R2SnapshotStore |
 | `src/lib/archive.ts`             | Archive builder (tar.gz packaging)                |
 | `src/lib/snapshot-data.ts`       | Auto-generated bundled snapshot data              |
 | `src/routes/`                    | All application routes                            |

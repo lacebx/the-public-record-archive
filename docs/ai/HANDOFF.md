@@ -9,10 +9,11 @@ The project is at early MVP stage with:
 - Client-side verification and download
 - All data bundled at build time (no historical archive yet)
 - No database, no auth, no server-side state
-- Testing infrastructure: Vitest with 65 tests
+- Testing infrastructure: Vitest with 83 tests
 - CI/CD: GitHub Actions (PR checks, deploy, scheduled snapshots + artifacts)
-- Storage abstraction: `SnapshotStore` interface + `LocalSnapshotStore`
+- Storage abstraction: `SnapshotStore` interface + `LocalSnapshotStore` + `R2SnapshotStore`
 - Downloadable snapshot archive: tar.gz with manifest, checksums, and README
+- R2 storage integration: S3-compatible API with env var configuration
 
 ## Recently Completed
 
@@ -21,24 +22,25 @@ The project is at early MVP stage with:
   snapshot workflow, storage abstraction, artifact archival
 - **Issue #8: Downloadable snapshot archive** — Archive builder with minimal
   USTAR tar packer + gzip compression, server function for on-demand archive
-  generation, download button on snapshot detail page, SHA-256 integrity
-  information in MANIFEST + separate checksums file
+  generation, download button on snapshot detail page
+- **Issue #4: R2 SnapshotStore** — R2SnapshotStore implementing SnapshotStore
+  interface with S3-compatible API, archive/manifest/checksums uploads,
+  graceful fallback when R2 not configured
 
 ## Next
 
-The active milestone is **Milestone 1: Persistent Archive**. The highest
-priority issue is **#4: Persist snapshot JSON to cloud object storage**.
+The highest priority action is **configuring a Cloudflare R2 bucket** and
+setting the required GitHub secrets. Once R2 is active, the next milestone
+(Milestone 2) can begin.
 
 ## How to Resume
 
 1. Read `docs/ai/CONTEXT.md` and `docs/ai/HANDOFF.md`
-2. Check current milestone and issue on GitHub
-3. Create a branch: `feature/r2-storage`
-4. Implement:
-   - Create Cloudflare R2 bucket
-   - Set GitHub secrets (CLOUDFLARE_API_TOKEN, CLOUDFLARE_ACCOUNT_ID, R2 credentials)
-   - Implement `R2SnapshotStore` in `src/lib/storage.ts`
-   - Update `generate-snapshot.ts` to use `R2SnapshotStore` when configured
-   - Update `data.ts` to use `R2SnapshotStore` for historical lookups
-5. Update docs/ai/ files
-6. Open a PR that closes the issue
+2. Check current milestone and issue status on GitHub
+3. Complete R2 setup:
+   a. Create Cloudflare R2 bucket named `public-record-archive`
+   b. Generate R2 API credentials
+   c. Set GitHub secrets: `R2_ACCOUNT_ID`, `R2_ACCESS_KEY_ID`, `R2_SECRET_ACCESS_KEY`
+   d. Verify: trigger `snapshot.yml` workflow manually and check logs
+4. Review Milestone 2 issues on GitHub roadmap
+5. Branch from main and implement the next issue
