@@ -1,14 +1,18 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteShell } from "../components/site-shell";
+import { getSnapshot } from "../lib/data";
 
 export const Route = createFileRoute("/about")({
+  loader: async () => {
+    const snapshot = await getSnapshot();
+    return { snapshot };
+  },
   head: () => ({
     meta: [
       { title: "About — Public Internet Record" },
       {
         name: "description",
-        content:
-          "The Public Internet Record is a nonprofit archival trust preserving the primary sources of the open web since 1998.",
+        content: "The Public Internet Record is a nonprofit archival trust preserving the primary sources of the open web since 1998.",
       },
       { property: "og:title", content: "About — Public Internet Record" },
       {
@@ -21,6 +25,8 @@ export const Route = createFileRoute("/about")({
 });
 
 function About() {
+  const { snapshot } = Route.useLoaderData();
+
   return (
     <SiteShell>
       <h1 className="text-[14px] font-bold uppercase tracking-[0.06em]">About</h1>
@@ -58,11 +64,23 @@ function About() {
             </tr>
             <tr>
               <td>Total Records</td>
-              <td>1.4 billion</td>
+              <td>{snapshot.articles.toLocaleString("en-US")}</td>
             </tr>
             <tr>
-              <td>Archival Nodes</td>
-              <td>27 across 19 jurisdictions</td>
+              <td>Active Sources</td>
+              <td>{snapshot.sources}</td>
+            </tr>
+            <tr>
+              <td>Countries</td>
+              <td>{snapshot.countries}</td>
+            </tr>
+            <tr>
+              <td>Latest Snapshot</td>
+              <td>{snapshot.isoDate}</td>
+            </tr>
+            <tr>
+              <td>Latest Integrity Hash</td>
+              <td className="break-all text-[11px]">{snapshot.hash}</td>
             </tr>
           </tbody>
         </table>
