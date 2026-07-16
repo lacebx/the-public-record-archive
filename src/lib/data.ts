@@ -31,14 +31,10 @@ export type Snapshot = {
 };
 
 export const getSnapshot = createServerFn({ method: "GET" }).handler(
-  // @ts-expect-error - compiled by babel plugin
   async () => bundledSnapshot satisfies Snapshot,
 );
 
-export const getSnapshotByDate = createServerFn({ method: "GET" }).handler(
-  // @ts-expect-error - compiled by babel plugin
-  async (date: string) => {
-    if (date === bundledSnapshot.isoDate) return bundledSnapshot satisfies Snapshot;
-    return null;
-  },
-);
+export async function getSnapshotByDate(date: string): Promise<Snapshot | null> {
+  if (date === bundledSnapshot.isoDate) return bundledSnapshot satisfies Snapshot;
+  return null;
+}
