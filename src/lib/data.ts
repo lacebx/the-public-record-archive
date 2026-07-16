@@ -96,8 +96,8 @@ export async function fetchSnapshotList(): Promise<SnapshotSummary[]> {
   return fallback;
 }
 
-export const getSnapshotList = createServerFn({ method: "GET" }).handler(
-  async () => fetchSnapshotList(),
+export const getSnapshotList = createServerFn({ method: "GET" }).handler(async () =>
+  fetchSnapshotList(),
 );
 
 export const getArchive = createServerFn({ method: "POST" })

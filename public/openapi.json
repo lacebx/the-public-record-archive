@@ -1,0 +1,367 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Public Internet Record API",
+    "description": "Read-only HTTP API for querying the permanent public record. No authentication required. All responses are cacheable and reproducible.",
+    "version": "1.0.0",
+    "contact": {
+      "url": "https://github.com/lacebx/the-public-record-archive"
+    }
+  },
+  "servers": [
+    {
+      "url": "/api/v1",
+      "description": "Production API"
+    }
+  ],
+  "paths": {
+    "/health": {
+      "get": {
+        "summary": "Health check",
+        "description": "Returns the current system health and snapshot status.",
+        "operationId": "healthCheck",
+        "responses": {
+          "200": {
+            "description": "System is healthy",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": { "type": "boolean" },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "status": { "type": "string", "example": "ok" },
+                        "snapshotStore": {
+                          "type": "string",
+                          "enum": ["bundled", "r2", "local", "unknown"]
+                        },
+                        "snapshotDate": {
+                          "type": "string",
+                          "format": "date",
+                          "example": "2026-07-16"
+                        },
+                        "recordsCount": { "type": "integer", "example": 942 }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Service unavailable"
+          }
+        }
+      }
+    },
+    "/snapshots": {
+      "get": {
+        "summary": "List snapshots",
+        "description": "Returns a list of all available daily snapshots with summary metadata.",
+        "operationId": "listSnapshots",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Maximum number of snapshots to return",
+            "schema": { "type": "integer", "minimum": 1, "maximum": 100 }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Number of snapshots to skip",
+            "schema": { "type": "integer", "minimum": 0 }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of snapshots",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": { "type": "boolean" },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "snapshots": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "isoDate": { "type": "string", "format": "date" },
+                              "date": { "type": "string" },
+                              "generated": { "type": "string", "format": "date-time" },
+                              "articles": { "type": "integer" },
+                              "sources": { "type": "integer" },
+                              "hash": { "type": "string" }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "meta": {
+                      "type": "object",
+                      "properties": {
+                        "total": { "type": "integer" },
+                        "limit": { "type": "integer" },
+                        "offset": { "type": "integer" }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/snapshots/{date}": {
+      "get": {
+        "summary": "Get snapshot",
+        "description": "Retrieve the full snapshot data for a specific date (YYYY-MM-DD) or 'latest'.",
+        "operationId": "getSnapshot",
+        "parameters": [
+          {
+            "name": "date",
+            "in": "path",
+            "required": true,
+            "description": "Snapshot date in YYYY-MM-DD format, or 'latest'",
+            "schema": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$|^latest$" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Snapshot data including all records",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": { "type": "boolean" },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "snapshot": {
+                          "type": "object",
+                          "properties": {
+                            "date": { "type": "string" },
+                            "isoDate": { "type": "string" },
+                            "generated": { "type": "string" },
+                            "articles": { "type": "integer" },
+                            "sources": { "type": "integer" },
+                            "countries": { "type": "integer" },
+                            "status": { "type": "string" },
+                            "hash": { "type": "string" },
+                            "records": {
+                              "type": "array",
+                              "items": { "$ref": "#/components/schemas/Record" }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Snapshot not found"
+          }
+        }
+      }
+    },
+    "/records/{id}": {
+      "get": {
+        "summary": "Get record",
+        "description": "Retrieve a single record by its unique identifier.",
+        "operationId": "getRecord",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "Record ID (e.g., REC-2026-07-16-000091)",
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Record with full metadata and hash",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": { "type": "boolean" },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "record": { "$ref": "#/components/schemas/Record" }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Record not found"
+          }
+        }
+      }
+    },
+    "/search": {
+      "get": {
+        "summary": "Search records",
+        "description": "Full-text search across all records in the latest snapshot. Searches title, publisher, summary, category, country, and hash fields.",
+        "operationId": "searchRecords",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "required": true,
+            "description": "Search query",
+            "schema": { "type": "string", "minLength": 1 }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Maximum number of results to return (default 20, max 100)",
+            "schema": { "type": "integer", "minimum": 1, "maximum": 100 }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Search results",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": { "type": "boolean" },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "results": {
+                          "type": "array",
+                          "items": { "$ref": "#/components/schemas/Record" }
+                        },
+                        "query": { "type": "string" }
+                      }
+                    },
+                    "meta": {
+                      "type": "object",
+                      "properties": {
+                        "total": { "type": "integer" },
+                        "limit": { "type": "integer" }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Missing query parameter"
+          }
+        }
+      }
+    },
+    "/archive/{date}": {
+      "get": {
+        "summary": "Download archive",
+        "description": "Returns a downloadable tar.gz archive containing the snapshot JSON, manifest, checksums, and verification instructions for a specific date.",
+        "operationId": "getArchive",
+        "parameters": [
+          {
+            "name": "date",
+            "in": "path",
+            "required": true,
+            "description": "Snapshot date in YYYY-MM-DD format, or 'latest'",
+            "schema": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$|^latest$" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Archive metadata (base64-encoded gzip content)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": { "type": "boolean" },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "base64": { "type": "string" },
+                        "isoDate": { "type": "string" },
+                        "filename": {
+                          "type": "string",
+                          "example": "public-record-2026-07-16.tar.gz"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Snapshot not found"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Record": {
+        "type": "object",
+        "required": [
+          "id",
+          "publisher",
+          "title",
+          "published",
+          "archived",
+          "status",
+          "hash",
+          "summary",
+          "sourceUrl",
+          "country",
+          "category"
+        ],
+        "properties": {
+          "id": { "type": "string", "example": "REC-2026-07-16-000091" },
+          "publisher": { "type": "string", "example": "Reuters" },
+          "title": { "type": "string", "example": "OpenAI announces new governance framework" },
+          "published": { "type": "string", "format": "date-time" },
+          "archived": { "type": "string", "format": "date-time" },
+          "status": { "type": "string", "enum": ["VERIFIED", "PENDING"] },
+          "hash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+          "summary": { "type": "string" },
+          "sourceUrl": { "type": "string", "format": "uri" },
+          "country": { "type": "string" },
+          "category": { "type": "string" }
+        }
+      },
+      "ApiError": {
+        "type": "object",
+        "properties": {
+          "success": { "type": "boolean", "enum": [false] },
+          "error": {
+            "type": "object",
+            "properties": {
+              "code": { "type": "string" },
+              "message": { "type": "string" }
+            }
+          }
+        }
+      }
+    }
+  }
+}

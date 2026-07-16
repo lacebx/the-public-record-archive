@@ -109,17 +109,24 @@ scripts/generate-snapshot.ts
 
 ### Route Structure
 
-| Path               | Component         | Data Source                          |
-| ------------------ | ----------------- | ------------------------------------ |
-| `/`                | HomePage          | `getSnapshot()`                      |
-| `/browse`          | BrowsePage        | `getSnapshot()`                      |
-| `/search`          | SearchPage        | `getSnapshot()` (client-side filter) |
-| `/snapshots/`      | SnapshotsIndex    | `getSnapshotList()` (all dates)      |
-| `/snapshots/$date` | SnapshotPage      | `getSnapshotByDate(date)`            |
-| `/record/$id`      | RecordPage        | `getSnapshot()` (find by id)         |
-| `/about`           | AboutPage         | `getSnapshot()`                      |
-| `/documentation`   | DocumentationPage | Static                               |
-| `/api`             | ApiDocs           | Static                               |
+| Path                       | Component           | Data Source                          |
+| -------------------------- | ------------------- | ------------------------------------ |
+| `/`                        | HomePage            | `getSnapshot()`                      |
+| `/browse`                  | BrowsePage          | `getSnapshot()`                      |
+| `/search`                  | SearchPage          | `getSnapshot()` (client-side filter) |
+| `/snapshots/`              | SnapshotsIndex      | `getSnapshotList()` (all dates)      |
+| `/snapshots/$date`         | SnapshotPage        | `getSnapshotByDate(date)`            |
+| `/record/$id`              | RecordPage          | `getSnapshot()` (find by id)         |
+| `/about`                   | AboutPage           | `getSnapshot()`                      |
+| `/documentation`           | DocumentationPage   | Static                               |
+| `/api`                     | Developer Portal    | Static + Scalar API playground       |
+| `/api/playground`          | Scalar Playground   | OpenAPI spec via `/openapi.json`     |
+| `/api/v1/health`           | API Health Route    | `healthCheck()`                      |
+| `/api/v1/snapshots`        | API Snapshots Route | `listSnapshots()`                    |
+| `/api/v1/snapshots/$date`  | API Snapshot Route  | `getSnapshotApi()`                   |
+| `/api/v1/records/$id`      | API Record Route    | `getRecordById()`                    |
+| `/api/v1/search`           | API Search Route    | `searchRecords()`                    |
+| `/api/v1/archive/$date`    | API Archive Route   | `getArchiveData()`                   |
 
 ### Archive Download
 
@@ -149,7 +156,7 @@ export class LocalSnapshotStore implements SnapshotStore {
 }
 
 export class R2SnapshotStore implements SnapshotStore {
-  constructor()
+  constructor();
   // saves/loads JSON files via S3-compatible API to Cloudflare R2
   // additional methods: saveLatest(), saveArchive(), saveManifest(), saveChecksums()
   // key structure: snapshots/YYYY/MM/DD/{snapshot.json, archive.tar.gz, manifest.json, checksums.txt}
@@ -175,10 +182,10 @@ Used by:
 
 Two LRU caches in `src/lib/data.ts` reduce R2 and filesystem calls:
 
-| Cache | Key | Max | TTL | Populated by |
-|-------|-----|-----|-----|-------------|
-| `snapshotCache` | isoDate | 50 | 5 min | `getSnapshotByDate()` |
-| `listCache` | `"all"` | 10 | 2 min | `fetchSnapshotList()` |
+| Cache           | Key     | Max | TTL   | Populated by          |
+| --------------- | ------- | --- | ----- | --------------------- |
+| `snapshotCache` | isoDate | 50  | 5 min | `getSnapshotByDate()` |
+| `listCache`     | `"all"` | 10  | 2 min | `fetchSnapshotList()` |
 
 The bundled snapshot is always returned synchronously from the `Snapshot` type
 export and participates in caching. Historical snapshots fetched from R2 are
@@ -186,22 +193,26 @@ cached on first access.
 
 ### Key Modules
 
-| Module                           | Purpose                                           |
-| -------------------------------- | ------------------------------------------------- |
-| `scripts/generate-snapshot.ts`   | RSS fetching, parsing, hashing, output generation |
-| `src/lib/data.ts`                | Type definitions, server functions, data access, LRU caching |
+| Module                           | Purpose                                                        |
+| -------------------------------- | -------------------------------------------------------------- |
+| `scripts/generate-snapshot.ts`   | RSS fetching, parsing, hashing, output generation              |
+| `src/lib/data.ts`                | Type definitions, server functions, data access, LRU caching   |
 | `src/lib/storage.ts`             | SnapshotStore interface + LocalSnapshotStore + R2SnapshotStore |
-| `src/lib/archive.ts`             | Archive builder (tar.gz packaging)                |
-| `src/lib/snapshot-data.ts`       | Auto-generated bundled snapshot data              |
-| `src/routes/`                    | All application routes                            |
-| `src/components/site-shell.tsx`  | Shared layout                                     |
-| `src/styles.css`                 | Global styles, Tailwind, custom CSS               |
-| `src/start.ts`                   | TanStack Start entry point                        |
-| `src/server.ts`                  | SSR server with error recovery                    |
-| `src/router.tsx`                 | TanStack Router with QueryClient                  |
-| `.github/workflows/ci.yml`       | PR validation                                     |
-| `.github/workflows/deploy.yml`   | Production deploy + PR validation                 |
-| `.github/workflows/snapshot.yml` | Scheduled daily snapshot generation               |
+| `src/lib/archive.ts`             | Archive builder (tar.gz packaging)                             |
+| `src/lib/api.ts`                 | REST API handler functions (listSnapshots, getRecords, etc.)   |
+| `src/lib/snapshot-data.ts`       | Auto-generated bundled snapshot data                           |
+| `src/routes/`                    | All application routes                                         |
+| `src/routes/api/v1/`             | REST API endpoint routes (JSON responses)                      |
+| `src/routes/api/playground.tsx`  | Scalar interactive API playground                              |
+| `src/components/site-shell.tsx`  | Shared layout                                                  |
+| `src/styles.css`                 | Global styles, Tailwind, custom CSS                            |
+| `src/start.ts`                   | TanStack Start entry point                                     |
+| `src/server.ts`                  | SSR server with error recovery                                 |
+| `src/router.tsx`                 | TanStack Router with QueryClient                               |
+| `public/openapi.json`            | OpenAPI 3.1 specification for the v1 API                       |
+| `.github/workflows/ci.yml`       | PR validation                                                  |
+| `.github/workflows/deploy.yml`   | Production deploy + PR validation                              |
+| `.github/workflows/snapshot.yml` | Scheduled daily snapshot generation                            |
 
 ## Future Architecture Considerations
 
@@ -215,6 +226,4 @@ cached on first access.
   results stored as JSON in R2.
 - **Cron Trigger** — When R2 is active, `snapshot.yml` can be replaced by
   Cloudflare Workers Cron Triggers for tighter integration.
-- **API layer** — TanStack Start server functions serving JSON responses with
-  CORS headers, exposed at `/api/v1/`.
 - **External timestamp anchoring** — OpenTimestamps for public verifiability.

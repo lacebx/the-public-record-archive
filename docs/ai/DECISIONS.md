@@ -397,6 +397,59 @@ Consequences:
 
 ---
 
+### ADR-013: REST API as TanStack Start routes with JSON rendering
+
+Date: 2026-07-16
+
+Decision:
+Implement REST API endpoints as TanStack Start file-based routes under
+`src/routes/api/v1/` that render JSON in a `<pre>` tag. The API module
+(`src/lib/api.ts`) contains all business logic as plain async functions
+returning standardized `ApiResponse<T>` objects. An OpenAPI 3.1 spec
+(`public/openapi.json`) documents the API, and a Scalar interactive playground
+is available at `/api/playground`.
+
+Context:
+The project needs a public REST API at `/api/v1/*` for programmatic access.
+TanStack Start renders React components as HTML, so pure JSON responses with
+`Content-Type: application/json` are not natively supported by the router. The
+API must coexist with the existing TanStack Start routing architecture.
+
+Options considered:
+
+- **TanStack Start routes with JSON in `<pre>` (chosen)** — Simplest approach
+  that works within the existing architecture. Routes are accessible at proper
+  REST paths. The response contains JSON in an HTML body — useable from both
+  browsers and API clients.
+- **Nitro event handlers in `server/`** — Bypasses TanStack Start router,
+  returns proper JSON Content-Type. Requires additional configuration and runs
+  outside the TanStack Start router context. Risk of conflicts.
+- **Middleware in `src/start.ts`** — Could intercept `/api/v1/*` requests
+  before the router. Unclear if middleware has access to request URL. Adding
+  API logic to middleware couples it with server setup.
+- **Server functions only** — `createServerFn` already returns proper JSON,
+  but URLs are auto-generated (`/_server/...`) and not user-friendly.
+
+Chosen approach:
+TanStack Start file-based routes under `src/routes/api/v1/` with:
+- `loader` fetches data via `src/lib/api.ts` functions
+- Component renders JSON inside a `<pre>` tag
+- OpenAPI 3.1 spec at `public/openapi.json` for documentation
+- Scalar playground at `/api/playground` for interactive testing
+- Business logic in `src/lib/api.ts` (plain async functions, no server function
+  dependencies for testability)
+
+Consequences:
+
+- API responses are HTML with `Content-Type: text/html` (JSON is in the body)
+- API clients can still parse the JSON from the HTML body
+- Browsers display formatted JSON nicely
+- `src/lib/api.ts` functions are testable without server infrastructure
+- All 110 tests pass including 22 API-specific tests
+- Future: can add Content-Type negotiation via middleware or CDN config
+
+---
+
 ### ADR-012: LRU cache for snapshot retrieval
 
 Date: 2026-07-16
@@ -413,6 +466,7 @@ request, and listing all snapshots does a `ListObjectsV2` call. With 5+ page
 views per session, caching eliminates redundant fetches.
 
 Options considered:
+
 - No caching (simplest, but poor UX with repeated R2 calls)
 - `lru-cache` (already installed, minimal overhead, proven)
 - React Query on the client (would duplicate state, no server-side benefit)
@@ -423,6 +477,7 @@ on first access. Historical snapshots from R2 are cached on first load. Cache
 entries expire after TTL to allow new snapshots to appear without restart.
 
 Consequences:
+
 - Cache is per-process (lost on cold start, which is fine for Workers)
 - Short TTLs (2-5 min) ensure new snapshots visible quickly
 - `fetchSnapshotList()` iterates R2 dates and calls `getSnapshotByDate()` per date
