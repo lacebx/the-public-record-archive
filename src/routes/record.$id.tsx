@@ -1,6 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { SiteShell } from "../components/site-shell";
 import { getSnapshot } from "../lib/data";
+import { stripHtml } from "../lib/utils";
 
 export const Route = createFileRoute("/record/$id")({
   loader: async ({ params }) => {
@@ -22,9 +23,9 @@ export const Route = createFileRoute("/record/$id")({
     return {
       meta: [
         { title: `${record.id} — ${record.publisher} — Public Internet Record` },
-        { name: "description", content: record.summary.slice(0, 160) },
+        { name: "description", content: stripHtml(record.summary).slice(0, 160) },
         { property: "og:title", content: `${record.publisher}: ${record.title}` },
-        { property: "og:description", content: record.summary.slice(0, 160) },
+        { property: "og:description", content: stripHtml(record.summary).slice(0, 160) },
       ],
     };
   },
@@ -109,12 +110,12 @@ function RecordPage() {
           Summary
         </div>
         <hr className="mt-1" />
-        <p className="mt-2 text-[13px] leading-relaxed">{record.summary}</p>
+        <p className="mt-2 text-[13px] leading-relaxed">{stripHtml(record.summary)}</p>
       </section>
 
       <section className="mt-6">
         <div className="text-[11px] uppercase tracking-widest text-[color:var(--muted-foreground)]">
-          Evidence Chain
+          Verification
         </div>
         <hr className="mt-1" />
         <table className="mt-2">
@@ -123,43 +124,12 @@ function RecordPage() {
               <td className="w-[220px]">Original Retrieval</td>
               <td>{record.archived}, HTTP 200</td>
             </tr>
-            <tr>
-              <td>Archival Node</td>
-              <td>node-eu-03.public-record.org</td>
-            </tr>
-            <tr>
-              <td>Witness Nodes</td>
-              <td>node-us-01, node-jp-02, node-br-01</td>
-            </tr>
-            <tr>
-              <td>Signed By</td>
-              <td>archivist-key-2026-Q3</td>
-            </tr>
           </tbody>
         </table>
-      </section>
-
-      <section className="mt-6">
-        <div className="text-[11px] uppercase tracking-widest text-[color:var(--muted-foreground)]">
-          Version History
-        </div>
-        <hr className="mt-1" />
-        <table className="mt-2">
-          <thead>
-            <tr>
-              <th className="w-[60px]">Rev</th>
-              <th className="w-[130px]">Timestamp</th>
-              <th>Change</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>001</td>
-              <td>{record.archived}</td>
-              <td>Initial capture. Verified against source.</td>
-            </tr>
-          </tbody>
-        </table>
+        <p className="mt-2 text-[12px] text-[color:var(--muted-foreground)]">
+          The SHA-256 hash of this record can be independently verified using the open-source
+          tooling in this project's repository.
+        </p>
       </section>
 
       <hr className="rule-double mt-8" />

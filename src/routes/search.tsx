@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { z } from "zod";
 import { SiteShell } from "../components/site-shell";
 import { getSnapshot } from "../lib/data";
+import { stripHtml } from "../lib/utils";
 
 const searchSchema = z.object({
   q: z.string().optional().default(""),
@@ -112,7 +113,7 @@ function Search() {
                       {r.title}
                     </Link>
                     <div className="text-[11px] text-[color:var(--muted-foreground)]">
-                      {r.summary.slice(0, 140)}&hellip;
+                      {stripHtml(r.summary).slice(0, 140)}&hellip;
                     </div>
                   </td>
                   <td>{r.published}</td>

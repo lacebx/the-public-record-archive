@@ -1,10 +1,8 @@
 # Context
 
-**Current milestone:** Milestone 2: Search & Discovery
-**Current issue:** #12, #13, #14 — REST API, dev portal, Scalar playground — complete
-**Current branch:** feature/api-v1
-**Current PR:** (to be opened, closes #12, #13, #14)
-**Last completed work:** REST API v1 with 7 endpoints, developer portal, interactive API playground
+**Current milestone:** Milestone 3: Historical Search & Analysis
+**Current branch:** feature/snapshot-diff (active — not yet merged)
+**Last completed work:** Repository health check, public alpha polish, honest product messaging, Playwright e2e tests
 
 ## Data Flow
 
@@ -15,17 +13,45 @@
 - `/api/v1/*` — REST API endpoints render JSON responses (TanStack Start routes with data from
   `src/lib/api.ts`, which delegates to `fetchSnapshotList()`, `getSnapshotByDate()`, or
   the bundled snapshot directly)
+- `/compare` — Client-side comparison page fetches from `/api/v1/diff?from=&to=`
+- `/api/v1/diff` — Returns diff between two snapshots (added/removed/modified/unchanged records)
 
 ## REST API Endpoints
 
-| Endpoint                  | Method | Description                         |
-| ------------------------- | ------ | ----------------------------------- |
-| `/api/v1/health`          | GET    | System health check                 |
-| `/api/v1/snapshots`       | GET    | List all snapshots (?limit, ?offset)|
-| `/api/v1/snapshots/{date}`| GET    | Get full snapshot for a date        |
-| `/api/v1/records/{id}`    | GET    | Get a single record by ID           |
-| `/api/v1/search`          | GET    | Search records (?q=, ?limit=)       |
-| `/api/v1/archive/{date}`  | GET    | Download snapshot archive (tar.gz)  |
+| Endpoint                   | Method | Description                          |
+| -------------------------- | ------ | ------------------------------------ |
+| `/api/v1/health`           | GET    | System health check                  |
+| `/api/v1/snapshots`        | GET    | List all snapshots (?limit, ?offset) |
+| `/api/v1/snapshots/{date}` | GET    | Full snapshot for a date             |
+| `/api/v1/records/{id}`     | GET    | Single record by ID                  |
+| `/api/v1/search`           | GET    | Search records (?q=, ?limit=)        |
+| `/api/v1/archive/{date}`   | GET    | Download snapshot archive (tar.gz)   |
+| `/api/v1/diff`             | GET    | Diff two snapshots (?from=&to=)      |
+
+## Routes
+
+| Route                      | Type   | Description                                  |
+| -------------------------- | ------ | -------------------------------------------- |
+| `/`                        | SSR    | Homepage with today's snapshot + recent      |
+| `/browse`                  | SSR    | Browse records with category filter          |
+| `/search`                  | SSR    | Full-text search across current snapshot     |
+| `/snapshots`               | SSR    | List all available snapshots                 |
+| `/snapshots/:date`         | SSR    | Single snapshot detail + download            |
+| `/record/:id`              | SSR    | Record detail with summary, hash, metadata   |
+| `/compare`                 | CSR    | Compare two snapshots via diff API           |
+| `/api`                     | SSR    | Developer portal with endpoint docs          |
+| `/api/playground`          | SSR    | Interactive Scalar API playground            |
+| `/documentation`           | SSR    | Project documentation                        |
+| `/about`                   | SSR    | About page with project info                 |
+
+## Diff Engine (`src/lib/diff.ts`)
+
+- `stableRecordKey()` — Deduplication key from `sourceUrl` or `publisher|||title`
+- `computeDiff()` — Classifies records as added/removed/modified/unchanged with field-level diffs
+- `buildMatches()` — Multimap (`Map<string, Match[]>`) preserving duplicate keys
+- `consumeMatch()` — Consumes one `from` record per `to` record (handles duplicates)
+- `getDiff()` — Resolves snapshots by date, caches via `diffCache` (LRU, 20 entries, 10-min TTL)
+- `paginateDiffRecords()` — Supports limit/offset for large diffs
 
 ## Developer Portal
 
@@ -39,6 +65,7 @@
 | --------------- | ----- | ------------------------------------- |
 | `snapshotCache` | 5 min | Full snapshot objects by isoDate      |
 | `listCache`     | 2 min | SnapshotSummary array from R2 listing |
+| `diffCache`     | 10 min| Diff results between snapshot dates   |
 
 ## Environment Variables (R2)
 
@@ -55,9 +82,10 @@
 - `npm run build` — Production build
 - `npm run deploy` — Deploy to Cloudflare Workers
 - `npm run snapshot` — Generate snapshot from RSS feeds
-- `npm test` — Run all tests (vitest run) — 110 tests
+- `npm test` — Run all tests (vitest run) — 127 tests
+- `npm run test:e2e` — Run Playwright e2e smoke tests
 - `npm run typecheck` — TypeScript type check
-- `npm run lint` — Lint source files
+- `npm run lint` — Lint + format source files
 
 ## Workflows
 

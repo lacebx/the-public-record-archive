@@ -54,9 +54,8 @@ function Docs() {
         <hr className="mt-1" />
         <p className="mt-2 text-[13px] leading-relaxed">
           The Public Internet Record is a permanent, publicly accessible archive of primary source
-          documents published on the open web. The project was established in 1998 by a consortium
-          of archivists, librarians, historians, and government record keepers. Its sole purpose is
-          the faithful preservation of the public record.
+          documents published on the open web. The project was established in 2026. Its sole purpose
+          is the faithful preservation of the public record.
         </p>
       </section>
 
@@ -74,9 +73,10 @@ function Docs() {
         <h2 className="text-[13px] font-bold uppercase tracking-[0.06em]">3. Snapshot Format</h2>
         <hr className="mt-1" />
         <p className="mt-2 text-[13px] leading-relaxed">
-          Snapshots are distributed as WARC 1.1 files accompanied by a JSON manifest. The manifest
-          enumerates every record and its SHA-256 hash. The snapshot root hash is a Merkle root over
-          all record hashes.
+          Snapshots are distributed as JSON files containing every record from that capture date.
+          Each record includes its SHA-256 hash. The snapshot root hash is computed over the
+          serialised records array. Archives can be downloaded as tar.gz bundles containing the
+          snapshot JSON, a manifest, and checksums.
         </p>
       </section>
 
@@ -84,9 +84,10 @@ function Docs() {
         <h2 className="text-[13px] font-bold uppercase tracking-[0.06em]">4. Integrity Model</h2>
         <hr className="mt-1" />
         <p className="mt-2 text-[13px] leading-relaxed">
-          Records are captured by multiple independent archival nodes. Each node signs the captured
-          content with its archival key. A record is marked <em>Integrity Verified</em> only when at
-          least three geographically distinct witness nodes agree on the resulting hash.
+          Every record includes a SHA-256 hash computed from its identifier, title, description,
+          link, source, and timestamp. The snapshot root hash is computed over the serialised
+          records array. Anyone can independently verify a snapshot by recomputing the hashes using
+          the open-source tooling.
         </p>
       </section>
 
