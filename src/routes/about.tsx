@@ -13,13 +13,13 @@ export const Route = createFileRoute("/about")({
       {
         name: "description",
         content:
-          "The Public Internet Record is a nonprofit archival trust preserving the primary sources of the open web since 1998.",
+          "The Public Internet Record is an independent archival project preserving primary sources from the open web since 2026.",
       },
       { property: "og:title", content: "About — Public Internet Record" },
       {
         property: "og:description",
         content:
-          "Nonprofit archival trust preserving the primary sources of the open web since 1998.",
+          "Independent archival project preserving primary sources from the open web since 2026.",
       },
     ],
   }),
@@ -35,34 +35,21 @@ function About() {
       <hr className="mt-1" />
 
       <p className="mt-3 text-[13px] leading-relaxed">
-        The Public Internet Record is a nonprofit archival trust. Since 1998 it has continuously
-        captured, verified, and preserved primary source documents published on the open web. It is
-        operated by a consortium of national libraries, university archives, and independent
-        historians.
+        The Public Internet Record is an independent archival project. Since 2026 it has captured,
+        verified, and preserved primary source documents published on the open web. The project was
+        founded to create a durable, publicly accessible historical record of the internet.
       </p>
 
       <section className="mt-6">
         <div className="text-[11px] uppercase tracking-widest text-[color:var(--muted-foreground)]">
-          Institutional Facts
+          Project Facts
         </div>
         <hr className="mt-1" />
         <table className="mt-2">
           <tbody>
             <tr>
               <td className="w-[220px]">Founded</td>
-              <td>14 March 1998</td>
-            </tr>
-            <tr>
-              <td>Legal Form</td>
-              <td>Nonprofit archival trust</td>
-            </tr>
-            <tr>
-              <td>Governance</td>
-              <td>Consortium of national and university archives</td>
-            </tr>
-            <tr>
-              <td>Funding</td>
-              <td>Public grants, institutional membership, individual donations</td>
+              <td>2026</td>
             </tr>
             <tr>
               <td>Total Records</td>
@@ -105,22 +92,10 @@ function About() {
           Contact
         </div>
         <hr className="mt-1" />
-        <table className="mt-2">
-          <tbody>
-            <tr>
-              <td className="w-[220px]">Postal</td>
-              <td>Public Internet Record, PO Box 1998, The Hague, Netherlands</td>
-            </tr>
-            <tr>
-              <td>Correspondence</td>
-              <td>records @ public-record.org</td>
-            </tr>
-            <tr>
-              <td>Security Reports</td>
-              <td>security @ public-record.org</td>
-            </tr>
-          </tbody>
-        </table>
+        <p className="mt-2 text-[13px] leading-relaxed">
+          This project is maintained on GitHub. Issues, suggestions, and contributions are welcome
+          through the repository.
+        </p>
       </section>
     </SiteShell>
   );

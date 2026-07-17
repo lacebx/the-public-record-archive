@@ -432,6 +432,7 @@ Options considered:
 
 Chosen approach:
 TanStack Start file-based routes under `src/routes/api/v1/` with:
+
 - `loader` fetches data via `src/lib/api.ts` functions
 - Component renders JSON inside a `<pre>` tag
 - OpenAPI 3.1 spec at `public/openapi.json` for documentation

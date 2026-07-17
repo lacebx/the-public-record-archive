@@ -109,24 +109,24 @@ scripts/generate-snapshot.ts
 
 ### Route Structure
 
-| Path                       | Component           | Data Source                          |
-| -------------------------- | ------------------- | ------------------------------------ |
-| `/`                        | HomePage            | `getSnapshot()`                      |
-| `/browse`                  | BrowsePage          | `getSnapshot()`                      |
-| `/search`                  | SearchPage          | `getSnapshot()` (client-side filter) |
-| `/snapshots/`              | SnapshotsIndex      | `getSnapshotList()` (all dates)      |
-| `/snapshots/$date`         | SnapshotPage        | `getSnapshotByDate(date)`            |
-| `/record/$id`              | RecordPage          | `getSnapshot()` (find by id)         |
-| `/about`                   | AboutPage           | `getSnapshot()`                      |
-| `/documentation`           | DocumentationPage   | Static                               |
-| `/api`                     | Developer Portal    | Static + Scalar API playground       |
-| `/api/playground`          | Scalar Playground   | OpenAPI spec via `/openapi.json`     |
-| `/api/v1/health`           | API Health Route    | `healthCheck()`                      |
-| `/api/v1/snapshots`        | API Snapshots Route | `listSnapshots()`                    |
-| `/api/v1/snapshots/$date`  | API Snapshot Route  | `getSnapshotApi()`                   |
-| `/api/v1/records/$id`      | API Record Route    | `getRecordById()`                    |
-| `/api/v1/search`           | API Search Route    | `searchRecords()`                    |
-| `/api/v1/archive/$date`    | API Archive Route   | `getArchiveData()`                   |
+| Path                      | Component           | Data Source                          |
+| ------------------------- | ------------------- | ------------------------------------ |
+| `/`                       | HomePage            | `getSnapshot()`                      |
+| `/browse`                 | BrowsePage          | `getSnapshot()`                      |
+| `/search`                 | SearchPage          | `getSnapshot()` (client-side filter) |
+| `/snapshots/`             | SnapshotsIndex      | `getSnapshotList()` (all dates)      |
+| `/snapshots/$date`        | SnapshotPage        | `getSnapshotByDate(date)`            |
+| `/record/$id`             | RecordPage          | `getSnapshot()` (find by id)         |
+| `/about`                  | AboutPage           | `getSnapshot()`                      |
+| `/documentation`          | DocumentationPage   | Static                               |
+| `/api`                    | Developer Portal    | Static + Scalar API playground       |
+| `/api/playground`         | Scalar Playground   | OpenAPI spec via `/openapi.json`     |
+| `/api/v1/health`          | API Health Route    | `healthCheck()`                      |
+| `/api/v1/snapshots`       | API Snapshots Route | `listSnapshots()`                    |
+| `/api/v1/snapshots/$date` | API Snapshot Route  | `getSnapshotApi()`                   |
+| `/api/v1/records/$id`     | API Record Route    | `getRecordById()`                    |
+| `/api/v1/search`          | API Search Route    | `searchRecords()`                    |
+| `/api/v1/archive/$date`   | API Archive Route   | `getArchiveData()`                   |
 
 ### Archive Download
 

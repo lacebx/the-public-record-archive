@@ -426,6 +426,7 @@ and an interactive API playground with Scalar.
 **Changes made:**
 
 **REST API (Issue #12):**
+
 - Created `src/lib/api.ts` — API business logic module with 7 endpoint handlers:
   `listSnapshots()`, `getSnapshotApi()`, `getRecords()`, `getRecordById()`,
   `searchRecords()`, `getArchiveData()`, `healthCheck()`
@@ -442,6 +443,7 @@ and an interactive API playground with Scalar.
 - OpenAPI 3.1 spec at `public/openapi.json` with all 6 endpoints documented
 
 **Developer Portal (Issue #13):**
+
 - Enhanced `src/routes/api.tsx` — full developer portal with:
   - Endpoint table with live links to each API route
   - Query parameters documentation
@@ -450,13 +452,16 @@ and an interactive API playground with Scalar.
   - Caching and OpenAPI/Scalar sections
 
 **Interactive Playground (Issue #14):**
+
 - Installed `@scalar/api-reference` and `@scalar/api-reference-react`
 - Created `src/routes/api/playground.tsx` — full-page Scalar API playground
 
 **Testing:**
+
 - Created `tests/api.test.ts` — 22 comprehensive tests covering all endpoints
 
 **Files created:**
+
 - `src/lib/api.ts` — API handler functions
 - `src/routes/api/v1/index.tsx`, `health.tsx`, `snapshots.tsx`,
   `snapshots.$date.tsx`, `records.$id.tsx`, `search.tsx`, `archive.$date.tsx`
@@ -465,15 +470,133 @@ and an interactive API playground with Scalar.
 - `tests/api.test.ts` — 22 API tests
 
 **Files modified:**
+
 - `src/routes/api.tsx` — enhanced developer portal
 - `package.json`, `package-lock.json` — added Scalar deps
 - `docs/ai/ARCHITECTURE.md`, `CONTEXT.md`, `DECISIONS.md`, `HANDOFF.md`,
   `WORK_LOG.md`
 
 **Verification:**
+
 - `npm test`: 110/110 passed (22 new + 88 existing)
 - `npm run lint`: 0 errors
 - `npm run typecheck`: 0 errors
 - `npm run build`: succeeds
 
 **PR:** https://github.com/lacebx/the-public-record-archive/pull/39 (closes #12, #13, #14)
+
+---
+
+### Session: 2026-07-17 — Repository health check, public alpha polish, honest messaging, e2e tests
+
+**Goal:** Perform a comprehensive repository health check, fix every broken page
+and empty state, remove fictional institutional claims, add Playwright e2e tests,
+and prepare the project for a true public alpha.
+
+**Milestone:** N/A (quality / readiness)
+
+**Issues:** None directly — pre-launch preparation
+
+**Branch:** `feature/snapshot-diff`
+
+## Phase 1 — Repository Health
+
+**Findings:**
+
+- All 9 PRs merged (none open). Main branch is current.
+- Milestone 1 closed (complete). Milestones 2–8 open.
+- Milestone 2 has 1 open issue (#11) — superseded by #12/#13/#14 implementation.
+- Cloudflare Workers deployment via `.github/workflows/deploy.yml` (not Vercel).
+- No blocking unmerged PRs.
+
+## Phase 2 — Public Alpha Polish
+
+**Changes made:**
+
+- **`src/routes/__root.tsx`** — Fixed 404 and error boundary components:
+  - Replaced undefined shadcn CSS classes (`bg-primary`, `rounded-md`, `border-input`,
+    `text-primary-foreground`) with project's existing `.btn` class
+  - Removed Tailwind v4 shadcn-style classes that had no corresponding CSS definitions
+- **`src/routes/browse.tsx`** — Added empty state for category filter with no matches:
+  "No records match the selected category."
+- **`src/routes/index.tsx`** — Added empty state for "Recently Archived" section:
+  "No records have been archived yet."
+- **`src/lib/utils.ts`** — Added `stripHtml()` utility function that removes HTML tags
+  and decodes common HTML entities
+- **`src/routes/search.tsx`** — Applied `stripHtml()` to record summaries in search results
+- **`src/routes/record.$id.tsx`** — Applied `stripHtml()` to record summary display and
+  meta description; fixed record meta to strip HTML from OG tags
+
+## Phase 3 — Honest Product Messaging
+
+**Changes made:**
+
+- **`src/routes/about.tsx`** — Removed all fictional claims:
+  - "since 1998" → "since 2026"
+  - "nonprofit archival trust" → "independent archival project"
+  - "consortium of national libraries, university archives, and independent historians"
+    → "founded to create a durable, publicly accessible historical record"
+  - Removed "Founded 14 March 1998", "Legal Form: Nonprofit archival trust",
+    "Governance: Consortium of national and university archives",
+    "Funding: Public grants, institutional membership, individual donations"
+  - Removed fictional contact info: "PO Box 1998, The Hague, Netherlands",
+    "records @ public-record.org", "security @ public-record.org"
+  - Replaced with "This project is maintained on GitHub."
+- **`src/routes/documentation.tsx`** — Fixed multiple fictional claims:
+  - "established in 1998 by a consortium" → "established in 2026"
+  - "WARC 1.1 files accompanied by a JSON manifest" → actual JSON format description
+  - "multiple independent archival nodes... three geographically distinct witness nodes"
+    → actual SHA-256 hash verification process
+- **`src/routes/__root.tsx`** — Changed "Established 1998" → "Founded 2026" in site-wide
+  meta description
+- **`src/routes/record.$id.tsx`** — Removed fictional "Evidence Chain" section:
+  - Removed witness nodes (node-us-01, node-jp-02, node-br-01)
+  - Removed "Signed By: archivist-key-2026-Q3"
+  - Removed "Version History" section with hardcoded revision
+  - Replaced with simplified "Verification" section with honest description
+
+## Phase 4 — Automated QA
+
+**Changes made:**
+
+- **Installed** `@playwright/test` as dev dependency
+- **Created** `playwright.config.ts` with dev server auto-start
+- **Created** `tests/e2e/smoke.spec.ts` with 21 smoke tests covering:
+  - Homepage load with today's snapshot
+  - Browse page with record display and category filter
+  - Search with prompt display and results
+  - Snapshots index and detail pages
+  - Record detail page
+  - API documentation and playground
+  - Health endpoint and snapshots API
+  - OpenAPI spec accessibility
+  - Compare page
+  - About and Documentation pages
+  - Navigation links in header
+  - 404 page rendering
+- **Added** `npm run test:e2e` script to `package.json`
+
+## Phase 5 — Final Verification
+
+- `npm test` — 127/127 passed (all tests)
+- `npm run lint` — 0 errors
+- `npm run typecheck` — 0 errors
+- `npm run build` — succeeds (client, SSR, Nitro)
+
+## Files Modified
+
+- `src/lib/utils.ts` — Added `stripHtml()` utility
+- `src/routes/__root.tsx` — Fixed 404/error styling, removed "Established 1998"
+- `src/routes/about.tsx` — Honest messaging rewrite
+- `src/routes/documentation.tsx` — Fixed false claims in Docs
+- `src/routes/index.tsx` — Empty state for Recently Archived
+- `src/routes/browse.tsx` — Empty state for no filter matches
+- `src/routes/search.tsx` — Strip HTML from summaries
+- `src/routes/record.$id.tsx` — Strip HTML, removed fictional Evidence Chain
+- `playwright.config.ts` — New e2e test configuration
+- `tests/e2e/smoke.spec.ts` — New Playwright smoke tests
+- `package.json` — Added `test:e2e` script and `@playwright/test` dep
+- `docs/ai/CONTEXT.md`, `HANDOFF.md`, `KNOWN_ISSUES.md`, `WORK_LOG.md` — Updated
+- `src/routeTree.gen.ts` — Regenerated (includes /compare and /api/v1/diff)
+
+**PR:** _(to be opened)_

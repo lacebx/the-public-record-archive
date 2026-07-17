@@ -224,6 +224,100 @@ export async function healthCheck(): Promise<ApiResponse<HealthStatus>> {
   }
 }
 
+export type DiffQuery = {
+  from: string;
+  to: string;
+  limit?: number;
+  offset?: number;
+};
+
+export async function getDiffApi(query: DiffQuery): Promise<
+  ApiResponse<{
+    from: string;
+    to: string;
+    summary: { added: number; removed: number; modified: number; unchanged: number };
+    added: DiffRecordItem[];
+    removed: DiffRecordItem[];
+    modified: DiffRecordItem[];
+  }>
+> {
+  try {
+    const { getDiff, paginateDiffRecords } = await import("./diff");
+    const result = await getDiff(query.from, query.to);
+    if (!result) {
+      return apiError("NOT_FOUND", `Snapshot "${query.from}" or "${query.to}" not found`);
+    }
+
+    const trimmed = {
+      added: paginateDiffRecords(result.added, query.limit, query.offset),
+      removed: paginateDiffRecords(result.removed, query.limit, query.offset),
+      modified: paginateDiffRecords(result.modified, query.limit, query.offset),
+    };
+
+    return success(
+      {
+        from: result.from,
+        to: result.to,
+        summary: result.summary,
+        added: trimRecordDetails(trimmed.added.items),
+        removed: trimRecordDetails(trimmed.removed.items),
+        modified: trimFieldChanges(trimmed.modified.items),
+      },
+      {
+        totalAdded: result.summary.added,
+        totalRemoved: result.summary.removed,
+        totalModified: result.summary.modified,
+        totalUnchanged: result.summary.unchanged,
+        limit: query.limit,
+        offset: query.offset,
+      },
+    );
+  } catch {
+    return apiError("INTERNAL_ERROR", "Failed to compute diff");
+  }
+}
+
+type DiffRecordItem = {
+  id: string;
+  title: string;
+  publisher: string;
+  category: string;
+  country: string;
+  hash: string;
+};
+
+type DiffRecordModified = DiffRecordItem & {
+  fieldChanges: { field: string; from: unknown; to: unknown }[];
+};
+
+function trimRecordDetails(records: { record: Record }[]): DiffRecordItem[] {
+  return records.map((r) => ({
+    id: r.record.id,
+    title: r.record.title,
+    publisher: r.record.publisher,
+    category: r.record.category,
+    country: r.record.country,
+    hash: r.record.hash,
+  }));
+}
+
+function trimFieldChanges(
+  records: {
+    record: Record;
+    fieldChanges?: { field: string; from: unknown; to: unknown }[];
+  }[],
+): DiffRecordModified[] {
+  return records.map((r) => ({
+    id: r.record.id,
+    title: r.record.title,
+    publisher: r.record.publisher,
+    category: r.record.category,
+    country: r.record.country,
+    hash: r.record.hash,
+    fieldChanges: r.fieldChanges ?? [],
+  }));
+}
+
 function applyPagination<T>(items: T[], limit?: number, offset?: number): T[] {
   const start = offset ?? 0;
   const end = limit != null ? start + limit : undefined;
