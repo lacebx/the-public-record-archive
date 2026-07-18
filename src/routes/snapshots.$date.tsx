@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, useRouter } from "@tanstack/react-router";
 import { SiteShell } from "../components/site-shell";
-import { getSnapshot, getSnapshotByDate } from "../lib/data";
+import { getSnapshot, getSnapshotByDate, getArchive } from "../lib/data";
 
 export const Route = createFileRoute("/snapshots/$date")({
   loader: async ({ params }) => {
@@ -100,6 +100,7 @@ function SnapshotPage() {
 
       <div className="mt-4 flex flex-wrap gap-2">
         <DownloadButton data={data} isoDate={isoDate} />
+        <ArchiveDownloadButton isoDate={isoDate} />
         <VerifyButton expectedHash={hash} data={data} />
         <Link to="/browse" search={{ category: "" }} className="btn">
           [ Browse Contents ]
@@ -124,6 +125,37 @@ ${hash}  ${isoDate}.json`}
       </div>
       <hr className="rule-double" />
     </SiteShell>
+  );
+}
+
+function ArchiveDownloadButton({ isoDate }: { isoDate: string }) {
+  const [loading, setLoading] = useState(false);
+
+  const handleDownload = async () => {
+    setLoading(true);
+    try {
+      const result = await getArchive({ data: { date: isoDate } });
+      const binary = Uint8Array.from(atob(result.base64), (c) => c.charCodeAt(0));
+      const blob = new Blob([binary], { type: "application/gzip" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `public-record-${result.isoDate}.tar.gz`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    } catch (err) {
+      console.error("Archive download failed:", err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <button onClick={handleDownload} disabled={loading} className="btn">
+      {loading ? "[ Preparing Archive … ]" : "[ Download Archive (.tar.gz) ]"}
+    </button>
   );
 }
 

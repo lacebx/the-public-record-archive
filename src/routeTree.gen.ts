@@ -11,13 +11,26 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SearchRouteImport } from './routes/search'
 import { Route as DocumentationRouteImport } from './routes/documentation'
+import { Route as CompareRouteImport } from './routes/compare'
 import { Route as BrowseRouteImport } from './routes/browse'
 import { Route as ApiRouteImport } from './routes/api'
+import { Route as AnalyticsRouteImport } from './routes/analytics'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as TimelinesIndexRouteImport } from './routes/timelines.index'
 import { Route as SnapshotsIndexRouteImport } from './routes/snapshots.index'
+import { Route as TimelinesIdRouteImport } from './routes/timelines.$id'
 import { Route as SnapshotsDateRouteImport } from './routes/snapshots.$date'
 import { Route as RecordIdRouteImport } from './routes/record.$id'
+import { Route as ApiPlaygroundRouteImport } from './routes/api/playground'
+import { Route as ApiV1IndexRouteImport } from './routes/api/v1/index'
+import { Route as ApiV1SnapshotsRouteImport } from './routes/api/v1/snapshots'
+import { Route as ApiV1SearchRouteImport } from './routes/api/v1/search'
+import { Route as ApiV1HealthRouteImport } from './routes/api/v1/health'
+import { Route as ApiV1DiffRouteImport } from './routes/api/v1/diff'
+import { Route as ApiV1SnapshotsDateRouteImport } from './routes/api/v1/snapshots.$date'
+import { Route as ApiV1RecordsIdRouteImport } from './routes/api/v1/records.$id'
+import { Route as ApiV1ArchiveDateRouteImport } from './routes/api/v1/archive.$date'
 
 const SearchRoute = SearchRouteImport.update({
   id: '/search',
@@ -27,6 +40,11 @@ const SearchRoute = SearchRouteImport.update({
 const DocumentationRoute = DocumentationRouteImport.update({
   id: '/documentation',
   path: '/documentation',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CompareRoute = CompareRouteImport.update({
+  id: '/compare',
+  path: '/compare',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BrowseRoute = BrowseRouteImport.update({
@@ -39,6 +57,11 @@ const ApiRoute = ApiRouteImport.update({
   path: '/api',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AnalyticsRoute = AnalyticsRouteImport.update({
+  id: '/analytics',
+  path: '/analytics',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
@@ -49,9 +72,19 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TimelinesIndexRoute = TimelinesIndexRouteImport.update({
+  id: '/timelines/',
+  path: '/timelines/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SnapshotsIndexRoute = SnapshotsIndexRouteImport.update({
   id: '/snapshots/',
   path: '/snapshots/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TimelinesIdRoute = TimelinesIdRouteImport.update({
+  id: '/timelines/$id',
+  path: '/timelines/$id',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SnapshotsDateRoute = SnapshotsDateRouteImport.update({
@@ -64,87 +97,214 @@ const RecordIdRoute = RecordIdRouteImport.update({
   path: '/record/$id',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiPlaygroundRoute = ApiPlaygroundRouteImport.update({
+  id: '/playground',
+  path: '/playground',
+  getParentRoute: () => ApiRoute,
+} as any)
+const ApiV1IndexRoute = ApiV1IndexRouteImport.update({
+  id: '/v1/',
+  path: '/v1/',
+  getParentRoute: () => ApiRoute,
+} as any)
+const ApiV1SnapshotsRoute = ApiV1SnapshotsRouteImport.update({
+  id: '/v1/snapshots',
+  path: '/v1/snapshots',
+  getParentRoute: () => ApiRoute,
+} as any)
+const ApiV1SearchRoute = ApiV1SearchRouteImport.update({
+  id: '/v1/search',
+  path: '/v1/search',
+  getParentRoute: () => ApiRoute,
+} as any)
+const ApiV1HealthRoute = ApiV1HealthRouteImport.update({
+  id: '/v1/health',
+  path: '/v1/health',
+  getParentRoute: () => ApiRoute,
+} as any)
+const ApiV1DiffRoute = ApiV1DiffRouteImport.update({
+  id: '/v1/diff',
+  path: '/v1/diff',
+  getParentRoute: () => ApiRoute,
+} as any)
+const ApiV1SnapshotsDateRoute = ApiV1SnapshotsDateRouteImport.update({
+  id: '/$date',
+  path: '/$date',
+  getParentRoute: () => ApiV1SnapshotsRoute,
+} as any)
+const ApiV1RecordsIdRoute = ApiV1RecordsIdRouteImport.update({
+  id: '/v1/records/$id',
+  path: '/v1/records/$id',
+  getParentRoute: () => ApiRoute,
+} as any)
+const ApiV1ArchiveDateRoute = ApiV1ArchiveDateRouteImport.update({
+  id: '/v1/archive/$date',
+  path: '/v1/archive/$date',
+  getParentRoute: () => ApiRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/api': typeof ApiRoute
+  '/analytics': typeof AnalyticsRoute
+  '/api': typeof ApiRouteWithChildren
   '/browse': typeof BrowseRoute
+  '/compare': typeof CompareRoute
   '/documentation': typeof DocumentationRoute
   '/search': typeof SearchRoute
+  '/api/playground': typeof ApiPlaygroundRoute
   '/record/$id': typeof RecordIdRoute
   '/snapshots/$date': typeof SnapshotsDateRoute
+  '/timelines/$id': typeof TimelinesIdRoute
   '/snapshots/': typeof SnapshotsIndexRoute
+  '/timelines/': typeof TimelinesIndexRoute
+  '/api/v1/diff': typeof ApiV1DiffRoute
+  '/api/v1/health': typeof ApiV1HealthRoute
+  '/api/v1/search': typeof ApiV1SearchRoute
+  '/api/v1/snapshots': typeof ApiV1SnapshotsRouteWithChildren
+  '/api/v1/': typeof ApiV1IndexRoute
+  '/api/v1/archive/$date': typeof ApiV1ArchiveDateRoute
+  '/api/v1/records/$id': typeof ApiV1RecordsIdRoute
+  '/api/v1/snapshots/$date': typeof ApiV1SnapshotsDateRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/api': typeof ApiRoute
+  '/analytics': typeof AnalyticsRoute
+  '/api': typeof ApiRouteWithChildren
   '/browse': typeof BrowseRoute
+  '/compare': typeof CompareRoute
   '/documentation': typeof DocumentationRoute
   '/search': typeof SearchRoute
+  '/api/playground': typeof ApiPlaygroundRoute
   '/record/$id': typeof RecordIdRoute
   '/snapshots/$date': typeof SnapshotsDateRoute
+  '/timelines/$id': typeof TimelinesIdRoute
   '/snapshots': typeof SnapshotsIndexRoute
+  '/timelines': typeof TimelinesIndexRoute
+  '/api/v1/diff': typeof ApiV1DiffRoute
+  '/api/v1/health': typeof ApiV1HealthRoute
+  '/api/v1/search': typeof ApiV1SearchRoute
+  '/api/v1/snapshots': typeof ApiV1SnapshotsRouteWithChildren
+  '/api/v1': typeof ApiV1IndexRoute
+  '/api/v1/archive/$date': typeof ApiV1ArchiveDateRoute
+  '/api/v1/records/$id': typeof ApiV1RecordsIdRoute
+  '/api/v1/snapshots/$date': typeof ApiV1SnapshotsDateRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/api': typeof ApiRoute
+  '/analytics': typeof AnalyticsRoute
+  '/api': typeof ApiRouteWithChildren
   '/browse': typeof BrowseRoute
+  '/compare': typeof CompareRoute
   '/documentation': typeof DocumentationRoute
   '/search': typeof SearchRoute
+  '/api/playground': typeof ApiPlaygroundRoute
   '/record/$id': typeof RecordIdRoute
   '/snapshots/$date': typeof SnapshotsDateRoute
+  '/timelines/$id': typeof TimelinesIdRoute
   '/snapshots/': typeof SnapshotsIndexRoute
+  '/timelines/': typeof TimelinesIndexRoute
+  '/api/v1/diff': typeof ApiV1DiffRoute
+  '/api/v1/health': typeof ApiV1HealthRoute
+  '/api/v1/search': typeof ApiV1SearchRoute
+  '/api/v1/snapshots': typeof ApiV1SnapshotsRouteWithChildren
+  '/api/v1/': typeof ApiV1IndexRoute
+  '/api/v1/archive/$date': typeof ApiV1ArchiveDateRoute
+  '/api/v1/records/$id': typeof ApiV1RecordsIdRoute
+  '/api/v1/snapshots/$date': typeof ApiV1SnapshotsDateRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
     | '/about'
+    | '/analytics'
     | '/api'
     | '/browse'
+    | '/compare'
     | '/documentation'
     | '/search'
+    | '/api/playground'
     | '/record/$id'
     | '/snapshots/$date'
+    | '/timelines/$id'
     | '/snapshots/'
+    | '/timelines/'
+    | '/api/v1/diff'
+    | '/api/v1/health'
+    | '/api/v1/search'
+    | '/api/v1/snapshots'
+    | '/api/v1/'
+    | '/api/v1/archive/$date'
+    | '/api/v1/records/$id'
+    | '/api/v1/snapshots/$date'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
+    | '/analytics'
     | '/api'
     | '/browse'
+    | '/compare'
     | '/documentation'
     | '/search'
+    | '/api/playground'
     | '/record/$id'
     | '/snapshots/$date'
+    | '/timelines/$id'
     | '/snapshots'
+    | '/timelines'
+    | '/api/v1/diff'
+    | '/api/v1/health'
+    | '/api/v1/search'
+    | '/api/v1/snapshots'
+    | '/api/v1'
+    | '/api/v1/archive/$date'
+    | '/api/v1/records/$id'
+    | '/api/v1/snapshots/$date'
   id:
     | '__root__'
     | '/'
     | '/about'
+    | '/analytics'
     | '/api'
     | '/browse'
+    | '/compare'
     | '/documentation'
     | '/search'
+    | '/api/playground'
     | '/record/$id'
     | '/snapshots/$date'
+    | '/timelines/$id'
     | '/snapshots/'
+    | '/timelines/'
+    | '/api/v1/diff'
+    | '/api/v1/health'
+    | '/api/v1/search'
+    | '/api/v1/snapshots'
+    | '/api/v1/'
+    | '/api/v1/archive/$date'
+    | '/api/v1/records/$id'
+    | '/api/v1/snapshots/$date'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
-  ApiRoute: typeof ApiRoute
+  AnalyticsRoute: typeof AnalyticsRoute
+  ApiRoute: typeof ApiRouteWithChildren
   BrowseRoute: typeof BrowseRoute
+  CompareRoute: typeof CompareRoute
   DocumentationRoute: typeof DocumentationRoute
   SearchRoute: typeof SearchRoute
   RecordIdRoute: typeof RecordIdRoute
   SnapshotsDateRoute: typeof SnapshotsDateRoute
+  TimelinesIdRoute: typeof TimelinesIdRoute
   SnapshotsIndexRoute: typeof SnapshotsIndexRoute
+  TimelinesIndexRoute: typeof TimelinesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -163,6 +323,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DocumentationRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/compare': {
+      id: '/compare'
+      path: '/compare'
+      fullPath: '/compare'
+      preLoaderRoute: typeof CompareRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/browse': {
       id: '/browse'
       path: '/browse'
@@ -175,6 +342,13 @@ declare module '@tanstack/react-router' {
       path: '/api'
       fullPath: '/api'
       preLoaderRoute: typeof ApiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/analytics': {
+      id: '/analytics'
+      path: '/analytics'
+      fullPath: '/analytics'
+      preLoaderRoute: typeof AnalyticsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -191,11 +365,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/timelines/': {
+      id: '/timelines/'
+      path: '/timelines'
+      fullPath: '/timelines/'
+      preLoaderRoute: typeof TimelinesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/snapshots/': {
       id: '/snapshots/'
       path: '/snapshots'
       fullPath: '/snapshots/'
       preLoaderRoute: typeof SnapshotsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/timelines/$id': {
+      id: '/timelines/$id'
+      path: '/timelines/$id'
+      fullPath: '/timelines/$id'
+      preLoaderRoute: typeof TimelinesIdRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/snapshots/$date': {
@@ -212,19 +400,122 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RecordIdRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/playground': {
+      id: '/api/playground'
+      path: '/playground'
+      fullPath: '/api/playground'
+      preLoaderRoute: typeof ApiPlaygroundRouteImport
+      parentRoute: typeof ApiRoute
+    }
+    '/api/v1/': {
+      id: '/api/v1/'
+      path: '/v1'
+      fullPath: '/api/v1/'
+      preLoaderRoute: typeof ApiV1IndexRouteImport
+      parentRoute: typeof ApiRoute
+    }
+    '/api/v1/snapshots': {
+      id: '/api/v1/snapshots'
+      path: '/v1/snapshots'
+      fullPath: '/api/v1/snapshots'
+      preLoaderRoute: typeof ApiV1SnapshotsRouteImport
+      parentRoute: typeof ApiRoute
+    }
+    '/api/v1/search': {
+      id: '/api/v1/search'
+      path: '/v1/search'
+      fullPath: '/api/v1/search'
+      preLoaderRoute: typeof ApiV1SearchRouteImport
+      parentRoute: typeof ApiRoute
+    }
+    '/api/v1/health': {
+      id: '/api/v1/health'
+      path: '/v1/health'
+      fullPath: '/api/v1/health'
+      preLoaderRoute: typeof ApiV1HealthRouteImport
+      parentRoute: typeof ApiRoute
+    }
+    '/api/v1/diff': {
+      id: '/api/v1/diff'
+      path: '/v1/diff'
+      fullPath: '/api/v1/diff'
+      preLoaderRoute: typeof ApiV1DiffRouteImport
+      parentRoute: typeof ApiRoute
+    }
+    '/api/v1/snapshots/$date': {
+      id: '/api/v1/snapshots/$date'
+      path: '/$date'
+      fullPath: '/api/v1/snapshots/$date'
+      preLoaderRoute: typeof ApiV1SnapshotsDateRouteImport
+      parentRoute: typeof ApiV1SnapshotsRoute
+    }
+    '/api/v1/records/$id': {
+      id: '/api/v1/records/$id'
+      path: '/v1/records/$id'
+      fullPath: '/api/v1/records/$id'
+      preLoaderRoute: typeof ApiV1RecordsIdRouteImport
+      parentRoute: typeof ApiRoute
+    }
+    '/api/v1/archive/$date': {
+      id: '/api/v1/archive/$date'
+      path: '/v1/archive/$date'
+      fullPath: '/api/v1/archive/$date'
+      preLoaderRoute: typeof ApiV1ArchiveDateRouteImport
+      parentRoute: typeof ApiRoute
+    }
   }
 }
+
+interface ApiV1SnapshotsRouteChildren {
+  ApiV1SnapshotsDateRoute: typeof ApiV1SnapshotsDateRoute
+}
+
+const ApiV1SnapshotsRouteChildren: ApiV1SnapshotsRouteChildren = {
+  ApiV1SnapshotsDateRoute: ApiV1SnapshotsDateRoute,
+}
+
+const ApiV1SnapshotsRouteWithChildren = ApiV1SnapshotsRoute._addFileChildren(
+  ApiV1SnapshotsRouteChildren,
+)
+
+interface ApiRouteChildren {
+  ApiPlaygroundRoute: typeof ApiPlaygroundRoute
+  ApiV1DiffRoute: typeof ApiV1DiffRoute
+  ApiV1HealthRoute: typeof ApiV1HealthRoute
+  ApiV1SearchRoute: typeof ApiV1SearchRoute
+  ApiV1SnapshotsRoute: typeof ApiV1SnapshotsRouteWithChildren
+  ApiV1IndexRoute: typeof ApiV1IndexRoute
+  ApiV1ArchiveDateRoute: typeof ApiV1ArchiveDateRoute
+  ApiV1RecordsIdRoute: typeof ApiV1RecordsIdRoute
+}
+
+const ApiRouteChildren: ApiRouteChildren = {
+  ApiPlaygroundRoute: ApiPlaygroundRoute,
+  ApiV1DiffRoute: ApiV1DiffRoute,
+  ApiV1HealthRoute: ApiV1HealthRoute,
+  ApiV1SearchRoute: ApiV1SearchRoute,
+  ApiV1SnapshotsRoute: ApiV1SnapshotsRouteWithChildren,
+  ApiV1IndexRoute: ApiV1IndexRoute,
+  ApiV1ArchiveDateRoute: ApiV1ArchiveDateRoute,
+  ApiV1RecordsIdRoute: ApiV1RecordsIdRoute,
+}
+
+const ApiRouteWithChildren = ApiRoute._addFileChildren(ApiRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
-  ApiRoute: ApiRoute,
+  AnalyticsRoute: AnalyticsRoute,
+  ApiRoute: ApiRouteWithChildren,
   BrowseRoute: BrowseRoute,
+  CompareRoute: CompareRoute,
   DocumentationRoute: DocumentationRoute,
   SearchRoute: SearchRoute,
   RecordIdRoute: RecordIdRoute,
   SnapshotsDateRoute: SnapshotsDateRoute,
+  TimelinesIdRoute: TimelinesIdRoute,
   SnapshotsIndexRoute: SnapshotsIndexRoute,
+  TimelinesIndexRoute: TimelinesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

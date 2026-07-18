@@ -1,13 +1,16 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { SiteShell } from "../components/site-shell";
 import { getSnapshot } from "../lib/data";
+import { stripHtml } from "../lib/utils";
+import { findRelated } from "../lib/related";
 
 export const Route = createFileRoute("/record/$id")({
   loader: async ({ params }) => {
     const snapshot = await getSnapshot();
     const record = snapshot.records.find((r) => r.id === params.id);
     if (!record) throw notFound();
-    return { record, snapshot };
+    const related = findRelated(record, snapshot.records, 8);
+    return { record, snapshot, related };
   },
   head: ({ loaderData }) => {
     if (!loaderData) {
@@ -22,9 +25,9 @@ export const Route = createFileRoute("/record/$id")({
     return {
       meta: [
         { title: `${record.id} — ${record.publisher} — Public Internet Record` },
-        { name: "description", content: record.summary.slice(0, 160) },
+        { name: "description", content: stripHtml(record.summary).slice(0, 160) },
         { property: "og:title", content: `${record.publisher}: ${record.title}` },
-        { property: "og:description", content: record.summary.slice(0, 160) },
+        { property: "og:description", content: stripHtml(record.summary).slice(0, 160) },
       ],
     };
   },
@@ -45,7 +48,7 @@ export const Route = createFileRoute("/record/$id")({
 });
 
 function RecordPage() {
-  const { record } = Route.useLoaderData();
+  const { record, related } = Route.useLoaderData();
 
   return (
     <SiteShell>
@@ -109,12 +112,12 @@ function RecordPage() {
           Summary
         </div>
         <hr className="mt-1" />
-        <p className="mt-2 text-[13px] leading-relaxed">{record.summary}</p>
+        <p className="mt-2 text-[13px] leading-relaxed">{stripHtml(record.summary)}</p>
       </section>
 
       <section className="mt-6">
         <div className="text-[11px] uppercase tracking-widest text-[color:var(--muted-foreground)]">
-          Evidence Chain
+          Verification
         </div>
         <hr className="mt-1" />
         <table className="mt-2">
@@ -123,44 +126,89 @@ function RecordPage() {
               <td className="w-[220px]">Original Retrieval</td>
               <td>{record.archived}, HTTP 200</td>
             </tr>
-            <tr>
-              <td>Archival Node</td>
-              <td>node-eu-03.public-record.org</td>
-            </tr>
-            <tr>
-              <td>Witness Nodes</td>
-              <td>node-us-01, node-jp-02, node-br-01</td>
-            </tr>
-            <tr>
-              <td>Signed By</td>
-              <td>archivist-key-2026-Q3</td>
-            </tr>
           </tbody>
         </table>
+        <p className="mt-2 text-[12px] text-[color:var(--muted-foreground)]">
+          The SHA-256 hash of this record can be independently verified using the open-source
+          tooling in this project's repository.
+        </p>
       </section>
 
-      <section className="mt-6">
-        <div className="text-[11px] uppercase tracking-widest text-[color:var(--muted-foreground)]">
-          Version History
-        </div>
-        <hr className="mt-1" />
-        <table className="mt-2">
-          <thead>
-            <tr>
-              <th className="w-[60px]">Rev</th>
-              <th className="w-[130px]">Timestamp</th>
-              <th>Change</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>001</td>
-              <td>{record.archived}</td>
-              <td>Initial capture. Verified against source.</td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
+      {related.length > 0 ? (
+        <section className="mt-8">
+          <div className="text-[11px] uppercase tracking-widest text-[color:var(--muted-foreground)]">
+            Related Records
+          </div>
+          <hr className="mt-1" />
+          <table className="mt-2">
+            <thead>
+              <tr>
+                <th className="w-[200px]">Title</th>
+                <th className="w-[120px]">Publisher</th>
+                <th className="w-[100px]">Archived</th>
+                <th className="w-[110px]">Type</th>
+                <th className="w-[70px] text-right">Score</th>
+              </tr>
+            </thead>
+            <tbody>
+              {related.map((r) => (
+                <tr key={r.record.id}>
+                  <td>
+                    <Link to="/record/$id" params={{ id: r.record.id }}>
+                      {r.record.title}
+                    </Link>
+                  </td>
+                  <td>{r.record.publisher}</td>
+                  <td>{r.record.archived.slice(0, 10)}</td>
+                  <td className="text-[11px]">{r.type}</td>
+                  <td className="text-right tabular-nums">{r.score}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <div className="mt-2 text-[11px] text-[color:var(--muted-foreground)]">
+            {related.length > 0 ? (
+              <details className="cursor-pointer">
+                <summary className="text-[11px]">Why these are related</summary>
+                <ul className="mt-1 space-y-1">
+                  {related.map((r) => (
+                    <li key={r.record.id} className="border-l-2 border-[color:var(--border)] pl-2">
+                      <span className="font-medium">{r.record.publisher}:</span>{" "}
+                      <Link to="/record/$id" params={{ id: r.record.id }}>
+                        {r.record.title}
+                      </Link>{" "}
+                      <span className="text-[color:var(--muted-foreground)]">
+                        ({r.type}, score {r.score})
+                      </span>
+                      <ul className="mt-[2px] list-inside list-disc text-[10px] text-[color:var(--muted-foreground)]">
+                        {r.reasons.map((reason, i) => (
+                          <li key={i}>
+                            {reason.factor}: +{reason.contribution} ({reason.detail})
+                          </li>
+                        ))}
+                      </ul>
+                    </li>
+                  ))}
+                </ul>
+              </details>
+            ) : null}
+          </div>
+          <div className="mt-3 text-[10px] italic text-[color:var(--muted-foreground)]">
+            Inferred relationships based on publisher, category, time proximity, and keyword
+            overlap.
+          </div>
+        </section>
+      ) : (
+        <section className="mt-8">
+          <div className="text-[11px] uppercase tracking-widest text-[color:var(--muted-foreground)]">
+            Related Records
+          </div>
+          <hr className="mt-1" />
+          <p className="mt-2 text-[12px] text-[color:var(--muted-foreground)]">
+            No related records found in the current snapshot.
+          </p>
+        </section>
+      )}
 
       <hr className="rule-double mt-8" />
       <div className="py-2 text-center text-[11px] text-[color:var(--muted-foreground)]">

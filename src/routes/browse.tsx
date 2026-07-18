@@ -44,8 +44,8 @@ function Browse() {
       <h1 className="text-[14px] font-bold uppercase tracking-[0.06em]">Browse Records</h1>
       <hr className="mt-1" />
       <p className="mt-2 text-[12px] text-[color:var(--muted-foreground)]">
-        Records are listed in reverse chronological order of archival. All entries are
-        cryptographically verified and immutable.
+        All entries are from the current snapshot. Each record is identified by a unique archive ID
+        for traceability.
       </p>
 
       <section className="mt-5">
@@ -74,32 +74,38 @@ function Browse() {
       </section>
 
       <section className="mt-5">
-        <table>
-          <thead>
-            <tr>
-              <th className="w-[170px]">Record ID</th>
-              <th className="w-[130px]">Publisher</th>
-              <th>Title</th>
-              <th className="w-[110px]">Category</th>
-              <th className="w-[90px]">Archived</th>
-            </tr>
-          </thead>
-          <tbody>
-            {filtered.map((r) => (
-              <tr key={r.id}>
-                <td className="whitespace-nowrap">{r.id}</td>
-                <td>{r.publisher}</td>
-                <td>
-                  <Link to="/record/$id" params={{ id: r.id }}>
-                    {r.title}
-                  </Link>
-                </td>
-                <td>{r.category}</td>
-                <td>{r.archived}</td>
+        {filtered.length === 0 ? (
+          <p className="text-[12px] text-[color:var(--muted-foreground)]">
+            No records match the selected category.
+          </p>
+        ) : (
+          <table>
+            <thead>
+              <tr>
+                <th className="w-[170px]">Record ID</th>
+                <th className="w-[130px]">Publisher</th>
+                <th>Title</th>
+                <th className="w-[110px]">Category</th>
+                <th className="w-[90px]">Archived</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {filtered.map((r) => (
+                <tr key={r.id}>
+                  <td className="whitespace-nowrap">{r.id}</td>
+                  <td>{r.publisher}</td>
+                  <td>
+                    <Link to="/record/$id" params={{ id: r.id }}>
+                      {r.title}
+                    </Link>
+                  </td>
+                  <td>{r.category}</td>
+                  <td>{r.archived}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        )}
       </section>
 
       <p className="mt-4 text-[11px] text-[color:var(--muted-foreground)]">

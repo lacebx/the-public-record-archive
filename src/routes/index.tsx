@@ -83,6 +83,26 @@ function Home() {
               <td>Integrity Hash (SHA-256)</td>
               <td className="break-all">{meta.hash}</td>
             </tr>
+            {meta.statistics ? (
+              <>
+                <tr>
+                  <td>New Records</td>
+                  <td className="text-[color:var(--verified)]">
+                    +{meta.statistics.newRecords.toLocaleString("en-US")}
+                  </td>
+                </tr>
+                <tr>
+                  <td>Carried Over</td>
+                  <td>{meta.statistics.carriedOverRecords.toLocaleString("en-US")}</td>
+                </tr>
+                {meta.statistics.duplicatesRemoved > 0 ? (
+                  <tr>
+                    <td>Duplicates Removed</td>
+                    <td>{meta.statistics.duplicatesRemoved.toLocaleString("en-US")}</td>
+                  </tr>
+                ) : null}
+              </>
+            ) : null}
           </tbody>
         </table>
 
@@ -99,43 +119,49 @@ function Home() {
         </div>
       </section>
 
-      {recentRecords.length > 0 && (
-        <section className="mt-8">
-          <h2 className="text-[13px] font-bold uppercase tracking-[0.06em]">Recently Archived</h2>
-          <hr className="mt-1" />
-          <table className="mt-2">
-            <thead>
-              <tr>
-                <th className="w-[140px]">Publisher</th>
-                <th>Record</th>
-                <th className="w-[90px]">Published</th>
-                <th className="w-[90px]">Archived</th>
-                <th className="w-[90px]">Integrity</th>
-              </tr>
-            </thead>
-            <tbody>
-              {recentRecords.map((r) => (
-                <tr key={r.id}>
-                  <td>{r.publisher}</td>
-                  <td>
-                    <Link to="/record/$id" params={{ id: r.id }}>
-                      {r.title}
-                    </Link>
-                  </td>
-                  <td>{r.published}</td>
-                  <td>{r.archived}</td>
-                  <td className="text-[color:var(--verified)]">Verified</td>
+      <section className="mt-8">
+        <h2 className="text-[13px] font-bold uppercase tracking-[0.06em]">Recently Archived</h2>
+        <hr className="mt-1" />
+        {recentRecords.length > 0 ? (
+          <>
+            <table className="mt-2">
+              <thead>
+                <tr>
+                  <th className="w-[140px]">Publisher</th>
+                  <th>Record</th>
+                  <th className="w-[90px]">Published</th>
+                  <th className="w-[90px]">Archived</th>
+                  <th className="w-[90px]">Integrity</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
-          <div className="mt-2 text-[12px]">
-            <Link to="/browse" search={{ category: "" }}>
-              View all recently archived records &raquo;
-            </Link>
-          </div>
-        </section>
-      )}
+              </thead>
+              <tbody>
+                {recentRecords.map((r) => (
+                  <tr key={r.id}>
+                    <td>{r.publisher}</td>
+                    <td>
+                      <Link to="/record/$id" params={{ id: r.id }}>
+                        {r.title}
+                      </Link>
+                    </td>
+                    <td>{r.published}</td>
+                    <td>{r.archived}</td>
+                    <td className="text-[color:var(--verified)]">Verified</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            <div className="mt-2 text-[12px]">
+              <Link to="/browse" search={{ category: "" }}>
+                View all recently archived records &raquo;
+              </Link>
+            </div>
+          </>
+        ) : (
+          <p className="mt-2 text-[12px] text-[color:var(--muted-foreground)]">
+            No records have been archived yet.
+          </p>
+        )}
+      </section>
 
       <section className="mt-8">
         <h2 className="text-[13px] font-bold uppercase tracking-[0.06em]">Search the Archive</h2>

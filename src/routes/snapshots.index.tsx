@@ -1,11 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteShell } from "../components/site-shell";
-import { getSnapshot } from "../lib/data";
+import { getSnapshotList } from "../lib/data";
 
 export const Route = createFileRoute("/snapshots/")({
   loader: async () => {
-    const snapshot = await getSnapshot();
-    return { snapshot };
+    const snapshots = await getSnapshotList();
+    return { snapshots };
   },
   head: () => ({
     meta: [
@@ -22,7 +22,7 @@ export const Route = createFileRoute("/snapshots/")({
 });
 
 function SnapshotsIndex() {
-  const { snapshot } = Route.useLoaderData();
+  const { snapshots } = Route.useLoaderData();
 
   return (
     <SiteShell>
@@ -33,34 +33,42 @@ function SnapshotsIndex() {
         day. Snapshots are immutable and independently verifiable.
       </p>
 
-      <table className="mt-4">
-        <thead>
-          <tr>
-            <th className="w-[130px]">Date</th>
-            <th className="w-[110px]">Records</th>
-            <th className="w-[90px]">Sources</th>
-            <th>Root Hash (SHA-256)</th>
-            <th className="w-[80px]">Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr key={snapshot.isoDate}>
-            <td>
-              <Link to="/snapshots/$date" params={{ date: snapshot.isoDate }}>
-                {snapshot.isoDate}
-              </Link>
-            </td>
-            <td>{snapshot.articles.toLocaleString("en-US")}</td>
-            <td>{snapshot.sources}</td>
-            <td className="break-all">{snapshot.hash.slice(0, 24)}&hellip;</td>
-            <td>
-              <Link to="/snapshots/$date" params={{ date: snapshot.isoDate }}>
-                view
-              </Link>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      {snapshots.length === 0 ? (
+        <p className="mt-4 text-[12px] text-[color:var(--muted-foreground)]">
+          No snapshots are currently available.
+        </p>
+      ) : (
+        <table className="mt-4">
+          <thead>
+            <tr>
+              <th className="w-[130px]">Date</th>
+              <th className="w-[110px]">Records</th>
+              <th className="w-[90px]">Sources</th>
+              <th>Root Hash (SHA-256)</th>
+              <th className="w-[80px]">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {snapshots.map((s) => (
+              <tr key={s.isoDate}>
+                <td>
+                  <Link to="/snapshots/$date" params={{ date: s.isoDate }}>
+                    {s.isoDate}
+                  </Link>
+                </td>
+                <td>{s.articles.toLocaleString("en-US")}</td>
+                <td>{s.sources}</td>
+                <td className="break-all">{s.hash.slice(0, 24)}&hellip;</td>
+                <td>
+                  <Link to="/snapshots/$date" params={{ date: s.isoDate }}>
+                    view
+                  </Link>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      )}
     </SiteShell>
   );
 }

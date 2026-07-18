@@ -7,6 +7,9 @@ import {
   isRecord,
   buildRecords,
   buildSnapshot,
+  loadPreviousSnapshot,
+  deduplicateArticles,
+  computeSnapshotStatistics,
 } from "../generate-snapshot";
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
@@ -184,6 +187,258 @@ describe("parseFeedItems", () => {
   });
 });
 
+describe("deduplicateArticles", () => {
+  it("removes articles with duplicate links", () => {
+    const articles = [
+      {
+        title: "A1",
+        description: "D1",
+        link: "https://a.com/1",
+        published: "Mon, 15 Jul 2026 10:00:00 GMT",
+        source: "Src",
+        country: "US",
+        category: "News",
+      },
+      {
+        title: "A2",
+        description: "D2",
+        link: "https://a.com/1",
+        published: "Mon, 15 Jul 2026 11:00:00 GMT",
+        source: "Src",
+        country: "US",
+        category: "News",
+      },
+      {
+        title: "A3",
+        description: "D3",
+        link: "https://a.com/2",
+        published: "Mon, 15 Jul 2026 12:00:00 GMT",
+        source: "Src",
+        country: "US",
+        category: "News",
+      },
+    ];
+    const { deduped, removed } = deduplicateArticles(articles);
+    expect(deduped).toHaveLength(2);
+    expect(removed).toBe(1);
+    expect(deduped[0].title).toBe("A1");
+    expect(deduped[1].title).toBe("A3");
+  });
+
+  it("preserves first occurrence of duplicate", () => {
+    const articles = [
+      {
+        title: "First",
+        description: "D1",
+        link: "https://a.com/dup",
+        published: "Mon, 15 Jul 2026 10:00:00 GMT",
+        source: "Src",
+        country: "US",
+        category: "News",
+      },
+      {
+        title: "Second",
+        description: "D2",
+        link: "https://a.com/dup",
+        published: "Mon, 15 Jul 2026 11:00:00 GMT",
+        source: "Src",
+        country: "US",
+        category: "News",
+      },
+    ];
+    const { deduped } = deduplicateArticles(articles);
+    expect(deduped[0].title).toBe("First");
+  });
+
+  it("handles empty array", () => {
+    const { deduped, removed } = deduplicateArticles([]);
+    expect(deduped).toHaveLength(0);
+    expect(removed).toBe(0);
+  });
+
+  it("handles no duplicates", () => {
+    const articles = [
+      {
+        title: "A1",
+        description: "D1",
+        link: "https://a.com/1",
+        published: "Mon",
+        source: "S",
+        country: "U",
+        category: "N",
+      },
+      {
+        title: "A2",
+        description: "D2",
+        link: "https://a.com/2",
+        published: "Tue",
+        source: "S",
+        country: "U",
+        category: "N",
+      },
+    ];
+    const { deduped, removed } = deduplicateArticles(articles);
+    expect(deduped).toHaveLength(2);
+    expect(removed).toBe(0);
+  });
+
+  it("uses title as fallback key when link is empty", () => {
+    const articles = [
+      {
+        title: "Same Title",
+        description: "D1",
+        link: "",
+        published: "Mon",
+        source: "S",
+        country: "U",
+        category: "N",
+      },
+      {
+        title: "Same Title",
+        description: "D2",
+        link: "",
+        published: "Tue",
+        source: "S",
+        country: "U",
+        category: "N",
+      },
+    ];
+    const { deduped, removed } = deduplicateArticles(articles);
+    expect(deduped).toHaveLength(1);
+    expect(removed).toBe(1);
+  });
+});
+
+describe("computeSnapshotStatistics", () => {
+  it("counts new and carried-over records when previous snapshot exists", () => {
+    const prevRecords = [
+      {
+        sourceUrl: "https://a.com/new",
+        publisher: "Src A",
+        title: "A1",
+        id: "R1",
+        published: "",
+        archived: "",
+        status: "VERIFIED",
+        hash: "",
+        summary: "",
+        country: "US",
+        category: "News",
+      },
+    ];
+    const prevSnapshot = {
+      records: prevRecords,
+      date: "",
+      isoDate: "",
+      generated: "",
+      articles: 1,
+      sources: 1,
+      countries: 1,
+      status: "",
+      hash: "",
+    };
+    const currentArticles = [
+      {
+        title: "A1",
+        description: "D1",
+        link: "https://a.com/new",
+        published: "",
+        source: "Src A",
+        country: "US",
+        category: "News",
+      },
+      {
+        title: "A2",
+        description: "D2",
+        link: "https://a.com/new2",
+        published: "",
+        source: "Src A",
+        country: "US",
+        category: "News",
+      },
+    ];
+    const currentRecords = [
+      {
+        sourceUrl: "https://a.com/new",
+        publisher: "Src A",
+        title: "A1",
+        id: "R1",
+        published: "",
+        archived: "",
+        status: "VERIFIED",
+        hash: "",
+        summary: "",
+        country: "US",
+        category: "News",
+      },
+      {
+        sourceUrl: "https://a.com/new2",
+        publisher: "Src A",
+        title: "A2",
+        id: "R2",
+        published: "",
+        archived: "",
+        status: "VERIFIED",
+        hash: "",
+        summary: "",
+        country: "US",
+        category: "News",
+      },
+    ];
+    const stats = computeSnapshotStatistics(
+      currentArticles,
+      currentRecords,
+      0,
+      prevSnapshot,
+      1234,
+      10,
+      0,
+      10,
+    );
+    expect(stats.newRecords).toBe(1);
+    expect(stats.carriedOverRecords).toBe(1);
+    expect(stats.rawRecords).toBe(2);
+    expect(stats.uniqueRecords).toBe(2);
+    expect(stats.generationDurationMs).toBe(1234);
+    expect(stats.feedsSucceeded).toBe(10);
+    expect(stats.feedsFailed).toBe(0);
+    expect(stats.feedsTotal).toBe(10);
+  });
+
+  it("counts all records as new when no previous snapshot", () => {
+    const currentArticles = [
+      {
+        title: "A1",
+        description: "D1",
+        link: "https://a.com/1",
+        published: "",
+        source: "S",
+        country: "U",
+        category: "N",
+      },
+    ];
+    const currentRecords = [
+      {
+        sourceUrl: "https://a.com/1",
+        publisher: "S",
+        title: "A1",
+        id: "R1",
+        published: "",
+        archived: "",
+        status: "VERIFIED",
+        hash: "",
+        summary: "",
+        country: "U",
+        category: "N",
+      },
+    ];
+    const stats = computeSnapshotStatistics(currentArticles, currentRecords, 0, null, 500, 5, 0, 5);
+    expect(stats.newRecords).toBe(1);
+    expect(stats.carriedOverRecords).toBe(0);
+    expect(stats.removedRecords).toBe(0);
+  });
+});
+
 describe("buildRecords", () => {
   const articles = [
     {
@@ -322,5 +577,17 @@ describe("buildSnapshot", () => {
       isoDate: "2026-07-16",
       generated: "12:00:00 UTC",
     });
+  });
+});
+
+describe("loadPreviousSnapshot", () => {
+  it("returns a snapshot when data/latest.json exists", async () => {
+    const result = await loadPreviousSnapshot();
+    expect(result).not.toBeNull();
+    if (result) {
+      expect(result).toHaveProperty("isoDate");
+      expect(result).toHaveProperty("hash");
+      expect(result).toHaveProperty("records");
+    }
   });
 });
