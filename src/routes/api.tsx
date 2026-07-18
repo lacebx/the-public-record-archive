@@ -58,9 +58,9 @@ const EXAMPLE_RESPONSE = `{
     "snapshot": {
       "isoDate": "2026-07-16",
       "date": "July 16, 2026",
-      "articles": 942,
-      "sources": 47,
-      "countries": 12,
+      "articles": 687,
+      "sources": 29,
+      "countries": 6,
       "hash": "a3f9b21e8c4d5a6f7b2e9c1d0a8f4b6e3c7d2a1f5b9e8c4d6a3f1b7e2c9d5a8f"
     }
   }
@@ -206,7 +206,7 @@ function ApiPage() {
   "success": false,
   "error": {
     "code": "NOT_FOUND",
-    "message": "Snapshot 1999-01-01 not found"
+    "message": "Snapshot 2025-01-01 not found"
   }
 }`}
         </pre>

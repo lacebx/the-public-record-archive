@@ -39,10 +39,9 @@
                         },
                         "snapshotDate": {
                           "type": "string",
-                          "format": "date",
-                          "example": "2026-07-16"
+                          "format": "date"
                         },
-                        "recordsCount": { "type": "integer", "example": 942 }
+                        "recordsCount": { "type": "integer" }
                       }
                     }
                   }
@@ -337,8 +336,8 @@
         ],
         "properties": {
           "id": { "type": "string", "example": "REC-2026-07-16-000091" },
-          "publisher": { "type": "string", "example": "Reuters" },
-          "title": { "type": "string", "example": "OpenAI announces new governance framework" },
+          "publisher": { "type": "string", "example": "Example Publisher" },
+          "title": { "type": "string", "example": "Example Record Title" },
           "published": { "type": "string", "format": "date-time" },
           "archived": { "type": "string", "format": "date-time" },
           "status": { "type": "string", "enum": ["VERIFIED", "PENDING"] },

@@ -486,3 +486,102 @@ Consequences:
   expensive
 - Overall: 1 R2 ListObjects + N R2 GetObject calls per cache expiry cycle
   (where N = number of new dates since last expiry)
+
+---
+
+### ADR-013: North star — evidence infrastructure for history
+
+Date: 2026-07-17
+
+Decision:
+Adopt the north star: "The Public Internet Record is not a news site. It is
+evidence infrastructure for history." All features must answer "Does this help
+someone verify history?"
+
+Context:
+The project had accumulated features driven by "what would be cool" rather than
+"What does the archive need." The analytics dashboard ranked stories by size,
+the API showed fabricated example data, and snapshot data was bundled in git.
+These patterns undermine trust, which is the archive's only asset.
+
+Options considered:
+
+- Continue as-is (features are already built, no need to change)
+- Pivot to a news-like product (rankings, recommendations, editorial voice)
+- Establish a hard north star and audit every feature against it
+
+Chosen approach:
+Hard north star. Every feature must be defensible as evidence infrastructure.
+No editorial voice, no rankings, no fabricated data.
+
+Consequences:
+
+- Existing features that violate the north star must be fixed before new work
+- Feature development is paused until P0/P1/P2 remediation is complete
+- The north star becomes the lens for every architectural decision
+
+---
+
+### ADR-014: No AI, no semantic search, no LLM features
+
+Date: 2026-07-17
+
+Decision:
+The archive will not use AI, LLMs, semantic search, embeddings, automated
+summarization, or any opinionated content generation.
+
+Context:
+AI features (summarization, ranking, semantic search) are popular and attractive,
+but they introduce opacity, hallucination risk, and editorial bias. An archive
+that says "this story is related because we found overlapping keywords" is
+verifiable. An archive that says "this story is related because the AI thinks
+so" is not. The north star requires everything to be explainable.
+
+Options considered:
+
+- Open AI integration for semantic search and summarization
+- Embedding-based record similarity
+- No AI at all
+
+Chosen approach:
+No AI. Related records use deterministic Jaccard similarity. Timelines use graph
+clustering. Everything is explainable.
+
+Consequences:
+
+- Milestone 7 (AI-Assisted Exploration) is cancelled or must be redefined
+- Search remains keyword-based
+- Related records and timelines are less sophisticated but fully auditable
+
+---
+
+### ADR-015: No feature development until P0/P1/P2 cleanup done
+
+Date: 2026-07-17
+
+Decision:
+All new feature development is stopped until the P0/P1/P2 issues identified in
+the north-star audit are resolved.
+
+Context:
+The audit revealed integrity-threatening issues across the application.
+Fabricated data in API docs undermines trust. Editorial rankings on the
+analytics page turn the archive into a news site. Git-bundled snapshots make
+verification circular. Building more features on top of these issues compounds
+the problem.
+
+Options considered:
+
+- Fix issues as part of ongoing feature work (risks never getting to them)
+- Separate cleanup track alongside features (splits focus)
+- Full stop until cleanup is complete (forces prioritization)
+
+Chosen approach:
+Full stop. No new issues, no new routes, no new features. Only bug fixes and
+north-star compliance changes.
+
+Consequences:
+
+- Milestones 5-8 are on hold
+- The project's velocity appears to slow, but the foundation becomes solid
+- The cleanup roadmap is the de facto project plan until complete

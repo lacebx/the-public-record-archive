@@ -1,5 +1,35 @@
 # Known Issues
 
+## Audit Findings (P0 — integrity threatening)
+
+- **Fabricated example values in OpenAPI spec.** `/openapi.json` contains made-up example responses with 942 records, "Reuters" as a publisher (not actually ingested), and an OpenAI fictional article title. This is fabrication, not documentation. **Fix:** Replace with real examples or mark as illustrative.
+- **Fabricated example values in API docs.** `src/routes/api.tsx` shows a fictional snapshot: 1,592 records from 45 sources across 12 countries. Should show "real" example or be marked as illustrative.
+- **Fictional snapshot stats in health endpoint.** `src/routes/api.tsx` (health section) returns `{ snapshots: 142, records: 94252 }` — completely fabricated numbers.
+- **Analytics page ranks record importance.** `src/routes/analytics.tsx` shows "Largest Stories," "Most Active Publishers," "Newest Timelines" — editorial judgment that ranks records by importance. An archive does not rank. **Fix:** Remove these sections or re-frame as neutral facts.
+- **Snapshot data is bundled in git.** `src/lib/snapshot-data.ts` is auto-generated and committed. This prevents verifiability (the bundled data passes through git, not the original pipeline). **Fix:** Fetch from R2 at build time; git should only hold source code.
+- **Browse page "reverse chronological order" claim.** `src/routes/browse.tsx` says records are ordered "reverse chronological" but this is not guaranteed for historical snapshots (only true for the latest snapshot which represents a single point in time).
+- **Integrity certificate caveat missing.** `src/routes/record.$id.tsx` calls the hash display an "Integrity Certificate" without explaining what it actually proves (that the record hash was included in the snapshot bundle — not that the original source published this content on that date).
+- **API playground has low archival value.** `/api/playground` loads a heavy Scalar client-side bundle for what is essentially a REST test tool. Researchers would prefer the raw OpenAPI spec or curl examples.
+- **Diff UI implies feed-rotation is page deletion.** `/compare` shows "removed" records without explaining that feeds naturally rotate their content windows.
+
+## Audit Findings (P1 — archival reliability)
+
+- **R2 persistence has silent failure.** `src/lib/storage.ts` wraps R2 `save()` in try-catch that only logs errors. A snapshot could fail to persist without anyone noticing.
+- **Archive generation uses current timestamp.** `src/lib/archive.ts` embeds `new Date().toISOString()` as the archive creation time instead of the snapshot's timestamp.
+- **No multi-day history without R2.** If R2 is down and no snapshots have been cached locally, only the latest bundled snapshot is available.
+- **"New records" stat is misleading.** "New records" vs "carried over" uses the previous snapshot as baseline, but with only one bundled snapshot available, the comparison is always against itself (all records are "new").
+- **No individual record checksums.** Snapshot integrity is verified at the snapshot level only. Individual records cannot be independently verified.
+- **Search is not scalable.** `src/routes/search.tsx` loads all records client-side and filters in memory.
+- **No pagination.** Record lists, search results, and diff output have no pagination.
+
+## Audit Findings (P2 — polish)
+
+- **Timeline auto-naming quality.** Auto-generated titles from frequent words are often incoherent.
+- **OpenAPI diff endpoint missing.** `/api/v1/diff` exists but is not documented in OpenAPI spec.
+- **No conditional HTTP requests.** Feeds are unconditionally fetched every run.
+- **Timeline computation O(n²).** `buildTimelines()` compares all pairs; fine for 700 records, won't scale to 10,000+.
+- **No language detection.** All records treated as English regardless of actual language.
+
 ## Fixed (this session)
 
 - **Milestone 4 implemented** — Related Record Engine, Story Timelines, Timeline Intelligence all completed (Issue #17).
@@ -32,7 +62,7 @@
 - **Relationship scoring does not use named entity recognition.** Overlapping keywords may surface false positives when unrelated stories share common vocabulary (e.g., "court rules" could match both a legal ruling and a sports court decision). Named entity extraction would improve precision.
 - **Timeline titles are auto-generated from most frequent words.** They may not always produce meaningful or human-readable titles. A human-curated naming system or NLP-based headline generation would improve quality.
 - **Snapshot size is determined by feed windows.** All 29 feeds return a fixed-size window of recent items. The expected total of ~700+ records per day is the sum of these fixed windows. The pipeline does not control this — it faithfully captures whatever each feed provides.
-- **Feed rollout for failures only.** When a feed fails (HTTP error), the pipeline rolls over the previous day's records for that source. But if a feed returns *fewer* items than the previous day (e.g., 43 → 40), the pipeline does not detect this or compensate. The lower count is accepted as-is.
+- **Feed rollout for failures only.** When a feed fails (HTTP error), the pipeline rolls over the previous day's records for that source. But if a feed returns _fewer_ items than the previous day (e.g., 43 → 40), the pipeline does not detect this or compensate. The lower count is accepted as-is.
 - **Snapshot data contains raw HTML.** Record `summary` fields may contain raw HTML from RSS feeds. Now stripped at render time via `stripHtml()`.
 - **No language detection.** All records are treated as English even when they are in German, French, or Arabic.
 - **Client-side compare.** The `/compare` page fetches from the diff API client-side; no SSR for comparison results.

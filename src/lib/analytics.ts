@@ -1,7 +1,7 @@
 import type { Record } from "./data";
 import { fetchSnapshotList } from "./data";
 import bundledSnapshot from "./snapshot-data";
-import { getTimelineStats, getTimelines, type Timeline } from "./timelines";
+import { getTimelines, getLongestRunningTimelines, type Timeline } from "./timelines";
 
 export type PublisherBreakdown = {
   name: string;
@@ -50,10 +50,7 @@ export type AnalyticsData = {
   timelineStats?: {
     totalTimelines: number;
     totalRecordsInTimelines: number;
-    largestStories: Timeline[];
-    mostActivePublishers: { name: string; timelineCount: number; totalRecords: number }[];
     longestRunningTimelines: Timeline[];
-    newestTimelines: Timeline[];
   };
 };
 
@@ -123,8 +120,6 @@ export async function computeAnalytics(): Promise<AnalyticsData> {
     };
   }
 
-  const timelineStatsData = getTimelineStats();
-
   return {
     timeSeries,
     publishers,
@@ -139,10 +134,7 @@ export async function computeAnalytics(): Promise<AnalyticsData> {
     timelineStats: {
       totalTimelines: getTimelines().totalTimelines,
       totalRecordsInTimelines: getTimelines().totalRecordsInTimelines,
-      largestStories: timelineStatsData.largestStories,
-      mostActivePublishers: timelineStatsData.mostActivePublishers,
-      longestRunningTimelines: timelineStatsData.longestRunningTimelines,
-      newestTimelines: timelineStatsData.newestTimelines,
+      longestRunningTimelines: getLongestRunningTimelines(5),
     },
   };
 }

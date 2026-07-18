@@ -248,7 +248,7 @@ function Analytics() {
               Timeline Intelligence
             </h2>
             <hr className="mt-1" />
-            <div className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-4">
+            <div className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-2">
               <div className="border p-3 text-center">
                 <div className="text-[24px] font-bold">
                   {analytics.timelineStats.totalTimelines}
@@ -265,103 +265,12 @@ function Analytics() {
                   Records in Timelines
                 </div>
               </div>
-              <div className="border p-3 text-center">
-                <div className="text-[24px] font-bold">
-                  {analytics.timelineStats.mostActivePublishers.length}
-                </div>
-                <div className="mt-1 text-[11px] text-[color:var(--muted-foreground)]">
-                  Active in Timelines
-                </div>
-              </div>
-              <div className="border p-3 text-center">
-                <div className="text-[24px] font-bold">
-                  {analytics.timelineStats.largestStories[0]?.recordCount ?? 0}
-                </div>
-                <div className="mt-1 text-[11px] text-[color:var(--muted-foreground)]">
-                  Largest Timeline
-                </div>
-              </div>
             </div>
           </section>
 
-          {/* Largest evolving stories */}
+          {/* Timeline duration */}
           <section className="mt-8">
-            <h2 className="text-[13px] font-bold uppercase tracking-[0.06em]">
-              Largest Evolving Stories
-            </h2>
-            <hr className="mt-1" />
-            {analytics.timelineStats.largestStories.length > 0 ? (
-              <table className="mt-2">
-                <thead>
-                  <tr>
-                    <th>Timeline</th>
-                    <th className="w-[70px] text-right">Records</th>
-                    <th className="w-[130px]">Publishers</th>
-                    <th className="w-[100px]">Latest</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {analytics.timelineStats.largestStories.map((t) => (
-                    <tr key={t.id}>
-                      <td>
-                        <a href={`/timelines/${t.id}`} className="underline">
-                          {t.title}
-                        </a>
-                      </td>
-                      <td className="text-right tabular-nums">{t.recordCount}</td>
-                      <td className="text-[11px]">
-                        {t.publishers.slice(0, 2).join(", ")}
-                        {t.publishers.length > 2 ? "..." : ""}
-                      </td>
-                      <td className="text-[11px]">{t.latestPublished.slice(0, 10)}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            ) : (
-              <p className="mt-2 text-[12px] text-[color:var(--muted-foreground)]">
-                No timelines detected yet.
-              </p>
-            )}
-          </section>
-
-          {/* Most active publishers */}
-          <section className="mt-8">
-            <h2 className="text-[13px] font-bold uppercase tracking-[0.06em]">
-              Most Active Publishers
-            </h2>
-            <hr className="mt-1" />
-            {analytics.timelineStats.mostActivePublishers.length > 0 ? (
-              <table className="mt-2">
-                <thead>
-                  <tr>
-                    <th>Publisher</th>
-                    <th className="w-[70px] text-right">Timelines</th>
-                    <th className="w-[80px] text-right">Total Records</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {analytics.timelineStats.mostActivePublishers.map((p) => (
-                    <tr key={p.name}>
-                      <td>{p.name}</td>
-                      <td className="text-right tabular-nums">{p.timelineCount}</td>
-                      <td className="text-right tabular-nums">{p.totalRecords}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            ) : (
-              <p className="mt-2 text-[12px] text-[color:var(--muted-foreground)]">
-                No publisher data available.
-              </p>
-            )}
-          </section>
-
-          {/* Longest-running */}
-          <section className="mt-8">
-            <h2 className="text-[13px] font-bold uppercase tracking-[0.06em]">
-              Longest-Running Timelines
-            </h2>
+            <h2 className="text-[13px] font-bold uppercase tracking-[0.06em]">Timeline Span</h2>
             <hr className="mt-1" />
             {analytics.timelineStats.longestRunningTimelines.length > 0 ? (
               <table className="mt-2">
@@ -395,44 +304,11 @@ function Analytics() {
             )}
           </section>
 
-          {/* Newest timelines */}
-          <section className="mt-8">
-            <h2 className="text-[13px] font-bold uppercase tracking-[0.06em]">Newest Timelines</h2>
-            <hr className="mt-1" />
-            {analytics.timelineStats.newestTimelines.length > 0 ? (
-              <table className="mt-2">
-                <thead>
-                  <tr>
-                    <th>Timeline</th>
-                    <th className="w-[70px] text-right">Records</th>
-                    <th className="w-[100px]">Latest</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {analytics.timelineStats.newestTimelines.map((t) => (
-                    <tr key={t.id}>
-                      <td>
-                        <a href={`/timelines/${t.id}`} className="underline">
-                          {t.title}
-                        </a>
-                      </td>
-                      <td className="text-right tabular-nums">{t.recordCount}</td>
-                      <td className="text-[11px]">{t.latestPublished.slice(0, 10)}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            ) : (
-              <p className="mt-2 text-[12px] text-[color:var(--muted-foreground)]">
-                No timelines detected yet.
-              </p>
-            )}
-            <div className="mt-3 text-[11px]">
-              <a href="/timelines" className="underline">
-                View all timelines &raquo;
-              </a>
-            </div>
-          </section>
+          <div className="mt-3 text-[11px]">
+            <a href="/timelines" className="underline">
+              View all timelines &raquo;
+            </a>
+          </div>
         </>
       ) : null}
     </SiteShell>

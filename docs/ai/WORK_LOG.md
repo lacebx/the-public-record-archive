@@ -604,6 +604,7 @@ and prepare the project for a true public alpha.
 ---
 
 ### Session: 2026-07-17 — Expansion, deduplication, logging, snapshot statistics
+
 **Goal:** Expand to ~700+ records/day via 18 new feeds, implement URL deduplication, add per-feed diagnostic logging, persist generation statistics, and expose growth on the homepage.
 
 **Milestone:** Milestone 3: Historical Search & Analysis
@@ -613,6 +614,7 @@ and prepare the project for a true public alpha.
 **Changes made:**
 
 **New feeds (18 sources added, 11 → 29 total):**
+
 - **News:** France24, Euronews, CBC News, ABC News, Los Angeles Times
 - **Technology:** The Verge, TechCrunch, Hacker News, Cloudflare Blog, Chromium Blog
 - **Business:** CNBC, Bloomberg
@@ -621,30 +623,36 @@ and prepare the project for a true public alpha.
 - **Government:** UK Government
 
 **Pipeline improvements (`scripts/generate-snapshot.ts`):**
+
 - Rewrote `main()` logging with per-feed breakdown: source name, item count, newest item age, fetch/parse duration, HTTP status
 - Added summary totals: raw fetched, duplicates removed, after dedup, sources, countries, new records, carried over, removed, SHA-256 hash
 - Implemented `deduplicateArticles()` — URL-based dedup preserving first occurrence, with log output
 - Added `computeSnapshotStatistics()` — computes new/carried-over/removed records relative to previous snapshot
 
 **Type system (`src/lib/data.ts`):**
+
 - Added `SnapshotStatistics` type with full generation metadata
 - Added optional `statistics` field to `Snapshot` type (backward compatible)
 - Extended `SnapshotSummary` with optional `statistics` subset
 - Updated `fetchSnapshotList()` to propagate statistics in summaries
 
 **Homepage (`src/routes/index.tsx`):**
+
 - Displays new records, carried-over, and duplicates-removed counts when statistics are available
 
 **Tests (`scripts/__tests__/generate-snapshot.test.ts`):**
+
 - 5 dedup tests: duplicate link removal, first occurrence preserved, empty array, no duplicates, title fallback
 - 2 statistics tests: new/carried-over with previous snapshot, all new without previous
 
 **Verification:**
+
 - `npm test` — 134/134 passed (7 new + 127 existing)
 - `npm run lint` — 0 errors
 - `npm run typecheck` — 0 errors
 
 **Files modified:**
+
 - `scripts/generate-snapshot.ts` — new feeds, logging, dedup, statistics
 - `src/lib/data.ts` — SnapshotStatistics type, extended Snapshot/SnapshotSummary
 - `src/routes/index.tsx` — statistics display
@@ -654,9 +662,11 @@ and prepare the project for a true public alpha.
 ---
 
 ### Session: 2026-07-17 — Milestone 2 closure, Milestone 3 completion, analytics dashboard
+
 **Goal:** Close remaining open issues in Milestones 2 and 3, audit cross-milestone feature coverage, implement the snapshot analytics dashboard (Issue #16).
 
 **Milestone alignment:**
+
 - **Milestone 2 (100% now):** Closed Issue #11 (Server function-based REST endpoints) — implemented since PR #39, just needed GitHub issue closure.
 - **Milestone 3 (100% now):** Implemented Issue #16 (Snapshot analytics dashboard) — new `/analytics` route, analytics computation module, CSS-based charts.
 - **Milestone 5 (partial):** Noted 18 new feeds as progress on Issue #20 (Expand sources), kept open since AC not fully met.
@@ -666,9 +676,11 @@ and prepare the project for a true public alpha.
 **Changes made:**
 
 **Issue #11 closed:**
+
 - REST API v1 endpoints were already implemented in PR #39 (7 endpoints at `/api/v1/*`). Issue marked as completed.
 
 **Analytics dashboard (`src/routes/analytics.tsx`):**
+
 - New `/analytics` page with overview cards (total snapshots, latest records, unique sources, days of data)
 - Source health section (feeds succeeded/failed/total, success rate)
 - Time-series table: records, sources, new records, carried over per snapshot date
@@ -679,28 +691,33 @@ and prepare the project for a true public alpha.
 - Empty states for all sections
 
 **Analytics engine (`src/lib/analytics.ts`):**
+
 - `computePublishers()` — publisher frequency from records
 - `computeCategories()` — category frequency from records
 - `computeCountries()` — country frequency from records
 - `computeAnalytics()` — aggregates time-series from `fetchSnapshotList()`, breakdowns from bundled snapshot, source health from latest statistics
 
 **Navigation & fixes:**
+
 - Added `/analytics` link to site-shell NAV array
 - Fixed `"est. 1998"` → `"founded 2026"` in site-shell header
 - Fixed `"Established 1998 · Nonprofit Archival Trust"` → `"Founded 2026 · Independent Archival Project"` in footer
 - Added `feedsFailed`, `feedsTotal` to `SnapshotSummary.statistics` type
 
 **Verification:**
+
 - `npm test` — 134/134 passed
 - `npm run lint` — 0 errors
 - `npm run typecheck` — 0 errors
 - `npm run build` — succeeds
 
 **Files created:**
+
 - `src/lib/analytics.ts` — analytics computation module
 - `src/routes/analytics.tsx` — analytics dashboard page
 
 **Files modified:**
+
 - `src/components/site-shell.tsx` — nav link, header/footer text
 - `src/lib/data.ts` — added feedsFailed/feedsTotal to SnapshotSummary.statistics
 - `docs/ai/CONTEXT.md`, `HANDOFF.md`, `KNOWN_ISSUES.md`, `WORK_LOG.md` — updated
@@ -708,6 +725,7 @@ and prepare the project for a true public alpha.
 ---
 
 ### Session: 2026-07-17 — Milestone 4: Historical Intelligence (Issue #17)
+
 **Goal:** Implement Related Record Engine, Story Timelines, Timeline Intelligence analytics.
 
 **Milestone:** Milestone 4: Historical Intelligence (completed)
@@ -717,45 +735,54 @@ and prepare the project for a true public alpha.
 **Changes made:**
 
 **Related Record Engine (`src/lib/related.ts`):**
+
 - Deterministic scoring (no AI/LLM): same publisher (+30), time proximity (+5-15), title similarity (Jaccard, 0-25), keyword overlap (0-20), same category (+10), same country (+5)
 - `computeRelationship()` — pairwise scoring, explainable reasons, type determination
 - `findRelated()` — sorted results with configurable threshold/limit
 - `precomputeFeatures()` — memoized word extraction for O(n²) performance
 
 **Story Timeline Engine (`src/lib/timelines.ts`):**
+
 - `buildTimelines()` — graph-based clustering (connected components, threshold ≥ 40)
 - `computeTimelineFromCluster()` — auto-title from frequent words, chronological sort
 - Cached accessors: `getTimelines()`, `getTimeline()`, `getLargestTimelines()`, etc.
 - `getTimelineStats()` — largest stories, active publishers, longest-running, newest
 
 **Related Records UI (`src/routes/record.$id.tsx`):**
+
 - "Related Records" section with table and expandable reason details
 - Disambiguation label distinguishing archived facts from inferred relationships
 - Empty state for no related records
 
 **Timeline Routes (`/timelines`, `/timelines/$id`):**
+
 - Browse page with sort: newest / largest / oldest
 - Detail page with chronological sequence, metadata, relationship types, disambiguation note
 
 **Analytics Extension:**
+
 - Timeline Intelligence section on `/analytics`: overview cards, largest stories, active publishers, longest-running, newest timelines
 
 **Tests (44 new):**
+
 - `scripts/__tests__/related.test.ts` — 28 tests: word extraction, similarity, scoring, type determination, findRelated edge cases
 - `scripts/__tests__/timelines.test.ts` — 16 tests: title generation, cluster computation, buildTimelines, false-positive prevention, accessors
 
 **Verification:**
+
 - `npm test` — 187/187 passed (9 test files)
 - `npm run lint` — 0 errors
 - `npm run typecheck` — 0 errors
 - `npm run build` — succeeds
 
 **Files created:**
+
 - `src/lib/related.ts`, `src/lib/timelines.ts`
 - `src/routes/timelines.index.tsx`, `src/routes/timelines.$id.tsx`
 - `scripts/__tests__/related.test.ts`, `scripts/__tests__/timelines.test.ts`
 
 **Files modified:**
+
 - `src/routes/record.$id.tsx` — Related Records section
 - `src/components/site-shell.tsx` — Added /timelines nav link
 - `src/lib/analytics.ts`, `src/routes/analytics.tsx` — Timeline intelligence
@@ -763,3 +790,49 @@ and prepare the project for a true public alpha.
 - `docs/ai/*` — Updated
 
 **PR:** _(to be opened)_
+
+---
+
+### Session: 2026-07-17 — North-star audit and architectural roadmap
+
+**Goal:** Establish the project's north star ("evidence infrastructure for history"), audit every route, lib file, and spec against it, and produce a ranked remediation roadmap for Version 1.0.
+
+**Milestone:** N/A (architectural foundation)
+
+**Branch:** `feature/snapshot-diff`
+
+**North star established:**
+
+- Sentence: "The Public Internet Record is not a news site. It is evidence infrastructure for history."
+- 10 guiding principles: preserve faithfully, never invent, never editorialize, never predict, never rank importance, make verification easier than belief, every page must increase trust, simplicity beats feature count, every feature must answer "does this help verify history?", remove it if not.
+- All new feature development is **STOPPED**. Every decision must answer: "Does this help someone verify history?"
+
+**Audit performed:**
+
+- **15 routes audited** — P0 fixes needed in: `/api` (fabricated example values), `/analytics` (editorial rankings), OpenAPI spec (fabricated data), bundled snapshot data (committed to git), `/browse` (inaccurate claim), record pages (integrity caveats), `/compare` (feed rotation confusion), API playground (low archival value for researchers)
+- **14 lib files audited** — P0: snapshot-data.ts is auto-generated and committed. P1: R2 persistence reliability, archive.ts uses current timestamp, scalable search, individual record checksums.
+- **OpenAPI spec audited** — Fabricated example values (942 records, Reuters publisher, OpenAI title) — P0.
+- **Styles audited** — No changes needed (IBM Plex Mono, archival aesthetic is correct).
+
+**Ranked roadmap (P0/P1/P2) produced:**
+
+- P0 (integrity-threatening): Remove fabricated example values from API docs + OpenAPI, remove analytic rankings, stop bundling snapshot data in git, fix inaccurate browse page claims, add caveats to integrity claims.
+- P1 (archival reliability): R2 persistence reliability, archive generation timestamps, multi-day history without R2, "new records" misleading stat, individual record checksums, scalable search, pagination.
+- P2 (polish): Timeline auto-naming quality, OpenAPI diff endpoint docs, conditional HTTP feed requests, timeline computation performance.
+
+**Key files created/updated:**
+
+- `docs/ai/NORTH_STAR.md` — Full north star document with principles, audit findings, remediation roadmap.
+- `docs/ai/DECISIONS.md` — Added ADR-013 (north star), ADR-014 (no AI), ADR-015 (no feature development until cleanup done).
+
+**Verification:**
+
+- (No code changes — this was an audit/documentation session)
+
+**Branch:** `feature/snapshot-diff`
+
+**Remaining work:**
+
+- Begin P0 remediation: fix fabricated data in API docs, OpenAPI spec, analytics rankings, git-bundled snapshots, inaccurate browse page claims.
+- Then P1, then P2.
+- No new features until audit findings are addressed.
