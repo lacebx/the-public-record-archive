@@ -1,8 +1,8 @@
 # Context
 
-**Current milestone:** Milestone 3: Historical Search & Analysis
+**Current milestone:** Milestone 4: Historical Intelligence (100% complete)
 **Current branch:** feature/snapshot-diff (active — not yet merged)
-**Last completed work:** Repository health check, public alpha polish, honest product messaging, Playwright e2e tests
+**Last completed work:** Related Record Engine, Story Timelines, Timeline Intelligence analytics (Issue #17)
 
 ## Data Flow
 
@@ -39,10 +39,19 @@
 | `/snapshots/:date`         | SSR    | Single snapshot detail + download            |
 | `/record/:id`              | SSR    | Record detail with summary, hash, metadata   |
 | `/compare`                 | CSR    | Compare two snapshots via diff API           |
+| `/analytics`               | SSR    | Archive analytics dashboard (Issue #16)      |
 | `/api`                     | SSR    | Developer portal with endpoint docs          |
 | `/api/playground`          | SSR    | Interactive Scalar API playground            |
 | `/documentation`           | SSR    | Project documentation                        |
 | `/about`                   | SSR    | About page with project info                 |
+
+## Analytics (`src/lib/analytics.ts`)
+
+- `computeAnalytics()` — Server-side computation from `fetchSnapshotList()` + bundled snapshot
+- `computePublishers()` / `computeCategories()` / `computeCountries()` — Breakdowns with percentages
+- Time-series: records, sources, new records, carried over per snapshot date
+- Source health: feeds succeeded/failed/total from latest snapshot statistics
+- Charts: CSS-based horizontal bars (no JS chart dependency), tables for time-series
 
 ## Diff Engine (`src/lib/diff.ts`)
 
@@ -82,7 +91,7 @@
 - `npm run build` — Production build
 - `npm run deploy` — Deploy to Cloudflare Workers
 - `npm run snapshot` — Generate snapshot from RSS feeds
-- `npm test` — Run all tests (vitest run) — 127 tests
+- `npm test` — Run all tests (vitest run) — 187 tests
 - `npm run test:e2e` — Run Playwright e2e smoke tests
 - `npm run typecheck` — TypeScript type check
 - `npm run lint` — Lint + format source files

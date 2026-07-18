@@ -14,9 +14,12 @@ import { Route as DocumentationRouteImport } from './routes/documentation'
 import { Route as CompareRouteImport } from './routes/compare'
 import { Route as BrowseRouteImport } from './routes/browse'
 import { Route as ApiRouteImport } from './routes/api'
+import { Route as AnalyticsRouteImport } from './routes/analytics'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as TimelinesIndexRouteImport } from './routes/timelines.index'
 import { Route as SnapshotsIndexRouteImport } from './routes/snapshots.index'
+import { Route as TimelinesIdRouteImport } from './routes/timelines.$id'
 import { Route as SnapshotsDateRouteImport } from './routes/snapshots.$date'
 import { Route as RecordIdRouteImport } from './routes/record.$id'
 import { Route as ApiPlaygroundRouteImport } from './routes/api/playground'
@@ -54,6 +57,11 @@ const ApiRoute = ApiRouteImport.update({
   path: '/api',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AnalyticsRoute = AnalyticsRouteImport.update({
+  id: '/analytics',
+  path: '/analytics',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
@@ -64,9 +72,19 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TimelinesIndexRoute = TimelinesIndexRouteImport.update({
+  id: '/timelines/',
+  path: '/timelines/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SnapshotsIndexRoute = SnapshotsIndexRouteImport.update({
   id: '/snapshots/',
   path: '/snapshots/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TimelinesIdRoute = TimelinesIdRouteImport.update({
+  id: '/timelines/$id',
+  path: '/timelines/$id',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SnapshotsDateRoute = SnapshotsDateRouteImport.update({
@@ -128,6 +146,7 @@ const ApiV1ArchiveDateRoute = ApiV1ArchiveDateRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/analytics': typeof AnalyticsRoute
   '/api': typeof ApiRouteWithChildren
   '/browse': typeof BrowseRoute
   '/compare': typeof CompareRoute
@@ -136,7 +155,9 @@ export interface FileRoutesByFullPath {
   '/api/playground': typeof ApiPlaygroundRoute
   '/record/$id': typeof RecordIdRoute
   '/snapshots/$date': typeof SnapshotsDateRoute
+  '/timelines/$id': typeof TimelinesIdRoute
   '/snapshots/': typeof SnapshotsIndexRoute
+  '/timelines/': typeof TimelinesIndexRoute
   '/api/v1/diff': typeof ApiV1DiffRoute
   '/api/v1/health': typeof ApiV1HealthRoute
   '/api/v1/search': typeof ApiV1SearchRoute
@@ -149,6 +170,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/analytics': typeof AnalyticsRoute
   '/api': typeof ApiRouteWithChildren
   '/browse': typeof BrowseRoute
   '/compare': typeof CompareRoute
@@ -157,7 +179,9 @@ export interface FileRoutesByTo {
   '/api/playground': typeof ApiPlaygroundRoute
   '/record/$id': typeof RecordIdRoute
   '/snapshots/$date': typeof SnapshotsDateRoute
+  '/timelines/$id': typeof TimelinesIdRoute
   '/snapshots': typeof SnapshotsIndexRoute
+  '/timelines': typeof TimelinesIndexRoute
   '/api/v1/diff': typeof ApiV1DiffRoute
   '/api/v1/health': typeof ApiV1HealthRoute
   '/api/v1/search': typeof ApiV1SearchRoute
@@ -171,6 +195,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/analytics': typeof AnalyticsRoute
   '/api': typeof ApiRouteWithChildren
   '/browse': typeof BrowseRoute
   '/compare': typeof CompareRoute
@@ -179,7 +204,9 @@ export interface FileRoutesById {
   '/api/playground': typeof ApiPlaygroundRoute
   '/record/$id': typeof RecordIdRoute
   '/snapshots/$date': typeof SnapshotsDateRoute
+  '/timelines/$id': typeof TimelinesIdRoute
   '/snapshots/': typeof SnapshotsIndexRoute
+  '/timelines/': typeof TimelinesIndexRoute
   '/api/v1/diff': typeof ApiV1DiffRoute
   '/api/v1/health': typeof ApiV1HealthRoute
   '/api/v1/search': typeof ApiV1SearchRoute
@@ -194,6 +221,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/analytics'
     | '/api'
     | '/browse'
     | '/compare'
@@ -202,7 +230,9 @@ export interface FileRouteTypes {
     | '/api/playground'
     | '/record/$id'
     | '/snapshots/$date'
+    | '/timelines/$id'
     | '/snapshots/'
+    | '/timelines/'
     | '/api/v1/diff'
     | '/api/v1/health'
     | '/api/v1/search'
@@ -215,6 +245,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
+    | '/analytics'
     | '/api'
     | '/browse'
     | '/compare'
@@ -223,7 +254,9 @@ export interface FileRouteTypes {
     | '/api/playground'
     | '/record/$id'
     | '/snapshots/$date'
+    | '/timelines/$id'
     | '/snapshots'
+    | '/timelines'
     | '/api/v1/diff'
     | '/api/v1/health'
     | '/api/v1/search'
@@ -236,6 +269,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about'
+    | '/analytics'
     | '/api'
     | '/browse'
     | '/compare'
@@ -244,7 +278,9 @@ export interface FileRouteTypes {
     | '/api/playground'
     | '/record/$id'
     | '/snapshots/$date'
+    | '/timelines/$id'
     | '/snapshots/'
+    | '/timelines/'
     | '/api/v1/diff'
     | '/api/v1/health'
     | '/api/v1/search'
@@ -258,6 +294,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  AnalyticsRoute: typeof AnalyticsRoute
   ApiRoute: typeof ApiRouteWithChildren
   BrowseRoute: typeof BrowseRoute
   CompareRoute: typeof CompareRoute
@@ -265,7 +302,9 @@ export interface RootRouteChildren {
   SearchRoute: typeof SearchRoute
   RecordIdRoute: typeof RecordIdRoute
   SnapshotsDateRoute: typeof SnapshotsDateRoute
+  TimelinesIdRoute: typeof TimelinesIdRoute
   SnapshotsIndexRoute: typeof SnapshotsIndexRoute
+  TimelinesIndexRoute: typeof TimelinesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -305,6 +344,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/analytics': {
+      id: '/analytics'
+      path: '/analytics'
+      fullPath: '/analytics'
+      preLoaderRoute: typeof AnalyticsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/about': {
       id: '/about'
       path: '/about'
@@ -319,11 +365,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/timelines/': {
+      id: '/timelines/'
+      path: '/timelines'
+      fullPath: '/timelines/'
+      preLoaderRoute: typeof TimelinesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/snapshots/': {
       id: '/snapshots/'
       path: '/snapshots'
       fullPath: '/snapshots/'
       preLoaderRoute: typeof SnapshotsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/timelines/$id': {
+      id: '/timelines/$id'
+      path: '/timelines/$id'
+      fullPath: '/timelines/$id'
+      preLoaderRoute: typeof TimelinesIdRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/snapshots/$date': {
@@ -445,6 +505,7 @@ const ApiRouteWithChildren = ApiRoute._addFileChildren(ApiRouteChildren)
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  AnalyticsRoute: AnalyticsRoute,
   ApiRoute: ApiRouteWithChildren,
   BrowseRoute: BrowseRoute,
   CompareRoute: CompareRoute,
@@ -452,7 +513,9 @@ const rootRouteChildren: RootRouteChildren = {
   SearchRoute: SearchRoute,
   RecordIdRoute: RecordIdRoute,
   SnapshotsDateRoute: SnapshotsDateRoute,
+  TimelinesIdRoute: TimelinesIdRoute,
   SnapshotsIndexRoute: SnapshotsIndexRoute,
+  TimelinesIndexRoute: TimelinesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

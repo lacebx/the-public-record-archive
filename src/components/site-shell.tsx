@@ -7,6 +7,8 @@ const NAV = [
   { to: "/search", label: "Search" },
   { to: "/snapshots", label: "Snapshots" },
   { to: "/compare", label: "Compare" },
+  { to: "/timelines", label: "Timelines" },
+  { to: "/analytics", label: "Analytics" },
   { to: "/api", label: "API" },
   { to: "/documentation", label: "Documentation" },
   { to: "/about", label: "About" },
@@ -17,7 +19,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
     <div className="mx-auto max-w-[900px] px-6 py-6">
       <header>
         <div className="text-[11px] uppercase tracking-widest text-[color:var(--muted-foreground)]">
-          public.record / est. 1998
+          public.record / founded 2026
         </div>
         <div className="mt-1 flex flex-wrap items-baseline justify-between gap-2">
           <Link to="/" className="text-black no-underline visited:text-black hover:underline">
@@ -51,7 +53,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
         <hr />
         <div className="flex flex-wrap justify-between gap-2 py-3 text-[11px] text-[color:var(--muted-foreground)]">
           <div>
-            Public Internet Record &middot; Established 1998 &middot; Nonprofit Archival Trust
+            Public Internet Record &middot; Founded 2026 &middot; Independent Archival Project
           </div>
           <div>
             <Link to="/documentation">Documentation</Link>
