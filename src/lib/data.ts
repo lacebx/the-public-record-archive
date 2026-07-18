@@ -16,6 +16,19 @@ export type Record = {
   category: string;
 };
 
+export type SnapshotStatistics = {
+  rawRecords: number;
+  uniqueRecords: number;
+  duplicatesRemoved: number;
+  feedsSucceeded: number;
+  feedsFailed: number;
+  feedsTotal: number;
+  newRecords: number;
+  carriedOverRecords: number;
+  removedRecords: number;
+  generationDurationMs: number;
+};
+
 export type Snapshot = {
   date: string;
   isoDate: string;
@@ -26,6 +39,7 @@ export type Snapshot = {
   status: string;
   hash: string;
   records: Record[];
+  statistics?: SnapshotStatistics;
 };
 
 export type SnapshotSummary = {
@@ -35,6 +49,15 @@ export type SnapshotSummary = {
   articles: number;
   sources: number;
   hash: string;
+  statistics?: {
+    newRecords: number;
+    carriedOverRecords: number;
+    duplicatesRemoved: number;
+    feedsSucceeded: number;
+    feedsFailed: number;
+    feedsTotal: number;
+    generationDurationMs: number;
+  };
 };
 
 const snapshotCache = new LRUCache<string, Snapshot>({
@@ -65,14 +88,26 @@ export async function fetchSnapshotList(): Promise<SnapshotSummary[]> {
         for (const isoDate of dates) {
           const s = await getSnapshotByDate(isoDate);
           if (s) {
-            summaries.push({
+            const entry: SnapshotSummary = {
               isoDate: s.isoDate,
               date: s.date,
               generated: s.generated,
               articles: s.articles,
               sources: s.sources,
               hash: s.hash,
-            });
+            };
+            if (s.statistics) {
+              entry.statistics = {
+                newRecords: s.statistics.newRecords,
+                carriedOverRecords: s.statistics.carriedOverRecords,
+                duplicatesRemoved: s.statistics.duplicatesRemoved,
+                feedsSucceeded: s.statistics.feedsSucceeded,
+                feedsFailed: s.statistics.feedsFailed,
+                feedsTotal: s.statistics.feedsTotal,
+                generationDurationMs: s.statistics.generationDurationMs,
+              };
+            }
+            summaries.push(entry);
           }
         }
         listCache.set("all", summaries);
@@ -83,16 +118,26 @@ export async function fetchSnapshotList(): Promise<SnapshotSummary[]> {
     // R2 not available, fall through
   }
 
-  const fallback: SnapshotSummary[] = [
-    {
-      isoDate: bundledSnapshot.isoDate,
-      date: bundledSnapshot.date,
-      generated: bundledSnapshot.generated,
-      articles: bundledSnapshot.articles,
-      sources: bundledSnapshot.sources,
-      hash: bundledSnapshot.hash,
-    },
-  ];
+  const fallbackEntry: SnapshotSummary = {
+    isoDate: bundledSnapshot.isoDate,
+    date: bundledSnapshot.date,
+    generated: bundledSnapshot.generated,
+    articles: bundledSnapshot.articles,
+    sources: bundledSnapshot.sources,
+    hash: bundledSnapshot.hash,
+  };
+  if (bundledSnapshot.statistics) {
+    fallbackEntry.statistics = {
+      newRecords: bundledSnapshot.statistics.newRecords,
+      carriedOverRecords: bundledSnapshot.statistics.carriedOverRecords,
+      duplicatesRemoved: bundledSnapshot.statistics.duplicatesRemoved,
+      feedsSucceeded: bundledSnapshot.statistics.feedsSucceeded,
+      feedsFailed: bundledSnapshot.statistics.feedsFailed,
+      feedsTotal: bundledSnapshot.statistics.feedsTotal,
+      generationDurationMs: bundledSnapshot.statistics.generationDurationMs,
+    };
+  }
+  const fallback: SnapshotSummary[] = [fallbackEntry];
   return fallback;
 }
 

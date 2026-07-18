@@ -83,6 +83,26 @@ function Home() {
               <td>Integrity Hash (SHA-256)</td>
               <td className="break-all">{meta.hash}</td>
             </tr>
+            {meta.statistics ? (
+              <>
+                <tr>
+                  <td>New Records</td>
+                  <td className="text-[color:var(--verified)]">
+                    +{meta.statistics.newRecords.toLocaleString("en-US")}
+                  </td>
+                </tr>
+                <tr>
+                  <td>Carried Over</td>
+                  <td>{meta.statistics.carriedOverRecords.toLocaleString("en-US")}</td>
+                </tr>
+                {meta.statistics.duplicatesRemoved > 0 ? (
+                  <tr>
+                    <td>Duplicates Removed</td>
+                    <td>{meta.statistics.duplicatesRemoved.toLocaleString("en-US")}</td>
+                  </tr>
+                ) : null}
+              </>
+            ) : null}
           </tbody>
         </table>
 
