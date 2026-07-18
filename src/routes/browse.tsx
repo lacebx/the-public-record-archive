@@ -44,8 +44,8 @@ function Browse() {
       <h1 className="text-[14px] font-bold uppercase tracking-[0.06em]">Browse Records</h1>
       <hr className="mt-1" />
       <p className="mt-2 text-[12px] text-[color:var(--muted-foreground)]">
-        Records are listed in reverse chronological order of archival. All entries are
-        cryptographically verified and immutable.
+        All entries are from the current snapshot. Each record is identified by a unique archive ID
+        for traceability.
       </p>
 
       <section className="mt-5">

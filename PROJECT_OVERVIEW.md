@@ -1,35 +1,46 @@
 # The Public Internet Record — Project Overview
 
-> A platform for preserving the public record by creating immutable daily
-> snapshots of publicly available information.
+> The Public Internet Record is not a news site. It is evidence infrastructure
+> for history.
 
 ---
 
 ## Current Status
 
-The project is in **early MVP** stage. A functional web application exists with:
+The project is at **public alpha** stage. A functional web application exists
+with **20 routes**, SSR rendering, and Cloudflare Workers deployment.
 
-- **8 pages** (home, browse, search, snapshots list, snapshot detail, record
-  detail, about, documentation, API docs)
-- **Snapshot generation** from 11 RSS feeds across 5 countries
-- **Client-side verification** of snapshot integrity (SHA-256 via Web Crypto)
-- **Client-side download** of snapshot JSON
-- **Category and keyword search** over the latest snapshot
-- **Cloudflare Workers deployment** via Nitro
+**What exists:**
 
-### What is NOT yet built
+- Snapshot generation from **29 RSS feeds** (~700+ records/day expected)
+- URL deduplication at ingestion (preserves first occurrence)
+- Per-feed diagnostic logging with source, item count, age, fetch/parse duration
+- SnapshotStatistics metadata persisted with each snapshot
+- Homepage displays generation statistics (new records, carried over, duplicates)
+- Historical snapshot storage and retrieval via Cloudflare R2
+- REST API v1 with 7 endpoints at `/api/v1/*`
+- Developer portal at `/api` + interactive Scalar playground
+- Diff engine for comparing any two snapshots (added/removed/modified/unchanged)
+- Client-side verification, download, and archive export
+- Snapshot analytics dashboard at `/analytics`
+- Related Record Engine and Story Timelines (deterministic, no AI)
+- No database, no auth, no server-side state
+- Unit testing: Vitest with **187 tests**
+- E2E testing: Playwright with 21 smoke tests
+- CI/CD: GitHub Actions (PR checks, deploy, scheduled snapshots + artifacts)
 
-- Historical snapshot storage and retrieval (only latest snapshot available)
-- Public REST API (documentation exists, no implementation)
-- Server-side search (client-side only, does not scale)
-- Cross-snapshot comparison and change tracking
-- External cryptographic timestamping
-- Real evidence chain for records
-- Expanded source coverage (11 sources is too few)
-- AI-assisted exploration
-- Tests, CI/CD pipeline
+**What is NOT yet built or needs remediation:**
 
-**Approximate progress toward Version 1.0: ~10%**
+- External cryptographic timestamping (OpenTimestamps)
+- Real evidence chain for records (current claims need caveats)
+- Cross-snapshot timeline tracking (currently single-snapshot only)
+- Scalable server-side search (currently client-side only)
+- Individual record checksums
+- Pagination for large responses
+- Expanded source coverage (29/50 sources)
+
+**North star:** The north-star audit identified P0/P1/P2 issues that must be
+remediated before any new feature development. See `docs/ai/NORTH_STAR.md`.
 
 ---
 
@@ -212,33 +223,45 @@ launch.
 
 ---
 
-## Current Milestone
+## Current Priority: North-Star Remediation
 
-**Milestone 1: Persistent Archive** is the active milestone.
+**Feature development is STOPPED.** Milestones 1-4 are complete. Milestones 5-8
+are on hold.
 
-The immediate priority is making the archive durable and accessible across
-time — without this, every subsequent capability is impossible.
+The north-star audit revealed integrity-threatening issues. The immediate
+priority is remediation, ranked by severity:
 
-### Recommended Next Tasks (in order)
+### P0 — Integrity-threatening (do first)
 
-1. **Issue #4** — Set up Cloudflare R2 bucket and modify the snapshot generator
-   to upload JSON files. This is the foundation for everything else.
-2. **Issue #10** — Set up CI/CD so every PR is tested and deployed
-   automatically. This reduces friction for all future work.
-3. **Issue #9** — Install Vitest and write the first tests. The project has
-   zero tests and needs quality infrastructure.
-4. **Issue #6** — Once R2 is working, implement `getSnapshotByDate()` to fetch
-   from R2, enabling historical snapshot views.
-5. **Issue #5** — Update the snapshots listing page to show all available dates
-   instead of just the latest.
+1. Remove fabricated example values from OpenAPI spec and API docs
+2. Remove editorial rankings from analytics (largest, most active, newest)
+3. Stop bundling snapshot data in git — fetch from R2 at build time
+4. Fix inaccurate claims on browse page ("reverse chronological order")
+5. Add caveats to integrity claims on record pages
 
-### Parallel workstreams
+### P1 — Archival reliability (do second)
 
-The following issues in Milestone 1 have no dependencies and can be picked up
-at any time:
+6. Fix R2 persistence silent failure catch
+7. Fix archive generation timestamp (uses current time, not snapshot time)
+8. Multi-day history without R2 (cross-date lookup)
+9. Fix misleading "new records" statistic
+10. Individual record checksums
+11. Scalable search with server-side filtering
+12. Pagination for large responses
 
-- #9 (Testing infrastructure) — can begin immediately
-- #10 (CI/CD pipeline) — can begin immediately, needs only GitHub repo access
+### P2 — Polish (do third)
+
+13. Timeline auto-naming quality improvements
+14. OpenAPI diff endpoint docs
+15. Conditional HTTP feed requests
+16. Timeline computation performance improvements
+
+**Before any PR:**
+
+- `npm test` (187 tests)
+- `npm run lint` (0 errors)
+- `npm run typecheck` (0 errors)
+- `npm run build` (succeeds)
 
 ---
 

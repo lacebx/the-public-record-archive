@@ -1,8 +1,10 @@
 # Context
 
-**Current milestone:** Milestone 4: Historical Intelligence (100% complete)
+**Current milestone:** N/A — feature development is STOPPED. All effort is on north-star remediation (P0/P1/P2).
 **Current branch:** feature/snapshot-diff (active — not yet merged)
-**Last completed work:** Related Record Engine, Story Timelines, Timeline Intelligence analytics (Issue #17)
+**Last completed work:** North-star audit — established "evidence infrastructure for history" north star, audited all 15 routes + 14 lib files + OpenAPI spec + styles, produced P0/P1/P2 remediation roadmap.
+**North star:** "The Public Internet Record is not a news site. It is evidence infrastructure for history."
+**Guiding principle:** Every decision must answer: "Does this help someone verify history?"
 
 ## Data Flow
 
@@ -30,20 +32,20 @@
 
 ## Routes
 
-| Route                      | Type   | Description                                  |
-| -------------------------- | ------ | -------------------------------------------- |
-| `/`                        | SSR    | Homepage with today's snapshot + recent      |
-| `/browse`                  | SSR    | Browse records with category filter          |
-| `/search`                  | SSR    | Full-text search across current snapshot     |
-| `/snapshots`               | SSR    | List all available snapshots                 |
-| `/snapshots/:date`         | SSR    | Single snapshot detail + download            |
-| `/record/:id`              | SSR    | Record detail with summary, hash, metadata   |
-| `/compare`                 | CSR    | Compare two snapshots via diff API           |
-| `/analytics`               | SSR    | Archive analytics dashboard (Issue #16)      |
-| `/api`                     | SSR    | Developer portal with endpoint docs          |
-| `/api/playground`          | SSR    | Interactive Scalar API playground            |
-| `/documentation`           | SSR    | Project documentation                        |
-| `/about`                   | SSR    | About page with project info                 |
+| Route              | Type | Description                                |
+| ------------------ | ---- | ------------------------------------------ |
+| `/`                | SSR  | Homepage with today's snapshot + recent    |
+| `/browse`          | SSR  | Browse records with category filter        |
+| `/search`          | SSR  | Full-text search across current snapshot   |
+| `/snapshots`       | SSR  | List all available snapshots               |
+| `/snapshots/:date` | SSR  | Single snapshot detail + download          |
+| `/record/:id`      | SSR  | Record detail with summary, hash, metadata |
+| `/compare`         | CSR  | Compare two snapshots via diff API         |
+| `/analytics`       | SSR  | Archive analytics dashboard (Issue #16)    |
+| `/api`             | SSR  | Developer portal with endpoint docs        |
+| `/api/playground`  | SSR  | Interactive Scalar API playground          |
+| `/documentation`   | SSR  | Project documentation                      |
+| `/about`           | SSR  | About page with project info               |
 
 ## Analytics (`src/lib/analytics.ts`)
 
@@ -70,11 +72,11 @@
 
 ## Caching
 
-| Cache           | TTL   | Purpose                               |
-| --------------- | ----- | ------------------------------------- |
-| `snapshotCache` | 5 min | Full snapshot objects by isoDate      |
-| `listCache`     | 2 min | SnapshotSummary array from R2 listing |
-| `diffCache`     | 10 min| Diff results between snapshot dates   |
+| Cache           | TTL    | Purpose                               |
+| --------------- | ------ | ------------------------------------- |
+| `snapshotCache` | 5 min  | Full snapshot objects by isoDate      |
+| `listCache`     | 2 min  | SnapshotSummary array from R2 listing |
+| `diffCache`     | 10 min | Diff results between snapshot dates   |
 
 ## Environment Variables (R2)
 
