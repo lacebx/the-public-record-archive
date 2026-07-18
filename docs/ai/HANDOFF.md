@@ -71,38 +71,41 @@ The project is at public alpha stage with:
 - Cached results (rebuilt on module load from bundled snapshot)
 - Conservative: prefers false negatives over false positives
 
-## Important: Feature Development STOPPED
+## V1.0 Product Direction: ADR-016
 
-The north-star audit revealed integrity-threatening issues across the application. **No new features** (including Milestones 5-8) may be worked on until the P0/P1/P2 remediation is complete.
+The project has adopted a five-layer engineering model (ADR-016):
 
-Every future decision must answer: **"Does this help someone verify history?"**
+| Layer | Name | Status |
+|-------|------|--------|
+| 1 | Archive Foundation | ~60% |
+| 2 | Historical Research | Not started |
+| 3 | Archive Expansion | Partial (29/50 sources) |
+| 4 | Preservation | Not started |
+| 5 | Public Launch | Not started |
+
+Work must be completed in layer order. All new features must pass five gates:
+North Star, Integrity, Simplicity, Dependency, Removal.
+
+**See:** `docs/ai/ROADMAP.md` for the full issue-by-issue roadmap.
 
 ## Next
 
-### Immediate: P0 Remediation (integrity-threatening)
+### Immediate: Complete Layer 1
 
-1. Remove fabricated example values from `public/openapi.json` and API docs
-2. Remove editorial rankings from analytics (largest, most active, newest)
-3. Stop bundling snapshot data in git — make `snapshot-data.ts` a build-time fetch
-4. Fix inaccurate claims on browse page ("reverse chronological order")
-5. Add caveats to integrity claims on record pages
+1. **#44** — Unbundle snapshot data from git (critical — blocks verifiability)
+2. **#45** — R2 persistence reliability (critical — silent failure loses snapshots)
+3. **#47** — Fix archive timestamp (high — misleading metadata)
+4. **#46** — Per-record checksums (high — enables independent verification)
+5. **#48** — Conditional HTTP feeds (medium — bandwidth, source respect)
+6. **#49** — Server-side search (high — scalability)
+7. **#50** — Pagination (high — scalability)
+8. **#51** — Cron failure notification (high — reliability)
+9. **#18** — Evidence chain (high — provenance)
+10. OpenAPI diff docs (medium — completeness)
 
-### Then: P1 (archival reliability)
+### Then: Layer 2+ (when Layer 1 is stable)
 
-6. Fix R2 persistence silent failure catch
-7. Fix archive generation timestamp (uses current time, not snapshot time)
-8. Multi-day history without R2 (cross-date lookup)
-9. Fix misleading "new records" statistic
-10. Individual record checksums
-11. Scalable search with server-side filtering
-12. Pagination for large responses
-
-### Then: P2 (polish)
-
-13. Timeline auto-naming quality improvements
-14. OpenAPI diff endpoint docs
-15. Conditional HTTP feed requests
-16. Timeline computation performance improvements
+See `docs/ai/ROADMAP.md` for the full dependency graph.
 
 ### Before any PR
 
@@ -113,7 +116,7 @@ Every future decision must answer: **"Does this help someone verify history?"**
 
 ## How to Resume
 
-1. Read `docs/ai/CONTEXT.md`, `docs/ai/HANDOFF.md`, and `docs/ai/NORTH_STAR.md`
-2. Work on the current branch (`feature/snapshot-diff`)
-3. Do not start new features until P0/P1/P2 remediation is complete
+1. Read `docs/ai/CONTEXT.md`, `docs/ai/HANDOFF.md`, `docs/ai/NORTH_STAR.md`, and `docs/ai/ROADMAP.md`
+2. Read ADR-016 in `docs/ai/DECISIONS.md` for product direction
+3. Work in layer order — complete Layer 1 before starting Layer 2
 4. Run all checks before opening PRs

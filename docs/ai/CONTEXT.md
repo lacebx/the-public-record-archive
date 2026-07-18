@@ -1,10 +1,10 @@
 # Context
 
-**Current milestone:** N/A — feature development is STOPPED. All effort is on north-star remediation (P0/P1/P2).
-**Current branch:** feature/snapshot-diff (active — not yet merged)
-**Last completed work:** North-star audit — established "evidence infrastructure for history" north star, audited all 15 routes + 14 lib files + OpenAPI spec + styles, produced P0/P1/P2 remediation roadmap.
-**North star:** "The Public Internet Record is not a news site. It is evidence infrastructure for history."
-**Guiding principle:** Every decision must answer: "Does this help someone verify history?"
+**Current milestone:** N/A — work is organized by engineering layer (see ADR-016).
+**Current branch:** fix/north-star-p0 (PR #43 open)
+**Last completed work:** ADR-016, ROADMAP.md, Layer 1 issue creation, P0 remediation (browse claim, analytics rankings, OpenAPI examples).
+**North star:** "The Public Internet Record preserves what was publicly available on the internet at a given point in time. It never predicts, interprets, ranks, recommends, or editorializes. It preserves evidence."
+**Product model:** Five engineering layers (Foundation → Research → Expansion → Preservation → Launch). Work in layer order. See `docs/ai/ROADMAP.md`.
 
 ## Data Flow
 
