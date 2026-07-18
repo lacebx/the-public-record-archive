@@ -557,6 +557,8 @@ Consequences:
 
 ### ADR-015: No feature development until P0/P1/P2 cleanup done
 
+**Superseded by ADR-016.**
+
 Date: 2026-07-17
 
 Decision:
@@ -585,3 +587,70 @@ Consequences:
 - Milestones 5-8 are on hold
 - The project's velocity appears to slow, but the foundation becomes solid
 - The cleanup roadmap is the de facto project plan until complete
+
+---
+
+### ADR-016: Version 1.0 Product Direction
+
+**Supersedes ADR-013, ADR-014, ADR-015.**
+
+Date: 2026-07-18
+
+Decision:
+Adopt a five-layer engineering model for Version 1.0, replacing the earlier
+milestone-based roadmap. All new work must pass five gates (North Star,
+Integrity, Simplicity, Dependency, Removal) before being accepted.
+
+Context:
+The project accumulated features driven by "what would be cool" rather than
+"what does the archive need." The north-star audit (ADR-013) revealed
+integrity-threatening issues. ADR-014 banned AI features. ADR-015 paused
+all development. A more structured product direction is needed to ensure
+every future engineering decision aligns with a coherent architectural vision.
+
+Options considered:
+
+- Keep the milestone-based roadmap (Milestones 1-8)
+- Pivot to a completely new roadmap
+- Organize work into engineering layers ordered by dependency (chosen)
+
+Chosen approach:
+Five engineering layers, each building on the previous:
+
+| Layer | Name | Description |
+|-------|------|-------------|
+| 1 | Archive Foundation | Ingestion, storage, API, search, integrity |
+| 2 | Historical Research | Timelines, version history, clustering, provenance |
+| 3 | Archive Expansion | More sources, languages, web crawling |
+| 4 | Preservation | OpenTimestamps, WARC, IPFS, mirrors |
+| 5 | Public Launch | Documentation, accessibility, performance, launch |
+
+Work must be completed in layer order. No Layer 2 work may begin until Layer 1
+is stable. No Layer 3 work may begin until Layer 2 is stable, and so on.
+Parallel work is allowed within a layer.
+
+Five gates for accepting new features:
+
+1. **North Star Test** — Does this help someone verify what existed on the
+   internet at a given point in time?
+2. **Integrity Test** — Does this introduce any fabricated, editorial, or
+   unverifiable content?
+3. **Simplicity Test** — Is this the simplest possible implementation?
+4. **Dependency Test** — Does this depend on work that is not yet stable?
+5. **Removal Test** — If we built this, would we ever want to remove it?
+
+A feature must pass all five. Failure at any gate is rejection.
+
+Non-goals (explicitly out of scope):
+- Summarization, prediction, ranking, recommendation
+- Editorial voice, opinion, narrative framing
+- Personalization, user accounts, algorithmic feeds
+- AI/ML features of any kind
+
+Consequences:
+
+- The old Milestones 1-8 are replaced by the five-layer model
+- Milestones 1-4 are recognized as completed Layer 1 work
+- Milestones 5-8 are subsumed into Layers 2-5
+- No new features outside the layer model
+- The five gates must be documented and referenced in every feature proposal
