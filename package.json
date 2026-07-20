@@ -9,7 +9,7 @@
     "build:dev": "vite build --mode development",
     "preview": "vite preview",
     "snapshot": "tsx scripts/generate-snapshot.ts",
-    "vercel-build": "npm run snapshot && npm run build && npx nitro build --preset vercel",
+    "vercel-build": "npm run snapshot && npm run build",
     "test": "vitest run",
     "test:watch": "vitest",
     "typecheck": "tsc --noEmit",
