@@ -850,6 +850,7 @@ and prepare the project for a true public alpha.
 **Changes made:**
 
 **ADR-016 (Product Direction):**
+
 - Replaces ADR-013/014/015 with a definitive V1.0 product philosophy
 - Five-layer engineering model: Foundation → Research → Expansion → Preservation → Launch
 - Five gates for accepting features: North Star, Integrity, Simplicity, Dependency, Removal
@@ -857,35 +858,42 @@ and prepare the project for a true public alpha.
 - Documented in `docs/ai/DECISIONS.md`
 
 **Roadmap (`docs/ai/ROADMAP.md`):**
+
 - Full issue-by-issue roadmap across all five layers
 - Dependency graph showing implementation order
 - Version 1.0 definition and completion criteria
 - Cancelled work, duplicated work, and new issues listed
 
 **GitHub new issues created (19 total):**
+
 - Layer 1: #44 (unbundle snapshot), #45 (R2 reliability), #46 (per-record checksums), #47 (archive timestamp), #48 (conditional HTTP), #49 (search index), #50 (pagination), #51 (cron notification)
 - Layer 2: #52 (cross-snapshot timelines), #53 (date-range browse), #54 (timeline naming), #55 (timeline performance)
 - Layer 4: #56 (OpenTimestamps), #57 (WARC export), #58 (IPFS pinning), #59 (mirror/backup)
 - Layer 5: #60 (monitoring), #61 (accessibility), #62 (contributor guide)
 
 **GitHub housekeeping:**
+
 - Opened PR #43 (P0 remediation)
 - Created `layer-1` through `layer-5` labels
 - All 19 new issues assigned to Milestone 8 (Version 1.0 Launch)
 
 **Files created:**
+
 - `docs/ai/ROADMAP.md` — Full five-layer roadmap
 
 **Files modified:**
+
 - `docs/ai/DECISIONS.md` — Added ADR-016, marked ADR-015 as superseded
 - `docs/ai/HANDOFF.md` — Updated with V1.0 product direction and layer model
 - `docs/ai/CONTEXT.md` — Updated with current state
 - `docs/ai/WORK_LOG.md` — This entry
 
 **Verification:**
+
 - (No code changes — documentation + GitHub administration)
 
 **Remaining work:**
+
 - PR #43 is open for P0 fixes (review and merge)
 - Begin Layer 1 implementation: #44 (unbundle snapshot), #45 (R2 reliability), #47 (archive timestamp)
 - Then remaining Layer 1 issues

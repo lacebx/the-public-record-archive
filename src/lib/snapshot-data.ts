@@ -4794,18 +4794,18 @@ const data: Snapshot = {
       category: "Science",
     },
   ],
-  "statistics": {
-    "rawRecords": 669,
-    "uniqueRecords": 669,
-    "duplicatesRemoved": 74,
-    "feedsSucceeded": 28,
-    "feedsFailed": 1,
-    "feedsTotal": 29,
-    "newRecords": 308,
-    "carriedOverRecords": 361,
-    "removedRecords": 325,
-    "generationDurationMs": 15216
-  }
+  statistics: {
+    rawRecords: 669,
+    uniqueRecords: 669,
+    duplicatesRemoved: 74,
+    feedsSucceeded: 28,
+    feedsFailed: 1,
+    feedsTotal: 29,
+    newRecords: 308,
+    carriedOverRecords: 361,
+    removedRecords: 325,
+    generationDurationMs: 15216,
+  },
 };
 
 export default data;
