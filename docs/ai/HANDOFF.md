@@ -75,13 +75,13 @@ The project is at public alpha stage with:
 
 The project has adopted a five-layer engineering model (ADR-016):
 
-| Layer | Name | Status |
-|-------|------|--------|
-| 1 | Archive Foundation | ~60% |
-| 2 | Historical Research | Not started |
-| 3 | Archive Expansion | Partial (29/50 sources) |
-| 4 | Preservation | Not started |
-| 5 | Public Launch | Not started |
+| Layer | Name                | Status                  |
+| ----- | ------------------- | ----------------------- |
+| 1     | Archive Foundation  | ~60%                    |
+| 2     | Historical Research | Not started             |
+| 3     | Archive Expansion   | Partial (29/50 sources) |
+| 4     | Preservation        | Not started             |
+| 5     | Public Launch       | Not started             |
 
 Work must be completed in layer order. All new features must pass five gates:
 North Star, Integrity, Simplicity, Dependency, Removal.

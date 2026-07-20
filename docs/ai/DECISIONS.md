@@ -617,13 +617,13 @@ Options considered:
 Chosen approach:
 Five engineering layers, each building on the previous:
 
-| Layer | Name | Description |
-|-------|------|-------------|
-| 1 | Archive Foundation | Ingestion, storage, API, search, integrity |
-| 2 | Historical Research | Timelines, version history, clustering, provenance |
-| 3 | Archive Expansion | More sources, languages, web crawling |
-| 4 | Preservation | OpenTimestamps, WARC, IPFS, mirrors |
-| 5 | Public Launch | Documentation, accessibility, performance, launch |
+| Layer | Name                | Description                                        |
+| ----- | ------------------- | -------------------------------------------------- |
+| 1     | Archive Foundation  | Ingestion, storage, API, search, integrity         |
+| 2     | Historical Research | Timelines, version history, clustering, provenance |
+| 3     | Archive Expansion   | More sources, languages, web crawling              |
+| 4     | Preservation        | OpenTimestamps, WARC, IPFS, mirrors                |
+| 5     | Public Launch       | Documentation, accessibility, performance, launch  |
 
 Work must be completed in layer order. No Layer 2 work may begin until Layer 1
 is stable. No Layer 3 work may begin until Layer 2 is stable, and so on.
@@ -642,6 +642,7 @@ Five gates for accepting new features:
 A feature must pass all five. Failure at any gate is rejection.
 
 Non-goals (explicitly out of scope):
+
 - Summarization, prediction, ranking, recommendation
 - Editorial voice, opinion, narrative framing
 - Personalization, user accounts, algorithmic feeds

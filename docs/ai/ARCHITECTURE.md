@@ -6,7 +6,7 @@
 
 - **TanStack Start** (v1.168) — Full-stack React framework with SSR, file-based
   routing, and server functions.
-- **Vite 8** — Build tool via `@lovable.dev/vite-tanstack-config`.
+- **Vite 8** — Build tool with TanStack Start, React, Tailwind CSS, and Nitro for Cloudflare Workers.
 - **Nitro 3** — SSR production server with Cloudflare Workers adapter.
 - **Tailwind CSS v4** — Styling with custom CSS variables for archival
   aesthetic.

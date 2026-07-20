@@ -9,7 +9,7 @@
 - **Fabricated example values in API docs.** `src/routes/api.tsx` shows a fictional snapshot: 1,592 records from 45 sources across 12 countries. Should show "real" example or be marked as illustrative.
 - **Fictional snapshot stats in health endpoint.** `src/routes/api.tsx` (health section) returns `{ snapshots: 142, records: 94252 }` — completely fabricated numbers.
 - **Analytics page ranks record importance.** `src/routes/analytics.tsx` shows "Largest Stories," "Most Active Publishers," "Newest Timelines" — editorial judgment that ranks records by importance. An archive does not rank. **Fix:** Remove these sections or re-frame as neutral facts.
-- **Snapshot data is bundled in git.** `src/lib/snapshot-data.ts` is auto-generated and committed. This prevents verifiability (the bundled data passes through git, not the original pipeline). **Fix:** Fetch from R2 at build time; git should only hold source code. (*Issue #44*)
+- **Snapshot data is bundled in git.** `src/lib/snapshot-data.ts` is auto-generated and committed. This prevents verifiability (the bundled data passes through git, not the original pipeline). **Fix:** Fetch from R2 at build time; git should only hold source code. (_Issue #44_)
 - **Browse page "reverse chronological order" claim.** `src/routes/browse.tsx` says records are ordered "reverse chronological" but this is not guaranteed for historical snapshots (only true for the latest snapshot which represents a single point in time).
 - **Integrity certificate caveat missing.** `src/routes/record.$id.tsx` calls the hash display an "Integrity Certificate" without explaining what it actually proves (that the record hash was included in the snapshot bundle — not that the original source published this content on that date).
 - **API playground has low archival value.** `/api/playground` loads a heavy Scalar client-side bundle for what is essentially a REST test tool. Researchers would prefer the raw OpenAPI spec or curl examples.
@@ -17,11 +17,11 @@
 
 ## Audit Findings (P1 — archival reliability)
 
-- **R2 persistence has silent failure.** `src/lib/storage.ts` wraps R2 `save()` in try-catch that only logs errors. A snapshot could fail to persist without anyone noticing. (*Issue #45*)
-- **Archive generation uses current timestamp.** `src/lib/archive.ts` embeds `new Date().toISOString()` as the archive creation time instead of the snapshot's timestamp. (*Issue #47*)
+- **R2 persistence has silent failure.** `src/lib/storage.ts` wraps R2 `save()` in try-catch that only logs errors. A snapshot could fail to persist without anyone noticing. (_Issue #45_)
+- **Archive generation uses current timestamp.** `src/lib/archive.ts` embeds `new Date().toISOString()` as the archive creation time instead of the snapshot's timestamp. (_Issue #47_)
 - **No multi-day history without R2.** If R2 is down and no snapshots have been cached locally, only the latest bundled snapshot is available.
 - **"New records" stat is misleading.** "New records" vs "carried over" uses the previous snapshot as baseline, but with only one bundled snapshot available, the comparison is always against itself (all records are "new").
-- **No individual record checksums.** Snapshot integrity is verified at the snapshot level only. Individual records cannot be independently verified. (*Issue #46*)
+- **No individual record checksums.** Snapshot integrity is verified at the snapshot level only. Individual records cannot be independently verified. (_Issue #46_)
 - **Search is not scalable.** `src/routes/search.tsx` loads all records client-side and filters in memory.
 - **No pagination.** Record lists, search results, and diff output have no pagination.
 
