@@ -70,8 +70,22 @@ const listCache = new LRUCache<string, SnapshotSummary[]>({
   ttl: 1000 * 60 * 2,
 });
 
-export const getSnapshot = createServerFn({ method: "GET" }).handler(
-  async () => bundledSnapshot satisfies Snapshot,
+export async function getLatestSnapshot(): Promise<Snapshot> {
+  try {
+    const summaries = await fetchSnapshotList();
+    if (summaries.length > 0) {
+      const latest = summaries[summaries.length - 1];
+      const snapshot = await getSnapshotByDate(latest.isoDate);
+      if (snapshot) return snapshot;
+    }
+  } catch {
+    // R2 not available, fall through to bundled
+  }
+  return bundledSnapshot satisfies Snapshot;
+}
+
+export const getSnapshot = createServerFn({ method: "GET" }).handler(async () =>
+  getLatestSnapshot(),
 );
 
 export async function fetchSnapshotList(): Promise<SnapshotSummary[]> {
@@ -150,7 +164,7 @@ export const getArchive = createServerFn({ method: "POST" })
   .handler(async ({ data }) => {
     let snapshot: Snapshot | null;
     if (!data.date || data.date === "latest") {
-      snapshot = bundledSnapshot satisfies Snapshot;
+      snapshot = await getLatestSnapshot();
     } else {
       snapshot = await getSnapshotByDate(data.date);
     }
