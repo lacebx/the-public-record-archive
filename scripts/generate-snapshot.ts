@@ -5,6 +5,7 @@ import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { XMLParser } from "fast-xml-parser";
+import type { SnapshotSummary } from "../src/lib/data";
 import { LocalSnapshotStore, r2Config } from "../src/lib/storage";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -578,6 +579,29 @@ export default data;
   return { dateFile, latestFile, tsFile };
 }
 
+function buildSummary(snapshot: Snapshot): SnapshotSummary {
+  const s: SnapshotSummary = {
+    isoDate: snapshot.isoDate,
+    date: snapshot.date,
+    generated: snapshot.generated,
+    articles: snapshot.articles,
+    sources: snapshot.sources,
+    hash: snapshot.hash,
+  };
+  if (snapshot.statistics) {
+    s.statistics = {
+      newRecords: snapshot.statistics.newRecords,
+      carriedOverRecords: snapshot.statistics.carriedOverRecords,
+      duplicatesRemoved: snapshot.statistics.duplicatesRemoved,
+      feedsSucceeded: snapshot.statistics.feedsSucceeded,
+      feedsFailed: snapshot.statistics.feedsFailed,
+      feedsTotal: snapshot.statistics.feedsTotal,
+      generationDurationMs: snapshot.statistics.generationDurationMs,
+    };
+  }
+  return s;
+}
+
 export async function persistSnapshot(snapshot: Snapshot, isoDate: string) {
   const store = new LocalSnapshotStore(DATA_DIR);
   await store.save("latest", snapshot);
@@ -600,6 +624,14 @@ export async function persistSnapshot(snapshot: Snapshot, isoDate: string) {
       await r2.saveArchive(isoDate, tarGz);
       await r2.saveManifest(isoDate, manifest);
       await r2.saveChecksums(isoDate, checksums);
+
+      const currentSummary = buildSummary(snapshot);
+      const existingSummaries = await r2.loadSummaries();
+      const merged = existingSummaries
+        .filter((s) => s.isoDate !== isoDate)
+        .concat(currentSummary)
+        .sort((a, b) => a.isoDate.localeCompare(b.isoDate));
+      await r2.saveSummaries(merged);
 
       console.log(`  Synced to R2 (bucket: ${cfg.bucket})`);
     } catch (err) {
