@@ -96,6 +96,13 @@ export async function fetchSnapshotList(): Promise<SnapshotSummary[]> {
     const { R2SnapshotStore, r2Config } = await import("./storage");
     if (r2Config()) {
       const store = new R2SnapshotStore();
+
+      const summariesFromIndex = await store.loadSummaries();
+      if (summariesFromIndex.length > 0) {
+        listCache.set("all", summariesFromIndex);
+        return summariesFromIndex;
+      }
+
       const dates = await store.list();
       if (dates.length > 0) {
         const summaries: SnapshotSummary[] = [];

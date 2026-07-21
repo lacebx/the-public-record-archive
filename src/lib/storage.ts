@@ -1,4 +1,4 @@
-import type { Snapshot } from "./data";
+import type { Snapshot, SnapshotSummary } from "./data";
 
 export interface SnapshotStore {
   save(isoDate: string, snapshot: Snapshot): Promise<void>;
@@ -186,6 +186,36 @@ export class R2SnapshotStore implements SnapshotStore {
         Key: `${dateDir(isoDate)}/checksums.txt`,
         Body: checksums,
         ContentType: "text/plain",
+      }),
+    );
+  }
+
+  async loadSummaries(): Promise<SnapshotSummary[]> {
+    try {
+      const { GetObjectCommand } = await import("@aws-sdk/client-s3");
+      const client = await this.getClient();
+      const response = await client.send(
+        new GetObjectCommand({
+          Bucket: this.cfg.bucket,
+          Key: "snapshots/summaries.json",
+        }),
+      );
+      const body = await response.Body?.transformToString("utf-8");
+      return body ? (JSON.parse(body) as import("./data").SnapshotSummary[]) : [];
+    } catch {
+      return [];
+    }
+  }
+
+  async saveSummaries(summaries: SnapshotSummary[]): Promise<void> {
+    const { PutObjectCommand } = await import("@aws-sdk/client-s3");
+    const client = await this.getClient();
+    await client.send(
+      new PutObjectCommand({
+        Bucket: this.cfg.bucket,
+        Key: "snapshots/summaries.json",
+        Body: JSON.stringify(summaries, null, 2),
+        ContentType: "application/json",
       }),
     );
   }
